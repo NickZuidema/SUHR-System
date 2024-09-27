@@ -10,8 +10,8 @@ from PyQt6.QtCore import Qt, QPoint, QRect
 
 
 # TrOCR processor and model initialization
-processor = TrOCRProcessor.from_pretrained('C:/Users/Acer/Desktop/code samples/softeng implementation project/handwriting model/processor')
-model = VisionEncoderDecoderModel.from_pretrained('C:/Users/Acer/Desktop/code samples/softeng implementation project/handwriting model/model')
+processor = TrOCRProcessor.from_pretrained('path to processor')
+model = VisionEncoderDecoderModel.from_pretrained('path to model')
 
 class ImageLabel(QLabel):
     def __init__(self):
