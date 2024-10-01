@@ -2,6 +2,10 @@ import sys
 import sqlite3
 from PySide6.QtWidgets import QApplication, QMainWindow, QMessageBox
 from ui_login import Ui_Login  # Import the Ui_Login class
+import os
+
+here = os.path.dirname(os.path.abspath(__file__))
+os.chdir(here)
 
 class MainWindow(QMainWindow):
     def __init__(self):
@@ -14,7 +18,7 @@ class MainWindow(QMainWindow):
     def connect_db(self):
         """Establish a connection to the SQLite database."""
         try:
-            self.connection = sqlite3.connect(r'C:\Users\leeu6\OneDrive\Desktop\SUHR\SUHR-System\Database\SUHRSystem.db')
+            self.connection = sqlite3.connect(r'SUHRSystem.db')
             self.cursor = self.connection.cursor()
         except sqlite3.Error as e:
             QMessageBox.critical(self, "Database Error", f"Could not connect to the database: {e}")
