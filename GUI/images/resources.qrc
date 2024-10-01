@@ -1,0 +1,21 @@
+<RCC>
+  <qresource prefix="images">
+    <file>background1_fade.png</file>
+    <file>background1_silliman.png</file>
+    <file>background2_header.png</file>
+    <file>background2_table.png</file>
+    <file>button_add-new-record.png</file>
+    <file>button_archived-records.png</file>
+    <file>button_home.png</file>
+    <file>button_info.png</file>
+    <file>button_login.png</file>
+    <file>button_logout.png</file>
+    <file>logo_silliman.png</file>
+    <file>title_login-bold.png</file>
+    <file>title1_header1.png</file>
+    <file>title1_header2.png</file>
+    <file>title2_header1.png</file>
+    <file>title2_header2.png</file>
+    <file>title2_header3.png</file>
+  </qresource>
+</RCC>
