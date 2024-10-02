@@ -161,7 +161,7 @@
    <widget class="QPushButton" name="pushButton_3">
     <property name="geometry">
      <rect>
-      <x>1100</x>
+      <x>1110</x>
       <y>730</y>
       <width>251</width>
       <height>41</height>
@@ -187,7 +187,7 @@
    <widget class="QPushButton" name="pushButton_4">
     <property name="geometry">
      <rect>
-      <x>820</x>
+      <x>830</x>
       <y>730</y>
       <width>261</width>
       <height>41</height>
@@ -213,7 +213,7 @@
    <widget class="QLabel" name="label_5">
     <property name="geometry">
      <rect>
-      <x>40</x>
+      <x>60</x>
       <y>180</y>
       <width>261</width>
       <height>16</height>
@@ -223,7 +223,7 @@
      <string notr="true">background-color: rgba(0, 0, 0, 0);</string>
     </property>
     <property name="text">
-     <string/>
+     <string>Currently Employed Records</string>
     </property>
     <property name="pixmap">
      <pixmap resource="images/resources.qrc">:/images/title2_header3.png</pixmap>
@@ -232,8 +232,8 @@
    <widget class="QWidget" name="widget" native="true">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>260</y>
+      <x>60</x>
+      <y>270</y>
       <width>1301</width>
       <height>441</height>
      </rect>
@@ -243,8 +243,8 @@
       <rect>
        <x>0</x>
        <y>0</y>
-       <width>1311</width>
-       <height>451</height>
+       <width>1281</width>
+       <height>441</height>
       </rect>
      </property>
      <row>
@@ -296,9 +296,9 @@
     <widget class="QScrollArea" name="scrollArea">
      <property name="geometry">
       <rect>
-       <x>1269</x>
+       <x>1280</x>
        <y>0</y>
-       <width>31</width>
+       <width>20</width>
        <height>441</height>
       </rect>
      </property>
@@ -310,7 +310,7 @@
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>29</width>
+        <width>18</width>
         <height>439</height>
        </rect>
       </property>
@@ -319,7 +319,7 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>31</width>
+         <width>21</width>
          <height>441</height>
         </rect>
        </property>
@@ -333,6 +333,49 @@
      </widget>
     </widget>
    </widget>
+   <widget class="QLineEdit" name="lineEdit">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>221</y>
+      <width>281</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="placeholderText">
+     <string>Search</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_5">
+    <property name="geometry">
+     <rect>
+      <x>340</x>
+      <y>220</y>
+      <width>32</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="images/resources.qrc">
+      <normaloff>:/images/search-icon.png</normaloff>:/images/search-icon.png</iconset>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="comboBox">
+    <property name="geometry">
+     <rect>
+      <x>380</x>
+      <y>220</y>
+      <width>241</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="placeholderText">
+     <string>Choose a filter...</string>
+    </property>
+   </widget>
    <zorder>label_2</zorder>
    <zorder>label</zorder>
    <zorder>label_3</zorder>
@@ -344,6 +387,9 @@
    <zorder>pushButton_4</zorder>
    <zorder>label_5</zorder>
    <zorder>widget</zorder>
+   <zorder>lineEdit</zorder>
+   <zorder>pushButton_5</zorder>
+   <zorder>comboBox</zorder>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
