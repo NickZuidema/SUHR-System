@@ -2,7 +2,7 @@ import sys
 import sqlite3
 from PySide6.QtWidgets import QApplication, QMainWindow, QMessageBox
 from ui_login import Ui_Login
-from dashboard import Dashboard  
+from dashboard import Dashboard  # Import the Dashboard class
 
 class MainWindow(QMainWindow):
     def __init__(self):
@@ -10,7 +10,7 @@ class MainWindow(QMainWindow):
         self.ui = Ui_Login()
         self.ui.setupUi(self)
         self.ui.pushButton.clicked.connect(self.handle_login)
-        self.db_path = r'C:\Users\leeu6\Desktop\SUHR\SUHR-System\Database\SUHRSystem.db'  
+        self.db_path = r'C:\Users\leeu6\Desktop\SUHR\SUHR-System\Database\SUHRSystem.db'  # Store the database path
 
     def authenticate(self, username, password):
         """Authenticate the user by checking the provided username and password."""
@@ -32,15 +32,15 @@ class MainWindow(QMainWindow):
 
         if self.authenticate(username, password):
             QMessageBox.information(self, "Success", "Login successful!")
-            self.show_dashboard()  
+            self.show_dashboard()  # Show the dashboard after successful login
         else:
             QMessageBox.warning(self, "Error", "Login failed! Please check your credentials.")
 
     def show_dashboard(self):
         """Show the main dashboard after login."""
-        self.dashboard = Dashboard(self.db_path)  
+        self.dashboard = Dashboard(self.db_path)  # Pass the database path to the Dashboard
         self.dashboard.show()
-        self.hide() 
+        self.hide()  # Hide the login window
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
