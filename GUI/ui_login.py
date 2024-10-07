@@ -1,40 +1,24 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'loginNjKXvM.ui'
+## Form generated from reading UI file 'loginoSFjBJ.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.4.3
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
 
-# from PySide6.QtCore import (QCoreApplication, QDate, QDateTime, QLocale,
-#     QMetaObject, QObject, QPoint, QRect,
-#     QSize, QTime, QUrl, Qt)
-# from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
-#     QFont, QFontDatabase, QGradient, QIcon,
-#     QImage, QKeySequence, QLinearGradient, QPainter,
-#     QPalette, QPixmap, QRadialGradient, QTransform)
-# from PySide6.QtWidgets import (QApplication, QFrame, QLabel, QMainWindow,
-#     QPushButton, QSizePolicy, QStatusBar, QTextEdit,
-#     QWidget)
-# import resources_rc
 from PySide6.QtCore import (QCoreApplication, QDate, QDateTime, QLocale,
     QMetaObject, QObject, QPoint, QRect,
     QSize, QTime, QUrl, Qt)
 from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
-    QPalette, QPixmap, QRadialGradient, QTransform)  # Ensure QPixmap is here
-from PySide6.QtWidgets import (QApplication, QFrame, QLabel, QMainWindow,
-    QPushButton, QSizePolicy, QStatusBar, QTextEdit,
+    QPalette, QPixmap, QRadialGradient, QTransform)
+from PySide6.QtWidgets import (QApplication, QFrame, QLabel, QLineEdit,
+    QMainWindow, QPushButton, QSizePolicy, QStatusBar,
     QWidget)
 import resources_rc
-
-import os
-
-here = os.path.dirname(os.path.abspath(__file__))
-os.chdir(here)
 
 class Ui_Login(object):
     def setupUi(self, Login):
@@ -43,11 +27,6 @@ class Ui_Login(object):
         Login.resize(1543, 850)
         Login.setAcceptDrops(False)
         Login.setStyleSheet(u"background-color: rgb(255, 255, 255);")
-
-
-        default_font = QFont("Arial", 12)  # Change font and size as needed
-        Login.setFont(default_font)
-
         self.centralwidget = QWidget(Login)
         self.centralwidget.setObjectName(u"centralwidget")
         self.silliman_bg = QLabel(self.centralwidget)
@@ -86,23 +65,7 @@ class Ui_Login(object):
         self.label_5.setGeometry(QRect(70, 320, 141, 81))
         self.label_5.setStyleSheet(u"background-color: rgba(0, 0, 0, 0);")
         self.label_5.setPixmap(QPixmap(u":/images/title_login-bold.png"))
-        self.textEdit = QTextEdit(self.centralwidget)
-        self.textEdit.setObjectName(u"textEdit")
-        self.textEdit.setGeometry(QRect(70, 420, 181, 31))
-        sizePolicy = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.textEdit.sizePolicy().hasHeightForWidth())
-        self.textEdit.setSizePolicy(sizePolicy)
-        self.textEdit.setStyleSheet(u"background-color: rgba(0, 0, 0, 0);")
-        self.textEdit.setLineWidth(0)
-        self.textEdit_2 = QTextEdit(self.centralwidget)
-        self.textEdit_2.setObjectName(u"textEdit_2")
-        self.textEdit_2.setGeometry(QRect(70, 470, 181, 31))
-        sizePolicy.setHeightForWidth(self.textEdit_2.sizePolicy().hasHeightForWidth())
-        self.textEdit_2.setSizePolicy(sizePolicy)
-        self.textEdit_2.setStyleSheet(u"background-color: rgba(0, 0, 0, 0);")
-        self.textEdit_2.setLineWidth(0)
+
         self.pushButton = QPushButton(self.centralwidget)
         self.pushButton.setObjectName(u"pushButton")
         self.pushButton.setGeometry(QRect(70, 520, 191, 51))
@@ -111,6 +74,40 @@ class Ui_Login(object):
         icon.addFile(u":/images/button_login.png", QSize(), QIcon.Normal, QIcon.Off)
         self.pushButton.setIcon(icon)
         self.pushButton.setIconSize(QSize(186, 49))
+
+        self.lineEdit = QLineEdit(self.centralwidget)
+        self.lineEdit.setObjectName(u"lineEdit")
+        self.lineEdit.setGeometry(QRect(70, 420, 181, 31))
+        self.lineEdit.setPlaceholderText("Username")
+
+        #add this for the placeholder to be visible
+        self.lineEdit.setStyleSheet("""
+            QLineEdit {
+                color: black;                   /* Text color */
+                background-color: white;        /* Background color */
+                border: 1px solid lightgray;    /* Border color */
+            }
+            QLineEdit:placeholder {
+                color: gray;                    /* Placeholder text color */
+            }
+        """)
+
+        self.lineEdit_2 = QLineEdit(self.centralwidget)
+        self.lineEdit_2.setObjectName(u"lineEdit_2")
+        self.lineEdit_2.setGeometry(QRect(70, 470, 181, 31))
+        self.lineEdit_2.setPlaceholderText("Password")
+
+        self.lineEdit_2.setStyleSheet("""
+            QLineEdit {
+                color: black;                   /* Text color */
+                background-color: white;        /* Background color */
+                border: 1px solid lightgray;    /* Border color */
+            }
+            QLineEdit:placeholder {
+                color: gray;                    /* Placeholder text color */
+            }
+        """)
+
         Login.setCentralWidget(self.centralwidget)
         self.statusbar = QStatusBar(Login)
         self.statusbar.setObjectName(u"statusbar")
@@ -124,9 +121,14 @@ class Ui_Login(object):
     def retranslateUi(self, Login):
         Login.setWindowTitle(QCoreApplication.translate("Login", u"Login", None))
         Login.setWindowFilePath("")
-        
-        self.textEdit.setPlaceholderText(QCoreApplication.translate("Login", u"Username", None))
-        self.textEdit_2.setPlaceholderText(QCoreApplication.translate("Login", u"Password", None))
-        
+        self.silliman_bg.setText("")
+        self.label.setText("")
+        self.label_2.setText("")
+        self.label_3.setText("")
+        self.label_4.setText("")
+        self.label_5.setText("")
+        self.pushButton.setText("")
+        self.lineEdit.setText("")
+        self.lineEdit_2.setText("")
     # retranslateUi
 
