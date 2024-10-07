@@ -1,5 +1,9 @@
 import sys
 import sqlite3
+from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
+    QFont, QFontDatabase, QGradient, QIcon,
+    QImage, QKeySequence, QLinearGradient, QPainter,
+    QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import QApplication, QMainWindow, QMessageBox
 from ui_login import Ui_Login  # Import the Ui_Login class
 import os
@@ -14,6 +18,10 @@ class MainWindow(QMainWindow):
         self.ui.setupUi(self)
         self.ui.pushButton.clicked.connect(self.handle_login)
         self.connect_db()  # Establish the connection once at startup
+
+         # Set a default font for the application
+        default_font = QFont("Helvetica", 12)  # Change to your desired font and size
+        QApplication.setFont(default_font)
 
     def connect_db(self):
         """Establish a connection to the SQLite database."""

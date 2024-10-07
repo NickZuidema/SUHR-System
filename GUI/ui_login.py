@@ -31,6 +31,11 @@ from PySide6.QtWidgets import (QApplication, QFrame, QLabel, QMainWindow,
     QWidget)
 import resources_rc
 
+import os
+
+here = os.path.dirname(os.path.abspath(__file__))
+os.chdir(here)
+
 class Ui_Login(object):
     def setupUi(self, Login):
         if not Login.objectName():
@@ -38,6 +43,11 @@ class Ui_Login(object):
         Login.resize(1543, 850)
         Login.setAcceptDrops(False)
         Login.setStyleSheet(u"background-color: rgb(255, 255, 255);")
+
+
+        default_font = QFont("Arial", 12)  # Change font and size as needed
+        Login.setFont(default_font)
+
         self.centralwidget = QWidget(Login)
         self.centralwidget.setObjectName(u"centralwidget")
         self.silliman_bg = QLabel(self.centralwidget)
@@ -114,14 +124,9 @@ class Ui_Login(object):
     def retranslateUi(self, Login):
         Login.setWindowTitle(QCoreApplication.translate("Login", u"Login", None))
         Login.setWindowFilePath("")
-        self.silliman_bg.setText("")
-        self.label.setText("")
-        self.label_2.setText("")
-        self.label_3.setText("")
-        self.label_4.setText("")
-        self.label_5.setText("")
+        
         self.textEdit.setPlaceholderText(QCoreApplication.translate("Login", u"Username", None))
         self.textEdit_2.setPlaceholderText(QCoreApplication.translate("Login", u"Password", None))
-        self.pushButton.setText("")
+        
     # retranslateUi
 
