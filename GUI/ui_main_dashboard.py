@@ -95,6 +95,7 @@ class Ui_MainWindow(object):
         self.widget.setObjectName(u"widget")
         self.widget.setGeometry(QRect(60, 270, 1301, 441))
         self.tableWidget = QTableWidget(self.widget)
+        
         if (self.tableWidget.columnCount() < 4):
             self.tableWidget.setColumnCount(4)
         __qtablewidgetitem = QTableWidgetItem()

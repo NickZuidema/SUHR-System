@@ -78,7 +78,7 @@ class Dashboard(QMainWindow):
     def add_new_employee(self):
         """Open the Add Employee window."""
         self.add_employee_window = AddEmployeeWindow()  # Create an instance of AddEmployeeWindow
-        self.add_employee_window.show()  # Show the window
+        self.   add_employee_window.show()  # Show the window
 
     def closeEvent(self, event):
         """Close the database connection when the application exits."""

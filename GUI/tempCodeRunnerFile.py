@@ -17,7 +17,7 @@ class MainWindow(QMainWindow):
         try:
             with sqlite3.connect(self.db_path) as connection:
                 cursor = connection.cursor()
-                query = "SELECT * FROM user WHERE User_Id=? AND password=?"
+                query = "SELECT * FROM User WHERE User_Id=? AND password=?"
                 cursor.execute(query, (username, password))
                 result = cursor.fetchone()
                 return result is not None
