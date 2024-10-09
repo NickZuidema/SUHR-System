@@ -30,7 +30,7 @@ class Dashboard(QMainWindow):
     def populate_employee_table(self):
         """Populate the employee table on the dashboard."""
         try:
-            query = "SELECT * FROM currently_employed"
+            query = "SELECT * FROM Employee"
             self.cursor.execute(query)
             employees = self.cursor.fetchall()
 
