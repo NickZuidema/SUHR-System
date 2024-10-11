@@ -4,23 +4,29 @@ import cv2
 from transformers import TrOCRProcessor, VisionEncoderDecoderModel
 
 import numpy as np
-from PyQt6.QtWidgets import QApplication, QLabel, QVBoxLayout, QPushButton, QFileDialog, QWidget, QScrollArea
+from PyQt6.QtWidgets import QApplication, QLabel, QVBoxLayout, QPushButton, QFileDialog, QWidget, QScrollArea, QLineEdit
 from PyQt6.QtGui import QPixmap, QImage, QPainter, QColor, QPen
 from PyQt6.QtCore import Qt, QPoint, QRect
 
 
 # TrOCR processor and model initialization
-processor = TrOCRProcessor.from_pretrained('path to processor')
-model = VisionEncoderDecoderModel.from_pretrained('path to model')
+processor = TrOCRProcessor.from_pretrained('processor fileloc here')
+model = VisionEncoderDecoderModel.from_pretrained('model fileloc here')
 
 class ImageLabel(QLabel):
     def __init__(self):
         super().__init__()
         self.rectangles = []  
+        self.label_list = []
         self.start_point = None
         self.end_point = None
         self.drawing = False
         self.image = None
+        self.allowDraw = False
+
+    def allow_drawing_action(self, message, label):
+        self.allowDraw = message
+        self.rectLabel = label
 
     def set_image(self, img):
         self.image = img
@@ -30,7 +36,7 @@ class ImageLabel(QLabel):
         self.setPixmap(QPixmap.fromImage(q_img))
 
     def mousePressEvent(self, event):
-        if event.button() == Qt.MouseButton.LeftButton:
+        if self.allowDraw and event.button() == Qt.MouseButton.LeftButton:
             self.start_point = event.position().toPoint()
             self.drawing = True
 
@@ -40,10 +46,12 @@ class ImageLabel(QLabel):
             self.update()
 
     def mouseReleaseEvent(self, event):
-        if event.button() == Qt.MouseButton.LeftButton:
+        if self.drawing and event.button() == Qt.MouseButton.LeftButton:
             self.end_point = event.position().toPoint()
             self.drawing = False
+            self.allowDraw = False
             self.rectangles.append((self.start_point, self.end_point))
+            self.label_list.append(self.rectLabel)
             self.update()
 
     def paintEvent(self, event):
@@ -63,6 +71,7 @@ class ImageLabel(QLabel):
                 current_rect = QRect(self.start_point, self.end_point)
                 painter.drawRect(current_rect)
 
+            #for future update, add feature that adds a button that deletes all rectangles
 
 class MainWindow(QWidget):
     def __init__(self):
@@ -85,11 +94,20 @@ class MainWindow(QWidget):
         self.crop_button = QPushButton("Crop Area")
         self.crop_button.clicked.connect(self.crop_rectangles)
 
+        self.draw_button = QPushButton("Draw Rect")
+        self.draw_button.clicked.connect(self.draw_rectangles)
+        
+        self.label_input = QLineEdit(self)
+        self.label_input.setPlaceholderText("Enter label for rectangle")
+        
+
         # Layout
         layout = QVBoxLayout()
         layout.addWidget(self.scroll_area)
         layout.addWidget(self.open_button)
         layout.addWidget(self.crop_button)
+        layout.addWidget(self.draw_button)
+        layout.addWidget(self.label_input)
         self.setLayout(layout)
 
         self.image = None
@@ -103,6 +121,12 @@ class MainWindow(QWidget):
                 return
 
             self.image_label.set_image(self.image)
+
+    def draw_rectangles(self):
+        drawState = True
+        rectangleLabel = self.label_input.text()
+        self.image_label.allow_drawing_action(drawState,rectangleLabel)
+        print("Drawing")
 
     def crop_rectangles(self):
         if self.image is None or not self.image_label.rectangles:
@@ -138,6 +162,8 @@ class MainWindow(QWidget):
             generated_ids = model.generate(pixel_values)
             generated_text = processor.batch_decode(generated_ids, skip_special_tokens=True)[0]
 
+            labeled_name = self.image_label.label_list[i]
+            print(f"Showing {labeled_name}")
             print(generated_text)
 
             cv2.imshow("Cropped Image", final_img)
