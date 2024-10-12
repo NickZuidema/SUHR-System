@@ -10,8 +10,8 @@ from PyQt6.QtCore import Qt, QPoint, QRect
 
 
 # TrOCR processor and model initialization
-processor = TrOCRProcessor.from_pretrained('processor fileloc here')
-model = VisionEncoderDecoderModel.from_pretrained('model fileloc here')
+processor = TrOCRProcessor.from_pretrained('C:/Users/Acer/Desktop/code samples/softeng implementation project/handwriting model/processor')
+model = VisionEncoderDecoderModel.from_pretrained('C:/Users/Acer/Desktop/code samples/softeng implementation project/handwriting model/model')
 
 class ImageLabel(QLabel):
     def __init__(self):
@@ -73,6 +73,11 @@ class ImageLabel(QLabel):
 
             #for future update, add feature that adds a button that deletes all rectangles
 
+    def erase_event(self):
+        self.rectangles = []
+        self.label_list = []
+        self.update()
+
 class MainWindow(QWidget):
     def __init__(self):
         super().__init__()
@@ -100,6 +105,8 @@ class MainWindow(QWidget):
         self.label_input = QLineEdit(self)
         self.label_input.setPlaceholderText("Enter label for rectangle")
         
+        self.erase_button = QPushButton("Erase all")
+        self.erase_button.clicked.connect(self.erase_all)
 
         # Layout
         layout = QVBoxLayout()
@@ -108,6 +115,7 @@ class MainWindow(QWidget):
         layout.addWidget(self.crop_button)
         layout.addWidget(self.draw_button)
         layout.addWidget(self.label_input)
+        layout.addWidget(self.erase_button)
         self.setLayout(layout)
 
         self.image = None
@@ -127,6 +135,10 @@ class MainWindow(QWidget):
         rectangleLabel = self.label_input.text()
         self.image_label.allow_drawing_action(drawState,rectangleLabel)
         print("Drawing")
+
+    def erase_all(self):
+        self.image_label.erase_event()
+        print("erasing all")
 
     def crop_rectangles(self):
         if self.image is None or not self.image_label.rectangles:
