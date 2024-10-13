@@ -35,6 +35,14 @@ INSERT INTO User (User_Id, Password)
 VALUES 
 ('E002', 'password789');
 
+INSERT INTO User (User_Id, Password) 
+VALUES 
+('111', '111');
+
+INSERT INTO User (User_Id, Password) 
+VALUES 
+('admin', 'admin');
+
 
 
 
