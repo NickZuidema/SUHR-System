@@ -6,7 +6,8 @@ import sys
 import datetime
 import sqlite3
 import spouse
-from fpdf import FPDF
+from benefit import insert_benefit_data  # Ensure this function returns the Benefit_Id
+
 
 class AddEmployeeWindow(QMainWindow):
     def __init__(self):
@@ -20,12 +21,15 @@ class AddEmployeeWindow(QMainWindow):
         archived = 0
         employee_data = collect_employee_data(self.ui, employee_id, archived)
 
-        # Save employee data to the database
-        self.save_employee_data(employee_data)
+        # Insert benefit data with default values for education and medical
+        benefit_id = insert_benefit_data()  # Get the new Benefit_Id from the inserted record
+
+        # Save employee data to the database with the Benefit_Id
+        self.save_employee_data(employee_data, benefit_id)
 
         # Define the path for saving the PDF
-        pdf_file_path = f"C:\\Users\\leeu6\\Desktop\\pdf\\{employee_data['employee_id']}.pdf"
-        
+        pdf_file_path = f"C:\\Users\\Admin\\Downloads\\testing shit\\{employee_data['employee_id']}.pdf"
+
         # Call the save_pdf function from generatepdf.py
         save_pdf(employee_data, pdf_file_path)  # Pass the employee data and the PDF file path
 
@@ -40,7 +44,6 @@ class AddEmployeeWindow(QMainWindow):
             # Insert the spouse data and the spouse info into the respective tables
             spouse.insert_spouse_data(spouse_id, spouse_name, date_of_marriage, place_of_marriage)
 
-
     def generate_employee_id(self):
         today_date = datetime.datetime.now().strftime('%Y%m%d')
         count = self.get_employee_count_for_today(today_date)
@@ -48,7 +51,7 @@ class AddEmployeeWindow(QMainWindow):
         return employee_id
 
     def get_employee_count_for_today(self, today_date):
-        conn = sqlite3.connect(r'C:\Users\leeu6\Desktop\SUHR-System\Database\SUHRSystem.db')
+        conn = sqlite3.connect(r'C:\Users\Admin\Documents\GitHub\SUHR-System\Database\SUHRSystem.db')
         cursor = conn.cursor()
         query = """
         SELECT COUNT(*) FROM Employee
@@ -59,9 +62,9 @@ class AddEmployeeWindow(QMainWindow):
         conn.close()
         return count
 
-    def save_employee_data(self, data):
+    def save_employee_data(self, data, benefit_id):
         try:
-            conn = sqlite3.connect(r'C:\Users\leeu6\Desktop\SUHR-System\Database\SUHRSystem.db')
+            conn = sqlite3.connect(r'C:\Users\Admin\Documents\GitHub\SUHR-System\Database\SUHRSystem.db')
             cursor = conn.cursor()
             sql = '''INSERT INTO Employee (
                 Employee_Id,
@@ -86,7 +89,7 @@ class AddEmployeeWindow(QMainWindow):
                 Academic_Id,
                 Criminal_Record,
                 Regular,
-                Benefit_Id,
+                Benefit_Id,  -- Use Benefit_Id here
                 Salary_Id,
                 Contact_No,
                 Archived
@@ -114,7 +117,7 @@ class AddEmployeeWindow(QMainWindow):
                 None,
                 None,
                 0,
-                None,
+                benefit_id,  # Use the Benefit_Id here
                 None,
                 data["contact_num"],
                 data["Archived"]
@@ -127,7 +130,7 @@ class AddEmployeeWindow(QMainWindow):
             QMessageBox.critical(self, "Error", f"An error occurred: {e}")
 
     def get_archive_count_for_today(self, today_date):
-        conn = sqlite3.connect(r'C:\Users\leeu6\Desktop\SUHR-System\Database\SUHRSystem.db')
+        conn = sqlite3.connect(r'C:\Users\Admin\Documents\GitHub\SUHR-System\Database\SUHRSystem.db')
         cursor = conn.cursor()
         query = """
         SELECT COUNT(*) FROM Employee
