@@ -39,6 +39,8 @@ def collect_employee_data(ui, employee_id, archived=0):
         
         "place_of_marriage": ui.PlaceOfMarriage.toPlainText(),
         "date_of_marriage": ui.DateOfMarriage.toPlainText(),
+        
+        
         "child1_name": ui.child1_name.toPlainText(),
         "child1_birthdate": ui.child1_dateofbirth.toPlainText(),
         "child2_name": ui.child2_name.toPlainText(),

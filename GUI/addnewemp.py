@@ -33,12 +33,16 @@ class AddEmployeeWindow(QMainWindow):
         # Call the save_pdf function from generatepdf.py
         save_pdf(employee_data, pdf_file_path)  # Pass the employee data and the PDF file path
 
+        # Handle spouse information if provided
         spouse_name = self.ui.SpouseName.toPlainText()
+        date_of_marriage = self.ui.DateOfMarriage.toPlainText()
+        place_of_marriage = self.ui.PlaceOfMarriage.toPlainText()
+        
         if spouse_name:
             Saved_ID = employee_id.replace('-', '')
-            spouse_id, full_name = spouse.generate_spouse_id(Saved_ID)
-            full_name = spouse_name
-            spouse.insert_spouse_data(spouse_id, full_name)
+            spouse_id = spouse.generate_spouse_id(Saved_ID)
+            # Insert the spouse data and the spouse info into the respective tables
+            spouse.insert_spouse_data(spouse_id, spouse_name, date_of_marriage, place_of_marriage)
 
     def generate_employee_id(self):
         today_date = datetime.datetime.now().strftime('%Y%m%d')
