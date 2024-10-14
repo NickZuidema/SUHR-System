@@ -4,7 +4,7 @@ import sqlite3
 def insert_spouse_data(spouse_id, full_name, date_of_marriage, place_of_marriage):
     try:
         # Connect to the database
-        conn = sqlite3.connect(r'C:\Users\leeu6\Desktop\SUHR-System\Database\SUHRSystem.db')
+        conn = sqlite3.connect(r'C:\Users\Admin\Documents\GitHub\SUHR-System\Database\SUHRSystem.db')
         cursor = conn.cursor()
 
         # Insert spouse info first
@@ -40,7 +40,7 @@ def insert_spouse_data(spouse_id, full_name, date_of_marriage, place_of_marriage
 def generate_spouse_id(saved_id):
     try:
         # Connect to the database
-        conn = sqlite3.connect(r'C:\Users\leeu6\Desktop\SUHR-System\Database\SUHRSystem.db')
+        conn = sqlite3.connect(r'C:\Users\Admin\Documents\GitHub\SUHR-System\Database\SUHRSystem.db')
         cursor = conn.cursor()
 
         # Get the count of spouses related to this saved_id
