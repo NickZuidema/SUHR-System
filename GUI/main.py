@@ -10,14 +10,14 @@ class MainWindow(QMainWindow):
         self.ui = Ui_Login()
         self.ui.setupUi(self)
         self.ui.pushButton.clicked.connect(self.handle_login)
-        self.db_path = r'C:\Users\leeu6\Desktop\SUHR\SUHR-System\Database\SUHRSystem.db'  
+        self.db_path = r'C:\Users\leeu6\Desktop\SUHR-System\Database\SUHRSystem.db'  
 
     def authenticate(self, username, password):
         """Authenticate the user by checking the provided username and password."""
         try:
             with sqlite3.connect(self.db_path) as connection:
                 cursor = connection.cursor()
-                query = "SELECT * FROM user WHERE User_Id=? AND password=?"
+                query = "SELECT * FROM User WHERE User_Id=? AND password=?"
                 cursor.execute(query, (username, password))
                 result = cursor.fetchone()
                 return result is not None

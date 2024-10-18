@@ -1,49 +1,71 @@
-import sys
-import sqlite3
-from PySide6.QtWidgets import QApplication, QMainWindow, QMessageBox
-from ui_login import Ui_Login
-from dashboard import Dashboard  # Import the Dashboard class
-
-class MainWindow(QMainWindow):
-    def __init__(self):
-        super(MainWindow, self).__init__()
-        self.ui = Ui_Login()
-        self.ui.setupUi(self)
-        self.ui.pushButton.clicked.connect(self.handle_login)
-        self.db_path = r'C:\Users\leeu6\Desktop\SUHR\SUHR-System\Database\SUHRSystem.db'  # Store the database path
-
-    def authenticate(self, username, password):
-        """Authenticate the user by checking the provided username and password."""
+def save_employee_data(self, data):
         try:
-            with sqlite3.connect(self.db_path) as connection:
-                cursor = connection.cursor()
-                query = "SELECT * FROM user WHERE User_Id=? AND password=?"
-                cursor.execute(query, (username, password))
-                result = cursor.fetchone()
-                return result is not None
+            conn = sqlite3.connect(r'C:\Users\leeu6\Desktop\SUHR\SUHR-System\Database\SUHRSystem.db')
+            conn.execute("PRAGMA foreign_keys = ON")  # Enable foreign key constraints
+            cursor = conn.cursor()
+            
+            sql = '''INSERT INTO Employee (
+                Employee_Id,
+                Last_Name, 
+                First_Name, 
+                Middle_Name,
+                Date_Employed, 
+                Position_Id, 
+                Dgte_Address,
+                Home_Address, 
+                Date_Of_Birth, 
+                Place_Of_Birth,
+                Citizenship, 
+                Non_Filipino_Id,
+                Church, 
+                Tax_Id, 
+                Sss_No,
+                Philhealth_No, 
+                Pagibig_No, 
+                Civil_Status,
+                Spouse_Id, 
+                Academic_Id, 
+                Criminal_Record, 
+                Regular,
+                Benefit_Id, 
+                Salary_Id,
+                Contact_No,
+                Archived  
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)'''
+
+            values = (
+                data["employee_id"],               # Employee_Id
+                data["last_name"],                 # Last_Name
+                data["first_name"],                # First_Name
+                data["middle_name"],               # Middle_Name
+                datetime.datetime.now().strftime('%Y-%m-%d'),  # Date_Employed
+                data.get("position"),              # Position_Id
+                data["dmg_address"],               # Dgte_Address
+                data["home_address"],              # Home_Address
+                data["date_of_birth"],             # Date_Of_Birth
+                data["place_of_birth"],            # Place_Of_Birth
+                data["citizenship"],               # Citizenship
+                data.get("passport_num"),          # Non_Filipino_Id
+                data["church_affiliation"],        # Church
+                data["tin"],                       # Tax_Id
+                data["sss"],                       # Sss_No
+                data["philhealth"],                # Philhealth_No
+                data["pagibig"],                   # Pagibig_No
+                data["civil_status"],              # Civil_Status
+                data.get("spouse_name"),           # Spouse_Id
+                None,                              # Academic_Id (to be handled)
+                None,                              # Criminal_Record (if applicable)
+                0,                                 # Regular (default to 0)
+                None,                              # Benefit_Id (to be handled)
+                None,                              # Salary_Id (to be handled)
+                data["contact_num"],               # Contact_No
+                data["Archived"]                   # Archived
+            )
+
+            cursor.execute(sql, values)
+            conn.commit()
+            conn.close()
+
+            QMessageBox.information(self, "Success", "Employee record added successfully.")
         except sqlite3.Error as e:
-            QMessageBox.critical(self, "Database Error", f"Error querying the database: {e}")
-            return False
-
-    def handle_login(self):
-        """Handle the login button click event."""
-        username = self.ui.lineEdit.text()
-        password = self.ui.lineEdit_2.text()
-
-        if self.authenticate(username, password):
-            QMessageBox.information(self, "Success", "Login successful!")
-            self.show_dashboard()  # Show the dashboard after successful login
-        else:
-            QMessageBox.warning(self, "Error", "Login failed! Please check your credentials.")
-
-    def show_dashboard(self):
-        """Show the main dashboard after login."""
-        self.dashboard = Dashboard(self.db_path)  # Pass the database path to the Dashboard
-        self.dashboard.show()
-        self.hide()  # Hide the login window
-
-if __name__ == "__main__":
-    app = QApplication(sys.argv)
-    window = MainWindow()
-    window.show()
-    sys.exit(app.exec())
+            QMessageBox.critical(self, "Error", f"An error occurred: {e}")
