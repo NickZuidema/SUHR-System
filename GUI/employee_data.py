@@ -21,30 +21,51 @@ def collect_employee_data(ui, employee_id, archived=0):
         "pagibig": ui.PagIbigNumber.toPlainText(),
         "philhealth": ui.PhilHNumber.toPlainText(),
         "church_affiliation": ui.ChurchAffiliation.toPlainText(),
-        "father_name": ui.FatherName.toPlainText(),
+        
+        "father_firstname": ui.Father_FirstName.toPlainText(), 
+        "father_lastname": ui.Father_LastName.toPlainText(), 
+        "father_middle": ui.Father_MiddleName.toPlainText(), 
         "father_job": ui.FatherJob.toPlainText(),
         "father_address": ui.FatherAddress.toPlainText(),
-        "mother_name": ui.MotherName.toPlainText(),
+        
+        "mother_firstname": ui.Mother_FirstName.toPlainText(),
+        "mother_lastname": ui.Mother_LastName.toPlainText(),
+        "mother_middlename": ui.Mother_MiddleName.toPlainText(),
+        
         "mother_job": ui.MotherJob.toPlainText(),
         "mother_address": ui.MotherAddress.toPlainText(),
-        "sibling1_name": ui.sibling1_name.toPlainText(),
+        
+        "sibling1_firstname": ui.sibling1_FirstName.toPlainText(),
+        "sibling1_lastname": ui.sibling1_LastName.toPlainText(),
+        "sibling1_middlename": ui.sibling1_MiddleName.toPlainText(),
         "sibling1_occupation": ui.sibling1_occupation.toPlainText(),
         "sibling1_address": ui.sibling1_address.toPlainText(),
-        "sibling2_name": ui.sibling2_name.toPlainText(),
+        
+        "sibling2_firstname": ui.sibling2_FirstName.toPlainText(),
+        "sibling2_lastname": ui.sibling2_LastName.toPlainText(),
+        "sibling2_middlename": ui.sibling2_MiddleName.toPlainText(),
         "sibling2_occupation": ui.sibling2_occupation.toPlainText(),
         "sibling2_address": ui.sibling2_address.toPlainText(),
+        
         "civil_status": ui.CivilStatus.toPlainText(),
         
-        "spouse_name": ui.SpouseName.toPlainText(),
+        "spouse_firstename": ui.Spouse_FirstName.toPlainText(),
+        "spouse_middlename": ui.Spouse_MiddleName.toPlainText(),
+        "spouse_lastname": ui.Spouse_LastName.toPlainText(),
         
         "place_of_marriage": ui.PlaceOfMarriage.toPlainText(),
         "date_of_marriage": ui.DateOfMarriage.toPlainText(),
         
-        
-        "child1_name": ui.child1_name.toPlainText(),
+        "child1_firstname": ui.child1_FirstName.toPlainText(),
+        "child1_lastname": ui.child1_LastName.toPlainText(),
+        "child1_middlename": ui.child1_MiddleName.toPlainText(),
         "child1_birthdate": ui.child1_dateofbirth.toPlainText(),
-        "child2_name": ui.child2_name.toPlainText(),
+        
+        "child2_firstname": ui.child2_FirstName.toPlainText(),
+        "child2_lastname": ui.child2_LastName.toPlainText(),
+        "child2_middlename": ui.child2_MiddleName.toPlainText(),
         "child2_birthdate": ui.child2_dateofbirth.toPlainText(),
+        
         "elementary_school": ui.elementary_school.toPlainText(),
         "elementary_address": ui.elementary_school_address.toPlainText(),
         "elem_diploma": ui.diploma_elementary.toPlainText(),
@@ -61,12 +82,19 @@ def collect_employee_data(ui, employee_id, archived=0):
         "graduate_address": ui.address_graduateschool.toPlainText(),
         "graduate_diploma": ui.diploma_graduateschool.toPlainText(),
         "graduate_yeargraduated": ui.yeargraduate_graduateschool.toPlainText(),
-        "related_staff1": ui.staff_name1.toPlainText(),
+        
+        "related_staff1_firstname": ui.staff_FirstName1.toPlainText(),
+        "related_staff1_lastname": ui.staff_LastName1.toPlainText(),
+        "related_staff1_middlename": ui.staff_MiddleName1.toPlainText(),
         "related_staff1_relationship": ui.staff_relationship2.toPlainText(),
         "related_staff1_position": ui.staff_position3.toPlainText(),
-        "related_staff2": ui.staff_name2.toPlainText(),
+        
+        "related_staff2_firstname": ui.staff_FirstName2.toPlainText(),
+        "related_staff2_lastname": ui.staff_LastName2.toPlainText(),
+        "related_staff2_middlename": ui.staff_MiddleName2.toPlainText(),
         "related_staff2_relationship": ui.staff_relationship2_2.toPlainText(),
         "related_staff2_position": ui.staff_position2.toPlainText(),
+        
         "scholarship_awards": ui.scholarships_awards.toPlainText(),
         "publications": ui.publications.toPlainText(),
         "name_of_employer": ui.name_employer.toPlainText(),
