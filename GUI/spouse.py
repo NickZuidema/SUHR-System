@@ -36,7 +36,7 @@ def insert_spouse_data(spouse_id, first_name, middle_name, last_name, date_of_ma
 # Function to generate spouse_id using Saved_ID and count from the database
 def generate_spouse_id(saved_id):
     try:
-        # Connect to the database
+        # Connect to the database (provide the correct path)
         conn = sqlite3.connect(r'C:\Users\leeu6\Desktop\SUHR-System\SUHR-System\Database\SUHRSystem.db')
         cursor = conn.cursor()
 

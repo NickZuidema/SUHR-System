@@ -10,7 +10,7 @@ class MainWindow(QMainWindow):
         self.ui = Ui_Login()
         self.ui.setupUi(self)
         self.ui.pushButton.clicked.connect(self.handle_login)
-        self.db_path = r'C:\Users\leeu6\Desktop\SUHR-System\Database\SUHRSystem.db'  
+        self.db_path = r'C:\Users\leeu6\Desktop\SUHR-System\SUHR-System\Database\SUHRSystem.db'  
 
     def authenticate(self, username, password):
         """Authenticate the user by checking the provided username and password."""
@@ -30,6 +30,8 @@ class MainWindow(QMainWindow):
         username = self.ui.lineEdit.text()
         password = self.ui.lineEdit_2.text()
 
+        print(f"Attempting login with Username: {username}, Password: {password}")  # Debugging line
+
         if self.authenticate(username, password):
             QMessageBox.information(self, "Success", "Login successful!")
             self.show_dashboard()  
@@ -38,9 +40,10 @@ class MainWindow(QMainWindow):
 
     def show_dashboard(self):
         """Show the main dashboard after login."""
+        print("Opening dashboard...")  # Debugging line
         self.dashboard = Dashboard(self.db_path)  
         self.dashboard.show()
-        self.hide() 
+        self.hide()  
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)

@@ -3,6 +3,7 @@ from employee_data import collect_employee_data
 from ui_add_employee_record import Ui_MainWindow
 from generatepdf import save_pdf
 import sys
+import Path
 import datetime
 import sqlite3
 import spouse
@@ -23,7 +24,7 @@ class AddEmployeeWindow(QMainWindow):
         # Insert benefit data with default values for education and medical
         benefit_id = insert_benefit_data()  # Get the new Benefit_Id from the inserted record
 
-        # Save employee data to the database with the Benefit_Id
+        # Save employee data to the database with the Benefit_Id and initially without Spouse_Id
         spouse_id = None  # Initialize spouse_id
         self.save_employee_data(employee_data, benefit_id, archived, spouse_id)
 
@@ -35,7 +36,7 @@ class AddEmployeeWindow(QMainWindow):
         place_of_marriage = self.ui.PlaceOfMarriage.toPlainText()
 
         if first_name or middle_name or last_name:  # Check if at least one spouse name part is provided
-            Saved_ID = employee_id.replace('-', '')
+            Saved_ID = employee_id.replace('-', '')  # Removing hyphens from employee_id for Saved_ID
             spouse_id = spouse.generate_spouse_id(Saved_ID)
 
             # Insert the spouse data into the respective tables
@@ -137,11 +138,11 @@ class AddEmployeeWindow(QMainWindow):
                 data["pagibig"],
                 data["civil_status"],
                 spouse_id,  # Initially None
-                None,
-                None,
-                0,
+                None,  # Placeholder for Academic_Id
+                None,  # Placeholder for Criminal_Record
+                0,     # Initially not Regular
                 benefit_id,  # Use the Benefit_Id here
-                None,
+                None,  # Placeholder for Salary_Id
                 data["contact_num"],
                 archived
             )

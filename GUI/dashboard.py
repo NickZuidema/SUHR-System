@@ -1,24 +1,25 @@
 import sqlite3
-from PySide6.QtWidgets import QMainWindow, QTableWidgetItem, QMessageBox
-from ui_main_dashboard import Ui_MainWindow 
+from PySide6.QtWidgets import QMainWindow, QTableWidgetItem, QMessageBox, QApplication
+from ui_main_dashboard import Ui_MainWindow
 from addnewemp import AddEmployeeWindow
-from recordwindow import MainWindow as ArchiveWindow  # Import the ArchiveWindow
+from recordwindow import ArchiveWindow
 
 class Dashboard(QMainWindow):
     def __init__(self, db_path):
         super(Dashboard, self).__init__()
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
-        self.db_path = db_path  
+        self.db_path = db_path
         self.connection = None
         self.cursor = None
 
         self.connect_db()
         self.populate_employee_table()
 
+        # Connect button clicks to functions
         self.ui.pushButton_5.clicked.connect(self.search_employees)
-        self.ui.pushButton_4.clicked.connect(self.add_new_employee)  
-        self.ui.pushButton_archive.clicked.connect(self.open_archive)  # Connect to the archive button
+        self.ui.pushButton_4.clicked.connect(self.add_new_employee)
+        self.ui.pushButton_3.clicked.connect(self.open_archive)
 
     def connect_db(self):
         """Establish a connection to the SQLite database."""
@@ -27,7 +28,7 @@ class Dashboard(QMainWindow):
             self.cursor = self.connection.cursor()
         except sqlite3.Error as e:
             QMessageBox.critical(self, "Database Error", f"Could not connect to the database: {e}")
-            self.close()  
+            self.close()
 
     def populate_employee_table(self):
         """Populate the employee table on the dashboard."""
@@ -36,6 +37,11 @@ class Dashboard(QMainWindow):
             self.cursor.execute(query)
             employees = self.cursor.fetchall()
 
+            # Get the column names from the cursor description
+            column_names = [description[0] for description in self.cursor.description]
+            self.ui.tableWidget.setColumnCount(len(column_names))  # Set the column count
+            self.ui.tableWidget.setHorizontalHeaderLabels(column_names)  # Set column headers
+            
             self.ui.tableWidget.setRowCount(len(employees))
             for row_index, row_data in enumerate(employees):
                 for column_index, item in enumerate(row_data):
@@ -46,30 +52,29 @@ class Dashboard(QMainWindow):
 
     def search_employees(self):
         """Search for employees based on the input in the search field."""
-        search_text = self.ui.lineEdit.text().strip().lower()  
-        if not search_text:  
+        search_text = self.ui.lineEdit.text().strip().lower()
+        if not search_text:
             self.populate_employee_table()
             return
         
         try:
-            query = """SELECT * FROM currently_employed  
+            query = """SELECT * FROM Employee  
                        WHERE LOWER(Last_Name) LIKE ? OR 
                              LOWER(First_Name) LIKE ? OR 
-                             LOWER(Middle_Name) LIKE ? OR 
-                             LOWER(Position_Id) LIKE ?"""  
+                             LOWER(Middle_Name) LIKE ?"""
             
             search_pattern = f"%{search_text}%"
-            self.cursor.execute(query, (search_pattern, search_pattern, search_pattern, search_pattern))
+            self.cursor.execute(query, (search_pattern, search_pattern, search_pattern))
             results = self.cursor.fetchall()
 
-            self.ui.tableWidget.setRowCount(0)
+            self.ui.tableWidget.setRowCount(0)  # Clear previous results
 
             for row_index, row_data in enumerate(results):
-                self.ui.tableWidget.insertRow(row_index)  
+                self.ui.tableWidget.insertRow(row_index)
                 for column_index, item in enumerate(row_data):
                     self.ui.tableWidget.setItem(row_index, column_index, QTableWidgetItem(str(item)))
 
-            if not results: 
+            if not results:
                 QMessageBox.information(self, "Search Result", "No matching records found.")
             else:
                 QMessageBox.information(self, "Search Result", f"{len(results)} matching records found.")
@@ -79,13 +84,13 @@ class Dashboard(QMainWindow):
 
     def add_new_employee(self):
         """Open the Add Employee window."""
-        self.add_employee_window = AddEmployeeWindow()  
-        self.add_employee_window.show()  
+        self.add_employee_window = AddEmployeeWindow()
+        self.add_employee_window.show()
 
     def open_archive(self):
         """Open the Archive window."""
-        self.archive_window = ArchiveWindow()  # Create an instance of ArchiveWindow
-        self.archive_window.show()  # Show the archive window
+        self.archive_window = ArchiveWindow()
+        self.archive_window.show()
 
     def closeEvent(self, event):
         """Close the database connection when the application exits."""
@@ -94,3 +99,10 @@ class Dashboard(QMainWindow):
         if self.connection:
             self.connection.close()
         event.accept()
+
+if __name__ == "__main__":
+    db_path = r"C:\Users\leeu6\Desktop\SUHR-System\SUHR-System\Database\SUHRSystem.db"
+    app = QApplication([])
+    window = Dashboard(db_path)
+    window.show()
+    app.exec()
