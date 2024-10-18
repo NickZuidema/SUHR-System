@@ -1,7 +1,8 @@
 import sqlite3
 from PySide6.QtWidgets import QMainWindow, QTableWidgetItem, QMessageBox
 from ui_main_dashboard import Ui_MainWindow 
-from addnewemp import AddEmployeeWindow  # Import your AddEmployeeWindow class
+from addnewemp import AddEmployeeWindow
+from recordwindow import MainWindow as ArchiveWindow  # Import the ArchiveWindow
 
 class Dashboard(QMainWindow):
     def __init__(self, db_path):
@@ -16,7 +17,8 @@ class Dashboard(QMainWindow):
         self.populate_employee_table()
 
         self.ui.pushButton_5.clicked.connect(self.search_employees)
-        self.ui.pushButton_4.clicked.connect(self.add_new_employee)  # Connect the button
+        self.ui.pushButton_4.clicked.connect(self.add_new_employee)  
+        self.ui.pushButton_archive.clicked.connect(self.open_archive)  # Connect to the archive button
 
     def connect_db(self):
         """Establish a connection to the SQLite database."""
@@ -77,8 +79,13 @@ class Dashboard(QMainWindow):
 
     def add_new_employee(self):
         """Open the Add Employee window."""
-        self.add_employee_window = AddEmployeeWindow()  # Create an instance of AddEmployeeWindow
-        self.   add_employee_window.show()  # Show the window
+        self.add_employee_window = AddEmployeeWindow()  
+        self.add_employee_window.show()  
+
+    def open_archive(self):
+        """Open the Archive window."""
+        self.archive_window = ArchiveWindow()  # Create an instance of ArchiveWindow
+        self.archive_window.show()  # Show the archive window
 
     def closeEvent(self, event):
         """Close the database connection when the application exits."""
@@ -86,4 +93,4 @@ class Dashboard(QMainWindow):
             self.cursor.close()
         if self.connection:
             self.connection.close()
-        event.accept()  
+        event.accept()
