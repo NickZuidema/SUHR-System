@@ -140,7 +140,9 @@ CREATE TABLE IF NOT EXISTS "Employee_Sibling"
 CREATE TABLE IF NOT EXISTS "Spouse"
 (
     "Spouse_Id" TEXT NOT NULL,
-    "Full_Name" TEXT NOT NULL,
+    "First_Name" TEXT NOT NULL,
+    "Middle_Name" TEXT NOT NULL,
+    "Last_Name" TEXT NOT NULL,
     "Spouse_Info_Id" INTEGER NOT NULL,
     PRIMARY KEY ("Spouse_Id"),
     FOREIGN KEY ("Spouse_Info_Id") REFERENCES "Spouse_Info" ("Spouse_Info_Id") ON UPDATE CASCADE ON DELETE SET NULL
