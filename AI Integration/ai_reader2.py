@@ -4,14 +4,14 @@ import cv2
 from transformers import TrOCRProcessor, VisionEncoderDecoderModel
 
 import numpy as np
-from PyQt6.QtWidgets import QApplication, QLabel, QVBoxLayout, QPushButton, QFileDialog, QWidget, QScrollArea, QLineEdit
+from PyQt6.QtWidgets import QApplication, QLabel, QVBoxLayout, QPushButton, QFileDialog, QWidget, QScrollArea, QLineEdit, QHBoxLayout, QMessageBox
 from PyQt6.QtGui import QPixmap, QImage, QPainter, QColor, QPen
 from PyQt6.QtCore import Qt, QPoint, QRect
-
+import csv
 
 # TrOCR processor and model initialization
-processor = TrOCRProcessor.from_pretrained('C:/Users/Acer/Desktop/code samples/softeng implementation project/handwriting model/processor')
-model = VisionEncoderDecoderModel.from_pretrained('C:/Users/Acer/Desktop/code samples/softeng implementation project/handwriting model/model')
+processor = TrOCRProcessor.from_pretrained('processor file loc')
+model = VisionEncoderDecoderModel.from_pretrained('model file loc')
 
 class ImageLabel(QLabel):
     def __init__(self):
@@ -23,6 +23,7 @@ class ImageLabel(QLabel):
         self.drawing = False
         self.image = None
         self.allowDraw = False
+        self.csv_data = []
 
     def allow_drawing_action(self, message, label):
         self.allowDraw = message
@@ -76,6 +77,7 @@ class ImageLabel(QLabel):
     def erase_event(self):
         self.rectangles = []
         self.label_list = []
+        self.csv_data = []
         self.update()
 
 class MainWindow(QWidget):
@@ -96,7 +98,7 @@ class MainWindow(QWidget):
         self.open_button = QPushButton("Open Image")
         self.open_button.clicked.connect(self.open_image)
 
-        self.crop_button = QPushButton("Crop Area")
+        self.crop_button = QPushButton("Crop and Save")
         self.crop_button.clicked.connect(self.crop_rectangles)
 
         self.draw_button = QPushButton("Draw Rect")
@@ -104,18 +106,22 @@ class MainWindow(QWidget):
         
         self.label_input = QLineEdit(self)
         self.label_input.setPlaceholderText("Enter label for rectangle")
-        
+        self.label_input.setFixedWidth(450)
+
         self.erase_button = QPushButton("Erase all")
         self.erase_button.clicked.connect(self.erase_all)
+    
+        horizontal_group = QHBoxLayout()
+        horizontal_group.addWidget(self.label_input)
+        horizontal_group.addWidget(self.draw_button)
+        horizontal_group.addWidget(self.crop_button)
+        horizontal_group.addWidget(self.erase_button)
 
         # Layout
         layout = QVBoxLayout()
         layout.addWidget(self.scroll_area)
         layout.addWidget(self.open_button)
-        layout.addWidget(self.crop_button)
-        layout.addWidget(self.draw_button)
-        layout.addWidget(self.label_input)
-        layout.addWidget(self.erase_button)
+        layout.addLayout(horizontal_group)
         self.setLayout(layout)
 
         self.image = None
@@ -140,6 +146,7 @@ class MainWindow(QWidget):
         self.image_label.erase_event()
         print("erasing all")
 
+    
     def crop_rectangles(self):
         if self.image is None or not self.image_label.rectangles:
             print("Invalid Input")
@@ -177,10 +184,40 @@ class MainWindow(QWidget):
             labeled_name = self.image_label.label_list[i]
             print(f"Showing {labeled_name}")
             print(generated_text)
+            
+            #save the data into the dictionary
+            new_entry = {"label": labeled_name, "value": generated_text}
+            self.image_label.csv_data.append(new_entry)
 
             cv2.imshow("Cropped Image", final_img)
             cv2.waitKey(0)
             cv2.destroyAllWindows()
+
+        #csv save dialog
+        csv_file, _ = QFileDialog.getSaveFileName(self, "Save CSV", "", "CSV Files (*.csv);;All Files (*)")
+
+
+        # Check if the user selected a file
+        if csv_file:
+            # Ensure the file has a .csv extension
+            if not csv_file.endswith('.csv'):
+                csv_file += '.csv'
+
+            try:
+                # Writing to CSV
+                with open(csv_file, mode='w', newline='', encoding='utf-8') as csvfile:
+                    fieldnames = ['label', 'value']
+                    writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+                    writer.writeheader()
+                    writer.writerows(self.image_label.csv_data)  # Writing the sample data
+
+                # Show a success message
+                QMessageBox.information(self, "Success", f"CSV file saved to {csv_file}")
+            except Exception as e:
+                # Show an error message if saving fails
+                QMessageBox.critical(self, "Error", f"Failed to save CSV file:\n{e}")
+
+            
 
             # Save the cropped image
             '''
