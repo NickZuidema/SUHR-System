@@ -3,14 +3,14 @@ import sqlite3
 from PySide6.QtWidgets import QApplication, QMainWindow, QMessageBox
 from ui_login import Ui_Login
 from dashboard import Dashboard  
-
+from config import get_database_path
 class MainWindow(QMainWindow):
     def __init__(self):
         super(MainWindow, self).__init__()
         self.ui = Ui_Login()
         self.ui.setupUi(self)
         self.ui.pushButton.clicked.connect(self.handle_login)
-        self.db_path = r'C:\Users\leeu6\Desktop\SUHR-System\SUHR-System\Database\SUHRSystem.db'  
+        self.db_path = get_database_path() 
 
     def authenticate(self, username, password):
         """Authenticate the user by checking the provided username and password."""

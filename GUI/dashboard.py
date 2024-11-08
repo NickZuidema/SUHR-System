@@ -3,7 +3,7 @@ from PySide6.QtWidgets import QMainWindow, QTableWidgetItem, QMessageBox, QAppli
 from ui_main_dashboard import Ui_MainWindow
 from addnewemp import AddEmployeeWindow
 from recordwindow import ArchiveWindow
-
+from config import get_database_path
 class Dashboard(QMainWindow):
     def __init__(self, db_path):
         super(Dashboard, self).__init__()
@@ -116,7 +116,7 @@ class Dashboard(QMainWindow):
         event.accept()
 
 if __name__ == "__main__":
-    db_path = r"C:\Users\leeu6\Desktop\SUHR-System\SUHR-System\Database\SUHRSystem.db"
+    db_path = get_database_path()
     app = QApplication([])
     window = Dashboard(db_path)
     window.show()
