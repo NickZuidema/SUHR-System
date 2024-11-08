@@ -11,10 +11,14 @@ DELETE FROM Department
 DELETE FROM School
 
 DELETE FROM Spouse
-
+DELETE FROM Salary
+DELETE FROM Benefit
 DELETE FROM Spouse_info
 
-DROP TABLE IF EXISTS Spouse;
 
 DELETE FROM Employee;
-DELETE FROM Spouse;
+DELETE FROM Spouse
+DELETE FROM Spouse_info
+
+
+DROP TABLE IF EXISTS Spouse;
