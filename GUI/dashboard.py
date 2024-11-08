@@ -21,6 +21,9 @@ class Dashboard(QMainWindow):
         self.ui.pushButton_4.clicked.connect(self.add_new_employee)
         self.ui.pushButton_3.clicked.connect(self.open_archive)
 
+        # Connect cell click signal to the custom slot method
+        self.ui.tableWidget.cellClicked.connect(self.cell_clicked)
+
     def connect_db(self):
         """Establish a connection to the SQLite database."""
         try:
@@ -91,6 +94,18 @@ class Dashboard(QMainWindow):
         """Open the Archive window."""
         self.archive_window = ArchiveWindow()
         self.archive_window.show()
+
+    def cell_clicked(self, row, column):
+        """Handle cell click event in the employee table."""
+        employee_data = []
+        for col in range(self.ui.tableWidget.columnCount()):
+            item = self.ui.tableWidget.item(row, col)
+            if item:
+                employee_data.append(item.text())
+        
+        # Display the data in a message box or use it for other purposes
+        QMessageBox.information(self, "Employee Data", 
+                                f"You clicked on:\n{employee_data}")
 
     def closeEvent(self, event):
         """Close the database connection when the application exits."""
