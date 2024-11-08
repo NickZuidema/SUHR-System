@@ -7,6 +7,7 @@ from config import get_database_path
 from session import SessionManager
 from main import MainWindow  # Import the MainWindow (login page)
 from PySide6.QtWidgets import QMainWindow, QMessageBox, QTableWidgetItem, QApplication
+from view_record import MainWindow
 
 class Dashboard(QMainWindow):
     def __init__(self, db_path, username=None):
@@ -130,15 +131,21 @@ class Dashboard(QMainWindow):
 
     def cell_clicked(self, row, column):
         """Handle cell click event in the employee table."""
+        # Collect employee data from the clicked row (if needed)
         employee_data = []
         for col in range(self.ui.tableWidget.columnCount()):
             item = self.ui.tableWidget.item(row, col)
             if item:
                 employee_data.append(item.text())
+
+        # Initialize and show the view record window
+        self.view_record_window = MainWindow()
+        self.view_record_window.show()
+
         
         # Display the data in a message box or use it for other purposes
-        QMessageBox.information(self, "Employee Data", 
-                                f"You clicked on:\n{employee_data}")
+        # QMessageBox.information(self, "Employee Data", 
+        #                         f"You clicked on:\n{employee_data}")
 
     def logout(self):
         """Handle the logout functionality."""
@@ -169,4 +176,3 @@ if __name__ == "__main__":
     window = Dashboard(db_path)  # Do not pass username if there's no session
     app.exec()
     window.show()  # This will not be reached if no session
-  
