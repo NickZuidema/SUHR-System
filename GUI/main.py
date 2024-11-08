@@ -2,10 +2,35 @@
 import sqlite3
 import sys
 from PySide6.QtWidgets import QApplication, QMainWindow, QMessageBox
+from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
+    QFont, QFontDatabase, QGradient, QIcon,
+    QImage, QKeySequence, QLinearGradient, QPainter,
+    QPalette, QPixmap, QRadialGradient, QTransform)
 from ui_login import Ui_Login
 from config import get_database_path
 from session import SessionManager  # Import the session manager
+import os
 
+def force_light_mode(app):
+    # Create a palette with light mode colors
+    palette = QPalette()
+
+    # Set light mode background colors
+    palette.setColor(QPalette.ColorRole.Window, QColor(255, 255, 255))        # White background
+    palette.setColor(QPalette.ColorRole.WindowText, QColor(0, 0, 0))         # Black text
+    palette.setColor(QPalette.ColorRole.Base, QColor(255, 255, 255))         # White input background
+    palette.setColor(QPalette.ColorRole.AlternateBase, QColor(240, 240, 240))# Slightly gray background for widgets
+    palette.setColor(QPalette.ColorRole.ToolTipBase, QColor(255, 255, 220))  # Tooltip background
+    palette.setColor(QPalette.ColorRole.ToolTipText, QColor(0, 0, 0))        # Tooltip text
+    palette.setColor(QPalette.ColorRole.Text, QColor(0, 0, 0))               # Text color
+    palette.setColor(QPalette.ColorRole.Button, QColor(240, 240, 240))       # Button background
+    palette.setColor(QPalette.ColorRole.ButtonText, QColor(0, 0, 0))         # Button text
+    palette.setColor(QPalette.ColorRole.BrightText, QColor(255, 0, 0))       # Bright text (for warnings, etc.)
+    palette.setColor(QPalette.ColorRole.Highlight, QColor(30, 144, 255))     # Highlight color
+    palette.setColor(QPalette.ColorRole.HighlightedText, QColor(255, 255, 255)) # Highlighted text (white)
+
+    # Apply the palette to the application
+    app.setPalette(palette)
 class MainWindow(QMainWindow):
     def __init__(self):
         super(MainWindow, self).__init__()
@@ -62,6 +87,7 @@ class MainWindow(QMainWindow):
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
+    force_light_mode(app)
     window = MainWindow()
     window.show()
     sys.exit(app.exec())
