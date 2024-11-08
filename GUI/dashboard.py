@@ -79,7 +79,9 @@ class Dashboard(QMainWindow):
                         self.ui.tableWidget.setItem(row_index, column_index, QTableWidgetItem(str(item)))
             else:
                 QMessageBox.information(self, "No Records", "No employee data available.")
-
+                # Optionally, display a "No records" message in the table area
+                self.ui.tableWidget.setRowCount(1)
+                self.ui.tableWidget.setItem(0, 0, QTableWidgetItem("No records available"))
         except sqlite3.Error as e:
             QMessageBox.critical(self, "Database Error", f"Error fetching employee data: {e}")
 
@@ -158,6 +160,7 @@ class Dashboard(QMainWindow):
 
     def redirect_to_login(self):
         """Redirect to the login page (main.py)"""
+        from main import MainWindow  # Import here to avoid circular import
         self.main_window = MainWindow()  # Create a new login window
         self.main_window.show()  # Show the login window
         self.close()  # Close the dashboard window

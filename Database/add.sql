@@ -200,3 +200,13 @@ VALUES
 INSERT INTO User (User_Id, Password) 
 VALUES 
 ('admin', 'admin');
+
+
+
+
+CREATE TABLE IF NOT EXISTS Session (
+    session_id TEXT PRIMARY KEY,       -- Unique session identifier, could be a UUID
+    user_id TEXT NOT NULL,             -- References the logged-in user (e.g., foreign key to the User table)
+    login_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP, -- Login time
+    expiration_time TIMESTAMP          -- Optional: Expiration time for session validity
+);
