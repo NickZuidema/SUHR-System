@@ -1,6 +1,6 @@
 import sys
 import sqlite3
-from PySide6.QtWidgets import QApplication, QMainWindow, QMessageBox, QLabel
+from PySide6.QtWidgets import QApplication, QMainWindow, QMessageBox
 from ui_preview_template import Ui_MainWindow
 from config import get_database_path  # Import get_database_path from config
 
@@ -19,28 +19,39 @@ class MainWindow(QMainWindow):
                 cursor = conn.cursor()
 
                 # Example of employee_id in the format YYYYMMDD-XXX
-                employee_id = '20241108-001'  # Replace with the actual employee ID you want to display
+                employee_id = '20241109-002'  # Replace with the actual employee ID you want to display
 
-                # Retrieve data for the specific employee ID from the Employee table
-                cursor.execute("SELECT Dgte_Address, Home_Address, Date_Of_Birth, Citizenship, Civil_Status, Sss_No, Pagibig_No, Contact_No FROM Employee WHERE Employee_Id = ?", (employee_id,))
+                # Retrieve name and additional data for the specific employee ID from the Employee table
+                cursor.execute("""
+                    SELECT Last_Name, First_Name, Middle_Name, Dgte_Address, Home_Address, Date_Of_Birth,
+                           Citizenship, Civil_Status, Sss_No, Pagibig_No, Philhealth_No, Contact_No
+                    FROM Employee
+                    WHERE Employee_Id = ?
+                """, (employee_id,))
                 employee_data = cursor.fetchone()
 
                 if employee_data is None:
                     raise ValueError(f"No employee found with ID {employee_id}")
 
-           
-                self.ui.employee_dumaguete_address.setPlainText(employee_data[0])  # Set Dumaguete address in QTextEdit
-                self.ui.employee_home_address.setPlainText(employee_data[1])  # Set Home address in QTextEdit
-              
-            
-                self.ui.employee_birthday.setText(employee_data[2]) 
-                self.ui.employee_citizenship.setText(employee_data[3])
-                self.ui.employee_civil_status.setText(employee_data[4])
-                self.ui.employee_sss.setText(employee_id[5])  
-                self.ui.employee_pagibig.setText(employee_id[6])
-                self.ui.employee_philHealth.setText(employee_id[7])
-                self.ui.employee_phonenumber.setText(employee_id[8])
-                self.ui.employee_email.setText(employee_id[9])
+                # Concatenate Last_Name, First_Name, and Middle_Name to form the full name
+                last_name, first_name, middle_name = employee_data[0], employee_data[1], employee_data[2]
+                full_name = f"{last_name}, {first_name} {middle_name or ''}".strip()
+
+                # Populate UI fields with data from the database
+                self.ui.employee_name.setText(full_name)  # Set full name in QLabel
+                self.ui.employee_dumaguete_address.setPlainText(employee_data[3])  # Set Dumaguete address in QTextEdit
+                self.ui.employee_home_address.setPlainText(employee_data[4])  # Set Home address in QTextEdit
+                self.ui.employee_birthday.setText(employee_data[5])  # Set Date of Birth
+                self.ui.employee_citizenship.setText(employee_data[6])  # Set Citizenship
+                self.ui.employee_civil_status.setText(employee_data[7])  # Set Civil Status
+                self.ui.employee_sss.setText(employee_data[8])  # Set SSS number
+                self.ui.employee_pagibig.setText(employee_data[9])  # Set Pag-IBIG number
+                self.ui.employee_philHealth.setText(employee_data[10])  # Set PhilHealth number
+                self.ui.employee_phonenumber.setText(employee_data[11])  # Set Contact number
+
+                # Email field example (assuming it's populated elsewhere or is optional)
+                # self.ui.employee_email.setText(employee_email) # Uncomment and use if needed
+
         except sqlite3.Error as e:
             QMessageBox.critical(self, "Database Error", f"An error occurred while accessing the database: {e}")
         except ValueError as e:
