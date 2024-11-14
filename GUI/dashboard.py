@@ -2,7 +2,7 @@ import sqlite3
 from PySide6.QtWidgets import QMainWindow, QMessageBox, QApplication
 from ui_main_dashboard import Ui_MainWindow
 from addnewemp import AddEmployeeWindow
-from recordwindow import ArchiveWindow
+from recordwindow import RecordWindow
 from config import get_database_path
 from session import SessionManager
 from main import MainWindow  # Import the MainWindow (login page)
@@ -128,7 +128,7 @@ class Dashboard(QMainWindow):
 
     def open_archive(self):
         """Open the Archive window."""
-        self.archive_window = ArchiveWindow()
+        self.archive_window = RecordWindow()
         self.archive_window.show()
 
     def cell_clicked(self, row, column):
