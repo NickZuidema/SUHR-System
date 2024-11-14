@@ -19,7 +19,7 @@ class MainWindow(QMainWindow):
                 cursor = conn.cursor()
 
                 # Example of employee_id in the format YYYYMMDD-XXX
-                employee_id = '20241109-002'  # Replace with the actual employee ID you want to display
+                employee_id = '20241114-006'  # Replace with the actual employee ID you want to display
 
                 # Retrieve name and additional data for the specific employee ID from the Employee table
                 cursor.execute("""

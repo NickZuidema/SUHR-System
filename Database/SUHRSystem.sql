@@ -36,12 +36,6 @@ CREATE TABLE IF NOT EXISTS "Employee"
     FOREIGN KEY ("Salary_Id") REFERENCES "Salary" ("Salary_Id") ON UPDATE CASCADE ON DELETE SET NULL,
     FOREIGN KEY ("Position_Id") REFERENCES "Position" ("Position_Id") ON UPDATE CASCADE ON DELETE SET NULL
 );
-CREATE TABLE IF NOT EXISTS Session (
-    session_id TEXT PRIMARY KEY,       -- Unique session identifier, could be a UUID
-    user_id TEXT NOT NULL,             -- References the logged-in user (e.g., foreign key to the User table)
-    login_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP, -- Login time
-    expiration_time TIMESTAMP          -- Optional: Expiration time for session validity
-);
 
 CREATE TABLE IF NOT EXISTS "Non_Filipino"
 (
