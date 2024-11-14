@@ -134,15 +134,12 @@ class Dashboard(QMainWindow):
     def cell_clicked(self, row, column):
         """Handle cell click event in the employee table."""
         # Collect employee data from the clicked row (if needed)
-        employee_data = []
-        for col in range(self.ui.tableWidget.columnCount()):
-            item = self.ui.tableWidget.item(row, col)
-            if item:
-                employee_data.append(item.text())
+        employee_id = self.ui.tableWidget.item(row, 0).text()  # Assuming the Employee_Id is in the first column
 
-        # Initialize and show the view record window
-        self.view_record_window = MainWindow()
+        # Initialize and show the view record window with the selected employee ID
+        self.view_record_window = MainWindow(employee_id)
         self.view_record_window.show()
+
 
         
         # Display the data in a message box or use it for other purposes

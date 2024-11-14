@@ -5,7 +5,7 @@ from ui_preview_template import Ui_MainWindow
 from config import get_database_path  # Import get_database_path from config
 
 class MainWindow(QMainWindow):
-    def __init__(self):
+    def __init__(self, employee_id):
         super(MainWindow, self).__init__()
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
@@ -18,10 +18,7 @@ class MainWindow(QMainWindow):
             with sqlite3.connect(database_path) as conn:
                 cursor = conn.cursor()
 
-                # Example of employee_id in the format YYYYMMDD-XXX
-                employee_id = '20241114-006'  # Replace with the actual employee ID you want to display
-
-                # Retrieve name and additional data for the specific employee ID from the Employee table
+                # Use the passed employee_id for the query
                 cursor.execute("""
                     SELECT Last_Name, First_Name, Middle_Name, Dgte_Address, Home_Address, Date_Of_Birth,
                            Citizenship, Civil_Status, Sss_No, Pagibig_No, Philhealth_No, Contact_No
@@ -49,9 +46,6 @@ class MainWindow(QMainWindow):
                 self.ui.employee_philHealth.setText(employee_data[10])  # Set PhilHealth number
                 self.ui.employee_phonenumber.setText(employee_data[11])  # Set Contact number
 
-                # Email field example (assuming it's populated elsewhere or is optional)
-                # self.ui.employee_email.setText(employee_email) # Uncomment and use if needed
-
         except sqlite3.Error as e:
             QMessageBox.critical(self, "Database Error", f"An error occurred while accessing the database: {e}")
         except ValueError as e:
@@ -60,7 +54,8 @@ class MainWindow(QMainWindow):
             QMessageBox.critical(self, "Unexpected Error", f"An unexpected error occurred: {e}")
 
 if __name__ == "__main__":
+    # Example usage, replace '20241114-006' with the actual employee_id passed from the dashboard
     app = QApplication(sys.argv)
-    window = MainWindow()
+    window = MainWindow('20241114-006')  # Pass employee_id dynamically
     window.show()
     sys.exit(app.exec())
