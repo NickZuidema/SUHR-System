@@ -10,6 +10,9 @@ class MainWindow(QMainWindow):
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
 
+        # Connect the archive button to the archive_employee method
+        self.ui.archive_button.clicked.connect(self.archive_employee)
+
         # Get the database path from the config module
         database_path = get_database_path()
 
@@ -19,7 +22,7 @@ class MainWindow(QMainWindow):
                 cursor = conn.cursor()
 
                 # Example of employee_id in the format YYYYMMDD-XXX
-                employee_id = '20241114-006'  # Replace with the actual employee ID you want to display
+                employee_id = '20241115-001'  # Replace with the actual employee ID you want to display
 
                 # Retrieve name and additional data for the specific employee ID from the Employee table
                 cursor.execute("""
@@ -58,6 +61,31 @@ class MainWindow(QMainWindow):
             QMessageBox.warning(self, "Record Not Found", str(e))
         except Exception as e:
             QMessageBox.critical(self, "Unexpected Error", f"An unexpected error occurred: {e}")
+
+    def archive_employee(self):
+        try:
+            # Retrieve the employee ID (adjust this to fetch dynamically if needed)
+            employee_id = '20241115-001'  # Replace with the employee ID currently being displayed or selected
+
+            # Get the database path
+            database_path = get_database_path()
+
+            # Connect to the database
+            with sqlite3.connect(database_path) as conn:
+                cursor = conn.cursor()
+
+                # Update the Archived column to 1 (true) for the specified Employee_Id
+                cursor.execute("UPDATE Employee SET Archived = 1 WHERE Employee_Id = ?", (employee_id,))
+                conn.commit()
+
+            # Notify the user of success
+            QMessageBox.information(self, "Success", f"Employee {employee_id} has been archived.")
+
+        except sqlite3.Error as e:
+            QMessageBox.critical(self, "Database Error", f"An error occurred while archiving: {e}")
+        except Exception as e:
+            QMessageBox.critical(self, "Unexpected Error", f"An unexpected error occurred: {e}")
+
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
