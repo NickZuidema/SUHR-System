@@ -116,7 +116,6 @@ class AddEmployeeWindow(QMainWindow):
         return count > 0
 
     def save_employee_data(self, data, benefit_id, archived, spouse_id, salary_id, academic_record_id):
-
         try:
             conn = sqlite3.connect(get_database_path())
             cursor = conn.cursor()
@@ -172,7 +171,7 @@ class AddEmployeeWindow(QMainWindow):
                 None,  # Placeholder for Criminal_Record
                 0,     # Initially not Regular
                 benefit_id,  # Use the Benefit_Id here
-                None,  # Placeholder for Salary_Id
+                salary_id,  # Use the Salary_Id here
                 data["contact_num"],
                 archived
             )
@@ -206,6 +205,9 @@ class AddEmployeeWindow(QMainWindow):
         cursor.execute("SELECT MAX(Salary_Id) FROM Salary")
         max_id = cursor.fetchone()[0]
         new_salary_id = (max_id + 1) if max_id is not None else 1
+
+        # Ensure Salary_Id is an integer
+        new_salary_id = int(new_salary_id)
 
         # You can insert default salary values. Adjust these as needed.
         monthly_salary = 0.0  # Set default or fetched monthly salary
