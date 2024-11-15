@@ -5,6 +5,10 @@ from openpyxl import Workbook
 from datetime import datetime, timedelta
 import re
 
+
+here = os.path.dirname(os.path.abspath(__file__))
+os.chdir(here)
+
 class SessionManager:
     def __init__(self):
         self.db_path = get_database_path()  # Get the database path from config
