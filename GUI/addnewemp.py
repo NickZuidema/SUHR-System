@@ -206,15 +206,14 @@ class AddEmployeeWindow(QMainWindow):
         max_id = cursor.fetchone()[0]
         new_salary_id = (max_id + 1) if max_id is not None else 1
 
-        # Ensure Salary_Id is an integer
         new_salary_id = int(new_salary_id)
 
-        # You can insert default salary values. Adjust these as needed.
-        monthly_salary = 0.0  # Set default or fetched monthly salary
-        overtime_salary = 0.0  # Set default or fetched overtime salary
-        total_salary = monthly_salary + overtime_salary  # Calculate total salary
+      
+        monthly_salary = 0.0  
+        overtime_salary = 0.0  
+        total_salary = monthly_salary + overtime_salary  
 
-        # Insert the new salary data into the Salary table
+        
         cursor.execute(
             "INSERT INTO Salary (Salary_Id, Monthly_Salary, Overtime_Salary, Total_Salary) VALUES (?, ?, ?, ?)",
             (new_salary_id, monthly_salary, overtime_salary, total_salary)
