@@ -1,3 +1,21 @@
 # config.py
+
+import os
+
+
+
 def get_database_path():
-    return r"C:\Users\leeu6\Desktop\SUHR-System\Database\SUHRSystem.db"
+
+    GUI_path = os.path.dirname(os.path.abspath(__file__))
+    main_dir = os.path.dirname(GUI_path)
+    database_path = os.path.join(main_dir, 'Database')
+
+    database_file = os.path.join(database_path, 'SUHRSystem.db')
+
+    return database_file
+
+def get_pdf_path():
+    GUI_path = os.path.dirname(os.path.abspath(__file__))
+    main_dir = os.path.dirname(GUI_path)
+    pdf_path = os.path.join(main_dir, 'pdf')
+    return pdf_path

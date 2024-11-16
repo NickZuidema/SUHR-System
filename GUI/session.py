@@ -5,13 +5,17 @@ from openpyxl import Workbook
 from datetime import datetime, timedelta
 import re
 
+GUI_path = os.path.dirname(os.path.abspath(__file__))
+main_dir = os.path.dirname(GUI_path)
+logs_directory = os.path.join(main_dir, 'logs')
+
 class SessionManager:
     def __init__(self):
         self.db_path = get_database_path()  # Get the database path from config
         self.connection = None
         self.cursor = None
         self.create_sessions_table()  # Ensure the sessions table exists
-        self.log_folder = r"C:\Users\leeu6\Desktop\SUHR-System\SUHR-System\logs"  # Log folder path
+        self.log_folder = logs_directory  # Log folder path
         self.log_file = os.path.join(self.log_folder, "login_logout_log.xlsx")  # Log file path
         self.ensure_log_exists()  # Ensure log file exists and is ready
         self.session_timeout = timedelta(minutes=30)  # Set session timeout (e.g., 30 minutes)
