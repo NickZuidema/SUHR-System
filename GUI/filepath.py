@@ -13,10 +13,10 @@ main_dir = os.path.dirname(current_file_dir)
 print(main_dir)
 
 # Access the 'main/database' folder
-images_dir = os.path.join(main_dir, 'Database')
+database_dir = os.path.join(main_dir, 'Database')
 
 # Change the working directory to 'images'
-os.chdir(images_dir)
+os.chdir(database_dir)
 # Print the current working directory to verify
 print("Current directory:", os.getcwd())
 
