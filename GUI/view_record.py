@@ -1,11 +1,11 @@
 import sys
 import sqlite3
 from PySide6.QtWidgets import QApplication, QMainWindow, QMessageBox
-from ui_preview_template import Ui_MainWindow
+from ui_preview_template_withscroll import Ui_MainWindow
 from config import get_database_path  # Import get_database_path from config
 
 class MainWindow(QMainWindow):
-    def __init__(self):
+    def __init__(self, employee_data = None):
         super(MainWindow, self).__init__()
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
@@ -22,7 +22,8 @@ class MainWindow(QMainWindow):
                 cursor = conn.cursor()
 
                 # Example of employee_id in the format YYYYMMDD-XXX
-                employee_id = '20241115-001'  # Replace with the actual employee ID you want to display
+                print(employee_data[0])
+                employee_id = employee_data[0]  # Replace with the actual employee ID you want to display
 
                 # Retrieve name and additional data for the specific employee ID from the Employee table
                 cursor.execute("""

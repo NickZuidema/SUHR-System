@@ -139,9 +139,9 @@ class Dashboard(QMainWindow):
             item = self.ui.tableWidget.item(row, col)
             if item:
                 employee_data.append(item.text())
-
+        #print(employee_data)
         # Initialize and show the view record window
-        self.view_record_window = MainWindow()
+        self.view_record_window = MainWindow(employee_data=employee_data)
         self.view_record_window.show()
 
         
