@@ -394,7 +394,7 @@ class Ui_MainWindow(object):
     # setupUi
 
     def retranslateUi(self, MainWindow):
-        MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"Dashboard", None))
+        MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"Employee Record View", None))
         self.label.setText("")
         self.label_3.setText("")
         self.label_2.setText("")

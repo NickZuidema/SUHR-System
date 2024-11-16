@@ -1,6 +1,6 @@
 
 #playing around with file directories, so we wont have to always specify and change filepaths
-
+#this a tutorial code section and therefore should not have any impact on the rest of the modules
 import os
 
 
