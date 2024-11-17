@@ -30,8 +30,7 @@ def collect_employee_data(ui, employee_id, archived=0):
         
         "mother_firstname": ui.Mother_FirstName.toPlainText(),
         "mother_lastname": ui.Mother_LastName.toPlainText(),
-        "mother_middlename": ui.Mother_MiddleName.toPlainText(),
-        
+        "mother_middlename": ui.Mother_MiddleName.toPlainText(),   
         "mother_job": ui.MotherJob.toPlainText(),
         "mother_address": ui.MotherAddress.toPlainText(),
         
