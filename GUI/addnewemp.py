@@ -9,6 +9,9 @@ import spouse
 import academic 
 from benefit import insert_benefit_data  # Ensure this function returns the Benefit_Id
 from config import get_database_path
+from position import generate_position_id
+
+
 class AddEmployeeWindow(QMainWindow):
     def __init__(self):
         super().__init__()
@@ -73,8 +76,8 @@ class AddEmployeeWindow(QMainWindow):
             self.save_employee_data(employee_data, benefit_id, archived, spouse_id,salary_id, None)
 
         # Save employee data to the database with the Benefit_Id and initially without Spouse_Id
-        pdf_file_path = f"C:\\Users\\leeu6\\Desktop\\SUHR-System\\pdf\\{employee_data['employee_id']}.pdf"
-        pdf_file_path = f"C:/Users/leeu6/Desktop/SUHR-System/pdf/{employee_data['employee_id']}.pdf"
+        pdf_file_path = f"C:\\Users\\Admin\\Downloads\\SUHR-System-sprint-2 (1)\\SUHR-System-sprint-2\\pdf\\{employee_data['employee_id']}.pdf"
+        pdf_file_path = f"C:/Users/Admin/Downloads/SUHR-System-sprint-2 (1)/SUHR-System-sprint-2/pdf//{employee_data['employee_id']}.pdf"
         # Call the save_pdf function from generatepdf.py
         save_pdf(employee_data, pdf_file_path)  # Pass the employee data and the PDF file path
 
@@ -253,6 +256,8 @@ class AddEmployeeWindow(QMainWindow):
         count = cursor.fetchone()[0]
         conn.close()
         return count
+    def generate_position_id(self):
+        return generate_position_id()
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)

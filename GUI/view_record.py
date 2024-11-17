@@ -18,6 +18,8 @@ class MainWindow(QMainWindow):
             with sqlite3.connect(database_path) as conn:
                 cursor = conn.cursor()
 
+
+
                 # Use the passed employee_id for the query
                 cursor.execute("""
                     SELECT Last_Name, First_Name, Middle_Name, Dgte_Address, Home_Address, Date_Of_Birth,

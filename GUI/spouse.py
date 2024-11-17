@@ -5,7 +5,7 @@ def insert_spouse_data(spouse_id, first_name, middle_name, last_name, date_of_ma
     conn = None  # Initialize conn here to avoid the UnboundLocalError
     try:
         # Connect to the database
-        conn = sqlite3.connect(r'C:\Users\leeu6\Desktop\SUHR-System\Database\SUHRSystem.db')
+        conn = sqlite3.connect(r'C:\Users\Admin\Documents\GitHub\SUHR-System\Database\SUHRSystem.db')
         cursor = conn.cursor()
 
         # Insert spouse info first
@@ -39,7 +39,7 @@ def insert_spouse_data(spouse_id, first_name, middle_name, last_name, date_of_ma
 def generate_spouse_id(saved_id):
     try:
         # Connect to the database (provide the correct path)
-        conn = sqlite3.connect(r'C:\Users\leeu6\Desktop\SUHR-System\Database\SUHRSystem.db')
+        conn = sqlite3.connect(r'C:\Users\Admin\Documents\GitHub\SUHR-System\Database\SUHRSystem.db')
         cursor = conn.cursor()
 
         # Get the count of spouses related to this saved_id
