@@ -15,7 +15,7 @@
   </property>
   <property name="styleSheet">
    <string notr="true">color: black;
-background-color: white;</string>
+background-color: rgb(208, 208, 208)</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QLabel" name="label">
@@ -102,6 +102,9 @@ background-color: white;</string>
       <width>271</width>
       <height>16</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: white;</string>
     </property>
     <property name="text">
      <string/>
@@ -269,6 +272,9 @@ background-color: white;</string>
       <height>401</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(208, 208, 208)</string>
+    </property>
     <property name="widgetResizable">
      <bool>true</bool>
     </property>
@@ -276,9 +282,9 @@ background-color: white;</string>
      <property name="geometry">
       <rect>
        <x>0</x>
-       <y>-419</y>
+       <y>0</y>
        <width>1382</width>
-       <height>988</height>
+       <height>977</height>
       </rect>
      </property>
      <layout class="QGridLayout" name="gridLayout">
@@ -522,6 +528,9 @@ background-color: white;</string>
           <width>1000</width>
           <height>200</height>
          </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: 0px;</string>
         </property>
         <property name="title">
          <string/>
