@@ -9,10 +9,11 @@ import spouse
 import academic 
 from benefit import insert_benefit_data  # Ensure this function returns the Benefit_Id
 from config import get_database_path
-from employee_parent import add_employee_to_parent_table
+from employee_parent import add_employee_to_parent_table, add_parent_to_parent_family_table, generate_parent_family_id, store_parent_family
+
 class AddEmployeeWindow(QMainWindow):
     def __init__(self):
-        super().__init__()
+        super().__init__() 
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
         self.ui.pushButton.clicked.connect(self.get_employee_data)
@@ -74,6 +75,28 @@ class AddEmployeeWindow(QMainWindow):
         else:
             # If no academic record, save employee data with None for academic_record_id
             self.save_employee_data(employee_data, benefit_id, archived, spouse_id,salary_id, None)
+
+        # Handle parent information if provided
+        father_firstname = employee_data["father_firstname"]
+        father_lastname = employee_data["father_lastname"]
+        father_middle = employee_data["father_middle"]
+        father_job = employee_data["father_job"]
+        father_address = employee_data["father_address"]
+
+        mother_firstname = employee_data["mother_firstname"]
+        mother_lastname = employee_data["mother_lastname"]
+        mother_middlename = employee_data["mother_middlename"]
+        mother_job = employee_data["mother_job"]
+        mother_address = employee_data["mother_address"]
+
+        if father_firstname or father_lastname or father_middle or mother_firstname or mother_lastname or mother_middlename:
+            parent_parent_id = add_parent_to_parent_family_table(
+                father_lastname, father_firstname, father_middle,
+                mother_lastname, mother_firstname, mother_middlename,
+                father_job, father_address
+            )
+            if parent_parent_id:
+                add_employee_to_parent_table(employee_id, parent_parent_id)
 
         # Save employee data to the database with the Benefit_Id and initially without Spouse_Id
         pdf_file_path = f"C:\\Users\\leeu6\\Desktop\\SUHR-System\\pdf\\{employee_data['employee_id']}.pdf"
@@ -183,8 +206,6 @@ class AddEmployeeWindow(QMainWindow):
             conn.close()
             QMessageBox.information(self, "Success", "Employee record added successfully.")
             
-            # Add employee to Employee_Parent table
-            add_employee_to_parent_table(data["employee_id"])
         except sqlite3.Error as e:
             QMessageBox.critical(self, "Error", f"An error occurred: {e}")
 

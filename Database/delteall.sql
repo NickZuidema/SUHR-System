@@ -23,6 +23,7 @@ DELETE FROM "Sibling";
 DELETE FROM "Spouse_Info";
 DELETE FROM "Non_Filipino";
 DELETE FROM "Employee";
+DELETE FROM sqlite_sequence WHERE name='Employee_Parent';
 
 -- Optionally, reset the primary key sequences if needed
 -- DELETE FROM sqlite_sequence WHERE name='Employee';

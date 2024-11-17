@@ -24,3 +24,6 @@ DELETE FROM Benefit;
 
 DROP TABLE IF EXISTS "Parent";
 DROP TABLE IF EXISTS "Employee_Parent";
+
+DROP TABLE IF EXISTS "Parent_Parent";
+

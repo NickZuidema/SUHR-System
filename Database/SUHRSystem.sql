@@ -112,21 +112,22 @@ CREATE TABLE IF NOT EXISTS "Parent"
 
 CREATE TABLE IF NOT EXISTS "Employee_Parent"
 (
-    "Employee_Employee_Id" TEXT NOT NULL,
-    "Parent_Parent_Id" INTEGER NOT NULL,  -- Change to INTEGER
-    FOREIGN KEY ("Employee_Employee_Id") REFERENCES "Employee" ("Employee_Id") ON UPDATE CASCADE ON DELETE CASCADE,
-    FOREIGN KEY ("Parent_Parent_Id") REFERENCES "Parent" ("Parent_Id") ON UPDATE CASCADE ON DELETE CASCADE
+    "Employee_Employee_Id" INTEGER NOT NULL,  -- References Employee_Id in Employee table (INTEGER)
+    "Parent_Parent_Id" INTEGER NOT NULL,     -- This will correspond to Parent_Id in Parent table (INTEGER)
+    FOREIGN KEY ("Employee_Employee_Id") REFERENCES "Employee" ("Employee_Id") ON UPDATE CASCADE ON DELETE CASCADE
 );
 
-CREATE TABLE IF NOT EXISTS "Sibling"
+CREATE TABLE IF NOT EXISTS "Parent"
 (
-    "Sibling_Id" TEXT NOT NULL,
-    "Last_Name" TEXT NOT NULL,
-    "First_Name" TEXT NOT NULL,
-    "Middle_Name" TEXT,
+    "Parent_Id" INTEGER PRIMARY KEY ,  -- Unique ID for the family
+    "Father_Last_Name" TEXT NOT NULL,
+    "Father_First_Name" TEXT NOT NULL,
+    "Father_Middle_Name" TEXT,
+    "Mother_Last_Name" TEXT NOT NULL,
+    "Mother_First_Name" TEXT NOT NULL,
+    "Mother_Middle_Name" TEXT,
     "Occupation" TEXT,
-    "Address" TEXT,
-    PRIMARY KEY ("Sibling_Id")
+    "Address" TEXT
 );
 
 CREATE TABLE IF NOT EXISTS "Employee_Sibling"

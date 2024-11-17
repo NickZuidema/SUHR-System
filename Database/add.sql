@@ -90,6 +90,7 @@ VALUES
 
 
 
+
 INSERT INTO Parent (Parent_Id, Last_Name, First_Name, Middle_Name, Occupation, Address) 
 VALUES 
 ('P001', 'Doe', 'John Sr.', NULL, 'Teacher', 'Home Street 123');
@@ -200,3 +201,27 @@ VALUES
 INSERT INTO User (User_Id, Password) 
 VALUES 
 ('admin', 'admin');
+
+
+
+
+
+CREATE TABLE IF NOT EXISTS "Employee_Parent"
+(
+    "Employee_Employee_Id" INTEGER NOT NULL, 
+    "Parent_Parent_Id" INTEGER NOT NULL,
+    FOREIGN KEY ("Employee_Employee_Id") REFERENCES "Employee" ("Employee_Id") ON UPDATE CASCADE ON DELETE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS "Parent"
+(
+    "Parent_Id" INTEGER NOT NULL, 
+    "Last_Name" TEXT NOT NULL,
+    "First_Name" TEXT NOT NULL,
+    "Middle_Name" TEXT,
+    "Occupation" TEXT,
+    "Address" TEXT,
+    "Parent_Type" TEXT NOT NULL, 
+    PRIMARY KEY ("Parent_Id"),
+    FOREIGN KEY ("Parent_Id") REFERENCES "Employee_Parent" ("Parent_Parent_Id") ON UPDATE CASCADE ON DELETE CASCADE
+);
