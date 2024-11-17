@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'preview_template_withscrollHiUXUX.ui'
+## Form generated from reading UI file 'preview_template_withscrolltLhpru.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.4.3
 ##
@@ -241,6 +241,7 @@ class Ui_MainWindow(object):
         sizePolicy1.setHeightForWidth(self.groupBox.sizePolicy().hasHeightForWidth())
         self.groupBox.setSizePolicy(sizePolicy1)
         self.groupBox.setMinimumSize(QSize(1000, 200))
+        self.groupBox.setStyleSheet(u"border: 0px;")
         self.edit_info_button = QPushButton(self.groupBox)
         self.edit_info_button.setObjectName(u"edit_info_button")
         self.edit_info_button.setGeometry(QRect(10, 150, 131, 16))
