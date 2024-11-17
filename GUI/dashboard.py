@@ -1,6 +1,9 @@
 import sqlite3
 from PySide6.QtWidgets import QMainWindow, QMessageBox, QApplication
-from ui_main_dashboard import Ui_MainWindow
+
+#dashboard design file
+from ui_main_dashboard_copy import Ui_MainWindow
+
 from addnewemp import AddEmployeeWindow
 from recordwindow import RecordWindow
 from config import get_database_path

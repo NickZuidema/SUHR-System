@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'main_dashboardpKRVXR.ui'
+## Form generated from reading UI file 'main_dashboard-copyaVkYbp.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.4.3
 ##
@@ -17,8 +17,8 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QComboBox, QFrame, QHeaderView,
     QLabel, QLineEdit, QMainWindow, QPushButton,
-    QScrollArea, QScrollBar, QSizePolicy, QStatusBar,
-    QTableWidget, QTableWidgetItem, QWidget)
+    QSizePolicy, QStatusBar, QTableWidget, QTableWidgetItem,
+    QWidget)
 import resources_rc
 
 class Ui_MainWindow(object):
@@ -26,8 +26,8 @@ class Ui_MainWindow(object):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
         MainWindow.resize(1440, 839)
-        MainWindow.setStyleSheet(u"color: black;\n"
-"background-color: white;")
+        MainWindow.setStyleSheet(u"background-color: white;\n"
+"color: black;")
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.label = QLabel(self.centralwidget)
@@ -59,6 +59,7 @@ class Ui_MainWindow(object):
         self.pushButton = QPushButton(self.centralwidget)
         self.pushButton.setObjectName(u"pushButton")
         self.pushButton.setGeometry(QRect(1250, 60, 41, 31))
+        self.pushButton.setCursor(QCursor(Qt.PointingHandCursor))
         self.pushButton.setStyleSheet(u"background-color: rgba(0, 0, 0, 0);")
         icon = QIcon()
         icon.addFile(u":/images/button_home.png", QSize(), QIcon.Normal, QIcon.Off)
@@ -67,6 +68,7 @@ class Ui_MainWindow(object):
         self.pushButton_2 = QPushButton(self.centralwidget)
         self.pushButton_2.setObjectName(u"pushButton_2")
         self.pushButton_2.setGeometry(QRect(1310, 60, 75, 24))
+        self.pushButton_2.setCursor(QCursor(Qt.PointingHandCursor))
         self.pushButton_2.setStyleSheet(u"background-color: rgba(0, 0, 0, 0);")
         icon1 = QIcon()
         icon1.addFile(u":/images/button_logout.png", QSize(), QIcon.Normal, QIcon.Off)
@@ -75,6 +77,7 @@ class Ui_MainWindow(object):
         self.pushButton_3 = QPushButton(self.centralwidget)
         self.pushButton_3.setObjectName(u"pushButton_3")
         self.pushButton_3.setGeometry(QRect(1110, 730, 251, 41))
+        self.pushButton_3.setCursor(QCursor(Qt.PointingHandCursor))
         self.pushButton_3.setStyleSheet(u"background-color: rgba(0, 0, 0, 0);")
         icon2 = QIcon()
         icon2.addFile(u":/images/button_archived-records.png", QSize(), QIcon.Normal, QIcon.Off)
@@ -83,6 +86,7 @@ class Ui_MainWindow(object):
         self.pushButton_4 = QPushButton(self.centralwidget)
         self.pushButton_4.setObjectName(u"pushButton_4")
         self.pushButton_4.setGeometry(QRect(830, 730, 261, 41))
+        self.pushButton_4.setCursor(QCursor(Qt.PointingHandCursor))
         self.pushButton_4.setStyleSheet(u"background-color: rgba(0, 0, 0, 0);")
         icon3 = QIcon()
         icon3.addFile(u":/images/button_add-new-record.png", QSize(), QIcon.Normal, QIcon.Off)
@@ -96,8 +100,11 @@ class Ui_MainWindow(object):
         self.widget = QWidget(self.centralwidget)
         self.widget.setObjectName(u"widget")
         self.widget.setGeometry(QRect(60, 270, 1301, 441))
+        self.widget.setStyleSheet(u"background-color: white;\n"
+"color: black;\n"
+"font-weight: bold;\n"
+"border: 1px solid black;")
         self.tableWidget = QTableWidget(self.widget)
-        
         if (self.tableWidget.columnCount() < 4):
             self.tableWidget.setColumnCount(4)
         __qtablewidgetitem = QTableWidgetItem()
@@ -121,32 +128,36 @@ class Ui_MainWindow(object):
         __qtablewidgetitem8 = QTableWidgetItem()
         self.tableWidget.setItem(0, 3, __qtablewidgetitem8)
         self.tableWidget.setObjectName(u"tableWidget")
-        self.tableWidget.setGeometry(QRect(0, 0, 1281, 441))
-        self.scrollArea = QScrollArea(self.widget)
-        self.scrollArea.setObjectName(u"scrollArea")
-        self.scrollArea.setGeometry(QRect(1280, 0, 20, 441))
-        self.scrollArea.setWidgetResizable(True)
-        self.scrollAreaWidgetContents = QWidget()
-        self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 18, 439))
-        self.verticalScrollBar = QScrollBar(self.scrollAreaWidgetContents)
-        self.verticalScrollBar.setObjectName(u"verticalScrollBar")
-        self.verticalScrollBar.setGeometry(QRect(0, 0, 21, 441))
-        self.verticalScrollBar.setStyleSheet(u"background-color: rgba(0, 0, 0, 0);")
-        self.verticalScrollBar.setOrientation(Qt.Vertical)
-        self.scrollArea.setWidget(self.scrollAreaWidgetContents)
-        self.lineEdit = QLineEdit(self.centralwidget)
+        self.tableWidget.setGeometry(QRect(0, 0, 1301, 441))
+        self.tableWidget.setStyleSheet(u"")
+        self.frame = QFrame(self.centralwidget)
+        self.frame.setObjectName(u"frame")
+        self.frame.setGeometry(QRect(60, 210, 691, 51))
+        self.frame.setStyleSheet(u"background-color: white;")
+        self.frame.setFrameShape(QFrame.StyledPanel)
+        self.frame.setFrameShadow(QFrame.Raised)
+        self.lineEdit = QLineEdit(self.frame)
         self.lineEdit.setObjectName(u"lineEdit")
-        self.lineEdit.setGeometry(QRect(60, 221, 281, 31))
-        self.pushButton_5 = QPushButton(self.centralwidget)
-        self.pushButton_5.setObjectName(u"pushButton_5")
-        self.pushButton_5.setGeometry(QRect(340, 220, 32, 32))
-        icon4 = QIcon()
-        icon4.addFile(u":/images/search-icon.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.pushButton_5.setIcon(icon4)
-        self.comboBox = QComboBox(self.centralwidget)
+        self.lineEdit.setGeometry(QRect(10, 10, 281, 32))
+        self.lineEdit.setStyleSheet(u"border: 1px solid black;\n"
+"color: black;\n"
+"background-color: white;")
+        self.comboBox = QComboBox(self.frame)
         self.comboBox.setObjectName(u"comboBox")
-        self.comboBox.setGeometry(QRect(380, 220, 241, 31))
+        self.comboBox.setGeometry(QRect(340, 10, 241, 32))
+        self.comboBox.setStyleSheet(u"border: 1px solid black;")
+        self.pushButton_5 = QPushButton(self.frame)
+        self.pushButton_5.setObjectName(u"pushButton_5")
+        self.pushButton_5.setGeometry(QRect(290, 10, 32, 32))
+        font = QFont()
+        font.setBold(True)
+        self.pushButton_5.setFont(font)
+        self.pushButton_5.setCursor(QCursor(Qt.PointingHandCursor))
+        self.pushButton_5.setStyleSheet(u"background-color: white;\n"
+"color: black;\n"
+"font-weight: bolder;\n"
+"font-size: 12px;\n"
+"border: 1px solid black;")
         MainWindow.setCentralWidget(self.centralwidget)
         self.label_2.raise_()
         self.label.raise_()
@@ -159,9 +170,7 @@ class Ui_MainWindow(object):
         self.pushButton_4.raise_()
         self.label_5.raise_()
         self.widget.raise_()
-        self.lineEdit.raise_()
-        self.pushButton_5.raise_()
-        self.comboBox.raise_()
+        self.frame.raise_()
         self.statusbar = QStatusBar(MainWindow)
         self.statusbar.setObjectName(u"statusbar")
         MainWindow.setStatusBar(self.statusbar)
@@ -204,7 +213,7 @@ class Ui_MainWindow(object):
         self.tableWidget.setSortingEnabled(__sortingEnabled)
 
         self.lineEdit.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Search", None))
-        self.pushButton_5.setText("")
         self.comboBox.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Choose a filter...", None))
+        self.pushButton_5.setText(QCoreApplication.translate("MainWindow", u"\u2315", None))
     # retranslateUi
 

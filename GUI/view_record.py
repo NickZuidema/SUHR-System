@@ -1,7 +1,7 @@
 import sys
 import sqlite3
 from PySide6.QtWidgets import QApplication, QMainWindow, QMessageBox
-from ui_preview_template import Ui_MainWindow
+from ui_preview_template_withscroll import Ui_MainWindow
 from config import get_database_path  # Import get_database_path from config
 
 class MainWindow(QMainWindow):
