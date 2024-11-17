@@ -529,6 +529,9 @@ background-color: rgb(208, 208, 208)</string>
           <height>200</height>
          </size>
         </property>
+        <property name="styleSheet">
+         <string notr="true">border: 0px;</string>
+        </property>
         <property name="title">
          <string/>
         </property>
