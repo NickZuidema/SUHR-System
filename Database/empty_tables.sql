@@ -20,3 +20,7 @@ DELETE FROM Employee;
 DELETE FROM Spouse;
 
 DELETE FROM Benefit;
+
+
+DROP TABLE IF EXISTS "Parent";
+DROP TABLE IF EXISTS "Employee_Parent";

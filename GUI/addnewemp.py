@@ -9,6 +9,7 @@ import spouse
 import academic 
 from benefit import insert_benefit_data  # Ensure this function returns the Benefit_Id
 from config import get_database_path
+from employee_parent import add_employee_to_parent_table
 class AddEmployeeWindow(QMainWindow):
     def __init__(self):
         super().__init__()
@@ -33,6 +34,8 @@ class AddEmployeeWindow(QMainWindow):
 
          # Generate Salary_Id and insert salary data
         salary_id = self.insert_salary_data() # Now it works because insert_salary_data is part of this class
+        
+        spouse_id = None  # Initialize spouse_id to None
         
         if first_name or middle_name or last_name:  # Check if at least one spouse name part is provided
             Saved_ID = employee_id.replace('-', '')  # Removing hyphens from employee_id for Saved_ID
@@ -179,6 +182,9 @@ class AddEmployeeWindow(QMainWindow):
             conn.commit()
             conn.close()
             QMessageBox.information(self, "Success", "Employee record added successfully.")
+            
+            # Add employee to Employee_Parent table
+            add_employee_to_parent_table(data["employee_id"])
         except sqlite3.Error as e:
             QMessageBox.critical(self, "Error", f"An error occurred: {e}")
 

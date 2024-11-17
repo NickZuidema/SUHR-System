@@ -105,16 +105,17 @@ CREATE TABLE IF NOT EXISTS "Parent"
     "Middle_Name" TEXT,
     "Occupation" TEXT,
     "Address" TEXT,
+    "Parent_Type" TEXT NOT NULL,  -- 'Father' or 'Mother'
     PRIMARY KEY ("Parent_Id")
 );
+
 
 CREATE TABLE IF NOT EXISTS "Employee_Parent"
 (
     "Employee_Employee_Id" TEXT NOT NULL,
-    "Parent_Parent_Id" TEXT NOT NULL,
+    "Parent_Parent_Id" INTEGER NOT NULL,  -- Change to INTEGER
     FOREIGN KEY ("Employee_Employee_Id") REFERENCES "Employee" ("Employee_Id") ON UPDATE CASCADE ON DELETE CASCADE,
     FOREIGN KEY ("Parent_Parent_Id") REFERENCES "Parent" ("Parent_Id") ON UPDATE CASCADE ON DELETE CASCADE
-
 );
 
 CREATE TABLE IF NOT EXISTS "Sibling"
