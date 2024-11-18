@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'preview_template_withscrollLijWeO.ui'
+## Form generated from reading UI file 'preview_template_withscrolltLhpru.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.4.3
 ##
@@ -27,7 +27,7 @@ class Ui_MainWindow(object):
             MainWindow.setObjectName(u"MainWindow")
         MainWindow.resize(1422, 734)
         MainWindow.setStyleSheet(u"color: black;\n"
-"background-color: white;")
+"background-color: rgb(208, 208, 208)")
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.label = QLabel(self.centralwidget)
@@ -55,6 +55,7 @@ class Ui_MainWindow(object):
         self.label_4 = QLabel(self.centralwidget)
         self.label_4.setObjectName(u"label_4")
         self.label_4.setGeometry(QRect(150, 90, 271, 16))
+        self.label_4.setStyleSheet(u"background-color: white;")
         self.label_4.setPixmap(QPixmap(u":/images/title2_header2.png"))
         self.home_button = QPushButton(self.centralwidget)
         self.home_button.setObjectName(u"home_button")
@@ -101,10 +102,11 @@ class Ui_MainWindow(object):
         self.scrollArea = QScrollArea(self.centralwidget)
         self.scrollArea.setObjectName(u"scrollArea")
         self.scrollArea.setGeometry(QRect(10, 200, 1401, 401))
+        self.scrollArea.setStyleSheet(u"background-color: rgb(208, 208, 208)")
         self.scrollArea.setWidgetResizable(True)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, -419, 1382, 988))
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 1382, 977))
         self.gridLayout = QGridLayout(self.scrollAreaWidgetContents)
         self.gridLayout.setObjectName(u"gridLayout")
         self.acad_record_header = QLabel(self.scrollAreaWidgetContents)
@@ -239,6 +241,7 @@ class Ui_MainWindow(object):
         sizePolicy1.setHeightForWidth(self.groupBox.sizePolicy().hasHeightForWidth())
         self.groupBox.setSizePolicy(sizePolicy1)
         self.groupBox.setMinimumSize(QSize(1000, 200))
+        self.groupBox.setStyleSheet(u"border: 0px;")
         self.edit_info_button = QPushButton(self.groupBox)
         self.edit_info_button.setObjectName(u"edit_info_button")
         self.edit_info_button.setGeometry(QRect(10, 150, 131, 16))

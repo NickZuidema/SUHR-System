@@ -8,7 +8,10 @@ import sqlite3
 import spouse
 import academic 
 from benefit import insert_benefit_data  # Ensure this function returns the Benefit_Id
-from config import get_database_path, get_pdf_path
+from config import get_database_path
+from position import generate_position_id
+
+
 class AddEmployeeWindow(QMainWindow):
     def __init__(self):
         super().__init__()
@@ -73,7 +76,8 @@ class AddEmployeeWindow(QMainWindow):
             self.save_employee_data(employee_data, benefit_id, archived, spouse_id,salary_id, None)
 
         # Save employee data to the database with the Benefit_Id and initially without Spouse_Id
-        pdf_file_path = f"{get_pdf_path()}\\{employee_id}.pdf"
+        pdf_file_path = f"C:\\Users\\Admin\\Downloads\\SUHR-System-sprint-2 (1)\\SUHR-System-sprint-2\\pdf\\{employee_data['employee_id']}.pdf"
+        pdf_file_path = f"C:/Users/Admin/Downloads/SUHR-System-sprint-2 (1)/SUHR-System-sprint-2/pdf//{employee_data['employee_id']}.pdf"
         # Call the save_pdf function from generatepdf.py
         save_pdf(employee_data, pdf_file_path)  # Pass the employee data and the PDF file path
 
@@ -115,7 +119,6 @@ class AddEmployeeWindow(QMainWindow):
         return count > 0
 
     def save_employee_data(self, data, benefit_id, archived, spouse_id, salary_id, academic_record_id):
-
         try:
             conn = sqlite3.connect(get_database_path())
             cursor = conn.cursor()
@@ -171,7 +174,7 @@ class AddEmployeeWindow(QMainWindow):
                 None,  # Placeholder for Criminal_Record
                 0,     # Initially not Regular
                 benefit_id,  # Use the Benefit_Id here
-                None,  # Placeholder for Salary_Id
+                salary_id,  # Use the Salary_Id here
                 data["contact_num"],
                 archived
             )
@@ -206,12 +209,14 @@ class AddEmployeeWindow(QMainWindow):
         max_id = cursor.fetchone()[0]
         new_salary_id = (max_id + 1) if max_id is not None else 1
 
-        # You can insert default salary values. Adjust these as needed.
-        monthly_salary = 0.0  # Set default or fetched monthly salary
-        overtime_salary = 0.0  # Set default or fetched overtime salary
-        total_salary = monthly_salary + overtime_salary  # Calculate total salary
+        new_salary_id = int(new_salary_id)
 
-        # Insert the new salary data into the Salary table
+      
+        monthly_salary = 0.0  
+        overtime_salary = 0.0  
+        total_salary = monthly_salary + overtime_salary  
+
+        
         cursor.execute(
             "INSERT INTO Salary (Salary_Id, Monthly_Salary, Overtime_Salary, Total_Salary) VALUES (?, ?, ?, ?)",
             (new_salary_id, monthly_salary, overtime_salary, total_salary)
@@ -251,6 +256,8 @@ class AddEmployeeWindow(QMainWindow):
         count = cursor.fetchone()[0]
         conn.close()
         return count
+    def generate_position_id(self):
+        return generate_position_id()
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)

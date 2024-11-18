@@ -1,6 +1,9 @@
 import sqlite3
 from PySide6.QtWidgets import QMainWindow, QMessageBox, QApplication
-from ui_main_dashboard import Ui_MainWindow
+
+#dashboard design file
+from ui_main_dashboard_copy import Ui_MainWindow
+
 from addnewemp import AddEmployeeWindow
 from recordwindow import RecordWindow
 from config import get_database_path
@@ -134,15 +137,12 @@ class Dashboard(QMainWindow):
     def cell_clicked(self, row, column):
         """Handle cell click event in the employee table."""
         # Collect employee data from the clicked row (if needed)
-        employee_data = []
-        for col in range(self.ui.tableWidget.columnCount()):
-            item = self.ui.tableWidget.item(row, col)
-            if item:
-                employee_data.append(item.text())
-        #print(employee_data)
-        # Initialize and show the view record window
-        self.view_record_window = MainWindow(employee_data=employee_data)
+        employee_id = self.ui.tableWidget.item(row, 0).text()  # Assuming the Employee_Id is in the first column
+
+        # Initialize and show the view record window with the selected employee ID
+        self.view_record_window = MainWindow(employee_id)
         self.view_record_window.show()
+
 
         
         # Display the data in a message box or use it for other purposes
