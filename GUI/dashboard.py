@@ -41,6 +41,7 @@ class Dashboard(QMainWindow):
         self.ui.pushButton_5.clicked.connect(self.search_employees)
         self.ui.pushButton_4.clicked.connect(self.add_new_employee)
         self.ui.pushButton_3.clicked.connect(self.open_archive)
+        self.ui.refresh_button.clicked.connect(self.populate_employee_table)
 
         # Connect logout button to logout function
         self.ui.pushButton_2.clicked.connect(self.logout)

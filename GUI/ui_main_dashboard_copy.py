@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'main_dashboard-copyaVkYbp.ui'
+## Form generated from reading UI file 'main_dashboard-copyTHwVrh.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.4.3
 ##
@@ -132,7 +132,7 @@ class Ui_MainWindow(object):
         self.tableWidget.setStyleSheet(u"")
         self.frame = QFrame(self.centralwidget)
         self.frame.setObjectName(u"frame")
-        self.frame.setGeometry(QRect(60, 210, 691, 51))
+        self.frame.setGeometry(QRect(60, 210, 731, 51))
         self.frame.setStyleSheet(u"background-color: white;")
         self.frame.setFrameShape(QFrame.StyledPanel)
         self.frame.setFrameShadow(QFrame.Raised)
@@ -143,8 +143,12 @@ class Ui_MainWindow(object):
 "color: black;\n"
 "background-color: white;")
         self.comboBox = QComboBox(self.frame)
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
         self.comboBox.setObjectName(u"comboBox")
         self.comboBox.setGeometry(QRect(340, 10, 241, 32))
+        self.comboBox.setCursor(QCursor(Qt.PointingHandCursor))
         self.comboBox.setStyleSheet(u"border: 1px solid black;")
         self.pushButton_5 = QPushButton(self.frame)
         self.pushButton_5.setObjectName(u"pushButton_5")
@@ -158,6 +162,11 @@ class Ui_MainWindow(object):
 "font-weight: bolder;\n"
 "font-size: 12px;\n"
 "border: 1px solid black;")
+        self.refresh_button = QPushButton(self.frame)
+        self.refresh_button.setObjectName(u"refresh_button")
+        self.refresh_button.setGeometry(QRect(640, 10, 75, 32))
+        self.refresh_button.setCursor(QCursor(Qt.PointingHandCursor))
+        self.refresh_button.setStyleSheet(u"border: 1px solid black;")
         MainWindow.setCentralWidget(self.centralwidget)
         self.label_2.raise_()
         self.label.raise_()
@@ -213,7 +222,12 @@ class Ui_MainWindow(object):
         self.tableWidget.setSortingEnabled(__sortingEnabled)
 
         self.lineEdit.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Search", None))
+        self.comboBox.setItemText(0, QCoreApplication.translate("MainWindow", u"ID", None))
+        self.comboBox.setItemText(1, QCoreApplication.translate("MainWindow", u"Name", None))
+        self.comboBox.setItemText(2, QCoreApplication.translate("MainWindow", u"Department", None))
+
         self.comboBox.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Choose a filter...", None))
         self.pushButton_5.setText(QCoreApplication.translate("MainWindow", u"\u2315", None))
+        self.refresh_button.setText(QCoreApplication.translate("MainWindow", u"Refresh", None))
     # retranslateUi
 
