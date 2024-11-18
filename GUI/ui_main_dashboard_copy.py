@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'main_dashboard-copyTHwVrh.ui'
+## Form generated from reading UI file 'main_dashboard-copyTwTNTa.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.4.3
 ##
@@ -224,7 +224,7 @@ class Ui_MainWindow(object):
         self.lineEdit.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Search", None))
         self.comboBox.setItemText(0, QCoreApplication.translate("MainWindow", u"ID", None))
         self.comboBox.setItemText(1, QCoreApplication.translate("MainWindow", u"Name", None))
-        self.comboBox.setItemText(2, QCoreApplication.translate("MainWindow", u"Department", None))
+        self.comboBox.setItemText(2, QCoreApplication.translate("MainWindow", u"Employment Date", None))
 
         self.comboBox.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Choose a filter...", None))
         self.pushButton_5.setText(QCoreApplication.translate("MainWindow", u"\u2315", None))

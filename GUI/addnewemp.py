@@ -8,9 +8,9 @@ import sqlite3
 import spouse
 import academic 
 from benefit import insert_benefit_data  # Ensure this function returns the Benefit_Id
-from config import get_database_path
+from config import get_database_path,get_pdf_path
 from position import generate_position_id
-
+import os
 
 class AddEmployeeWindow(QMainWindow):
     def __init__(self):
@@ -75,11 +75,14 @@ class AddEmployeeWindow(QMainWindow):
             # If no academic record, save employee data with None for academic_record_id
             self.save_employee_data(employee_data, benefit_id, archived, spouse_id,salary_id, None)
 
+        pdf_directory = get_pdf_path()
         # Save employee data to the database with the Benefit_Id and initially without Spouse_Id
-        pdf_file_path = f"C:\\Users\\Admin\\Downloads\\SUHR-System-sprint-2 (1)\\SUHR-System-sprint-2\\pdf\\{employee_data['employee_id']}.pdf"
-        pdf_file_path = f"C:/Users/Admin/Downloads/SUHR-System-sprint-2 (1)/SUHR-System-sprint-2/pdf//{employee_data['employee_id']}.pdf"
+        pdf_file_path = os.path.join(pdf_directory, f"{employee_data['employee_id']}.pdf")
+        #pdf_file_path = f"C:\\Users\\Admin\\Downloads\\SUHR-System-sprint-2 (1)\\SUHR-System-sprint-2\\pdf\\{employee_data['employee_id']}.pdf"
+       # pdf_file_path = f"C:/Users/Admin/Downloads/SUHR-System-sprint-2 (1)/SUHR-System-sprint-2/pdf//{employee_data['employee_id']}.pdf"
         # Call the save_pdf function from generatepdf.py
         save_pdf(employee_data, pdf_file_path)  # Pass the employee data and the PDF file path
+        print(f"Saving pdf to {pdf_file_path}")
 
     def generate_employee_id(self):
         today_date = datetime.datetime.now().strftime('%Y%m%d')

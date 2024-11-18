@@ -92,6 +92,9 @@ class Dashboard(QMainWindow):
     def search_employees(self):
         """Search for employees based on the input in the search field."""
         search_text = self.ui.lineEdit.text().strip().lower()
+        dropDown_data = self.ui.comboBox.currentText()
+        print(f"Selected Filter {dropDown_data}")
+
         if not search_text:
             self.populate_employee_table()
             return
@@ -101,13 +104,26 @@ class Dashboard(QMainWindow):
                 QMessageBox.warning(self, "No Session", "You must log in to search.")
                 return
 
-            query = """SELECT * FROM Employee  
-                       WHERE LOWER(Last_Name) LIKE ? OR 
-                             LOWER(First_Name) LIKE ? OR 
-                             LOWER(Middle_Name) LIKE ?"""
+            if dropDown_data == "Name":
+                query = """SELECT * FROM Employee  
+                        WHERE LOWER(Last_Name) LIKE ? OR 
+                                LOWER(First_Name) LIKE ? OR 
+                                LOWER(Middle_Name) LIKE ?"""
+                search_pattern = f"%{search_text}%"
+                self.cursor.execute(query, (search_pattern, search_pattern, search_pattern))
+
+            elif dropDown_data == "ID":
+                query = """SELECT * FROM Employee Where 
+                        Employee_Id LIKE ? """
+                search_pattern = f"{search_text}%"
+                self.cursor.execute(query, (search_pattern,))
+                
+
+            elif dropDown_data == "Employment Date":
+                query = """SELECT * FROM Employee Where Date_Employed Like ?"""
+                search_pattern = f"{search_text}%"
+                self.cursor.execute(query, (search_pattern,))
             
-            search_pattern = f"%{search_text}%"
-            self.cursor.execute(query, (search_pattern, search_pattern, search_pattern))
             results = self.cursor.fetchall()
 
             self.ui.tableWidget.setRowCount(0)  # Clear previous results

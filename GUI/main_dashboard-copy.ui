@@ -385,7 +385,7 @@ background-color: white;</string>
      </item>
      <item>
       <property name="text">
-       <string>Department</string>
+       <string>Employment Date</string>
       </property>
      </item>
     </widget>
