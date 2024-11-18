@@ -1,7 +1,7 @@
 import sqlite3
 import sys
 import uuid
-from PySide6.QtWidgets import QApplication, QMainWindow, QMessageBox
+from PySide6.QtWidgets import QApplication, QMainWindow, QMessageBox, QLineEdit
 from PySide6.QtGui import QPalette, QColor
 from ui_login import Ui_Login
 from config import get_database_path
@@ -29,6 +29,7 @@ class MainWindow(QMainWindow):
         super(MainWindow, self).__init__()
         self.ui = Ui_Login()
         self.ui.setupUi(self)
+        self.ui.lineEdit_2.setEchoMode(QLineEdit.EchoMode.Password)
         self.ui.pushButton.clicked.connect(self.handle_login)
         self.db_path = get_database_path()
         self.session_manager = SessionManager()
