@@ -1,8 +1,9 @@
 import sqlite3
+from config import get_database_path
 
 def generate_benefit_id():
     """Generate the next available Benefit ID."""
-    conn = sqlite3.connect(r'C:\Users\leeu6\Desktop\SUHR-System\SUHR-System\Database\SUHRSystem.db')
+    conn = sqlite3.connect(get_database_path())  # Updated path
     cursor = conn.cursor()
 
     # Get the maximum Benefit_Id from the table to increment for the new record
@@ -17,7 +18,7 @@ def generate_benefit_id():
     return benefit_id
 
 def insert_benefit_data():
-    conn = sqlite3.connect(r'C:\Users\leeu6\Desktop\SUHR-System\SUHR-System\Database\SUHRSystem.db')
+    conn = sqlite3.connect(get_database_path())  # Updated path
     cursor = conn.cursor()
 
     # Define your benefit values

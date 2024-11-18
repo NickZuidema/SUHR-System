@@ -1,0 +1,70 @@
+self.employee_dumaguete_address = QTextEdit(self.frame_header)
+        self.employee_dumaguete_address.setObjectName(u"employee_dumaguete_address")
+
+self.employee_home_address = QTextEdit(self.frame_header)
+        self.employee_home_address.setObjectName(u"employee_home_address")
+
+self.employee_birthday = QLabel(self.frame_header)
+        self.employee_birthday.setObjectName(u"employee_birthday")
+
+self.employee_civil_status = QLabel(self.frame_header)
+        self.employee_civil_status.setObjectName(u"employee_civil_status")
+
+self.employee_spouse = QLabel(self.frame_header)
+        self.employee_spouse.setObjectName(u"employee_spouse")
+
+
+ self.employee_children = QTextEdit(self.frame_header)
+        self.employee_children.setObjectName(u"employee_children")
+
+self.employee_religion = QLabel(self.frame_header)
+        self.employee_religion.setObjectName(u"employee_religion")
+
+self.employee_father = QLabel(self.frame_header)
+        self.employee_father.setObjectName(u"employee_father")
+
+self.employee_mother.setObjectName(u"employee_mother")
+        self.employee_mother.setGeometry(QRect(380, 300, 341, 31))
+
+self.employee_brother = QTextEdit(self.frame_header)
+        self.employee_brother.setObjectName(u"employee_brother")
+
+self.employee_sister = QTextEdit(self.frame_header)
+        self.employee_sister.setObjectName(u"employee_sister")
+
+self.employee_sss = QLabel(self.frame_header)
+        self.employee_sss.setObjectName(u"employee_sss")
+
+self.employee_pagibig = QLabel(self.frame_header)
+        self.employee_pagibig.setObjectName(u"employee_pagibig")
+
+self.employee_philHealth = QLabel(self.frame_header)
+        self.employee_philHealth.setObjectName(u"employee_philHealth")
+
+self.employee_phonenumber = QLabel(self.frame_header)
+        self.employee_phonenumber.setObjectName(u"employee_phonenumber")
+
+ self.employee_email = QLabel(self.frame_header)
+        self.employee_email.setObjectName(u"employee_email")
+
+self.employee_relation = QLabel(self.frame_header)
+        self.employee_relation.setObjectName(u"employee_relation")
+
+
+self.employee_school_distinctions = QTextEdit(self.frame_header)
+        self.employee_school_distinctions.setObjectName(u"employee_school_distinctions")
+
+self.employee_publications = QTextEdit(self.frame_header)
+        self.employee_publications.setObjectName(u"employee_publications")
+
+self.employee_history = QTextEdit(self.frame_header)
+        self.employee_history.setObjectName(u"employee_history")
+
+
+self.employee_acad_record = QTextEdit(self.frame_header)
+        self.employee_acad_record.setObjectName(u"employee_acad_record")
+
+
+self.employee_citizenship = QLabel(self.frame_header)
+        self.employee_citizenship.setObjectName(u"employee_citizenship")
+

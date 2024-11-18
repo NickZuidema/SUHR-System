@@ -1,19 +1,41 @@
-import sys
 import sqlite3
-from PySide6.QtWidgets import QApplication, QMainWindow, QMessageBox
+import sys
+import uuid
+from PySide6.QtWidgets import QApplication, QMainWindow, QMessageBox, QLineEdit
+from PySide6.QtGui import QPalette, QColor
 from ui_login import Ui_Login
-from dashboard import Dashboard  
+from config import get_database_path
+from session import SessionManager
+import os
+
+# def force_light_mode(app):
+#     palette = QPalette()
+#     palette.setColor(QPalette.ColorRole.Window, QColor(255, 255, 255))
+#     palette.setColor(QPalette.ColorRole.WindowText, QColor(0, 0, 0))
+#     palette.setColor(QPalette.ColorRole.Base, QColor(255, 255, 255))
+#     palette.setColor(QPalette.ColorRole.AlternateBase, QColor(240, 240, 240))
+#     palette.setColor(QPalette.ColorRole.ToolTipBase, QColor(255, 255, 220))
+#     palette.setColor(QPalette.ColorRole.ToolTipText, QColor(0, 0, 0))
+#     palette.setColor(QPalette.ColorRole.Text, QColor(0, 0, 0))
+#     palette.setColor(QPalette.ColorRole.Button, QColor(240, 240, 240))
+#     palette.setColor(QPalette.ColorRole.ButtonText, QColor(0, 0, 0))
+#     palette.setColor(QPalette.ColorRole.BrightText, QColor(255, 0, 0))
+#     palette.setColor(QPalette.ColorRole.Highlight, QColor(30, 144, 255))
+#     palette.setColor(QPalette.ColorRole.HighlightedText, QColor(255, 255, 255))
+#     app.setPalette(palette)
 
 class MainWindow(QMainWindow):
     def __init__(self):
         super(MainWindow, self).__init__()
         self.ui = Ui_Login()
         self.ui.setupUi(self)
+        self.ui.lineEdit_2.setEchoMode(QLineEdit.EchoMode.Password)
         self.ui.pushButton.clicked.connect(self.handle_login)
-        self.db_path = r'C:\Users\leeu6\Desktop\SUHR-System\Database\SUHRSystem.db'  
+        self.db_path = get_database_path()
+        self.session_manager = SessionManager()
+        self.check_session()
 
     def authenticate(self, username, password):
-        """Authenticate the user by checking the provided username and password."""
         try:
             with sqlite3.connect(self.db_path) as connection:
                 cursor = connection.cursor()
@@ -26,24 +48,36 @@ class MainWindow(QMainWindow):
             return False
 
     def handle_login(self):
-        """Handle the login button click event."""
         username = self.ui.lineEdit.text()
         password = self.ui.lineEdit_2.text()
-
         if self.authenticate(username, password):
+            session_id = str(uuid.uuid4())
+            self.session_manager.save_session(session_id, username)
             QMessageBox.information(self, "Success", "Login successful!")
-            self.show_dashboard()  
+            self.show_dashboard(username)
         else:
             QMessageBox.warning(self, "Error", "Login failed! Please check your credentials.")
 
-    def show_dashboard(self):
-        """Show the main dashboard after login."""
-        self.dashboard = Dashboard(self.db_path)  
+    def show_dashboard(self, username=None):
+        from dashboard import Dashboard
+        self.dashboard = Dashboard(self.db_path, username)
         self.dashboard.show()
-        self.hide() 
+        self.hide()
+
+    def check_session(self):
+        user = self.session_manager.check_session()
+        if user:
+            self.show_dashboard(user)
+        else:
+            self.ui.pushButton.setEnabled(True)
+
+    def logout(self):
+        self.session_manager.clear_session()
+        self.ui.pushButton.setEnabled(True)
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
+    # force_light_mode(app)
     window = MainWindow()
     window.show()
     sys.exit(app.exec())
