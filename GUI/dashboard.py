@@ -162,12 +162,6 @@ class Dashboard(QMainWindow):
         self.view_record_window = MainWindow(employee_id)
         self.view_record_window.show()
 
-
-        
-        # Display the data in a message box or use it for other purposes
-        # QMessageBox.information(self, "Employee Data", 
-        #                         f"You clicked on:\n{employee_data}")
-
     def logout(self):
         """Handle the logout functionality."""
         # Clear the session

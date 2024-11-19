@@ -69,6 +69,15 @@ CREATE TABLE IF NOT EXISTS "Employee_Organization"
     FOREIGN KEY ("Employee_Employee_Id") REFERENCES "Employee" ("Employee_Id") ON UPDATE CASCADE ON DELETE CASCADE,
     FOREIGN KEY ("Organization_Organization_Id") REFERENCES "Organizations" ("Organization_Id") ON UPDATE CASCADE ON DELETE CASCADE
 );
+CREATE TABLE IF NOT EXISTS "Employee_Child"
+(
+    "Employee_Employee_Id" TEXT NOT NULL,
+    "Child_Child_Id" TEXT NOT NULL,
+    FOREIGN KEY ("Employee_Employee_Id") REFERENCES "Employee" ("Employee_Id") ON UPDATE CASCADE ON DELETE CASCADE,
+    FOREIGN KEY ("Child_Child_Id") REFERENCES "Child" ("Child_Id") ON UPDATE CASCADE ON DELETE CASCADE
+
+);
+
 
 CREATE TABLE IF NOT EXISTS "Child"
 (
@@ -80,14 +89,6 @@ CREATE TABLE IF NOT EXISTS "Child"
     PRIMARY KEY ("Child_Id")
 );
 
-CREATE TABLE IF NOT EXISTS "Employee_Child"
-(
-    "Employee_Employee_Id" TEXT NOT NULL,
-    "Child_Child_Id" TEXT NOT NULL,
-    FOREIGN KEY ("Employee_Employee_Id") REFERENCES "Employee" ("Employee_Id") ON UPDATE CASCADE ON DELETE CASCADE,
-    FOREIGN KEY ("Child_Child_Id") REFERENCES "Child" ("Child_Id") ON UPDATE CASCADE ON DELETE CASCADE
-
-);
 
 CREATE TABLE IF NOT EXISTS "Spouse_Info"
 (
@@ -95,18 +96,6 @@ CREATE TABLE IF NOT EXISTS "Spouse_Info"
     "Date_Of_Marriage" TEXT NOT NULL, -- Use TEXT for dates
     "Place_Of_Marriage" TEXT NOT NULL,
     PRIMARY KEY ("Spouse_Info_Id")
-);
-
-CREATE TABLE IF NOT EXISTS "Parent"
-(
-    "Parent_Id" TEXT NOT NULL,
-    "Last_Name" TEXT NOT NULL,
-    "First_Name" TEXT NOT NULL,
-    "Middle_Name" TEXT,
-    "Occupation" TEXT,
-    "Address" TEXT,
-    "Parent_Type" TEXT NOT NULL,  -- 'Father' or 'Mother'
-    PRIMARY KEY ("Parent_Id")
 );
 
 
