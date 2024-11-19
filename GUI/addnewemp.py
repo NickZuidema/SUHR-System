@@ -13,6 +13,7 @@ from position import generate_position_id
 import os
 import employee_child  # Import the employee_child module
 import employee_sibling  # Import the employee_sibling module
+import employee_publication  # Import the employee_publication module
 
 class AddEmployeeWindow(QMainWindow):
     def __init__(self):
@@ -99,6 +100,18 @@ class AddEmployeeWindow(QMainWindow):
         else:
             # If no academic record, save employee data with None for academic_record_id
             self.save_employee_data(employee_data, benefit_id, archived, spouse_id,salary_id, None)
+
+        # Handle publications if provided
+        publications = self.ui.publications.toPlainText()
+        if publications:
+            publication_list = publications.split(';')  # Assuming publications are separated by semicolons
+            academic_record_id = employee_publication.get_academic_record_id_from_employee(employee_id)
+            if academic_record_id:  # Ensure academic_record_id is not None
+                for publication in publication_list:
+                    name, link = publication.split(',')  # Assuming each publication has a name and link separated by a comma
+                    employee_publication.add_publication_to_academic_record(academic_record_id, name.strip(), link.strip())
+            else:
+                print(f"No academic record found for employee {employee_id}. Publications not added.")
 
         pdf_directory = get_pdf_path()
         # Save employee data to the database with the Benefit_Id and initially without Spouse_Id
