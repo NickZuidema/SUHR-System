@@ -130,6 +130,17 @@ CREATE TABLE IF NOT EXISTS "Parent"
     "Address" TEXT
 );
 
+CREATE TABLE IF NOT EXISTS "Sibling"
+(
+    "Sibling_Id" TEXT NOT NULL,
+    "Last_Name" TEXT NOT NULL,
+    "First_Name" TEXT NOT NULL,
+    "Middle_Name" TEXT,
+    "Occupation" TEXT,
+    "Address" TEXT,
+    PRIMARY KEY ("Sibling_Id")
+);
+
 CREATE TABLE IF NOT EXISTS "Employee_Sibling"
 (
     "Employee_Employee_Id" TEXT NOT NULL,

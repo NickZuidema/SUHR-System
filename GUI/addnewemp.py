@@ -11,6 +11,8 @@ from benefit import insert_benefit_data  # Ensure this function returns the Bene
 from config import get_database_path,get_pdf_path
 from position import generate_position_id
 import os
+import employee_child  # Import the employee_child module
+import employee_sibling  # Import the employee_sibling module
 
 class AddEmployeeWindow(QMainWindow):
     def __init__(self):
@@ -46,6 +48,29 @@ class AddEmployeeWindow(QMainWindow):
 
             # Update the employee record to include the Spouse_Id
             self.update_employee_spouse_id(employee_data['employee_id'], spouse_id)
+
+        # Handle child information if provided
+        child_first_name = self.ui.child1_FirstName.toPlainText()
+        child_middle_name = self.ui.child1_MiddleName.toPlainText()
+        child_last_name = self.ui.child1_LastName.toPlainText()
+        child_date_of_birth = self.ui.child1_dateofbirth.toPlainText()
+
+        if child_first_name or child_middle_name or child_last_name:  # Check if at least one child name part is provided
+            employee_child.add_child_to_employee(
+                employee_id, child_last_name, child_first_name, child_middle_name, child_date_of_birth
+            )
+
+        # Handle sibling information if provided
+        sibling1_first_name = self.ui.sibling1_FirstName.toPlainText()
+        sibling1_middle_name = self.ui.sibling1_MiddleName.toPlainText()
+        sibling1_last_name = self.ui.sibling1_LastName.toPlainText()
+        sibling1_occupation = self.ui.sibling1_occupation.toPlainText()
+        sibling1_address = self.ui.sibling1_address.toPlainText()
+
+        if sibling1_first_name or sibling1_middle_name or sibling1_last_name:  # Check if at least one sibling name part is provided
+            employee_sibling.add_sibling_to_employee(
+                employee_id, sibling1_last_name, sibling1_first_name, sibling1_middle_name, sibling1_occupation, sibling1_address
+            )
 
         # Insert academic record data if provided
         elementary_id = self.ui.elementary_school.toPlainText()
