@@ -4,8 +4,10 @@ from PySide6.QtWidgets import QMainWindow, QMessageBox, QApplication
 #dashboard design file
 from ui_main_dashboard_copy import Ui_MainWindow
 
+#connected modules
 from addnewemp import AddEmployeeWindow
 from recordwindow import RecordWindow
+
 from config import get_database_path
 from session import SessionManager
 from main import MainWindow  # Import the MainWindow (login page)
@@ -67,7 +69,7 @@ class Dashboard(QMainWindow):
                 self.redirect_to_login()
                 return  # Do not proceed to fetch data if no session
 
-            query = "SELECT * FROM Employee"
+            query = "SELECT * FROM Employee where Archived = 0"
             self.cursor.execute(query)
             employees = self.cursor.fetchall()
 
@@ -106,21 +108,21 @@ class Dashboard(QMainWindow):
 
             if dropDown_data == "Name":
                 query = """SELECT * FROM Employee  
-                        WHERE LOWER(Last_Name) LIKE ? OR 
+                        WHERE (LOWER(Last_Name) LIKE ? OR 
                                 LOWER(First_Name) LIKE ? OR 
-                                LOWER(Middle_Name) LIKE ?"""
+                                LOWER(Middle_Name) LIKE ?) AND Archived = 0"""
                 search_pattern = f"%{search_text}%"
                 self.cursor.execute(query, (search_pattern, search_pattern, search_pattern))
 
             elif dropDown_data == "ID":
                 query = """SELECT * FROM Employee Where 
-                        Employee_Id LIKE ? """
+                        (Employee_Id LIKE ? ) AND Archived = 0"""
                 search_pattern = f"{search_text}%"
                 self.cursor.execute(query, (search_pattern,))
                 
 
             elif dropDown_data == "Employment Date":
-                query = """SELECT * FROM Employee Where Date_Employed Like ?"""
+                query = """SELECT * FROM Employee Where (Date_Employed Like ?) AND Archived = 0"""
                 search_pattern = f"{search_text}%"
                 self.cursor.execute(query, (search_pattern,))
             
