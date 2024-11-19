@@ -12,7 +12,7 @@ class MainWindow(QMainWindow):
 
         # Connect the archive button to the archive_employee method
         self.ui.archive_button.clicked.connect(self.archive_employee)
-
+        self.empID = employee_id
         # Get the database path from the config module
         database_path = get_database_path()
 
@@ -61,8 +61,8 @@ class MainWindow(QMainWindow):
     def archive_employee(self):
         try:
             # Retrieve the employee ID (adjust this to fetch dynamically if needed)
-            employee_id = '20241115-001'  # Replace with the employee ID currently being displayed or selected
-
+            # employee_id = '20241115-001'  # Replace with the employee ID currently being displayed or selected
+            employee_id = self.empID
             # Get the database path
             database_path = get_database_path()
 
