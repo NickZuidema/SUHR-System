@@ -4,8 +4,10 @@ from PySide6.QtWidgets import QMainWindow, QMessageBox, QApplication
 #dashboard design file
 from ui_main_dashboard_copy import Ui_MainWindow
 
+#connected modules
 from addnewemp import AddEmployeeWindow
 from recordwindow import RecordWindow
+
 from config import get_database_path
 from session import SessionManager
 from main import MainWindow  # Import the MainWindow (login page)
@@ -41,6 +43,7 @@ class Dashboard(QMainWindow):
         self.ui.pushButton_5.clicked.connect(self.search_employees)
         self.ui.pushButton_4.clicked.connect(self.add_new_employee)
         self.ui.pushButton_3.clicked.connect(self.open_archive)
+        self.ui.refresh_button.clicked.connect(self.populate_employee_table)
 
         # Connect logout button to logout function
         self.ui.pushButton_2.clicked.connect(self.logout)
@@ -66,7 +69,7 @@ class Dashboard(QMainWindow):
                 self.redirect_to_login()
                 return  # Do not proceed to fetch data if no session
 
-            query = "SELECT * FROM Employee"
+            query = "SELECT * FROM Employee where Archived = 0"
             self.cursor.execute(query)
             employees = self.cursor.fetchall()
 
@@ -91,6 +94,9 @@ class Dashboard(QMainWindow):
     def search_employees(self):
         """Search for employees based on the input in the search field."""
         search_text = self.ui.lineEdit.text().strip().lower()
+        dropDown_data = self.ui.comboBox.currentText()
+        print(f"Selected Filter {dropDown_data}")
+
         if not search_text:
             self.populate_employee_table()
             return
@@ -100,13 +106,26 @@ class Dashboard(QMainWindow):
                 QMessageBox.warning(self, "No Session", "You must log in to search.")
                 return
 
-            query = """SELECT * FROM Employee  
-                       WHERE LOWER(Last_Name) LIKE ? OR 
-                             LOWER(First_Name) LIKE ? OR 
-                             LOWER(Middle_Name) LIKE ?"""
+            if dropDown_data == "Name":
+                query = """SELECT * FROM Employee  
+                        WHERE (LOWER(Last_Name) LIKE ? OR 
+                                LOWER(First_Name) LIKE ? OR 
+                                LOWER(Middle_Name) LIKE ?) AND Archived = 0"""
+                search_pattern = f"%{search_text}%"
+                self.cursor.execute(query, (search_pattern, search_pattern, search_pattern))
+
+            elif dropDown_data == "ID":
+                query = """SELECT * FROM Employee Where 
+                        (Employee_Id LIKE ? ) AND Archived = 0"""
+                search_pattern = f"{search_text}%"
+                self.cursor.execute(query, (search_pattern,))
+                
+
+            elif dropDown_data == "Employment Date":
+                query = """SELECT * FROM Employee Where (Date_Employed Like ?) AND Archived = 0"""
+                search_pattern = f"{search_text}%"
+                self.cursor.execute(query, (search_pattern,))
             
-            search_pattern = f"%{search_text}%"
-            self.cursor.execute(query, (search_pattern, search_pattern, search_pattern))
             results = self.cursor.fetchall()
 
             self.ui.tableWidget.setRowCount(0)  # Clear previous results

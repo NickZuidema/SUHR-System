@@ -1,6 +1,5 @@
 
 #playing around with file directories, so we wont have to always specify and change filepaths
-
 import os
 
 

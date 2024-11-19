@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'preview_templateMFeRJa.ui'
+## Form generated from reading UI file 'preview_templatePeASKG.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.4.3
 ##
@@ -109,7 +109,7 @@ class Ui_MainWindow(object):
         self.Profile_pic.setStyleSheet(u"border: 1px solid black")
         self.employee_name = QLabel(self.frame_header)
         self.employee_name.setObjectName(u"employee_name")
-        self.employee_name.setGeometry(QRect(250, 20, 188, 36))
+        self.employee_name.setGeometry(QRect(250, 20, 1121, 36))
         font1 = QFont()
         font1.setPointSize(20)
         font1.setBold(True)
@@ -123,14 +123,14 @@ class Ui_MainWindow(object):
         self.employee_position.setFont(font2)
         self.employee_department = QLabel(self.frame_header)
         self.employee_department.setObjectName(u"employee_department")
-        self.employee_department.setGeometry(QRect(250, 100, 266, 28))
+        self.employee_department.setGeometry(QRect(250, 100, 1111, 28))
         font3 = QFont()
         font3.setPointSize(16)
         font3.setBold(False)
         self.employee_department.setFont(font3)
         self.employee_hired_date = QLabel(self.frame_header)
         self.employee_hired_date.setObjectName(u"employee_hired_date")
-        self.employee_hired_date.setGeometry(QRect(250, 130, 213, 26))
+        self.employee_hired_date.setGeometry(QRect(250, 130, 571, 26))
         font4 = QFont()
         font4.setPointSize(14)
         font4.setBold(False)
@@ -241,7 +241,7 @@ class Ui_MainWindow(object):
         self.sss_header.setFont(font5)
         self.employee_sss = QLabel(self.frame_header)
         self.employee_sss.setObjectName(u"employee_sss")
-        self.employee_sss.setGeometry(QRect(380, 510, 341, 31))
+        self.employee_sss.setGeometry(QRect(380, 510, 271, 31))
         self.employee_sss.setFont(font6)
         self.pagibig_header = QLabel(self.frame_header)
         self.pagibig_header.setObjectName(u"pagibig_header")
@@ -249,7 +249,7 @@ class Ui_MainWindow(object):
         self.pagibig_header.setFont(font5)
         self.employee_pagibig = QLabel(self.frame_header)
         self.employee_pagibig.setObjectName(u"employee_pagibig")
-        self.employee_pagibig.setGeometry(QRect(380, 560, 341, 31))
+        self.employee_pagibig.setGeometry(QRect(380, 560, 271, 31))
         self.employee_pagibig.setFont(font6)
         self.ph_header = QLabel(self.frame_header)
         self.ph_header.setObjectName(u"ph_header")
@@ -257,7 +257,7 @@ class Ui_MainWindow(object):
         self.ph_header.setFont(font5)
         self.employee_philHealth = QLabel(self.frame_header)
         self.employee_philHealth.setObjectName(u"employee_philHealth")
-        self.employee_philHealth.setGeometry(QRect(380, 620, 341, 31))
+        self.employee_philHealth.setGeometry(QRect(380, 620, 271, 31))
         self.employee_philHealth.setFont(font6)
         self.contact_header = QLabel(self.frame_header)
         self.contact_header.setObjectName(u"contact_header")
@@ -265,11 +265,11 @@ class Ui_MainWindow(object):
         self.contact_header.setFont(font5)
         self.employee_phonenumber = QLabel(self.frame_header)
         self.employee_phonenumber.setObjectName(u"employee_phonenumber")
-        self.employee_phonenumber.setGeometry(QRect(380, 670, 341, 31))
+        self.employee_phonenumber.setGeometry(QRect(380, 670, 271, 31))
         self.employee_phonenumber.setFont(font6)
         self.employee_email = QLabel(self.frame_header)
         self.employee_email.setObjectName(u"employee_email")
-        self.employee_email.setGeometry(QRect(380, 700, 341, 31))
+        self.employee_email.setGeometry(QRect(380, 700, 271, 31))
         self.employee_email.setFont(font6)
         self.frame_2 = QFrame(self.frame_header)
         self.frame_2.setObjectName(u"frame_2")
@@ -394,7 +394,7 @@ class Ui_MainWindow(object):
     # setupUi
 
     def retranslateUi(self, MainWindow):
-        MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"Dashboard", None))
+        MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"Employee Record View", None))
         self.label.setText("")
         self.label_3.setText("")
         self.label_2.setText("")
