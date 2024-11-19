@@ -4,6 +4,9 @@ from PySide6.QtWidgets import QApplication, QMainWindow, QMessageBox
 from ui_preview_template_withscroll import Ui_MainWindow
 from config import get_database_path  # Import get_database_path from config
 
+from edit_employee import Edit_MainWindow
+
+
 class MainWindow(QMainWindow):
     def __init__(self, employee_id):
         super(MainWindow, self).__init__()
@@ -13,6 +16,7 @@ class MainWindow(QMainWindow):
         # Connect the archive button to the archive_employee method
         self.ui.archive_button.clicked.connect(self.archive_employee)
         self.empID = employee_id
+        self.ui.edit_info_button.clicked.connect(self.edit_employee_record)
         # Get the database path from the config module
         database_path = get_database_path()
 
@@ -57,6 +61,11 @@ class MainWindow(QMainWindow):
             QMessageBox.warning(self, "Record Not Found", str(e))
         except Exception as e:
             QMessageBox.critical(self, "Unexpected Error", f"An unexpected error occurred: {e}")
+
+    def edit_employee_record(self):
+        print("editing employee")
+        self.edit_emp_window = Edit_MainWindow(self.empID)
+        self.edit_emp_window.show()
 
     def archive_employee(self):
         try:

@@ -4,8 +4,10 @@ from PySide6.QtWidgets import QMainWindow, QMessageBox, QApplication
 #dashboard design file
 from ui_main_dashboard_copy import Ui_MainWindow
 
+#connected modules
 from addnewemp import AddEmployeeWindow
 from recordwindow import RecordWindow
+
 from config import get_database_path
 from session import SessionManager
 from main import MainWindow  # Import the MainWindow (login page)
