@@ -159,3 +159,5 @@ if __name__ == "__main__":
         # ...existing code for opening windows...
     else:
         print("No user is logged in. Preventing windows from opening.")
+        # Prevent any windows from opening
+        exit()

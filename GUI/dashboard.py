@@ -149,6 +149,9 @@ class Dashboard(QMainWindow):
         self.close()
 
     def closeEvent(self, event):
+        if self.session_manager.is_user_logged_in():
+            self.session_manager.clear_session()
+            print("User logged out automatically due to program closure.")
         if self.cursor:
             self.cursor.close()
         if self.connection:
