@@ -10,7 +10,7 @@ def generate_government_exam_id():
         # Start by trying to generate a new government exam ID
         while True:
             # Get the last inserted Government_Exam_Id
-            cursor.execute("SELECT Governmant_Exam_Id FROM Government_Exam ORDER BY Governmant_Exam_Id DESC LIMIT 1")
+            cursor.execute("SELECT Government_Exam_Id FROM Government_Exam ORDER BY Government_Exam_Id DESC LIMIT 1")
             max_id_row = cursor.fetchone()
 
             if max_id_row:
@@ -26,7 +26,7 @@ def generate_government_exam_id():
                 new_exam_id = 1
 
             # Check if the generated ID already exists in the Government_Exam table
-            cursor.execute("SELECT 1 FROM Government_Exam WHERE Governmant_Exam_Id = ?", (str(new_exam_id),))
+            cursor.execute("SELECT 1 FROM Government_Exam WHERE Government_Exam_Id = ?", (str(new_exam_id),))
             if cursor.fetchone() is None:
                 # If the ID does not exist, break out of the loop
                 break
@@ -50,7 +50,7 @@ def add_government_exam_to_academic_record(academic_id, title, date, score_achie
         cursor = conn.cursor()
 
         # Insert the government exam record for the academic record
-        cursor.execute('''INSERT INTO Government_Exam (Governmant_Exam_Id, Academic_Id, Title, Date, Score_Achieved, Score_Max)
+        cursor.execute('''INSERT INTO Government_Exam (Government_Exam_Id, Academic_Id, Title, Date, Score_Achieved, Score_Max)
                           VALUES (?, ?, ?, ?, ?, ?)''', (exam_id, academic_id, title, date, score_achieved, score_max))
 
         conn.commit()  # Save changes
@@ -68,7 +68,7 @@ def get_government_exams_for_academic_record(academic_id):
         cursor = conn.cursor()
 
         # Retrieve government exams related to the given academic record
-        cursor.execute('''SELECT Governmant_Exam_Id, Title, Date, Score_Achieved, Score_Max
+        cursor.execute('''SELECT Government_Exam_Id, Title, Date, Score_Achieved, Score_Max
                           FROM Government_Exam
                           WHERE Academic_Id = ?''', (academic_id,))
         exams = cursor.fetchall()

@@ -39,8 +39,8 @@ def add_employee_to_parent_table(employee_employee_id, parent_family_id):
 
 
 def store_parent_family(last_name_father, first_name_father, middle_name_father,
-                        last_name_mother, first_name_mother, middle_name_mother,
-                        occupation, address):
+                        father_occupation, father_address, last_name_mother, first_name_mother, middle_name_mother,
+                        mother_occupation, mother_address):
     """Store both the father and mother as a parent family in the Parent table."""
     try:
         conn = sqlite3.connect(get_database_path())
@@ -48,12 +48,11 @@ def store_parent_family(last_name_father, first_name_father, middle_name_father,
 
        
         cursor.execute('''INSERT INTO Parent (Father_Last_Name, Father_First_Name, Father_Middle_Name,
-                                              Mother_Last_Name, Mother_First_Name, Mother_Middle_Name,
-                                              Occupation, Address)
-                          VALUES (?, ?, ?, ?, ?, ?, ?, ?)''', 
-                       (last_name_father, first_name_father, middle_name_father,
-                        last_name_mother, first_name_mother, middle_name_mother,
-                        occupation, address))
+                                              Father_Occupation, Father_Address, Mother_Last_Name, Mother_First_Name, Mother_Middle_Name,
+                                              Mother_Occupation, Mother_Address)
+                          VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)''', 
+                       (last_name_father, first_name_father, middle_name_father, father_occupation, father_address,
+                        last_name_mother, first_name_mother, middle_name_mother, mother_occupation, mother_address))
 
         conn.commit()  
         parent_family_id = cursor.lastrowid  
@@ -66,20 +65,18 @@ def store_parent_family(last_name_father, first_name_father, middle_name_father,
         return None
 
 def add_parent_to_parent_family_table(last_name_father, first_name_father, middle_name_father,
-                                      last_name_mother, first_name_mother, middle_name_mother,
-                                      occupation, address):
+                                      father_occupation, father_address, last_name_mother, first_name_mother, middle_name_mother,
+                                      mother_occupation, mother_address):
     """Insert the father and mother as a family into the Parent table."""
     try:
-      
         parent_family_id = generate_parent_family_id()
         if parent_family_id is None:
             print("Failed to generate Parent_Id.")
             return
 
-       
         parent_family_id = store_parent_family(last_name_father, first_name_father, middle_name_father,
-                                               last_name_mother, first_name_mother, middle_name_mother,
-                                               occupation, address)
+                                               father_occupation, father_address, last_name_mother, first_name_mother, middle_name_mother,
+                                               mother_occupation, mother_address)
 
         if parent_family_id is None:
             print("Failed to store parent family.")

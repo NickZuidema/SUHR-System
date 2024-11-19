@@ -16,6 +16,7 @@ import employee_sibling  # Import the employee_sibling module
 import employee_publication  # Import the employee_publication module
 import employee_distinction  # Import the employee_distinction module
 import government_exam  # Import the government_exam module
+import employee_parent  # Import the employee_parent module
 
 class AddEmployeeWindow(QMainWindow):
     def __init__(self):
@@ -131,6 +132,26 @@ class AddEmployeeWindow(QMainWindow):
                 academic_record_id, government_title, government_date, government_score, government_score_max
             )
 
+        # Handle parent family information if provided
+        father_first_name = self.ui.Father_FirstName.toPlainText()
+        father_middle_name = self.ui.Father_MiddleName.toPlainText()
+        father_last_name = self.ui.Father_LastName.toPlainText()
+        father_occupation = self.ui.FatherJob.toPlainText()
+        father_address = self.ui.FatherAddress.toPlainText()
+        mother_first_name = self.ui.Mother_FirstName.toPlainText()
+        mother_middle_name = self.ui.Mother_MiddleName.toPlainText()
+        mother_last_name = self.ui.Mother_LastName.toPlainText()
+        mother_occupation = self.ui.MotherJob.toPlainText()
+        mother_address = self.ui.MotherAddress.toPlainText()
+
+        if father_first_name or father_middle_name or father_last_name or mother_first_name or mother_middle_name or mother_last_name:
+            parent_family_id = employee_parent.add_parent_to_parent_family_table(
+                father_last_name, father_first_name, father_middle_name, father_occupation, father_address,
+                mother_last_name, mother_first_name, mother_middle_name, mother_occupation, mother_address
+            )
+            if parent_family_id:
+                employee_parent.add_employee_to_parent_table(employee_id, parent_family_id)
+
         pdf_directory = get_pdf_path()
         # Save employee data to the database with the Benefit_Id and initially without Spouse_Id
         pdf_file_path = os.path.join(pdf_directory, f"{employee_data['employee_id']}.pdf")
@@ -230,7 +251,7 @@ class AddEmployeeWindow(QMainWindow):
                 data["civil_status"],
                 spouse_id,  # Initially None
                 academic_record_id,  # Updated to Academic_Record_Id
-                None,  # Placeholder for Criminal_Record
+                data["criminal_case_name"],  # Store criminal_case_name in Criminal_Record
                 0,     # Initially not Regular
                 benefit_id,  # Use the Benefit_Id here
                 salary_id,  # Use the Salary_Id here
