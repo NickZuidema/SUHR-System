@@ -14,6 +14,8 @@ import os
 import employee_child  # Import the employee_child module
 import employee_sibling  # Import the employee_sibling module
 import employee_publication  # Import the employee_publication module
+import employee_distinction  # Import the employee_distinction module
+import government_exam  # Import the government_exam module
 
 class AddEmployeeWindow(QMainWindow):
     def __init__(self):
@@ -95,23 +97,39 @@ class AddEmployeeWindow(QMainWindow):
                 gradschool_diploma, gradschool_fin
             )
 
+            # Add distinctions to the academic record with default values
+            default_year = "2023"
+            default_semester = 1
+            employee_distinction.add_distinction_to_academic_record(academic_record_id, default_year, default_semester)
+
             # Update employee data with the new Academic_Record_Id
-            self.save_employee_data(employee_data, benefit_id, archived, spouse_id,salary_id, academic_record_id)
+            self.save_employee_data(employee_data, benefit_id, archived, spouse_id, salary_id, academic_record_id)
         else:
             # If no academic record, save employee data with None for academic_record_id
-            self.save_employee_data(employee_data, benefit_id, archived, spouse_id,salary_id, None)
+            self.save_employee_data(employee_data, benefit_id, archived, spouse_id, salary_id, None)
 
         # Handle publications if provided
         publications = self.ui.publications.toPlainText()
         if publications:
             publication_list = publications.split(';')  # Assuming publications are separated by semicolons
             academic_record_id = employee_publication.get_academic_record_id_from_employee(employee_id)
-            if academic_record_id:  # Ensure academic_record_id is not None
+            if (academic_record_id):  # Ensure academic_record_id is not None
                 for publication in publication_list:
                     name, link = publication.split(',')  # Assuming each publication has a name and link separated by a comma
                     employee_publication.add_publication_to_academic_record(academic_record_id, name.strip(), link.strip())
             else:
                 print(f"No academic record found for employee {employee_id}. Publications not added.")
+
+        # Handle government exam information if provided
+        government_title = self.ui.government_examination.toPlainText()
+        government_score = self.ui.government_rating.toPlainText()
+        government_date = self.ui.government_date.toPlainText()
+        government_score_max = 100  # Default value since there's no textbox for it
+
+        if government_title or government_score or government_date:  # Check if at least one field is provided
+            government_exam.add_government_exam_to_academic_record(
+                academic_record_id, government_title, government_date, government_score, government_score_max
+            )
 
         pdf_directory = get_pdf_path()
         # Save employee data to the database with the Benefit_Id and initially without Spouse_Id
