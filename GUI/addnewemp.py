@@ -17,6 +17,7 @@ import employee_publication  # Import the employee_publication module
 import employee_distinction  # Import the employee_distinction module
 import government_exam  # Import the government_exam module
 import employee_parent  # Import the employee_parent module
+import nonfilipino
 
 class AddEmployeeWindow(QMainWindow):
     def __init__(self):
@@ -29,6 +30,20 @@ class AddEmployeeWindow(QMainWindow):
         employee_id = self.generate_employee_id()
         archived = 0
         employee_data = collect_employee_data(self.ui, employee_id, archived)
+
+        # Collect non-Filipino details if provided
+        passport_no = self.ui.NONFILIPINO_passport.toPlainText()
+        acr_no = self.ui.NONFILIPINO_acrnum.toPlainText()
+        date_of_issue = self.ui.NONFILIPINO_dateissued.toPlainText()
+
+        non_filipino_id = None
+        if passport_no and acr_no and date_of_issue:
+            # Insert the data into the Non_Filipino table and get the Non_Filipino_Id
+            non_filipino_id = nonfilipino.insert_non_filipino_data(passport_no, acr_no, date_of_issue)
+
+        # Include Non_Filipino_Id in the employee data dictionary if applicable
+        employee_data["passport_num"] = non_filipino_id
+
 
         # Handle spouse information if provided
         first_name = self.ui.Spouse_FirstName.toPlainText()
@@ -236,13 +251,13 @@ class AddEmployeeWindow(QMainWindow):
                 data["first_name"],
                 data["middle_name"],
                 datetime.datetime.now().strftime('%Y-%m-%d'),
-                self.generate_position_id(),  # Use Position_Id here
+                self.generate_position_id(),
                 data["dmg_address"],
                 data["home_address"],
                 data["date_of_birth"],
                 data["place_of_birth"],
                 data["citizenship"],
-                data.get("passport_num"),
+                data["passport_num"],
                 data["church_affiliation"],
                 data["tin"],
                 data["sss"],
