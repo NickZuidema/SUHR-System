@@ -25,8 +25,6 @@ class MainWindow(QMainWindow):
             with sqlite3.connect(database_path) as conn:
                 cursor = conn.cursor()
 
-
-
                 # Use the passed employee_id for the query
                 cursor.execute("""
                     SELECT Last_Name, First_Name, Middle_Name, Dgte_Address, Home_Address, Date_Of_Birth,
@@ -54,6 +52,86 @@ class MainWindow(QMainWindow):
                 self.ui.employee_pagibig.setText(employee_data[9])  # Set Pag-IBIG number
                 self.ui.employee_philHealth.setText(employee_data[10])  # Set PhilHealth number
                 self.ui.employee_phonenumber.setText(employee_data[11])  # Set Contact number
+                self.ui.employee_children.setText("No children information available")  # Default message
+                self.ui.employee_religion.setText("No religion information available")  # Default message
+                self.ui.employee_father.setText("No father information available")  # Default message
+                self.ui.employee_mother.setText("No mother information available")  # Default message
+                # Fetch and display church affiliation
+                cursor.execute("""
+                    SELECT Church
+                    FROM Employee
+                    WHERE Employee_Id = ?
+                """, (employee_id,))
+                church_data = cursor.fetchone()
+
+                if church_data and church_data[0]:
+                    self.ui.employee_religion.setText(church_data[0])  # Set church affiliation in QLabel
+                else:
+                    self.ui.employee_religion.setText("No religion information available")
+
+                # Fetch and display spouse information
+                cursor.execute("""
+                    SELECT First_Name, Middle_Name, Last_Name
+                    FROM Spouse
+                    WHERE Spouse_Info_Id = (
+                        SELECT Spouse_Info_Id
+                        FROM Employee
+                        WHERE Employee_Id = ?
+                    )
+                """, (employee_id,))
+                spouse_data = cursor.fetchone()
+
+                if spouse_data:
+                    spouse_first_name, spouse_middle_name, spouse_last_name = spouse_data
+                    spouse_full_name = f"{spouse_last_name}, {spouse_first_name} {spouse_middle_name or ''}".strip()
+                    self.ui.employee_spouse.setText(spouse_full_name)  # Set spouse full name in QLabel
+                else:
+                    self.ui.employee_spouse.setText("No spouse information available")
+
+                # Fetch and display children information
+                cursor.execute("""
+                    SELECT Last_Name, First_Name, Middle_Name, Date_Of_Birth
+                    FROM Child
+                    WHERE Child_Id IN (
+                        SELECT Child_Id
+                        FROM Employee_Child
+                        WHERE Employee_Employee_Id = ?
+                    )
+                """, (employee_id,))
+                children_data = cursor.fetchall()
+
+                if children_data:
+                    children_info = []
+                    for child in children_data:
+                        child_last_name, child_first_name, child_middle_name, child_dob = child
+                        child_full_name = f"{child_last_name}, {child_first_name} {child_middle_name or ''}".strip()
+                        children_info.append(f"{child_full_name} (DOB: {child_dob})")
+                    self.ui.employee_children.setText("\n".join(children_info))  # Set children info in QLabel
+                else:
+                    self.ui.employee_children.setText("No children information available")
+
+                # Fetch and display parent information
+                cursor.execute("""
+                    SELECT Father_Last_Name, Father_First_Name, Father_Middle_Name, 
+                           Mother_Last_Name, Mother_First_Name, Mother_Middle_Name
+                    FROM Parent
+                    WHERE Parent_Id = (
+                        SELECT Parent_Parent_Id
+                        FROM Employee_Parent
+                        WHERE Employee_Employee_Id = ?
+                    )
+                """, (employee_id,))
+                parent_data = cursor.fetchone()
+
+                if parent_data:
+                    father_last_name, father_first_name, father_middle_name, mother_last_name, mother_first_name, mother_middle_name = parent_data
+                    father_full_name = f"{father_last_name}, {father_first_name} {father_middle_name or ''}".strip()
+                    mother_full_name = f"{mother_last_name}, {mother_first_name} {mother_middle_name or ''}".strip()
+                    self.ui.employee_father.setText(father_full_name)  # Set father full name in QLabel
+                    self.ui.employee_mother.setText(mother_full_name)  # Set mother full name in QLabel
+                else:
+                    self.ui.employee_father.setText("No father information available")
+                    self.ui.employee_mother.setText("No mother information available")
 
         except sqlite3.Error as e:
             QMessageBox.critical(self, "Database Error", f"An error occurred while accessing the database: {e}")
@@ -90,7 +168,6 @@ class MainWindow(QMainWindow):
             QMessageBox.critical(self, "Database Error", f"An error occurred while archiving: {e}")
         except Exception as e:
             QMessageBox.critical(self, "Unexpected Error", f"An unexpected error occurred: {e}")
-
 
 if __name__ == "__main__":
     # Example usage, replace '20241114-006' with the actual employee_id passed from the dashboard

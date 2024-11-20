@@ -129,6 +129,9 @@ class Edit_MainWindow(QMainWindow):
             with sqlite3.connect(database_path) as conn:
                 cursor = conn.cursor()
 
+                position_num = 0
+                if data['position'] != '':
+                    position_num = int(data['position'])
 
 
                 # Use the passed employee_id for the query
@@ -140,7 +143,7 @@ class Edit_MainWindow(QMainWindow):
                         Church = ?, Non_Filipino_Id = ?, Contact_No = ?,
                         Tax_Id = ?, Sss_No = ?, Pagibig_No = ?, Philhealth_No = ?
                     WHERE Employee_Id = ?
-                """, (data['lastname'],data['midname'],data['firstname'],int(data['position']),data['duma_address'],
+                """, (data['lastname'],data['midname'],data['firstname'],position_num,data['duma_address'],
                       data['home_address'], data['date_of_birth'],data['place_of_birth'], data['citizenship'], data['church'],
                       data['passport_num'], data['contact_num'], data['tin'], data['sss_num'],data['pag_ibig'],data['ph_health_num'],
                       self.id_val))
