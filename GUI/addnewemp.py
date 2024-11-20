@@ -244,13 +244,15 @@ class AddEmployeeWindow(QMainWindow):
                 Contact_No,
                 Archived
             ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)'''
+            position_name = data["position"]
+            position_id = generate_position_id(position_name)
             values = (
                 data["employee_id"],
                 data["last_name"],
                 data["first_name"],
                 data["middle_name"],
                 datetime.datetime.now().strftime('%Y-%m-%d'),
-                self.generate_position_id(),
+                position_id,
                 data["dmg_address"],
                 data["home_address"],
                 data["date_of_birth"],
@@ -350,8 +352,6 @@ class AddEmployeeWindow(QMainWindow):
         count = cursor.fetchone()[0]
         conn.close()
         return count
-    def generate_position_id(self):
-        return generate_position_id()
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)

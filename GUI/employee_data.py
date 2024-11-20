@@ -5,7 +5,7 @@ def collect_employee_data(ui, employee_id, archived=0):
         "first_name": ui.FirstName.toPlainText(),
         "middle_name": ui.MiddleName.toPlainText(),
         "last_name": ui.SurName.toPlainText(),
-        "position": ui.Position.toPlainText(),  # Ensure this field exists
+        "position": ui.Position.toPlainText(),  
         "dmg_address": ui.DumaAddress.toPlainText(),
         "home_address": ui.HomeAddress.toPlainText(),
         "date_of_birth": ui.DateOfBirth.toPlainText(),
