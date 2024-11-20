@@ -16,32 +16,27 @@ def generate_non_filipino_id():
 
 def insert_non_filipino_data(passport_no, acr_no, date_of_issue):
     """
-    Insert a new Non-Filipino record into the database and return the generated Non_Filipino_Id.
-    
+    Insert a new Non-Filipino record into the database.
+
     Args:
         passport_no (str): Passport number of the non-Filipino individual.
         acr_no (str): ACR (Alien Certificate of Registration) number.
         date_of_issue (str): Date of issue of the passport or ACR.
 
     Returns:
-        int: The generated Non_Filipino_Id for the inserted record.
+        None
     """
     conn = sqlite3.connect(get_database_path())
     cursor = conn.cursor()
 
-    # Generate a new Non_Filipino_Id
-    non_filipino_id = generate_non_filipino_id()
-
     # Insert the data into the Non_Filipino table
     cursor.execute(
         """
-        INSERT INTO Non_Filipino (Non_Filipino_Id, Passport_No, Acr_No, Date_Of_Issue)
-        VALUES (?, ?, ?, ?)
+        INSERT INTO Non_Filipino (Passport_No, Acr_No, Date_Of_Issue)
+        VALUES (?, ?, ?)
         """,
-        (non_filipino_id, passport_no, acr_no, date_of_issue)
+        (passport_no, acr_no, date_of_issue)
     )
 
     conn.commit()
     conn.close()
-
-    return non_filipino_id
