@@ -225,3 +225,6 @@ CREATE TABLE IF NOT EXISTS "Parent"
     PRIMARY KEY ("Parent_Id"),
     FOREIGN KEY ("Parent_Id") REFERENCES "Employee_Parent" ("Parent_Parent_Id") ON UPDATE CASCADE ON DELETE CASCADE
 );
+
+DROP TABLE IF EXISTS "Non_Filipino";
+DROP TABLE IF EXISTS "Position";

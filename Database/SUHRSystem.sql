@@ -43,7 +43,6 @@ CREATE TABLE IF NOT EXISTS "Non_Filipino"
     "Passport_No" TEXT NOT NULL,
     "Acr_No" TEXT NOT NULL,
     "Date_Of_Issue" TEXT NOT NULL, -- Use TEXT for dates
-    "Place_Of_Issue" TEXT NOT NULL, -- Use TEXT for dates
     PRIMARY KEY ("Non_Filipino_Id")
 );
 
