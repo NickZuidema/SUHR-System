@@ -1,19 +1,12 @@
 import sqlite3
 from config import get_database_path
-import os
-
-db_path = get_database_path()
 
 # Function to generate and insert spouse data
 def insert_spouse_data(spouse_id, first_name, middle_name, last_name, date_of_marriage, place_of_marriage):
     conn = None  # Initialize conn here to avoid the UnboundLocalError
-
-    
-
     try:
         # Connect to the database
-        #conn = sqlite3.connect(r'C:\Users\Admin\Documents\GitHub\SUHR-System\Database\SUHRSystem.db')
-        conn = sqlite3.connect(db_path)
+        conn = sqlite3.connect(get_database_path())
         cursor = conn.cursor()
 
         # Insert spouse info first
@@ -47,8 +40,7 @@ def insert_spouse_data(spouse_id, first_name, middle_name, last_name, date_of_ma
 def generate_spouse_id(saved_id):
     try:
         # Connect to the database (provide the correct path)
-        #conn = sqlite3.connect(r'C:\Users\Admin\Documents\GitHub\SUHR-System\Database\SUHRSystem.db')
-        conn = sqlite3.connect(db_path)
+        conn = sqlite3.connect(get_database_path())
         cursor = conn.cursor()
 
         # Get the count of spouses related to this saved_id

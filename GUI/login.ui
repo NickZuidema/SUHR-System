@@ -17,8 +17,7 @@
    <string>Login</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(255, 255, 255);
-color: black;</string>
+   <string notr="true">background-color: rgb(255, 255, 255);</string>
   </property>
   <property name="windowFilePath">
    <string/>

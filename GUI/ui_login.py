@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'loginoytDmo.ui'
+## Form generated from reading UI file 'loginEjAKeu.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.4.3
 ##
@@ -26,8 +26,7 @@ class Ui_Login(object):
             Login.setObjectName(u"Login")
         Login.resize(1543, 850)
         Login.setAcceptDrops(False)
-        Login.setStyleSheet(u"background-color: rgb(255, 255, 255);\n"
-"color: black;")
+        Login.setStyleSheet(u"background-color: rgb(255, 255, 255);")
         self.centralwidget = QWidget(Login)
         self.centralwidget.setObjectName(u"centralwidget")
         self.silliman_bg = QLabel(self.centralwidget)

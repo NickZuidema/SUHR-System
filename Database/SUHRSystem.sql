@@ -43,6 +43,7 @@ CREATE TABLE IF NOT EXISTS "Non_Filipino"
     "Passport_No" TEXT NOT NULL,
     "Acr_No" TEXT NOT NULL,
     "Date_Of_Issue" TEXT NOT NULL, -- Use TEXT for dates
+    "Place_Of_Issue" TEXT NOT NULL, -- Use TEXT for dates
     PRIMARY KEY ("Non_Filipino_Id")
 );
 
@@ -68,15 +69,6 @@ CREATE TABLE IF NOT EXISTS "Employee_Organization"
     FOREIGN KEY ("Employee_Employee_Id") REFERENCES "Employee" ("Employee_Id") ON UPDATE CASCADE ON DELETE CASCADE,
     FOREIGN KEY ("Organization_Organization_Id") REFERENCES "Organizations" ("Organization_Id") ON UPDATE CASCADE ON DELETE CASCADE
 );
-CREATE TABLE IF NOT EXISTS "Employee_Child"
-(
-    "Employee_Employee_Id" TEXT NOT NULL,
-    "Child_Child_Id" TEXT NOT NULL,
-    FOREIGN KEY ("Employee_Employee_Id") REFERENCES "Employee" ("Employee_Id") ON UPDATE CASCADE ON DELETE CASCADE,
-    FOREIGN KEY ("Child_Child_Id") REFERENCES "Child" ("Child_Id") ON UPDATE CASCADE ON DELETE CASCADE
-
-);
-
 
 CREATE TABLE IF NOT EXISTS "Child"
 (
@@ -88,6 +80,14 @@ CREATE TABLE IF NOT EXISTS "Child"
     PRIMARY KEY ("Child_Id")
 );
 
+CREATE TABLE IF NOT EXISTS "Employee_Child"
+(
+    "Employee_Employee_Id" TEXT NOT NULL,
+    "Child_Child_Id" TEXT NOT NULL,
+    FOREIGN KEY ("Employee_Employee_Id") REFERENCES "Employee" ("Employee_Id") ON UPDATE CASCADE ON DELETE CASCADE,
+    FOREIGN KEY ("Child_Child_Id") REFERENCES "Child" ("Child_Id") ON UPDATE CASCADE ON DELETE CASCADE
+
+);
 
 CREATE TABLE IF NOT EXISTS "Spouse_Info"
 (
@@ -97,30 +97,25 @@ CREATE TABLE IF NOT EXISTS "Spouse_Info"
     PRIMARY KEY ("Spouse_Info_Id")
 );
 
+CREATE TABLE IF NOT EXISTS "Parent"
+(
+    "Parent_Id" TEXT NOT NULL,
+    "Last_Name" TEXT NOT NULL,
+    "First_Name" TEXT NOT NULL,
+    "Middle_Name" TEXT,
+    "Occupation" TEXT,
+    "Address" TEXT,
+    PRIMARY KEY ("Parent_Id")
+);
 
 CREATE TABLE IF NOT EXISTS "Employee_Parent"
 (
-    "Employee_Employee_Id" INTEGER NOT NULL,  -- References Employee_Id in Employee table (INTEGER)
-    "Parent_Parent_Id" INTEGER NOT NULL,     -- Corresponds to Parent_Id in Parent table (INTEGER)
+    "Employee_Employee_Id" TEXT NOT NULL,
+    "Parent_Parent_Id" TEXT NOT NULL,
     FOREIGN KEY ("Employee_Employee_Id") REFERENCES "Employee" ("Employee_Id") ON UPDATE CASCADE ON DELETE CASCADE,
-    PRIMARY KEY ("Employee_Employee_Id", "Parent_Parent_Id")
-);
+    FOREIGN KEY ("Parent_Parent_Id") REFERENCES "Parent" ("Parent_Id") ON UPDATE CASCADE ON DELETE CASCADE
 
-CREATE TABLE IF NOT EXISTS "Parent"
-(
-    "Parent_Id" INTEGER PRIMARY KEY,  -- Unique ID for the family
-    "Father_Last_Name" TEXT NOT NULL,
-    "Father_First_Name" TEXT NOT NULL,
-    "Father_Middle_Name" TEXT,
-    "Father_Occupation" TEXT,          -- Father's occupation
-    "Father_Address" TEXT,             -- Father's address
-    "Mother_Last_Name" TEXT NOT NULL,
-    "Mother_First_Name" TEXT NOT NULL,
-    "Mother_Middle_Name" TEXT,
-    "Mother_Occupation" TEXT,          -- Mother's occupation
-    "Mother_Address" TEXT              -- Mother's address
 );
-
 
 CREATE TABLE IF NOT EXISTS "Sibling"
 (
@@ -243,13 +238,13 @@ CREATE TABLE IF NOT EXISTS "Distinction"
 
 CREATE TABLE IF NOT EXISTS "Government_Exam"
 (
-    "Government_Exam_Id" INTEGER NOT NULL,
+    "Governmant_Exam_Id" INTEGER NOT NULL,
     "Academic_Id" INTEGER NOT NULL,
     "Title" TEXT NOT NULL,
     "Date" TEXT NOT NULL, -- Use TEXT for dates
     "Score_Achieved" INTEGER NOT NULL,
     "Score_Max" INTEGER NOT NULL,
-    PRIMARY KEY ("Government_Exam_Id"),
+    PRIMARY KEY ("Governmant_Exam_Id"),
     FOREIGN KEY ("Academic_Id") REFERENCES "Academic_Record" ("Academic_Record_Id") ON UPDATE CASCADE ON DELETE CASCADE
 );
 
@@ -257,6 +252,7 @@ CREATE TABLE IF NOT EXISTS "Position"
 (
     "Position_Id" INTEGER NOT NULL,
     "Name" TEXT NOT NULL,
+    "Department" TEXT NOT NULL,
     PRIMARY KEY ("Position_Id")
 );
 

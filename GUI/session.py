@@ -5,17 +5,13 @@ from openpyxl import Workbook
 from datetime import datetime, timedelta
 import re
 
-GUI_path = os.path.dirname(os.path.abspath(__file__))
-main_dir = os.path.dirname(GUI_path)
-logs_directory = os.path.join(main_dir, 'logs')
-
 class SessionManager:
     def __init__(self):
         self.db_path = get_database_path()  # Get the database path from config
         self.connection = None
         self.cursor = None
         self.create_sessions_table()  # Ensure the sessions table exists
-        self.log_folder = logs_directory  # Log folder path
+        self.log_folder = r"C:\Users\leeu6\Desktop\SUHR-System\SUHR-System\logs"  # Log folder path
         self.log_file = os.path.join(self.log_folder, "login_logout_log.xlsx")  # Log file path
         self.ensure_log_exists()  # Ensure log file exists and is ready
         self.session_timeout = timedelta(minutes=30)  # Set session timeout (e.g., 30 minutes)
@@ -147,17 +143,11 @@ class SessionManager:
         # Save the workbook
         wb.save(self.log_file)
 
-    def is_user_logged_in(self):
-        """Check if any user is currently logged in."""
-        user_id = self.check_session()
-        return user_id is not None
-
 if __name__ == "__main__":
+    # Example of usage
     session_manager = SessionManager()
-    if session_manager.is_user_logged_in():
-        print("A user is logged in. Proceed with opening windows.")
-        # ...existing code for opening windows...
-    else:
-        print("No user is logged in. Preventing windows from opening.")
-        # Prevent any windows from opening
-        exit()
+    session_manager.save_session('session123', 'user1')  # Saving session
+    user_id = session_manager.check_session()  # Checking session
+    if user_id:
+        print(f"Logged in as {user_id}")
+    session_manager.clear_session()  # Clear session

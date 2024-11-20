@@ -8,8 +8,6 @@ from PySide6.QtCore import Qt
 import sqlite3
 from config import get_database_path  # Import get_database_path from config
 
-#Archived Employee Manager
-
 class RecordWindow(QMainWindow):
     def __init__(self):
         super().__init__()
