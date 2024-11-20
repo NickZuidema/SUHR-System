@@ -258,7 +258,6 @@ CREATE TABLE IF NOT EXISTS "Position"
 (
     "Position_Id" INTEGER NOT NULL,
     "Name" TEXT NOT NULL,
-    "Department" TEXT NOT NULL,
     PRIMARY KEY ("Position_Id")
 );
 
