@@ -10,7 +10,7 @@ def get_database_path():
     main_dir = os.path.dirname(GUI_path)
     database_path = os.path.join(main_dir, 'Database')
 
-    database_file = os.path.join(database_path, 'SUHRSystem.db')
+    database_file = os.path.join(database_path, 'SUHRSystem(1).db')
 
     return database_file
 

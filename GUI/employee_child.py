@@ -1,10 +1,12 @@
 import sqlite3
 from config import get_database_path
 
+db_path = get_database_path()
+
 def generate_child_id():
     """Generate a new Child_Id for a child, ensuring it's unique."""
     try:
-        conn = sqlite3.connect(get_database_path())
+        conn = sqlite3.connect(db_path)
         cursor = conn.cursor()
 
         # Start by trying to generate a new child ID
@@ -41,7 +43,7 @@ def generate_child_id():
 def add_employee_to_child_table(employee_employee_id, child_id):
     """Insert a new employee-child relationship into the Employee_Child table."""
     try:
-        conn = sqlite3.connect(get_database_path())
+        conn = sqlite3.connect(db_path)
         cursor = conn.cursor()
 
         # Insert the relationship
@@ -58,7 +60,7 @@ def add_employee_to_child_table(employee_employee_id, child_id):
 def store_child(last_name, first_name, middle_name, date_of_birth):
     """Store a new child's information in the Child table."""
     try:
-        conn = sqlite3.connect(get_database_path())
+        conn = sqlite3.connect(db_path)
         cursor = conn.cursor()
 
         # Generate a unique Child_Id

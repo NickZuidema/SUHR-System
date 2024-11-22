@@ -1,10 +1,12 @@
 import sqlite3
 from config import get_database_path
 
+db_path = get_database_path()
+
 def generate_sibling_id():
     """Generate a new Sibling_Id for a sibling based on existing Sibling_Sibling_Id."""
     try:
-        conn = sqlite3.connect(get_database_path())
+        conn = sqlite3.connect(db_path)
         cursor = conn.cursor()
 
         # Get the last inserted Sibling_Id
@@ -34,7 +36,7 @@ def generate_sibling_id():
 def add_employee_to_sibling_table(employee_employee_id, sibling_id):
     """Insert a new employee-sibling relationship into the Employee_Sibling table."""
     try:
-        conn = sqlite3.connect(get_database_path())
+        conn = sqlite3.connect(db_path)
         cursor = conn.cursor()
 
         # Insert the relationship
@@ -51,7 +53,7 @@ def add_employee_to_sibling_table(employee_employee_id, sibling_id):
 def store_sibling(last_name, first_name, middle_name, occupation, address):
     """Store a new sibling's information in the Sibling table."""
     try:
-        conn = sqlite3.connect(get_database_path())
+        conn = sqlite3.connect(db_path)
         cursor = conn.cursor()
 
         # Generate a unique Sibling_Id

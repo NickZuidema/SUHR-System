@@ -1,10 +1,12 @@
 import sqlite3
 from config import get_database_path
 
+db_path = get_database_path()
+
 def generate_government_exam_id():
     """Generate a new Government_Exam_Id for a government exam, ensuring it's unique."""
     try:
-        conn = sqlite3.connect(get_database_path())
+        conn = sqlite3.connect(db_path)
         cursor = conn.cursor()
 
         # Start by trying to generate a new government exam ID
@@ -46,7 +48,7 @@ def add_government_exam_to_academic_record(academic_id, title, date, score_achie
             print("Failed to generate Government_Exam_Id.")
             return
 
-        conn = sqlite3.connect(get_database_path())
+        conn = sqlite3.connect(db_path)
         cursor = conn.cursor()
 
         # Insert the government exam record for the academic record
@@ -64,7 +66,7 @@ def add_government_exam_to_academic_record(academic_id, title, date, score_achie
 def get_government_exams_for_academic_record(academic_id):
     """Retrieve all government exams for a given academic record."""
     try:
-        conn = sqlite3.connect(get_database_path())
+        conn = sqlite3.connect(db_path)
         cursor = conn.cursor()
 
         # Retrieve government exams related to the given academic record

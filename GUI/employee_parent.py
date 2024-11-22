@@ -1,10 +1,12 @@
 import sqlite3
 from config import get_database_path
 
+db_path = get_database_path()
+
 def generate_parent_family_id():
     """Generate a new Parent_Id for the new family based on existing Parent_Parent_Id."""
     try:
-        conn = sqlite3.connect(get_database_path())
+        conn = sqlite3.connect(db_path)
         cursor = conn.cursor()
 
    
@@ -24,7 +26,7 @@ def generate_parent_family_id():
 def add_employee_to_parent_table(employee_employee_id, parent_family_id):
     """Insert a new employee's reference into the Employee_Parent table."""
     try:
-        conn = sqlite3.connect(get_database_path())
+        conn = sqlite3.connect(db_path)
         cursor = conn.cursor()
 
       
@@ -43,7 +45,7 @@ def store_parent_family(last_name_father, first_name_father, middle_name_father,
                         mother_occupation, mother_address):
     """Store both the father and mother as a parent family in the Parent table."""
     try:
-        conn = sqlite3.connect(get_database_path())
+        conn = sqlite3.connect(db_path)
         cursor = conn.cursor()
 
        

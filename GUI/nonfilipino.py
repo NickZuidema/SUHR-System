@@ -1,9 +1,11 @@
 import sqlite3
 from config import get_database_path
 
+db_path = get_database_path()
+
 def generate_non_filipino_id():
     """Generate a new Non_Filipino_Id by incrementing the max existing ID."""
-    conn = sqlite3.connect(get_database_path())
+    conn = sqlite3.connect(db_path)
     cursor = conn.cursor()
 
     # Get the max Non_Filipino_Id from the Non_Filipino table
@@ -26,7 +28,7 @@ def insert_non_filipino_data(passport_no, acr_no, date_of_issue):
     Returns:
         None
     """
-    conn = sqlite3.connect(get_database_path())
+    conn = sqlite3.connect(db_path)
     cursor = conn.cursor()
 
     # Insert the data into the Non_Filipino table

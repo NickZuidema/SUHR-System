@@ -5,12 +5,14 @@ from generatepdf import save_pdf
 import sys
 import datetime
 import sqlite3
+
+import os
+
 import spouse
 import academic 
 from benefit import insert_benefit_data
 from config import get_database_path,get_pdf_path
 from position import generate_position_id
-import os
 import employee_child
 import employee_sibling
 import employee_publication

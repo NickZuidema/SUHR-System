@@ -1,6 +1,8 @@
 import sqlite3
 from config import get_database_path
 
+db_path = get_database_path()
+
 # Function to insert academic record data
 def insert_academic_record_data(
     elementary_id, elementary_fin, highschool_fin, seniorhigh_id,
@@ -10,7 +12,7 @@ def insert_academic_record_data(
     conn = None  # Initialize conn here to avoid the UnboundLocalError
     try:
         # Connect to the database
-        conn = sqlite3.connect(get_database_path())
+        conn = sqlite3.connect(db_path)
         cursor = conn.cursor()
 
         # Insert academic record data
@@ -47,7 +49,7 @@ def generate_academic_id(saved_id):
     conn = None  # Initialize conn here to avoid the UnboundLocalError
     try:
         # Connect to the database
-        conn = sqlite3.connect(get_database_path())
+        conn = sqlite3.connect(db_path)
         cursor = conn.cursor()
 
         # Count academic records related to the saved ID pattern
