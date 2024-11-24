@@ -1,4 +1,6 @@
-from PySide6.QtWidgets import QApplication, QMainWindow, QMessageBox
+from PySide6.QtWidgets import QApplication, QMainWindow, QMessageBox, QFileDialog
+from PySide6.QtGui import QPixmap
+from PySide6.QtCore import Qt 
 from employee_data import collect_employee_data
 from ui_add_employee_record import Ui_MainWindow
 from generatepdf import save_pdf
@@ -11,7 +13,7 @@ import os
 import spouse
 import academic 
 from benefit import insert_benefit_data
-from config import get_database_path,get_pdf_path
+from config import get_database_path,get_pdf_path,get_profile_path
 from position import generate_position_id
 import employee_child
 import employee_sibling
@@ -26,7 +28,31 @@ class AddEmployeeWindow(QMainWindow):
         super().__init__()
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
+
+        image_path = get_profile_path()
+        image_file = os.path.join(image_path,'employee_1.png')
+        self.employee_picture = image_file
+
         self.ui.pushButton.clicked.connect(self.get_employee_data)
+
+        self.ui.Image_Upload.clicked.connect(self.get_employee_image)
+        
+    def get_employee_image(self):
+        # Open a file dialog restricted to a specific folder and image files
+        folder_path = get_profile_path()
+        file_filter = "Image Files (*.png *.jpg *.jpeg *.bmp *.gif)"
+        file_path, _ = QFileDialog.getOpenFileName(self, "Select an Image", folder_path, file_filter)
+        
+        
+        if file_path:  # If a file is selected
+            # Load and scale the image to fit the QLabel
+            pixmap = QPixmap(file_path)
+            file_name = os.path.basename(file_path)
+            print(f"Grabbed {file_name}")
+            scaled_pixmap = pixmap.scaled(self.ui.employee_picture.size(), Qt.KeepAspectRatio, Qt.SmoothTransformation)
+            self.ui.employee_picture.setPixmap(scaled_pixmap)
+            self.ui.EmployeeImageLabel.setText(file_name)
+            self.employee_picture = file_name
 
     def get_employee_data(self):
         employee_id = self.generate_employee_id()
@@ -215,8 +241,9 @@ class AddEmployeeWindow(QMainWindow):
                 Benefit_Id,
                 Salary_Id,
                 Contact_No,
-                Archived
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)'''
+                Archived,
+                employee_image
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)'''
             position_name = data["position"]
             position_id = generate_position_id(position_name)
             values = (
@@ -245,7 +272,8 @@ class AddEmployeeWindow(QMainWindow):
                 benefit_id,
                 salary_id,
                 data["contact_num"],
-                archived
+                archived,
+                self.employee_picture
             )
             cursor.execute(sql, values)
             conn.commit()

@@ -23,36 +23,6 @@ class MainWindow(QMainWindow):
         # Get the database path from the config module
         database_path = get_database_path()
 
-        #load image in
-        scene = QGraphicsScene()
-
-        image_path = get_profile_path()
-        image_file = os.path.join(image_path,'employee_1.png')
-        
-        # Create a scene and load the image
-        scene = QGraphicsScene()
-        pixmap = QPixmap(image_file)
-
-        if pixmap.isNull():
-            QMessageBox.warning(self, "Invalid Image", f"Failed to load image: {image_file}")
-            return
-
-        # Resize the image to fit the QGraphicsView
-        scaled_pixmap = pixmap.scaled(
-            self.ui.Profile_pic_2.width(),
-            self.ui.Profile_pic_2.height(),
-            aspectMode=Qt.AspectRatioMode.KeepAspectRatio
-        )
-
-        # Add the image to the scene
-        image_item = QGraphicsPixmapItem(scaled_pixmap)
-        scene.addItem(image_item)
-
-        # Set the scene in the QGraphicsView
-        self.ui.Profile_pic_2.setScene(scene)
-
-        #----------end of image process------
-
 
         try:
             # Use 'with' to ensure the connection is properly managed
@@ -62,7 +32,7 @@ class MainWindow(QMainWindow):
                 # Use the passed employee_id for the query
                 cursor.execute("""
                     SELECT Last_Name, First_Name, Middle_Name, Dgte_Address, Home_Address, Date_Of_Birth,
-                           Citizenship, Civil_Status, Sss_No, Pagibig_No, Philhealth_No, Contact_No
+                           Citizenship, Civil_Status, Sss_No, Pagibig_No, Philhealth_No, Contact_No, employee_image
                     FROM Employee
                     WHERE Employee_Id = ?
                 """, (employee_id,))
@@ -90,6 +60,42 @@ class MainWindow(QMainWindow):
                 self.ui.employee_religion.setText("No religion information available")  # Default message
                 self.ui.employee_father.setText("No father information available")  # Default message
                 self.ui.employee_mother.setText("No mother information available")  # Default message
+
+
+                #-----load image in process ----------
+                scene = QGraphicsScene()
+
+                image_path = get_profile_path()
+                
+                if(employee_data[12] == None):
+                    image_file = os.path.join(image_path, 'default.jpg')
+                else:
+                    image_file = os.path.join(image_path, employee_data[12])
+                
+                # Create a scene and load the image
+                scene = QGraphicsScene()
+                pixmap = QPixmap(image_file)
+
+                if pixmap.isNull():
+                    QMessageBox.warning(self, "Invalid Image", f"Failed to load image: {image_file}")
+                    return
+
+                # Resize the image to fit the QGraphicsView
+                scaled_pixmap = pixmap.scaled(
+                    self.ui.Profile_pic_2.width(),
+                    self.ui.Profile_pic_2.height(),
+                    aspectMode=Qt.AspectRatioMode.KeepAspectRatio
+                )
+
+                # Add the image to the scene
+                image_item = QGraphicsPixmapItem(scaled_pixmap)
+                scene.addItem(image_item)
+
+                # Set the scene in the QGraphicsView
+                self.ui.Profile_pic_2.setScene(scene)
+
+                #----------end of image process------
+
                 # Fetch and display church affiliation
                 cursor.execute("""
                     SELECT Church
