@@ -132,27 +132,6 @@ background-color: rgb(208, 208, 208)</string>
      <pixmap resource="images/resources.qrc">:/images/title2_header3.png</pixmap>
     </property>
    </widget>
-   <widget class="QLabel" name="label_5">
-    <property name="geometry">
-     <rect>
-      <x>1030</x>
-      <y>660</y>
-      <width>361</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>12</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="pixmap">
-     <pixmap resource="images/resources.qrc">:/images/title2_header2.png</pixmap>
-    </property>
-   </widget>
    <widget class="QScrollArea" name="scrollArea">
     <property name="geometry">
      <rect>
@@ -917,58 +896,13 @@ font-weight: bold;
      </layout>
     </widget>
    </widget>
-   <widget class="QPushButton" name="edit_info_button_2">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>620</y>
-      <width>131</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">border-radius: 5px;
-
-background-color: rgb(50, 50, 50);
-color: white;
-font-weight: bold;
-</string>
-    </property>
-    <property name="text">
-     <string>Edit Information</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="archive_button_3">
-    <property name="geometry">
-     <rect>
-      <x>170</x>
-      <y>620</y>
-      <width>101</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">border-radius: 5px;
-
-background-color: rgb(138, 138, 138);
-color: white;
-font-weight: bold;
-</string>
-    </property>
-    <property name="text">
-     <string>Archive</string>
-    </property>
-   </widget>
    <zorder>label_2</zorder>
    <zorder>label</zorder>
    <zorder>label_3</zorder>
    <zorder>line</zorder>
    <zorder>label_4</zorder>
    <zorder>breadcrumb_label</zorder>
-   <zorder>label_5</zorder>
    <zorder>scrollArea</zorder>
-   <zorder>edit_info_button_2</zorder>
-   <zorder>archive_button_3</zorder>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>

@@ -1,11 +1,14 @@
 import sys
 import sqlite3
-from PySide6.QtWidgets import QApplication, QMainWindow, QMessageBox
+from PySide6.QtWidgets import QApplication,QGraphicsView,QGraphicsPixmapItem,QGraphicsScene, QMainWindow, QMessageBox
+from PySide6.QtGui import QPixmap
+from PySide6.QtCore import Qt 
 from ui_preview_template_withscroll import Ui_MainWindow
-from config import get_database_path  # Import get_database_path from config
+from config import get_database_path,get_profile_path  # Import get_database_path from config
 
 from edit_employee import Edit_MainWindow
 
+import os
 
 class MainWindow(QMainWindow):
     def __init__(self, employee_id):
@@ -19,6 +22,37 @@ class MainWindow(QMainWindow):
         self.ui.edit_info_button.clicked.connect(self.edit_employee_record)
         # Get the database path from the config module
         database_path = get_database_path()
+
+        #load image in
+        scene = QGraphicsScene()
+
+        image_path = get_profile_path()
+        image_file = os.path.join(image_path,'employee_1.png')
+        
+        # Create a scene and load the image
+        scene = QGraphicsScene()
+        pixmap = QPixmap(image_file)
+
+        if pixmap.isNull():
+            QMessageBox.warning(self, "Invalid Image", f"Failed to load image: {image_file}")
+            return
+
+        # Resize the image to fit the QGraphicsView
+        scaled_pixmap = pixmap.scaled(
+            self.ui.Profile_pic_2.width(),
+            self.ui.Profile_pic_2.height(),
+            aspectMode=Qt.AspectRatioMode.KeepAspectRatio
+        )
+
+        # Add the image to the scene
+        image_item = QGraphicsPixmapItem(scaled_pixmap)
+        scene.addItem(image_item)
+
+        # Set the scene in the QGraphicsView
+        self.ui.Profile_pic_2.setScene(scene)
+
+        #----------end of image process------
+
 
         try:
             # Use 'with' to ensure the connection is properly managed
