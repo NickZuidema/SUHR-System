@@ -147,11 +147,17 @@ class SessionManager:
         # Save the workbook
         wb.save(self.log_file)
 
+    def is_user_logged_in(self):
+        """Check if any user is currently logged in."""
+        user_id = self.check_session()
+        return user_id is not None
+
 if __name__ == "__main__":
-    # Example of usage
     session_manager = SessionManager()
-    session_manager.save_session('session123', 'user1')  # Saving session
-    user_id = session_manager.check_session()  # Checking session
-    if user_id:
-        print(f"Logged in as {user_id}")
-    session_manager.clear_session()  # Clear session
+    if session_manager.is_user_logged_in():
+        print("A user is logged in. Proceed with opening windows.")
+        # ...existing code for opening windows...
+    else:
+        print("No user is logged in. Preventing windows from opening.")
+        # Prevent any windows from opening
+        exit()
