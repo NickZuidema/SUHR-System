@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'editpvZZBm.ui'
+## Form generated from reading UI file 'editCANLASlvuRVm.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.4.3
 ##
@@ -124,11 +124,36 @@ class Ui_MainWindow(object):
 #endif
         self.scrollArea.setPalette(palette1)
         self.scrollArea.setAutoFillBackground(True)
-        self.scrollArea.setStyleSheet(u"border: 1px solid black;")
+        self.scrollArea.setStyleSheet(u"QScrollBar:vertical {\n"
+"    border: 0px solid #dcdcdc; /* Border around the scrollbar */\n"
+"    background: #f5f5f5;       /* Background of the scrollbar area */\n"
+"    width: 12px;               /* Width of the scrollbar */\n"
+"    margin: 0px 0px 0px 0px;   /* Margins around the scrollbar */\n"
+"}\n"
+"\n"
+"QScrollBar::handle:vertical {\n"
+"    background: #888;          /* Color of the scrollbar handle */\n"
+"    min-height: 10px;          /* Minimum height of the scrollbar handle */\n"
+"    border-radius: 5px;        /* Rounded corners of the scrollbar handle */\n"
+"}\n"
+"QScrollBar::add-line:vertical,\n"
+"QScrollBar::sub-line:vertical {\n"
+"    background: #dcdcdc;       /* Background color of arrow buttons */\n"
+"    border: 1px solid #aaa;    /* Border around the arrow buttons */\n"
+"    height: 12px;              /* Height of arrow buttons */\n"
+"    subcontrol-origin: margin;\n"
+"    subcontrol-position: top;  /* Positions at top and bottom */\n"
+"}\n"
+"QScrollArea {\n"
+"    background: none; /* Ba"
+                        "ckground color for the scroll area */\n"
+"    border: 2px solid black; /* Optional border */\n"
+"  \n"
+"}")
         self.scrollArea.setWidgetResizable(True)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, -2794, 1197, 3362))
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 1200, 2919))
         self.verticalLayout_2 = QVBoxLayout(self.scrollAreaWidgetContents)
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
         self.verticalLayout = QVBoxLayout()
@@ -150,12 +175,14 @@ class Ui_MainWindow(object):
         self.edit_examination_place = QPlainTextEdit(self.scrollAreaWidgetContents)
         self.edit_examination_place.setObjectName(u"edit_examination_place")
         self.edit_examination_place.setMinimumSize(QSize(0, 0))
+        self.edit_examination_place.setStyleSheet(u"border:1px solid black;")
 
         self.gridLayout_2.addWidget(self.edit_examination_place, 62, 3, 1, 1)
 
         self.edit_spouse = QPlainTextEdit(self.scrollAreaWidgetContents)
         self.edit_spouse.setObjectName(u"edit_spouse")
         self.edit_spouse.setMinimumSize(QSize(0, 0))
+        self.edit_spouse.setStyleSheet(u"border:1px solid black;")
 
         self.gridLayout_2.addWidget(self.edit_spouse, 38, 1, 1, 1)
 
@@ -186,6 +213,7 @@ class Ui_MainWindow(object):
         self.edit_staff_name = QPlainTextEdit(self.scrollAreaWidgetContents)
         self.edit_staff_name.setObjectName(u"edit_staff_name")
         self.edit_staff_name.setMinimumSize(QSize(0, 0))
+        self.edit_staff_name.setStyleSheet(u"border:1px solid black;")
 
         self.gridLayout_2.addWidget(self.edit_staff_name, 50, 0, 1, 1)
 
@@ -219,6 +247,7 @@ class Ui_MainWindow(object):
         self.edit_school_pub = QPlainTextEdit(self.scrollAreaWidgetContents)
         self.edit_school_pub.setObjectName(u"edit_school_pub")
         self.edit_school_pub.setMinimumSize(QSize(0, 0))
+        self.edit_school_pub.setStyleSheet(u"border:1px solid black;")
 
         self.gridLayout_2.addWidget(self.edit_school_pub, 54, 0, 1, 3)
 
@@ -231,6 +260,7 @@ class Ui_MainWindow(object):
         self.edit_mother_occ = QPlainTextEdit(self.scrollAreaWidgetContents)
         self.edit_mother_occ.setObjectName(u"edit_mother_occ")
         self.edit_mother_occ.setMinimumSize(QSize(0, 0))
+        self.edit_mother_occ.setStyleSheet(u"border:1px solid black;")
 
         self.gridLayout_2.addWidget(self.edit_mother_occ, 31, 2, 1, 1)
 
@@ -249,18 +279,21 @@ class Ui_MainWindow(object):
         self.edit_children = QPlainTextEdit(self.scrollAreaWidgetContents)
         self.edit_children.setObjectName(u"edit_children")
         self.edit_children.setMinimumSize(QSize(0, 0))
+        self.edit_children.setStyleSheet(u"border:1px solid black;")
 
         self.gridLayout_2.addWidget(self.edit_children, 40, 0, 1, 2)
 
         self.edit_department = QPlainTextEdit(self.scrollAreaWidgetContents)
         self.edit_department.setObjectName(u"edit_department")
         self.edit_department.setMinimumSize(QSize(0, 0))
+        self.edit_department.setStyleSheet(u"border:1px solid black;")
 
         self.gridLayout_2.addWidget(self.edit_department, 5, 0, 1, 3)
 
         self.edit_previous_name = QPlainTextEdit(self.scrollAreaWidgetContents)
         self.edit_previous_name.setObjectName(u"edit_previous_name")
         self.edit_previous_name.setMinimumSize(QSize(0, 0))
+        self.edit_previous_name.setStyleSheet(u"border:1px solid black;")
 
         self.gridLayout_2.addWidget(self.edit_previous_name, 57, 0, 1, 1)
 
@@ -273,6 +306,7 @@ class Ui_MainWindow(object):
         self.edit_elem_date = QPlainTextEdit(self.scrollAreaWidgetContents)
         self.edit_elem_date.setObjectName(u"edit_elem_date")
         self.edit_elem_date.setMinimumSize(QSize(0, 0))
+        self.edit_elem_date.setStyleSheet(u"border:1px solid black;")
 
         self.gridLayout_2.addWidget(self.edit_elem_date, 43, 2, 1, 1)
 
@@ -351,12 +385,14 @@ class Ui_MainWindow(object):
         self.edit_marriage_place = QPlainTextEdit(self.scrollAreaWidgetContents)
         self.edit_marriage_place.setObjectName(u"edit_marriage_place")
         self.edit_marriage_place.setMinimumSize(QSize(0, 0))
+        self.edit_marriage_place.setStyleSheet(u"border:1px solid black;")
 
         self.gridLayout_2.addWidget(self.edit_marriage_place, 38, 2, 1, 1)
 
         self.edit_elem_address = QPlainTextEdit(self.scrollAreaWidgetContents)
         self.edit_elem_address.setObjectName(u"edit_elem_address")
         self.edit_elem_address.setMinimumSize(QSize(0, 0))
+        self.edit_elem_address.setStyleSheet(u"border:1px solid black;")
 
         self.gridLayout_2.addWidget(self.edit_elem_address, 43, 1, 1, 1)
 
@@ -369,12 +405,14 @@ class Ui_MainWindow(object):
         self.edit_staff_relation = QPlainTextEdit(self.scrollAreaWidgetContents)
         self.edit_staff_relation.setObjectName(u"edit_staff_relation")
         self.edit_staff_relation.setMinimumSize(QSize(0, 0))
+        self.edit_staff_relation.setStyleSheet(u"border:1px solid black;")
 
         self.gridLayout_2.addWidget(self.edit_staff_relation, 50, 1, 1, 1)
 
         self.edit_siblings_occ = QPlainTextEdit(self.scrollAreaWidgetContents)
         self.edit_siblings_occ.setObjectName(u"edit_siblings_occ")
         self.edit_siblings_occ.setMinimumSize(QSize(0, 0))
+        self.edit_siblings_occ.setStyleSheet(u"border:1px solid black;")
 
         self.gridLayout_2.addWidget(self.edit_siblings_occ, 35, 1, 1, 1)
 
@@ -387,6 +425,7 @@ class Ui_MainWindow(object):
         self.edit_staff_pos = QPlainTextEdit(self.scrollAreaWidgetContents)
         self.edit_staff_pos.setObjectName(u"edit_staff_pos")
         self.edit_staff_pos.setMinimumSize(QSize(0, 0))
+        self.edit_staff_pos.setStyleSheet(u"border:1px solid black;")
 
         self.gridLayout_2.addWidget(self.edit_staff_pos, 50, 2, 1, 1)
 
@@ -413,12 +452,14 @@ class Ui_MainWindow(object):
         self.edit_college = QPlainTextEdit(self.scrollAreaWidgetContents)
         self.edit_college.setObjectName(u"edit_college")
         self.edit_college.setMinimumSize(QSize(0, 0))
+        self.edit_college.setStyleSheet(u"border:1px solid black;")
 
         self.gridLayout_2.addWidget(self.edit_college, 47, 0, 1, 1)
 
         self.edit_father_address = QPlainTextEdit(self.scrollAreaWidgetContents)
         self.edit_father_address.setObjectName(u"edit_father_address")
         self.edit_father_address.setMinimumSize(QSize(0, 0))
+        self.edit_father_address.setStyleSheet(u"border:1px solid black;")
 
         self.gridLayout_2.addWidget(self.edit_father_address, 33, 0, 1, 3)
 
@@ -437,18 +478,21 @@ class Ui_MainWindow(object):
         self.edit_father_occ = QPlainTextEdit(self.scrollAreaWidgetContents)
         self.edit_father_occ.setObjectName(u"edit_father_occ")
         self.edit_father_occ.setMinimumSize(QSize(0, 0))
+        self.edit_father_occ.setStyleSheet(u"border:1px solid black;")
 
         self.gridLayout_2.addWidget(self.edit_father_occ, 26, 2, 1, 1)
 
         self.edit_SSS = QPlainTextEdit(self.scrollAreaWidgetContents)
         self.edit_SSS.setObjectName(u"edit_SSS")
         self.edit_SSS.setMinimumSize(QSize(0, 0))
+        self.edit_SSS.setStyleSheet(u"border:1px solid black;")
 
         self.gridLayout_2.addWidget(self.edit_SSS, 20, 1, 1, 2)
 
         self.edit_TIN = QPlainTextEdit(self.scrollAreaWidgetContents)
         self.edit_TIN.setObjectName(u"edit_TIN")
         self.edit_TIN.setMinimumSize(QSize(0, 0))
+        self.edit_TIN.setStyleSheet(u"border:1px solid black;")
 
         self.gridLayout_2.addWidget(self.edit_TIN, 20, 0, 1, 1)
 
@@ -458,31 +502,30 @@ class Ui_MainWindow(object):
 
         self.gridLayout_2.addWidget(self.label_14, 10, 2, 1, 1)
 
-        self.checkBox_8 = QCheckBox(self.scrollAreaWidgetContents)
-        self.checkBox_8.setObjectName(u"checkBox_8")
-
-        self.gridLayout_2.addWidget(self.checkBox_8, 66, 1, 1, 2)
-
         self.edit_pagibig = QPlainTextEdit(self.scrollAreaWidgetContents)
         self.edit_pagibig.setObjectName(u"edit_pagibig")
         self.edit_pagibig.setMinimumSize(QSize(0, 0))
+        self.edit_pagibig.setStyleSheet(u"border:1px solid black;")
 
         self.gridLayout_2.addWidget(self.edit_pagibig, 22, 0, 1, 1)
 
         self.edit_elem = QPlainTextEdit(self.scrollAreaWidgetContents)
         self.edit_elem.setObjectName(u"edit_elem")
         self.edit_elem.setMinimumSize(QSize(0, 0))
+        self.edit_elem.setStyleSheet(u"border:1px solid black;")
 
         self.gridLayout_2.addWidget(self.edit_elem, 43, 0, 1, 1)
 
         self.edit_acrNo = QPlainTextEdit(self.scrollAreaWidgetContents)
         self.edit_acrNo.setObjectName(u"edit_acrNo")
+        self.edit_acrNo.setStyleSheet(u"border:1px solid black;")
 
         self.gridLayout_2.addWidget(self.edit_acrNo, 16, 1, 1, 1)
 
         self.edit_middleName = QPlainTextEdit(self.scrollAreaWidgetContents)
         self.edit_middleName.setObjectName(u"edit_middleName")
         self.edit_middleName.setMinimumSize(QSize(0, 0))
+        self.edit_middleName.setStyleSheet(u"border:1px solid black;")
 
         self.gridLayout_2.addWidget(self.edit_middleName, 1, 1, 1, 1)
 
@@ -494,6 +537,7 @@ class Ui_MainWindow(object):
 
         self.edit_date_issued = QPlainTextEdit(self.scrollAreaWidgetContents)
         self.edit_date_issued.setObjectName(u"edit_date_issued")
+        self.edit_date_issued.setStyleSheet(u"border:1px solid black;")
 
         self.gridLayout_2.addWidget(self.edit_date_issued, 16, 2, 1, 1)
 
@@ -506,18 +550,21 @@ class Ui_MainWindow(object):
         self.edit_Position = QPlainTextEdit(self.scrollAreaWidgetContents)
         self.edit_Position.setObjectName(u"edit_Position")
         self.edit_Position.setMinimumSize(QSize(0, 0))
+        self.edit_Position.setStyleSheet(u"border:1px solid black;")
 
         self.gridLayout_2.addWidget(self.edit_Position, 3, 0, 1, 3)
 
         self.edit_school_dist = QPlainTextEdit(self.scrollAreaWidgetContents)
         self.edit_school_dist.setObjectName(u"edit_school_dist")
         self.edit_school_dist.setMinimumSize(QSize(0, 0))
+        self.edit_school_dist.setStyleSheet(u"border:1px solid black;")
 
         self.gridLayout_2.addWidget(self.edit_school_dist, 52, 0, 1, 3)
 
         self.edit_citizen = QPlainTextEdit(self.scrollAreaWidgetContents)
         self.edit_citizen.setObjectName(u"edit_citizen")
         self.edit_citizen.setMinimumSize(QSize(0, 0))
+        self.edit_citizen.setStyleSheet(u"border:1px solid black;")
 
         self.gridLayout_2.addWidget(self.edit_citizen, 11, 2, 1, 1)
 
@@ -541,42 +588,49 @@ class Ui_MainWindow(object):
         self.edit_case = QPlainTextEdit(self.scrollAreaWidgetContents)
         self.edit_case.setObjectName(u"edit_case")
         self.edit_case.setMinimumSize(QSize(0, 0))
+        self.edit_case.setStyleSheet(u"border:1px solid black;")
 
         self.gridLayout_2.addWidget(self.edit_case, 65, 0, 1, 4)
 
         self.edit_mother_name = QPlainTextEdit(self.scrollAreaWidgetContents)
         self.edit_mother_name.setObjectName(u"edit_mother_name")
         self.edit_mother_name.setMinimumSize(QSize(0, 0))
+        self.edit_mother_name.setStyleSheet(u"border:1px solid black;")
 
         self.gridLayout_2.addWidget(self.edit_mother_name, 31, 0, 1, 2)
 
         self.edit_college_date = QPlainTextEdit(self.scrollAreaWidgetContents)
         self.edit_college_date.setObjectName(u"edit_college_date")
         self.edit_college_date.setMinimumSize(QSize(0, 0))
+        self.edit_college_date.setStyleSheet(u"border:1px solid black;")
 
         self.gridLayout_2.addWidget(self.edit_college_date, 47, 2, 1, 1)
 
         self.edit_email_add = QPlainTextEdit(self.scrollAreaWidgetContents)
         self.edit_email_add.setObjectName(u"edit_email_add")
         self.edit_email_add.setMinimumSize(QSize(0, 0))
+        self.edit_email_add.setStyleSheet(u"border:1px solid black;")
 
         self.gridLayout_2.addWidget(self.edit_email_add, 18, 1, 1, 2)
 
         self.edit_lastName = QPlainTextEdit(self.scrollAreaWidgetContents)
         self.edit_lastName.setObjectName(u"edit_lastName")
         self.edit_lastName.setMinimumSize(QSize(0, 0))
+        self.edit_lastName.setStyleSheet(u"border:1px solid black;")
 
         self.gridLayout_2.addWidget(self.edit_lastName, 1, 2, 1, 1)
 
         self.edit_high_address = QPlainTextEdit(self.scrollAreaWidgetContents)
         self.edit_high_address.setObjectName(u"edit_high_address")
         self.edit_high_address.setMinimumSize(QSize(0, 0))
+        self.edit_high_address.setStyleSheet(u"border:1px solid black;")
 
         self.gridLayout_2.addWidget(self.edit_high_address, 45, 1, 1, 1)
 
         self.edit_PoB = QPlainTextEdit(self.scrollAreaWidgetContents)
         self.edit_PoB.setObjectName(u"edit_PoB")
         self.edit_PoB.setMinimumSize(QSize(0, 0))
+        self.edit_PoB.setStyleSheet(u"border:1px solid black;")
 
         self.gridLayout_2.addWidget(self.edit_PoB, 11, 1, 1, 1)
 
@@ -595,12 +649,14 @@ class Ui_MainWindow(object):
         self.edit_workplace_address = QPlainTextEdit(self.scrollAreaWidgetContents)
         self.edit_workplace_address.setObjectName(u"edit_workplace_address")
         self.edit_workplace_address.setMinimumSize(QSize(0, 0))
+        self.edit_workplace_address.setStyleSheet(u"border:1px solid black;")
 
         self.gridLayout_2.addWidget(self.edit_workplace_address, 59, 0, 1, 4)
 
         self.edit_children_DoB = QPlainTextEdit(self.scrollAreaWidgetContents)
         self.edit_children_DoB.setObjectName(u"edit_children_DoB")
         self.edit_children_DoB.setMinimumSize(QSize(0, 0))
+        self.edit_children_DoB.setStyleSheet(u"border:1px solid black;")
 
         self.gridLayout_2.addWidget(self.edit_children_DoB, 40, 2, 1, 1)
 
@@ -624,12 +680,14 @@ class Ui_MainWindow(object):
         self.edit_philhealth = QPlainTextEdit(self.scrollAreaWidgetContents)
         self.edit_philhealth.setObjectName(u"edit_philhealth")
         self.edit_philhealth.setMinimumSize(QSize(0, 0))
+        self.edit_philhealth.setStyleSheet(u"border:1px solid black;")
 
         self.gridLayout_2.addWidget(self.edit_philhealth, 22, 1, 1, 2)
 
         self.edit_examination = QPlainTextEdit(self.scrollAreaWidgetContents)
         self.edit_examination.setObjectName(u"edit_examination")
         self.edit_examination.setMinimumSize(QSize(0, 0))
+        self.edit_examination.setStyleSheet(u"border:1px solid black;")
 
         self.gridLayout_2.addWidget(self.edit_examination, 62, 0, 1, 1)
 
@@ -641,6 +699,7 @@ class Ui_MainWindow(object):
 
         self.edit_marriage_date = QPlainTextEdit(self.scrollAreaWidgetContents)
         self.edit_marriage_date.setObjectName(u"edit_marriage_date")
+        self.edit_marriage_date.setStyleSheet(u"border:1px solid black;")
 
         self.gridLayout_2.addWidget(self.edit_marriage_date, 38, 3, 1, 1)
 
@@ -671,6 +730,7 @@ class Ui_MainWindow(object):
         self.edit_previous_position = QPlainTextEdit(self.scrollAreaWidgetContents)
         self.edit_previous_position.setObjectName(u"edit_previous_position")
         self.edit_previous_position.setMinimumSize(QSize(0, 0))
+        self.edit_previous_position.setStyleSheet(u"border:1px solid black;")
 
         self.gridLayout_2.addWidget(self.edit_previous_position, 57, 1, 1, 1)
 
@@ -689,12 +749,14 @@ class Ui_MainWindow(object):
         self.edit_DoB = QPlainTextEdit(self.scrollAreaWidgetContents)
         self.edit_DoB.setObjectName(u"edit_DoB")
         self.edit_DoB.setMinimumSize(QSize(0, 0))
+        self.edit_DoB.setStyleSheet(u"border:1px solid black;")
 
         self.gridLayout_2.addWidget(self.edit_DoB, 11, 0, 1, 1)
 
         self.edit_rating = QPlainTextEdit(self.scrollAreaWidgetContents)
         self.edit_rating.setObjectName(u"edit_rating")
         self.edit_rating.setMinimumSize(QSize(0, 0))
+        self.edit_rating.setStyleSheet(u"border:1px solid black;")
 
         self.gridLayout_2.addWidget(self.edit_rating, 62, 1, 1, 1)
 
@@ -707,6 +769,7 @@ class Ui_MainWindow(object):
         self.edit_civil = QPlainTextEdit(self.scrollAreaWidgetContents)
         self.edit_civil.setObjectName(u"edit_civil")
         self.edit_civil.setMinimumSize(QSize(0, 0))
+        self.edit_civil.setStyleSheet(u"border:1px solid black;")
 
         self.gridLayout_2.addWidget(self.edit_civil, 38, 0, 1, 1)
 
@@ -724,6 +787,7 @@ class Ui_MainWindow(object):
         self.edit_examination_date = QPlainTextEdit(self.scrollAreaWidgetContents)
         self.edit_examination_date.setObjectName(u"edit_examination_date")
         self.edit_examination_date.setMinimumSize(QSize(0, 0))
+        self.edit_examination_date.setStyleSheet(u"border:1px solid black;")
 
         self.gridLayout_2.addWidget(self.edit_examination_date, 62, 2, 1, 1)
 
@@ -742,6 +806,7 @@ class Ui_MainWindow(object):
         self.edit_father_name = QPlainTextEdit(self.scrollAreaWidgetContents)
         self.edit_father_name.setObjectName(u"edit_father_name")
         self.edit_father_name.setMinimumSize(QSize(0, 0))
+        self.edit_father_name.setStyleSheet(u"border:1px solid black;")
 
         self.gridLayout_2.addWidget(self.edit_father_name, 26, 0, 1, 2)
 
@@ -760,6 +825,7 @@ class Ui_MainWindow(object):
         self.edit_siblings_name = QPlainTextEdit(self.scrollAreaWidgetContents)
         self.edit_siblings_name.setObjectName(u"edit_siblings_name")
         self.edit_siblings_name.setMinimumSize(QSize(0, 0))
+        self.edit_siblings_name.setStyleSheet(u"border:1px solid black;")
 
         self.gridLayout_2.addWidget(self.edit_siblings_name, 35, 0, 1, 1)
 
@@ -772,6 +838,7 @@ class Ui_MainWindow(object):
         self.edit_previous_period = QPlainTextEdit(self.scrollAreaWidgetContents)
         self.edit_previous_period.setObjectName(u"edit_previous_period")
         self.edit_previous_period.setMinimumSize(QSize(0, 0))
+        self.edit_previous_period.setStyleSheet(u"border:1px solid black;")
 
         self.gridLayout_2.addWidget(self.edit_previous_period, 57, 2, 1, 1)
 
@@ -789,6 +856,7 @@ class Ui_MainWindow(object):
         sizePolicy.setHeightForWidth(self.edit_firstName.sizePolicy().hasHeightForWidth())
         self.edit_firstName.setSizePolicy(sizePolicy)
         self.edit_firstName.setMinimumSize(QSize(0, 0))
+        self.edit_firstName.setStyleSheet(u"border:1px solid black;")
 
         self.gridLayout_2.addWidget(self.edit_firstName, 1, 0, 1, 1)
 
@@ -819,6 +887,7 @@ class Ui_MainWindow(object):
         self.edit_college_address = QPlainTextEdit(self.scrollAreaWidgetContents)
         self.edit_college_address.setObjectName(u"edit_college_address")
         self.edit_college_address.setMinimumSize(QSize(0, 0))
+        self.edit_college_address.setStyleSheet(u"border:1px solid black;")
 
         self.gridLayout_2.addWidget(self.edit_college_address, 47, 1, 1, 1)
 
@@ -842,12 +911,14 @@ class Ui_MainWindow(object):
         self.edit_home_address = QPlainTextEdit(self.scrollAreaWidgetContents)
         self.edit_home_address.setObjectName(u"edit_home_address")
         self.edit_home_address.setMinimumSize(QSize(0, 0))
+        self.edit_home_address.setStyleSheet(u"border:1px solid black;")
 
         self.gridLayout_2.addWidget(self.edit_home_address, 9, 0, 1, 3)
 
         self.edit_passportNo = QPlainTextEdit(self.scrollAreaWidgetContents)
         self.edit_passportNo.setObjectName(u"edit_passportNo")
         self.edit_passportNo.setMinimumSize(QSize(0, 0))
+        self.edit_passportNo.setStyleSheet(u"border:1px solid black;")
 
         self.gridLayout_2.addWidget(self.edit_passportNo, 16, 0, 1, 1)
 
@@ -860,24 +931,28 @@ class Ui_MainWindow(object):
         self.edit_high = QPlainTextEdit(self.scrollAreaWidgetContents)
         self.edit_high.setObjectName(u"edit_high")
         self.edit_high.setMinimumSize(QSize(0, 0))
+        self.edit_high.setStyleSheet(u"border:1px solid black;")
 
         self.gridLayout_2.addWidget(self.edit_high, 45, 0, 1, 1)
 
         self.edit_previous_leaving = QPlainTextEdit(self.scrollAreaWidgetContents)
         self.edit_previous_leaving.setObjectName(u"edit_previous_leaving")
         self.edit_previous_leaving.setMinimumSize(QSize(0, 0))
+        self.edit_previous_leaving.setStyleSheet(u"border:1px solid black;")
 
         self.gridLayout_2.addWidget(self.edit_previous_leaving, 57, 3, 1, 1)
 
         self.edit_contactNo = QPlainTextEdit(self.scrollAreaWidgetContents)
         self.edit_contactNo.setObjectName(u"edit_contactNo")
         self.edit_contactNo.setMinimumSize(QSize(0, 0))
+        self.edit_contactNo.setStyleSheet(u"border:1px solid black;")
 
         self.gridLayout_2.addWidget(self.edit_contactNo, 18, 0, 1, 1)
 
         self.edit_church = QPlainTextEdit(self.scrollAreaWidgetContents)
         self.edit_church.setObjectName(u"edit_church")
         self.edit_church.setMinimumSize(QSize(0, 0))
+        self.edit_church.setStyleSheet(u"border:1px solid black;")
 
         self.gridLayout_2.addWidget(self.edit_church, 24, 0, 1, 3)
 
@@ -895,6 +970,7 @@ class Ui_MainWindow(object):
         self.edit_high_date = QPlainTextEdit(self.scrollAreaWidgetContents)
         self.edit_high_date.setObjectName(u"edit_high_date")
         self.edit_high_date.setMinimumSize(QSize(0, 0))
+        self.edit_high_date.setStyleSheet(u"border:1px solid black;")
 
         self.gridLayout_2.addWidget(self.edit_high_date, 45, 2, 1, 1)
 
@@ -913,6 +989,7 @@ class Ui_MainWindow(object):
         self.edit_dgte_address = QPlainTextEdit(self.scrollAreaWidgetContents)
         self.edit_dgte_address.setObjectName(u"edit_dgte_address")
         self.edit_dgte_address.setMinimumSize(QSize(0, 0))
+        self.edit_dgte_address.setStyleSheet(u"border:1px solid black;")
 
         self.gridLayout_2.addWidget(self.edit_dgte_address, 7, 0, 1, 3)
 
@@ -937,6 +1014,7 @@ class Ui_MainWindow(object):
         self.edit_siblings_address = QPlainTextEdit(self.scrollAreaWidgetContents)
         self.edit_siblings_address.setObjectName(u"edit_siblings_address")
         self.edit_siblings_address.setMinimumSize(QSize(0, 0))
+        self.edit_siblings_address.setStyleSheet(u"border:1px solid black;")
 
         self.gridLayout_2.addWidget(self.edit_siblings_address, 35, 2, 1, 1)
 
@@ -966,8 +1044,14 @@ class Ui_MainWindow(object):
         self.edit_father_home = QPlainTextEdit(self.scrollAreaWidgetContents)
         self.edit_father_home.setObjectName(u"edit_father_home")
         self.edit_father_home.setMinimumSize(QSize(0, 0))
+        self.edit_father_home.setStyleSheet(u"border:1px solid black;")
 
         self.gridLayout_2.addWidget(self.edit_father_home, 29, 0, 1, 3)
+
+        self.checkBox_8 = QCheckBox(self.scrollAreaWidgetContents)
+        self.checkBox_8.setObjectName(u"checkBox_8")
+
+        self.gridLayout_2.addWidget(self.checkBox_8, 66, 2, 1, 1)
 
 
         self.gridLayout_3.addLayout(self.gridLayout_2, 5, 1, 1, 1)
@@ -975,37 +1059,40 @@ class Ui_MainWindow(object):
         self.update_picture_btn = QPushButton(self.scrollAreaWidgetContents)
         self.update_picture_btn.setObjectName(u"update_picture_btn")
         palette3 = QPalette()
-        palette3.setBrush(QPalette.Active, QPalette.WindowText, brush)
-        palette3.setBrush(QPalette.Active, QPalette.Button, brush1)
-        palette3.setBrush(QPalette.Active, QPalette.Text, brush)
-        palette3.setBrush(QPalette.Active, QPalette.ButtonText, brush)
-        palette3.setBrush(QPalette.Active, QPalette.Base, brush1)
-        palette3.setBrush(QPalette.Active, QPalette.Window, brush1)
+        palette3.setBrush(QPalette.Active, QPalette.WindowText, brush1)
+        palette3.setBrush(QPalette.Active, QPalette.Button, brush3)
+        palette3.setBrush(QPalette.Active, QPalette.Text, brush1)
+        palette3.setBrush(QPalette.Active, QPalette.ButtonText, brush1)
+        palette3.setBrush(QPalette.Active, QPalette.Base, brush3)
+        palette3.setBrush(QPalette.Active, QPalette.Window, brush3)
 #if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
-        palette3.setBrush(QPalette.Active, QPalette.PlaceholderText, brush2)
+        palette3.setBrush(QPalette.Active, QPalette.PlaceholderText, brush4)
 #endif
-        palette3.setBrush(QPalette.Inactive, QPalette.WindowText, brush)
-        palette3.setBrush(QPalette.Inactive, QPalette.Button, brush1)
-        palette3.setBrush(QPalette.Inactive, QPalette.Text, brush)
-        palette3.setBrush(QPalette.Inactive, QPalette.ButtonText, brush)
-        palette3.setBrush(QPalette.Inactive, QPalette.Base, brush1)
-        palette3.setBrush(QPalette.Inactive, QPalette.Window, brush1)
+        palette3.setBrush(QPalette.Inactive, QPalette.WindowText, brush1)
+        palette3.setBrush(QPalette.Inactive, QPalette.Button, brush3)
+        palette3.setBrush(QPalette.Inactive, QPalette.Text, brush1)
+        palette3.setBrush(QPalette.Inactive, QPalette.ButtonText, brush1)
+        palette3.setBrush(QPalette.Inactive, QPalette.Base, brush3)
+        palette3.setBrush(QPalette.Inactive, QPalette.Window, brush3)
 #if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
-        palette3.setBrush(QPalette.Inactive, QPalette.PlaceholderText, brush2)
+        palette3.setBrush(QPalette.Inactive, QPalette.PlaceholderText, brush4)
 #endif
-        palette3.setBrush(QPalette.Disabled, QPalette.WindowText, brush)
-        palette3.setBrush(QPalette.Disabled, QPalette.Button, brush1)
-        palette3.setBrush(QPalette.Disabled, QPalette.Text, brush)
-        palette3.setBrush(QPalette.Disabled, QPalette.ButtonText, brush)
-        palette3.setBrush(QPalette.Disabled, QPalette.Base, brush1)
-        palette3.setBrush(QPalette.Disabled, QPalette.Window, brush1)
+        palette3.setBrush(QPalette.Disabled, QPalette.WindowText, brush1)
+        palette3.setBrush(QPalette.Disabled, QPalette.Button, brush3)
+        palette3.setBrush(QPalette.Disabled, QPalette.Text, brush1)
+        palette3.setBrush(QPalette.Disabled, QPalette.ButtonText, brush1)
+        palette3.setBrush(QPalette.Disabled, QPalette.Base, brush3)
+        palette3.setBrush(QPalette.Disabled, QPalette.Window, brush3)
 #if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
-        palette3.setBrush(QPalette.Disabled, QPalette.PlaceholderText, brush2)
+        palette3.setBrush(QPalette.Disabled, QPalette.PlaceholderText, brush4)
 #endif
         self.update_picture_btn.setPalette(palette3)
-        self.update_picture_btn.setFont(font3)
+        self.update_picture_btn.setFont(font1)
         self.update_picture_btn.setCursor(QCursor(Qt.PointingHandCursor))
-        self.update_picture_btn.setStyleSheet(u"border: 1px solid black;")
+        self.update_picture_btn.setStyleSheet(u"border-radius: 5px;\n"
+"background-color: rgb(128, 178, 65);\n"
+"color: rgb(255, 255, 255);\n"
+"padding:5px;")
 
         self.gridLayout_3.addWidget(self.update_picture_btn, 1, 0, 1, 1)
 
@@ -1022,9 +1109,12 @@ class Ui_MainWindow(object):
 
         self.update_sign_btn = QPushButton(self.scrollAreaWidgetContents)
         self.update_sign_btn.setObjectName(u"update_sign_btn")
-        self.update_sign_btn.setFont(font3)
+        self.update_sign_btn.setFont(font1)
         self.update_sign_btn.setCursor(QCursor(Qt.PointingHandCursor))
-        self.update_sign_btn.setStyleSheet(u"border: 1px solid black;")
+        self.update_sign_btn.setStyleSheet(u"border-radius: 5px;\n"
+"background-color: rgb(128, 178, 65);\n"
+"color: rgb(255, 255, 255);\n"
+"padding:5px;")
 
         self.gridLayout_3.addWidget(self.update_sign_btn, 2, 0, 1, 1)
 
@@ -1088,7 +1178,6 @@ class Ui_MainWindow(object):
         self.label_26.setText(QCoreApplication.translate("MainWindow", u"Father's occupation", None))
         self.label_25.setText(QCoreApplication.translate("MainWindow", u"Father", None))
         self.label_14.setText(QCoreApplication.translate("MainWindow", u"Citizenship", None))
-        self.checkBox_8.setText(QCoreApplication.translate("MainWindow", u"This confirms all details listed are true.", None))
         self.label_35.setText(QCoreApplication.translate("MainWindow", u"Name of spouse", None))
         self.label_59.setText(QCoreApplication.translate("MainWindow", u"Period of employment", None))
         self.checkBox_4.setText(QCoreApplication.translate("MainWindow", u"Employee has no record of prior employment", None))
@@ -1134,6 +1223,7 @@ class Ui_MainWindow(object):
         self.checkBox_5.setText(QCoreApplication.translate("MainWindow", u"Does not apply", None))
         self.label_15.setText(QCoreApplication.translate("MainWindow", u"If non-Filipino*, please indicate the following:", None))
         self.label_50.setText(QCoreApplication.translate("MainWindow", u"Related staff member(s)", None))
+        self.checkBox_8.setText(QCoreApplication.translate("MainWindow", u"This confirms all details listed are true.", None))
         self.update_picture_btn.setText(QCoreApplication.translate("MainWindow", u"Update Employee Picture", None))
         self.label_4.setText(QCoreApplication.translate("MainWindow", u"Editing Employee Information", None))
         self.update_sign_btn.setText(QCoreApplication.translate("MainWindow", u"Update Signature", None))
