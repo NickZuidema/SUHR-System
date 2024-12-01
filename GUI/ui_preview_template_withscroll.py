@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'view_recordCANLASYxXmQF.ui'
+## Form generated from reading UI file 'preview_template_withscrollCANLASdlHARc.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.4.3
 ##
@@ -65,14 +65,16 @@ class Ui_MainWindow(object):
 "background-color: white;")
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
-        self.centralwidget.setStyleSheet(u"")
+        self.centralwidget.setStyleSheet(u"background-color: white;\n"
+"color: black;")
         self.gridLayout_2 = QGridLayout(self.centralwidget)
         self.gridLayout_2.setObjectName(u"gridLayout_2")
         self.groupBox_2 = QGroupBox(self.centralwidget)
         self.groupBox_2.setObjectName(u"groupBox_2")
         self.groupBox_2.setMinimumSize(QSize(0, 150))
         self.groupBox_2.setStyleSheet(u"border: none;\n"
-"background-color:white;")
+"background-color: white;\n"
+"color: black;")
         self.layoutWidget = QWidget(self.groupBox_2)
         self.layoutWidget.setObjectName(u"layoutWidget")
         self.layoutWidget.setGeometry(QRect(160, 50, 258, 43))
@@ -81,7 +83,8 @@ class Ui_MainWindow(object):
         self.verticalLayout.setContentsMargins(0, 0, 0, 0)
         self.label_3 = QLabel(self.layoutWidget)
         self.label_3.setObjectName(u"label_3")
-        self.label_3.setStyleSheet(u"background-color: rgba(0, 0, 0, 0);")
+        self.label_3.setStyleSheet(u"background-color: white;\n"
+"color: black;")
         self.label_3.setPixmap(QPixmap(u":/images/title2_header1.png"))
         self.label_3.setScaledContents(False)
 
@@ -89,7 +92,8 @@ class Ui_MainWindow(object):
 
         self.label_4 = QLabel(self.layoutWidget)
         self.label_4.setObjectName(u"label_4")
-        self.label_4.setStyleSheet(u"background-color: none;")
+        self.label_4.setStyleSheet(u"background-color: white;\n"
+"color: black;")
         self.label_4.setPixmap(QPixmap(u":/images/title2_header2.png"))
 
         self.verticalLayout.addWidget(self.label_4)
@@ -97,7 +101,8 @@ class Ui_MainWindow(object):
         self.label = QLabel(self.groupBox_2)
         self.label.setObjectName(u"label")
         self.label.setGeometry(QRect(10, 20, 121, 111))
-        self.label.setStyleSheet(u"background-color: rgba(0, 0, 0, 0);")
+        self.label.setStyleSheet(u"background-color: white;\n"
+"color: black;")
         self.label.setPixmap(QPixmap(u":/images/logo_silliman.png"))
         self.label.setScaledContents(True)
 
@@ -125,9 +130,10 @@ class Ui_MainWindow(object):
 "    subcontrol-origin: margin;\n"
 "    subcontrol-position: top;  /* Positions at top and bottom */\n"
 "}\n"
-"QScrollArea {\n"
-"    background-color: rgb(2"
-                        "13, 213, 213);\n"
+"QScrollArea{\n"
+"	background-color: white;\n"
+""
+                        "	color: black;\n"
 "}\n"
 "\n"
 "")
@@ -135,6 +141,8 @@ class Ui_MainWindow(object):
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
         self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 1390, 918))
+        self.scrollAreaWidgetContents.setStyleSheet(u"background-color: rgb(241, 241, 241);\n"
+"color: black;")
         self.gridLayout = QGridLayout(self.scrollAreaWidgetContents)
         self.gridLayout.setObjectName(u"gridLayout")
         self.employee_civil_status = QLabel(self.scrollAreaWidgetContents)

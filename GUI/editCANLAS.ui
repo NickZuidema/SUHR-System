@@ -229,6 +229,10 @@ color: black;</string>
         <height>100</height>
        </size>
       </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: white;
+color: black;</string>
+      </property>
       <property name="title">
        <string/>
       </property>
@@ -245,6 +249,10 @@ color: black;</string>
         <font>
          <pointsize>14</pointsize>
         </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: white;
+color: black;</string>
        </property>
        <property name="text">
         <string>Silliman University</string>
@@ -264,6 +272,10 @@ color: black;</string>
          <pointsize>14</pointsize>
         </font>
        </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: white;
+color: black;</string>
+       </property>
        <property name="text">
         <string>Personal Record Dashboard</string>
        </property>
@@ -278,7 +290,8 @@ color: black;</string>
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">background-color: rgba(0, 0, 0, 0);</string>
+        <string notr="true">background-color: white;
+color: black;</string>
        </property>
        <property name="text">
         <string/>
@@ -539,10 +552,14 @@ QScrollArea {
        <property name="geometry">
         <rect>
          <x>0</x>
-         <y>-2353</y>
+         <y>0</y>
          <width>1200</width>
-         <height>2919</height>
+         <height>2954</height>
         </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: white;
+color: black;</string>
        </property>
        <layout class="QVBoxLayout" name="verticalLayout_2">
         <item>
@@ -561,6 +578,10 @@ QScrollArea {
                   <pointsize>12</pointsize>
                   <bold>true</bold>
                  </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
                 </property>
                 <property name="text">
                  <string>Position(s)</string>
@@ -601,6 +622,10 @@ QScrollArea {
                   <bold>true</bold>
                  </font>
                 </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
+                </property>
                 <property name="text">
                  <string>Occupation</string>
                 </property>
@@ -613,6 +638,10 @@ QScrollArea {
                   <pointsize>12</pointsize>
                   <bold>true</bold>
                  </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
                 </property>
                 <property name="text">
                  <string>Pag-Ibig Number</string>
@@ -627,6 +656,10 @@ QScrollArea {
                   <bold>true</bold>
                  </font>
                 </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
+                </property>
                 <property name="text">
                  <string>Contact number</string>
                 </property>
@@ -639,6 +672,10 @@ QScrollArea {
                   <pointsize>12</pointsize>
                   <bold>true</bold>
                  </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
                 </property>
                 <property name="text">
                  <string>Place of marriage</string>
@@ -666,6 +703,10 @@ QScrollArea {
                   <bold>true</bold>
                  </font>
                 </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
+                </property>
                 <property name="text">
                  <string>Date issued*</string>
                 </property>
@@ -678,6 +719,10 @@ QScrollArea {
                   <pointsize>12</pointsize>
                   <bold>true</bold>
                  </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
                 </property>
                 <property name="text">
                  <string>Place of Birth</string>
@@ -692,6 +737,10 @@ QScrollArea {
                   <bold>true</bold>
                  </font>
                 </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
+                </property>
                 <property name="text">
                  <string>Date of Birth</string>
                 </property>
@@ -704,6 +753,10 @@ QScrollArea {
                   <pointsize>10</pointsize>
                   <bold>false</bold>
                  </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
                 </property>
                 <property name="text">
                  <string>Year Graduated</string>
@@ -731,6 +784,10 @@ QScrollArea {
                   <bold>false</bold>
                  </font>
                 </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
+                </property>
                 <property name="text">
                  <string>Examination</string>
                 </property>
@@ -757,6 +814,10 @@ QScrollArea {
                   <bold>true</bold>
                  </font>
                 </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
+                </property>
                 <property name="text">
                  <string>Passport number*</string>
                 </property>
@@ -769,6 +830,10 @@ QScrollArea {
                   <pointsize>12</pointsize>
                   <bold>true</bold>
                  </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
                 </property>
                 <property name="text">
                  <string>Sibling(s)</string>
@@ -784,7 +849,8 @@ QScrollArea {
                  </size>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">border:1px solid black;</string>
+                 <string notr="true">background-color: white;
+color: black;border:1px solid black;</string>
                 </property>
                </widget>
               </item>
@@ -797,7 +863,8 @@ QScrollArea {
                  </size>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">border:1px solid black;</string>
+                 <string notr="true">background-color: white;
+color: black;border:1px solid black;</string>
                 </property>
                </widget>
               </item>
@@ -822,6 +889,10 @@ QScrollArea {
                   <bold>false</bold>
                  </font>
                 </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
+                </property>
                 <property name="text">
                  <string>Address</string>
                 </property>
@@ -836,7 +907,8 @@ QScrollArea {
                  </size>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">border:1px solid black;</string>
+                 <string notr="true">background-color: white;
+color: black;border:1px solid black;</string>
                 </property>
                </widget>
               </item>
@@ -847,6 +919,10 @@ QScrollArea {
                   <pointsize>10</pointsize>
                   <bold>false</bold>
                  </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
                 </property>
                 <property name="text">
                  <string>Name</string>
@@ -1117,6 +1193,10 @@ padding-bottom: 5px;</string>
                   <bold>true</bold>
                  </font>
                 </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
+                </property>
                 <property name="text">
                  <string>Full Name</string>
                 </property>
@@ -1129,6 +1209,10 @@ padding-bottom: 5px;</string>
                   <pointsize>12</pointsize>
                   <bold>true</bold>
                  </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
                 </property>
                 <property name="text">
                  <string>Civil Status</string>
@@ -1157,7 +1241,8 @@ padding-bottom: 5px;</string>
                  </size>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">border:1px solid black;</string>
+                 <string notr="true">background-color: white;
+color: black;border:1px solid black;</string>
                 </property>
                </widget>
               </item>
@@ -1168,6 +1253,10 @@ padding-bottom: 5px;</string>
                   <pointsize>12</pointsize>
                   <bold>true</bold>
                  </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
                 </property>
                 <property name="text">
                  <string>Tax Identification Number</string>
@@ -1208,6 +1297,10 @@ padding-bottom: 5px;</string>
                   <bold>true</bold>
                  </font>
                 </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
+                </property>
                 <property name="text">
                  <string>Involvement in criminal/civil case*</string>
                 </property>
@@ -1234,6 +1327,10 @@ padding-bottom: 5px;</string>
                   <bold>false</bold>
                  </font>
                 </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
+                </property>
                 <property name="text">
                  <string>Address</string>
                 </property>
@@ -1246,6 +1343,10 @@ padding-bottom: 5px;</string>
                   <width>0</width>
                   <height>20</height>
                  </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
                 </property>
                 <property name="frameShape">
                  <enum>QFrame::StyledPanel</enum>
@@ -1263,6 +1364,10 @@ padding-bottom: 5px;</string>
                   <bold>false</bold>
                  </font>
                 </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
+                </property>
                 <property name="text">
                  <string>Place</string>
                 </property>
@@ -1277,7 +1382,8 @@ padding-bottom: 5px;</string>
                  </size>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">border:1px solid black;</string>
+                 <string notr="true">background-color: white;
+color: black;border:1px solid black;</string>
                 </property>
                </widget>
               </item>
@@ -1302,6 +1408,10 @@ padding-bottom: 5px;</string>
                   <bold>true</bold>
                  </font>
                 </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
+                </property>
                 <property name="text">
                  <string>Father's occupation</string>
                 </property>
@@ -1314,6 +1424,10 @@ padding-bottom: 5px;</string>
                   <pointsize>12</pointsize>
                   <bold>true</bold>
                  </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
                 </property>
                 <property name="text">
                  <string>Father</string>
@@ -1342,7 +1456,8 @@ padding-bottom: 5px;</string>
                  </size>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">border:1px solid black;</string>
+                 <string notr="true">background-color: white;
+color: black;border:1px solid black;</string>
                 </property>
                </widget>
               </item>
@@ -1355,7 +1470,8 @@ padding-bottom: 5px;</string>
                  </size>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">border:1px solid black;</string>
+                 <string notr="true">background-color: white;
+color: black;border:1px solid black;</string>
                 </property>
                </widget>
               </item>
@@ -1366,6 +1482,10 @@ padding-bottom: 5px;</string>
                   <pointsize>12</pointsize>
                   <bold>true</bold>
                  </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
                 </property>
                 <property name="text">
                  <string>Citizenship</string>
@@ -1394,14 +1514,16 @@ padding-bottom: 5px;</string>
                  </size>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">border:1px solid black;</string>
+                 <string notr="true">background-color: white;
+color: black;border:1px solid black;</string>
                 </property>
                </widget>
               </item>
               <item row="16" column="1">
                <widget class="QPlainTextEdit" name="edit_acrNo">
                 <property name="styleSheet">
-                 <string notr="true">border:1px solid black;</string>
+                 <string notr="true">background-color: white;
+color: black;border:1px solid black;</string>
                 </property>
                </widget>
               </item>
@@ -1426,6 +1548,10 @@ padding-bottom: 5px;</string>
                   <bold>true</bold>
                  </font>
                 </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
+                </property>
                 <property name="text">
                  <string>Name of spouse</string>
                 </property>
@@ -1434,7 +1560,8 @@ padding-bottom: 5px;</string>
               <item row="16" column="2">
                <widget class="QPlainTextEdit" name="edit_date_issued">
                 <property name="styleSheet">
-                 <string notr="true">border:1px solid black;</string>
+                 <string notr="true">background-color: white;
+color: black;border:1px solid black;</string>
                 </property>
                </widget>
               </item>
@@ -1445,6 +1572,10 @@ padding-bottom: 5px;</string>
                   <pointsize>10</pointsize>
                   <bold>false</bold>
                  </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
                 </property>
                 <property name="text">
                  <string>Period of employment</string>
@@ -1460,7 +1591,8 @@ padding-bottom: 5px;</string>
                  </size>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">border:1px solid black;</string>
+                 <string notr="true">background-color: white;
+color: black;border:1px solid black;</string>
                 </property>
                </widget>
               </item>
@@ -1486,12 +1618,17 @@ padding-bottom: 5px;</string>
                  </size>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">border:1px solid black;</string>
+                 <string notr="true">background-color: white;
+color: black;border:1px solid black;</string>
                 </property>
                </widget>
               </item>
               <item row="55" column="3">
                <widget class="QCheckBox" name="checkBox_4">
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
+                </property>
                 <property name="text">
                  <string>Employee has no record of prior employment</string>
                 </property>
@@ -1505,6 +1642,10 @@ padding-bottom: 5px;</string>
                   <bold>false</bold>
                  </font>
                 </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
+                </property>
                 <property name="text">
                  <string>Rating</string>
                 </property>
@@ -1517,6 +1658,10 @@ padding-bottom: 5px;</string>
                   <pointsize>12</pointsize>
                   <bold>true</bold>
                  </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
                 </property>
                 <property name="text">
                  <string>Home Address</string>
@@ -1532,7 +1677,8 @@ padding-bottom: 5px;</string>
                  </size>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">border:1px solid black;</string>
+                 <string notr="true">background-color: white;
+color: black;border:1px solid black;</string>
                 </property>
                </widget>
               </item>
@@ -1558,7 +1704,8 @@ padding-bottom: 5px;</string>
                  </size>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">border:1px solid black;</string>
+                 <string notr="true">background-color: white;
+color: black;border:1px solid black;</string>
                 </property>
                </widget>
               </item>
@@ -1571,7 +1718,8 @@ padding-bottom: 5px;</string>
                  </size>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">border:1px solid black;</string>
+                 <string notr="true">background-color: white;
+color: black;border:1px solid black;</string>
                 </property>
                </widget>
               </item>
@@ -1610,7 +1758,8 @@ padding-bottom: 5px;</string>
                  </size>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">border:1px solid black;</string>
+                 <string notr="true">background-color: white;
+color: black;border:1px solid black;</string>
                 </property>
                </widget>
               </item>
@@ -1621,6 +1770,10 @@ padding-bottom: 5px;</string>
                   <pointsize>12</pointsize>
                   <bold>true</bold>
                  </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
                 </property>
                 <property name="text">
                  <string>Address</string>
@@ -1634,6 +1787,10 @@ padding-bottom: 5px;</string>
                   <pointsize>10</pointsize>
                   <bold>false</bold>
                  </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
                 </property>
                 <property name="text">
                  <string>College</string>
@@ -1662,7 +1819,8 @@ padding-bottom: 5px;</string>
                  </size>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">border:1px solid black;</string>
+                 <string notr="true">background-color: white;
+color: black;border:1px solid black;</string>
                 </property>
                </widget>
               </item>
@@ -1673,6 +1831,10 @@ padding-bottom: 5px;</string>
                   <pointsize>10</pointsize>
                   <bold>false</bold>
                  </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
                 </property>
                 <property name="text">
                  <string>Relationship</string>
@@ -1687,6 +1849,10 @@ padding-bottom: 5px;</string>
                   <bold>true</bold>
                  </font>
                 </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
+                </property>
                 <property name="text">
                  <string>Dumaguete Address</string>
                 </property>
@@ -1694,6 +1860,10 @@ padding-bottom: 5px;</string>
               </item>
               <item row="64" column="3">
                <widget class="QCheckBox" name="checkBox_6">
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
+                </property>
                 <property name="text">
                  <string>Does not apply</string>
                 </property>
@@ -1721,7 +1891,8 @@ padding-bottom: 5px;</string>
                  </size>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">border:1px solid black;</string>
+                 <string notr="true">background-color: white;
+color: black;border:1px solid black;</string>
                 </property>
                </widget>
               </item>
@@ -1732,6 +1903,10 @@ padding-bottom: 5px;</string>
                   <pointsize>10</pointsize>
                   <bold>false</bold>
                  </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
                 </property>
                 <property name="text">
                  <string>Reason for leaving</string>
@@ -1753,6 +1928,10 @@ padding-bottom: 5px;</string>
                   <bold>false</bold>
                  </font>
                 </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
+                </property>
                 <property name="text">
                  <string>Address of workplace</string>
                 </property>
@@ -1765,6 +1944,10 @@ padding-bottom: 5px;</string>
                   <pointsize>12</pointsize>
                   <bold>true</bold>
                  </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
                 </property>
                 <property name="text">
                  <string>Home Address</string>
@@ -1779,6 +1962,10 @@ padding-bottom: 5px;</string>
                   <bold>true</bold>
                  </font>
                 </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
+                </property>
                 <property name="text">
                  <string>Home Address</string>
                 </property>
@@ -1791,6 +1978,10 @@ padding-bottom: 5px;</string>
                   <pointsize>12</pointsize>
                   <bold>true</bold>
                  </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
                 </property>
                 <property name="text">
                  <string>Children (if any)</string>
@@ -1818,6 +2009,10 @@ padding-bottom: 5px;</string>
                   <bold>true</bold>
                  </font>
                 </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
+                </property>
                 <property name="text">
                  <string>Academic record</string>
                 </property>
@@ -1830,6 +2025,10 @@ padding-bottom: 5px;</string>
                   <pointsize>12</pointsize>
                   <bold>true</bold>
                  </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
                 </property>
                 <property name="text">
                  <string>Mother</string>
@@ -1845,7 +2044,8 @@ padding-bottom: 5px;</string>
                  </size>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">border:1px solid black;</string>
+                 <string notr="true">background-color: white;
+color: black;border:1px solid black;</string>
                 </property>
                </widget>
               </item>
@@ -1870,6 +2070,10 @@ padding-bottom: 5px;</string>
                   <bold>true</bold>
                  </font>
                 </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
+                </property>
                 <property name="text">
                  <string>Date of marriage</string>
                 </property>
@@ -1884,12 +2088,17 @@ padding-bottom: 5px;</string>
                  </size>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">border:1px solid black;</string>
+                 <string notr="true">background-color: white;
+color: black;border:1px solid black;</string>
                 </property>
                </widget>
               </item>
               <item row="23" column="2">
                <widget class="QCheckBox" name="checkBox">
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
+                </property>
                 <property name="text">
                  <string>Employee has no church affiliation</string>
                 </property>
@@ -1902,6 +2111,10 @@ padding-bottom: 5px;</string>
                   <pointsize>12</pointsize>
                   <bold>true</bold>
                  </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
                 </property>
                 <property name="text">
                  <string>Government examination(s) passed</string>
@@ -1929,6 +2142,10 @@ padding-bottom: 5px;</string>
                   <bold>true</bold>
                  </font>
                 </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
+                </property>
                 <property name="text">
                  <string>Email address</string>
                 </property>
@@ -1941,6 +2158,10 @@ padding-bottom: 5px;</string>
                   <pointsize>10</pointsize>
                   <bold>false</bold>
                  </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
                 </property>
                 <property name="text">
                  <string>Position</string>
@@ -1968,6 +2189,10 @@ padding-bottom: 5px;</string>
                   <bold>false</bold>
                  </font>
                 </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
+                </property>
                 <property name="text">
                  <string>Date of examination</string>
                 </property>
@@ -1980,6 +2205,10 @@ padding-bottom: 5px;</string>
                   <pointsize>10</pointsize>
                   <bold>false</bold>
                  </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
                 </property>
                 <property name="text">
                  <string>Year Graduated</string>
@@ -2007,6 +2236,10 @@ padding-bottom: 5px;</string>
                   <bold>true</bold>
                  </font>
                 </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
+                </property>
                 <property name="text">
                  <string>Record of previous employment</string>
                 </property>
@@ -2032,6 +2265,10 @@ padding-bottom: 5px;</string>
                   <pointsize>12</pointsize>
                   <bold>true</bold>
                  </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
                 </property>
                 <property name="text">
                  <string>SSS Number</string>
@@ -2065,6 +2302,10 @@ padding-bottom: 5px;</string>
                   <bold>true</bold>
                  </font>
                 </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
+                </property>
                 <property name="text">
                  <string>Publication(s)</string>
                 </property>
@@ -2077,6 +2318,10 @@ padding-bottom: 5px;</string>
                   <pointsize>12</pointsize>
                   <bold>true</bold>
                  </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
                 </property>
                 <property name="text">
                  <string>Mother's occupation</string>
@@ -2091,6 +2336,10 @@ padding-bottom: 5px;</string>
                   <bold>true</bold>
                  </font>
                 </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
+                </property>
                 <property name="text">
                  <string>Department(s)</string>
                 </property>
@@ -2103,6 +2352,10 @@ padding-bottom: 5px;</string>
                   <pointsize>10</pointsize>
                   <bold>false</bold>
                  </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
                 </property>
                 <property name="text">
                  <string>Position</string>
@@ -2118,7 +2371,8 @@ padding-bottom: 5px;</string>
                  </size>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">border:1px solid black;</string>
+                 <string notr="true">background-color: white;
+color: black;border:1px solid black;</string>
                 </property>
                </widget>
               </item>
@@ -2129,6 +2383,10 @@ padding-bottom: 5px;</string>
                   <pointsize>12</pointsize>
                   <bold>true</bold>
                  </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
                 </property>
                 <property name="text">
                  <string>ACR number*</string>
@@ -2143,6 +2401,10 @@ padding-bottom: 5px;</string>
                   <bold>false</bold>
                  </font>
                 </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
+                </property>
                 <property name="text">
                  <string>Address</string>
                 </property>
@@ -2150,6 +2412,10 @@ padding-bottom: 5px;</string>
               </item>
               <item row="39" column="3">
                <widget class="QCheckBox" name="checkBox_3">
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
+                </property>
                 <property name="text">
                  <string>Employee has no children.</string>
                 </property>
@@ -2188,6 +2454,10 @@ padding-bottom: 5px;</string>
                   <pointsize>10</pointsize>
                   <bold>false</bold>
                  </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
                 </property>
                 <property name="text">
                  <string>Name</string>
@@ -2229,7 +2499,8 @@ padding-bottom: 5px;</string>
                  </size>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">border:1px solid black;</string>
+                 <string notr="true">background-color: white;
+color: black;border:1px solid black;</string>
                 </property>
                </widget>
               </item>
@@ -2242,12 +2513,17 @@ padding-bottom: 5px;</string>
                  </size>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">border:1px solid black;</string>
+                 <string notr="true">background-color: white;
+color: black;border:1px solid black;</string>
                 </property>
                </widget>
               </item>
               <item row="13" column="2">
                <widget class="QCheckBox" name="checkBox_2">
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
+                </property>
                 <property name="text">
                  <string>Ignore fields*</string>
                 </property>
@@ -2260,6 +2536,10 @@ padding-bottom: 5px;</string>
                   <pointsize>12</pointsize>
                   <bold>true</bold>
                  </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
                 </property>
                 <property name="text">
                  <string>Philhealth Number</string>
@@ -2287,6 +2567,10 @@ padding-bottom: 5px;</string>
                   <bold>true</bold>
                  </font>
                 </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
+                </property>
                 <property name="text">
                  <string>Church Affiliation</string>
                 </property>
@@ -2299,6 +2583,10 @@ padding-bottom: 5px;</string>
                   <pointsize>10</pointsize>
                   <bold>false</bold>
                  </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
                 </property>
                 <property name="text">
                  <string>Year Graduated</string>
@@ -2314,7 +2602,8 @@ padding-bottom: 5px;</string>
                  </size>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">border:1px solid black;</string>
+                 <string notr="true">background-color: white;
+color: black;border:1px solid black;</string>
                 </property>
                </widget>
               </item>
@@ -2325,6 +2614,10 @@ padding-bottom: 5px;</string>
                   <pointsize>12</pointsize>
                   <bold>true</bold>
                  </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
                 </property>
                 <property name="text">
                  <string>Date of birth</string>
@@ -2339,6 +2632,10 @@ padding-bottom: 5px;</string>
                   <bold>false</bold>
                  </font>
                 </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
+                </property>
                 <property name="text">
                  <string>High School</string>
                 </property>
@@ -2351,6 +2648,10 @@ padding-bottom: 5px;</string>
                   <pointsize>12</pointsize>
                   <bold>true</bold>
                  </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
                 </property>
                 <property name="text">
                  <string>School or college distinction(s)</string>
@@ -2378,6 +2679,10 @@ padding-bottom: 5px;</string>
                   <bold>false</bold>
                  </font>
                 </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
+                </property>
                 <property name="text">
                  <string>Elementary School</string>
                 </property>
@@ -2385,6 +2690,10 @@ padding-bottom: 5px;</string>
               </item>
               <item row="60" column="3">
                <widget class="QCheckBox" name="checkBox_5">
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
+                </property>
                 <property name="text">
                  <string>Does not apply</string>
                 </property>
@@ -2398,6 +2707,10 @@ padding-bottom: 5px;</string>
                   <bold>false</bold>
                  </font>
                 </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
+                </property>
                 <property name="text">
                  <string>If non-Filipino*, please indicate the following:</string>
                 </property>
@@ -2410,6 +2723,10 @@ padding-bottom: 5px;</string>
                   <pointsize>12</pointsize>
                   <bold>true</bold>
                  </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
                 </property>
                 <property name="text">
                  <string>Related staff member(s)</string>
@@ -2431,6 +2748,10 @@ padding-bottom: 5px;</string>
               </item>
               <item row="66" column="2">
                <widget class="QCheckBox" name="checkBox_8">
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
+                </property>
                 <property name="text">
                  <string>This confirms all details listed are true.</string>
                 </property>
@@ -2710,6 +3031,10 @@ padding:5px;</string>
             <height>100</height>
            </size>
           </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: white;
+color: black;</string>
+          </property>
           <property name="title">
            <string/>
           </property>
@@ -2726,6 +3051,10 @@ padding:5px;</string>
             <font>
              <pointsize>14</pointsize>
             </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: white;
+color: black;</string>
            </property>
            <property name="text">
             <string>Silliman University Personnel Record Dashboard</string>

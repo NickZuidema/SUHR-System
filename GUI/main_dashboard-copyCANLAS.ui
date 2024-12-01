@@ -44,6 +44,10 @@ color: black;</string>
              <height>20</height>
             </size>
            </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: white;
+color: black;</string>
+           </property>
            <property name="title">
             <string/>
            </property>
@@ -58,7 +62,8 @@ color: black;</string>
             </size>
            </property>
            <property name="styleSheet">
-            <string notr="true">background-color: rgba(0, 0, 0, 0);</string>
+            <string notr="true">background-color: white;
+color: black;</string>
            </property>
            <property name="text">
             <string/>
@@ -79,6 +84,10 @@ color: black;</string>
              <height>35</height>
             </size>
            </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: white;
+color: black;</string>
+           </property>
            <property name="text">
             <string/>
            </property>
@@ -94,6 +103,10 @@ color: black;</string>
              <width>10000</width>
              <height>20</height>
             </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: white;
+color: black;</string>
            </property>
            <property name="title">
             <string/>
@@ -127,7 +140,8 @@ color: black;</string>
           <cursorShape>PointingHandCursor</cursorShape>
          </property>
          <property name="styleSheet">
-          <string notr="true">background-color: rgba(0, 0, 0, 0);
+          <string notr="true">background-color: white;
+color: black;
 border:none;</string>
          </property>
          <property name="text">
@@ -160,7 +174,8 @@ border:none;</string>
           </size>
          </property>
          <property name="styleSheet">
-          <string notr="true">background-color: rgba(0, 0, 0, 0);</string>
+          <string notr="true">background-color: white;
+color: black;</string>
          </property>
          <property name="text">
           <string/>
@@ -192,7 +207,9 @@ border:none;</string>
     <item row="2" column="0">
      <widget class="QGroupBox" name="groupBox_2">
       <property name="styleSheet">
-       <string notr="true"/>
+       <string notr="true">background-color: white;
+color: black;
+</string>
       </property>
       <property name="title">
        <string/>
@@ -515,7 +532,7 @@ background-color: white;</string>
              <cursorShape>PointingHandCursor</cursorShape>
             </property>
             <property name="styleSheet">
-             <string notr="true"/>
+             <string notr="true">border: 1px solid black</string>
             </property>
             <property name="placeholderText">
              <string>Choose a filter...</string>
