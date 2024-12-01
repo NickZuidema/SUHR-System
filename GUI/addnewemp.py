@@ -68,6 +68,12 @@ class AddEmployeeWindow(QMainWindow):
 
         employee_data["passport_num"] = passport_no
 
+        first_name = "n/a"
+        middle_name = "n/a"
+        last_name = "n/a"
+
+        spouse_id = 0
+
         first_name = self.ui.Spouse_FirstName.toPlainText()
         middle_name = self.ui.Spouse_MiddleName.toPlainText()
         last_name = self.ui.Spouse_LastName.toPlainText()
@@ -78,13 +84,15 @@ class AddEmployeeWindow(QMainWindow):
 
         salary_id = self.insert_salary_data()
         
-        if first_name or middle_name or last_name:
-            Saved_ID = employee_id.replace('-', '')
-            spouse_id = spouse.generate_spouse_id(Saved_ID)
+        #this has : if first_name or middle_name or last_name: until self.update_employee, 
+        #this will remain with no condition due to a bug that leaves an error when no spouse name is applied to the field
+        
+        Saved_ID = employee_id.replace('-', '')
+        spouse_id = spouse.generate_spouse_id(Saved_ID)
 
-            spouse.insert_spouse_data(spouse_id, first_name, middle_name, last_name, date_of_marriage, place_of_marriage)
+        spouse.insert_spouse_data(spouse_id, first_name, middle_name, last_name, date_of_marriage, place_of_marriage)
 
-            self.update_employee_spouse_id(employee_data['employee_id'], spouse_id)
+        self.update_employee_spouse_id(employee_data['employee_id'], spouse_id)
 
         child_first_name = self.ui.child1_FirstName.toPlainText()
         child_middle_name = self.ui.child1_MiddleName.toPlainText()
