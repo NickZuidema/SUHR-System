@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'main_dashboard-copyCANLASfJnKwI.ui'
+## Form generated from reading UI file 'main_dashboard-copyCANLASuDIwjN.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.4.3
 ##
@@ -44,13 +44,16 @@ class Ui_MainWindow(object):
         self.groupBox_7 = QGroupBox(self.groupBox)
         self.groupBox_7.setObjectName(u"groupBox_7")
         self.groupBox_7.setMaximumSize(QSize(10000, 20))
+        self.groupBox_7.setStyleSheet(u"background-color: white;\n"
+"color: black;")
 
         self.verticalLayout.addWidget(self.groupBox_7)
 
         self.label_3 = QLabel(self.groupBox)
         self.label_3.setObjectName(u"label_3")
         self.label_3.setMaximumSize(QSize(16777215, 35))
-        self.label_3.setStyleSheet(u"background-color: rgba(0, 0, 0, 0);")
+        self.label_3.setStyleSheet(u"background-color: white;\n"
+"color: black;")
         self.label_3.setPixmap(QPixmap(u":/images/title2_header1.png"))
         self.label_3.setScaledContents(False)
 
@@ -59,6 +62,8 @@ class Ui_MainWindow(object):
         self.label_4 = QLabel(self.groupBox)
         self.label_4.setObjectName(u"label_4")
         self.label_4.setMaximumSize(QSize(16777215, 35))
+        self.label_4.setStyleSheet(u"background-color: white;\n"
+"color: black;")
         self.label_4.setPixmap(QPixmap(u":/images/title2_header2.png"))
 
         self.verticalLayout.addWidget(self.label_4)
@@ -66,6 +71,8 @@ class Ui_MainWindow(object):
         self.groupBox_6 = QGroupBox(self.groupBox)
         self.groupBox_6.setObjectName(u"groupBox_6")
         self.groupBox_6.setMaximumSize(QSize(10000, 20))
+        self.groupBox_6.setStyleSheet(u"background-color: white;\n"
+"color: black;")
 
         self.verticalLayout.addWidget(self.groupBox_6)
 
@@ -82,7 +89,8 @@ class Ui_MainWindow(object):
         self.pushButton_2.setObjectName(u"pushButton_2")
         self.pushButton_2.setMaximumSize(QSize(100, 35))
         self.pushButton_2.setCursor(QCursor(Qt.PointingHandCursor))
-        self.pushButton_2.setStyleSheet(u"background-color: rgba(0, 0, 0, 0);\n"
+        self.pushButton_2.setStyleSheet(u"background-color: white;\n"
+"color: black;\n"
 "border:none;")
         icon = QIcon()
         icon.addFile(u":/images/button_logout.png", QSize(), QIcon.Normal, QIcon.Off)
@@ -95,7 +103,8 @@ class Ui_MainWindow(object):
         self.label.setObjectName(u"label")
         self.label.setMinimumSize(QSize(100, 100))
         self.label.setMaximumSize(QSize(100, 100))
-        self.label.setStyleSheet(u"background-color: rgba(0, 0, 0, 0);")
+        self.label.setStyleSheet(u"background-color: white;\n"
+"color: black;")
         self.label.setPixmap(QPixmap(u":/images/logo_silliman.png"))
         self.label.setScaledContents(True)
 
@@ -112,7 +121,9 @@ class Ui_MainWindow(object):
 
         self.groupBox_2 = QGroupBox(self.centralwidget)
         self.groupBox_2.setObjectName(u"groupBox_2")
-        self.groupBox_2.setStyleSheet(u"")
+        self.groupBox_2.setStyleSheet(u"background-color: white;\n"
+"color: black;\n"
+"")
         self.gridLayout_2 = QGridLayout(self.groupBox_2)
         self.gridLayout_2.setObjectName(u"gridLayout_2")
         self.gridLayout = QGridLayout()
@@ -232,7 +243,7 @@ class Ui_MainWindow(object):
 #endif
         self.comboBox.setPalette(palette)
         self.comboBox.setCursor(QCursor(Qt.PointingHandCursor))
-        self.comboBox.setStyleSheet(u"")
+        self.comboBox.setStyleSheet(u"border: 1px solid black")
         self.pushButton_5 = QPushButton(self.frame)
         self.pushButton_5.setObjectName(u"pushButton_5")
         self.pushButton_5.setGeometry(QRect(290, 10, 32, 31))

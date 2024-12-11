@@ -40,7 +40,7 @@ class ArchiveUI(QMainWindow):
         self.search_bar.textChanged.connect(self.filter_data)
         
         self.filter_combo = QComboBox(self)
-        self.filter_combo.addItem("All Positions")
+        self.filter_combo.addItem("Search")
         # Optionally, add predefined positions, or load dynamically
         search_layout.addWidget(self.search_bar)
         search_layout.addWidget(self.filter_combo)
