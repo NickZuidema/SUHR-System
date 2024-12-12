@@ -343,9 +343,9 @@ QScrollArea{
        <property name="geometry">
         <rect>
          <x>0</x>
-         <y>-263</y>
+         <y>-225</y>
          <width>1390</width>
-         <height>929</height>
+         <height>918</height>
         </rect>
        </property>
        <property name="styleSheet">
@@ -353,47 +353,14 @@ QScrollArea{
 color: black;</string>
        </property>
        <layout class="QGridLayout" name="gridLayout">
-        <item row="12" column="0">
-         <widget class="QLabel" name="employee_civil_status">
-          <property name="font">
-           <font>
-            <pointsize>12</pointsize>
-            <bold>false</bold>
-           </font>
-          </property>
-          <property name="text">
-           <string>Married in Dumaguete on May 29, 2013</string>
-          </property>
-         </widget>
-        </item>
-        <item row="9" column="1">
-         <widget class="QLabel" name="brother_header_2">
-          <property name="font">
-           <font>
-            <pointsize>12</pointsize>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="text">
-           <string>Sister</string>
-          </property>
-         </widget>
-        </item>
-        <item row="9" column="2">
-         <widget class="QLabel" name="prev_employment_header">
-          <property name="font">
-           <font>
-            <pointsize>12</pointsize>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="text">
-           <string>Record of Previous Employment</string>
-          </property>
-         </widget>
-        </item>
         <item row="14" column="1">
-         <widget class="QLabel" name="employee_pagibig">
+         <widget class="QLabel" name="employee_philHealth">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="font">
            <font>
             <pointsize>12</pointsize>
@@ -405,34 +372,8 @@ color: black;</string>
           </property>
          </widget>
         </item>
-        <item row="16" column="0">
-         <widget class="QTextEdit" name="employee_children">
-          <property name="maximumSize">
-           <size>
-            <width>500</width>
-            <height>16777215</height>
-           </size>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">border: 1px solid black</string>
-          </property>
-         </widget>
-        </item>
-        <item row="4" column="1">
-         <widget class="QLabel" name="employee_father">
-          <property name="font">
-           <font>
-            <pointsize>12</pointsize>
-            <bold>false</bold>
-           </font>
-          </property>
-          <property name="text">
-           <string>Juanito D. Ela Cruz</string>
-          </property>
-         </widget>
-        </item>
-        <item row="15" column="0">
-         <widget class="QLabel" name="children_header">
+        <item row="11" column="0">
+         <widget class="QLabel" name="civ_status_header">
           <property name="font">
            <font>
             <pointsize>12</pointsize>
@@ -440,51 +381,12 @@ color: black;</string>
            </font>
           </property>
           <property name="text">
-           <string>Children</string>
+           <string>Civil Status</string>
           </property>
          </widget>
         </item>
-        <item row="8" column="0">
-         <widget class="QLabel" name="employee_birthday">
-          <property name="font">
-           <font>
-            <pointsize>12</pointsize>
-            <bold>false</bold>
-           </font>
-          </property>
-          <property name="text">
-           <string>May 9, 1945</string>
-          </property>
-         </widget>
-        </item>
-        <item row="10" column="0">
-         <widget class="QLabel" name="employee_citizenship">
-          <property name="font">
-           <font>
-            <pointsize>12</pointsize>
-            <bold>false</bold>
-           </font>
-          </property>
-          <property name="text">
-           <string>Filipino</string>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="0">
-         <widget class="QGraphicsView" name="Profile_pic_2">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">border: 1px solid black</string>
-          </property>
-         </widget>
-        </item>
-        <item row="10" column="1">
-         <widget class="QTextEdit" name="employee_sister">
+        <item row="8" column="2">
+         <widget class="QTextEdit" name="employee_publications">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
             <horstretch>0</horstretch>
@@ -502,6 +404,19 @@ color: black;</string>
           </property>
          </widget>
         </item>
+        <item row="9" column="1">
+         <widget class="QLabel" name="sss_header">
+          <property name="font">
+           <font>
+            <pointsize>12</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>SSS Number</string>
+          </property>
+         </widget>
+        </item>
         <item row="5" column="1">
          <widget class="QLabel" name="mother_header">
           <property name="font">
@@ -515,8 +430,47 @@ color: black;</string>
           </property>
          </widget>
         </item>
-        <item row="20" column="1">
-         <widget class="QLabel" name="employee_phonenumber">
+        <item row="9" column="0">
+         <widget class="QLabel" name="citz_header">
+          <property name="font">
+           <font>
+            <pointsize>12</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>Citizenship</string>
+          </property>
+         </widget>
+        </item>
+        <item row="15" column="1">
+         <widget class="QLabel" name="contact_header">
+          <property name="font">
+           <font>
+            <pointsize>12</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>Contact Information</string>
+          </property>
+         </widget>
+        </item>
+        <item row="17" column="0">
+         <widget class="QTextEdit" name="employee_children">
+          <property name="maximumSize">
+           <size>
+            <width>500</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">border: 1px solid black</string>
+          </property>
+         </widget>
+        </item>
+        <item row="22" column="0">
+         <widget class="QLabel" name="employee_religion">
           <property name="font">
            <font>
             <pointsize>12</pointsize>
@@ -524,7 +478,169 @@ color: black;</string>
            </font>
           </property>
           <property name="text">
-           <string>0920 1337 420</string>
+           <string>Church of Pickle Rick</string>
+          </property>
+         </widget>
+        </item>
+        <item row="7" column="2">
+         <widget class="QLabel" name="publications_header">
+          <property name="font">
+           <font>
+            <pointsize>12</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>Publications</string>
+          </property>
+         </widget>
+        </item>
+        <item row="8" column="0">
+         <widget class="QLabel" name="employee_birthday">
+          <property name="font">
+           <font>
+            <pointsize>12</pointsize>
+            <bold>false</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>May 9, 1945</string>
+          </property>
+         </widget>
+        </item>
+        <item row="7" column="0">
+         <widget class="QLabel" name="birthday_header">
+          <property name="font">
+           <font>
+            <pointsize>12</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>Date of Birth</string>
+          </property>
+         </widget>
+        </item>
+        <item row="6" column="0">
+         <widget class="QTextEdit" name="employee_home_address">
+          <property name="maximumSize">
+           <size>
+            <width>500</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">border: 1px solid black</string>
+          </property>
+         </widget>
+        </item>
+        <item row="6" column="1">
+         <widget class="QLabel" name="employee_mother">
+          <property name="font">
+           <font>
+            <pointsize>12</pointsize>
+            <bold>false</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>Juanita D. Ela Cruz</string>
+          </property>
+         </widget>
+        </item>
+        <item row="11" column="2">
+         <widget class="QLabel" name="acad_record_header">
+          <property name="font">
+           <font>
+            <pointsize>12</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>Academic Record</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="2">
+         <widget class="QLabel" name="relation_header">
+          <property name="font">
+           <font>
+            <pointsize>12</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>Related Staff Member(s)</string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="1">
+         <widget class="QLabel" name="employee_father">
+          <property name="font">
+           <font>
+            <pointsize>12</pointsize>
+            <bold>false</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>Juanito D. Ela Cruz</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QLabel" name="employee_duma_address_header">
+          <property name="font">
+           <font>
+            <pointsize>12</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>Dumaguete Address</string>
+          </property>
+         </widget>
+        </item>
+        <item row="10" column="2">
+         <widget class="QTextEdit" name="employee_history">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>500</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">border: 1px solid black</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0">
+         <widget class="QLabel" name="breadcrumb_label">
+          <property name="styleSheet">
+           <string notr="true">background-color: rgba(0, 0, 0, 0);</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="pixmap">
+           <pixmap resource="images/resources.qrc">:/images/title2_header3.png</pixmap>
+          </property>
+         </widget>
+        </item>
+        <item row="7" column="1">
+         <widget class="QLabel" name="brother_header">
+          <property name="font">
+           <font>
+            <pointsize>12</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>Sibling</string>
           </property>
          </widget>
         </item>
@@ -541,8 +657,40 @@ color: black;</string>
           </property>
          </widget>
         </item>
-        <item row="5" column="0">
-         <widget class="QLabel" name="employee_address_header">
+        <item row="12" column="2">
+         <widget class="QTextEdit" name="employee_acad_record">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>500</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">border: 1px solid black</string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="2">
+         <widget class="QLabel" name="employee_relation">
+          <property name="font">
+           <font>
+            <pointsize>12</pointsize>
+            <bold>false</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>Juanita D. Ela Cruz, Wife, Professor</string>
+          </property>
+         </widget>
+        </item>
+        <item row="11" column="1">
+         <widget class="QLabel" name="pagibig_header">
           <property name="font">
            <font>
             <pointsize>12</pointsize>
@@ -550,7 +698,168 @@ color: black;</string>
            </font>
           </property>
           <property name="text">
-           <string>Home Address</string>
+           <string>Pag-Ibig Number</string>
+          </property>
+         </widget>
+        </item>
+        <item row="17" column="1">
+         <widget class="QLabel" name="employee_phonenumber">
+          <property name="font">
+           <font>
+            <pointsize>12</pointsize>
+            <bold>false</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>0920 1337 420</string>
+          </property>
+         </widget>
+        </item>
+        <item row="13" column="1">
+         <widget class="QLabel" name="ph_header">
+          <property name="font">
+           <font>
+            <pointsize>12</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>Philhealth Number</string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="0">
+         <widget class="QTextEdit" name="employee_dumaguete_address">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>500</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">border: 1px solid black</string>
+          </property>
+         </widget>
+        </item>
+        <item row="9" column="2">
+         <widget class="QLabel" name="prev_employment_header">
+          <property name="font">
+           <font>
+            <pointsize>12</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>Record of Previous Employment</string>
+          </property>
+         </widget>
+        </item>
+        <item row="6" column="2">
+         <widget class="QTextEdit" name="employee_school_distinctions">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>500</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">border: 1px solid black</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QGraphicsView" name="Profile_pic_2">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">border: 1px solid black</string>
+          </property>
+         </widget>
+        </item>
+        <item row="15" column="0">
+         <widget class="QLabel" name="children_header">
+          <property name="font">
+           <font>
+            <pointsize>12</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>Children</string>
+          </property>
+         </widget>
+        </item>
+        <item row="14" column="0">
+         <widget class="QLabel" name="employee_spouse">
+          <property name="font">
+           <font>
+            <pointsize>12</pointsize>
+            <bold>false</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>Ada P. Graming</string>
+          </property>
+         </widget>
+        </item>
+        <item row="10" column="1">
+         <widget class="QLabel" name="employee_sss">
+          <property name="font">
+           <font>
+            <pointsize>12</pointsize>
+            <bold>false</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>22-111111-12038</string>
+          </property>
+         </widget>
+        </item>
+        <item row="12" column="0">
+         <widget class="QLabel" name="employee_civil_status">
+          <property name="font">
+           <font>
+            <pointsize>12</pointsize>
+            <bold>false</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>Married in Dumaguete on May 29, 2013</string>
+          </property>
+         </widget>
+        </item>
+        <item row="21" column="0">
+         <widget class="QLabel" name="church_header">
+          <property name="font">
+           <font>
+            <pointsize>12</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>Church Affiliation</string>
           </property>
          </widget>
         </item>
@@ -586,8 +895,8 @@ color: black;</string>
           </property>
          </widget>
         </item>
-        <item row="11" column="1">
-         <widget class="QLabel" name="sss_header">
+        <item row="5" column="0">
+         <widget class="QLabel" name="employee_address_header">
           <property name="font">
            <font>
             <pointsize>12</pointsize>
@@ -595,33 +904,7 @@ color: black;</string>
            </font>
           </property>
           <property name="text">
-           <string>SSS Number</string>
-          </property>
-         </widget>
-        </item>
-        <item row="12" column="1">
-         <widget class="QLabel" name="employee_sss">
-          <property name="font">
-           <font>
-            <pointsize>12</pointsize>
-            <bold>false</bold>
-           </font>
-          </property>
-          <property name="text">
-           <string>22-111111-12038</string>
-          </property>
-         </widget>
-        </item>
-        <item row="19" column="1">
-         <widget class="QLabel" name="contact_header">
-          <property name="font">
-           <font>
-            <pointsize>12</pointsize>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="text">
-           <string>Contact Information</string>
+           <string>Home Address</string>
           </property>
          </widget>
         </item>
@@ -638,34 +921,8 @@ color: black;</string>
           </property>
          </widget>
         </item>
-        <item row="11" column="2">
-         <widget class="QLabel" name="acad_record_header">
-          <property name="font">
-           <font>
-            <pointsize>12</pointsize>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="text">
-           <string>Academic Record</string>
-          </property>
-         </widget>
-        </item>
-        <item row="15" column="1">
-         <widget class="QLabel" name="ph_header">
-          <property name="font">
-           <font>
-            <pointsize>12</pointsize>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="text">
-           <string>Philhealth Number</string>
-          </property>
-         </widget>
-        </item>
-        <item row="20" column="0">
-         <widget class="QLabel" name="employee_religion">
+        <item row="12" column="1">
+         <widget class="QLabel" name="employee_pagibig">
           <property name="font">
            <font>
             <pointsize>12</pointsize>
@@ -673,20 +930,7 @@ color: black;</string>
            </font>
           </property>
           <property name="text">
-           <string>Church of Pickle Rick</string>
-          </property>
-         </widget>
-        </item>
-        <item row="7" column="0">
-         <widget class="QLabel" name="birthday_header">
-          <property name="font">
-           <font>
-            <pointsize>12</pointsize>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="text">
-           <string>Date of Birth</string>
+           <string>22-111111-12038</string>
           </property>
          </widget>
         </item>
@@ -896,34 +1140,8 @@ font-weight: bold;
           </widget>
          </widget>
         </item>
-        <item row="3" column="0">
-         <widget class="QLabel" name="employee_duma_address_header">
-          <property name="font">
-           <font>
-            <pointsize>12</pointsize>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="text">
-           <string>Dumaguete Address</string>
-          </property>
-         </widget>
-        </item>
-        <item row="7" column="1">
-         <widget class="QLabel" name="brother_header">
-          <property name="font">
-           <font>
-            <pointsize>12</pointsize>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="text">
-           <string>Brother</string>
-          </property>
-         </widget>
-        </item>
-        <item row="4" column="2">
-         <widget class="QLabel" name="employee_relation">
+        <item row="10" column="0">
+         <widget class="QLabel" name="employee_citizenship">
           <property name="font">
            <font>
             <pointsize>12</pointsize>
@@ -931,171 +1149,11 @@ font-weight: bold;
            </font>
           </property>
           <property name="text">
-           <string>Juanita D. Ela Cruz, Wife, Professor</string>
+           <string>Filipino</string>
           </property>
          </widget>
         </item>
-        <item row="6" column="2">
-         <widget class="QTextEdit" name="employee_school_distinctions">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>500</width>
-            <height>16777215</height>
-           </size>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">border: 1px solid black</string>
-          </property>
-         </widget>
-        </item>
-        <item row="6" column="1">
-         <widget class="QLabel" name="employee_mother">
-          <property name="font">
-           <font>
-            <pointsize>12</pointsize>
-            <bold>false</bold>
-           </font>
-          </property>
-          <property name="text">
-           <string>Juanita D. Ela Cruz</string>
-          </property>
-         </widget>
-        </item>
-        <item row="11" column="0">
-         <widget class="QLabel" name="civ_status_header">
-          <property name="font">
-           <font>
-            <pointsize>12</pointsize>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="text">
-           <string>Civil Status</string>
-          </property>
-         </widget>
-        </item>
-        <item row="3" column="2">
-         <widget class="QLabel" name="relation_header">
-          <property name="font">
-           <font>
-            <pointsize>12</pointsize>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="text">
-           <string>Related Staff Member(s)</string>
-          </property>
-         </widget>
-        </item>
-        <item row="4" column="0">
-         <widget class="QTextEdit" name="employee_dumaguete_address">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="minimumSize">
-           <size>
-            <width>0</width>
-            <height>0</height>
-           </size>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>500</width>
-            <height>16777215</height>
-           </size>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">border: 1px solid black</string>
-          </property>
-         </widget>
-        </item>
-        <item row="8" column="2">
-         <widget class="QTextEdit" name="employee_publications">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>500</width>
-            <height>16777215</height>
-           </size>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">border: 1px solid black</string>
-          </property>
-         </widget>
-        </item>
-        <item row="7" column="2">
-         <widget class="QLabel" name="publications_header">
-          <property name="font">
-           <font>
-            <pointsize>12</pointsize>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="text">
-           <string>Publications</string>
-          </property>
-         </widget>
-        </item>
-        <item row="10" column="2">
-         <widget class="QTextEdit" name="employee_history">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>500</width>
-            <height>16777215</height>
-           </size>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">border: 1px solid black</string>
-          </property>
-         </widget>
-        </item>
-        <item row="14" column="0">
-         <widget class="QLabel" name="employee_spouse">
-          <property name="font">
-           <font>
-            <pointsize>12</pointsize>
-            <bold>false</bold>
-           </font>
-          </property>
-          <property name="text">
-           <string>Ada P. Graming</string>
-          </property>
-         </widget>
-        </item>
-        <item row="13" column="1">
-         <widget class="QLabel" name="pagibig_header">
-          <property name="font">
-           <font>
-            <pointsize>12</pointsize>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="text">
-           <string>Pag-Ibig Number</string>
-          </property>
-         </widget>
-        </item>
-        <item row="21" column="1">
+        <item row="18" column="1">
          <widget class="QLabel" name="employee_email">
           <property name="font">
            <font>
@@ -1105,96 +1163,6 @@ font-weight: bold;
           </property>
           <property name="text">
            <string>juandelacruz@su.edu.ph</string>
-          </property>
-         </widget>
-        </item>
-        <item row="19" column="0">
-         <widget class="QLabel" name="church_header">
-          <property name="font">
-           <font>
-            <pointsize>12</pointsize>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="text">
-           <string>Church Affiliation</string>
-          </property>
-         </widget>
-        </item>
-        <item row="9" column="0">
-         <widget class="QLabel" name="citz_header">
-          <property name="font">
-           <font>
-            <pointsize>12</pointsize>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="text">
-           <string>Citizenship</string>
-          </property>
-         </widget>
-        </item>
-        <item row="6" column="0">
-         <widget class="QTextEdit" name="employee_home_address">
-          <property name="maximumSize">
-           <size>
-            <width>500</width>
-            <height>16777215</height>
-           </size>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">border: 1px solid black</string>
-          </property>
-         </widget>
-        </item>
-        <item row="12" column="2">
-         <widget class="QTextEdit" name="employee_acad_record">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>500</width>
-            <height>16777215</height>
-           </size>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">border: 1px solid black</string>
-          </property>
-         </widget>
-        </item>
-        <item row="16" column="1">
-         <widget class="QLabel" name="employee_philHealth">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="font">
-           <font>
-            <pointsize>12</pointsize>
-            <bold>false</bold>
-           </font>
-          </property>
-          <property name="text">
-           <string>22-111111-12038</string>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="0">
-         <widget class="QLabel" name="breadcrumb_label">
-          <property name="styleSheet">
-           <string notr="true">background-color: rgba(0, 0, 0, 0);</string>
-          </property>
-          <property name="text">
-           <string/>
-          </property>
-          <property name="pixmap">
-           <pixmap resource="images/resources.qrc">:/images/title2_header3.png</pixmap>
           </property>
          </widget>
         </item>

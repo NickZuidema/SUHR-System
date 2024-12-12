@@ -137,23 +137,19 @@ class MainWindow(QMainWindow):
 
                 # Fetch and display children information
                 cursor.execute("""
-                    SELECT Last_Name, First_Name, Middle_Name, Date_Of_Birth
-                    FROM Child
-                    WHERE Child_Id IN (
-                        SELECT Child_Id
-                        FROM Employee_Child
-                        WHERE Employee_Employee_Id = ?
-                    )
+                               
+                    select Last_Name, First_Name, Middle_Name, Date_Of_Birth from Child 
+                    where Child_Id = (select Child_Child_Id from Employee_Child where Employee_Employee_Id = ?)
+                            
                 """, (employee_id,))
-                children_data = cursor.fetchall()
+                children_data = cursor.fetchone()
 
                 if children_data:
-                    children_info = []
-                    for child in children_data:
-                        child_last_name, child_first_name, child_middle_name, child_dob = child
-                        child_full_name = f"{child_last_name}, {child_first_name} {child_middle_name or ''}".strip()
-                        children_info.append(f"{child_full_name} (DOB: {child_dob})")
-                    self.ui.employee_children.setText("\n".join(children_info))  # Set children info in QLabel
+                    
+                    child_last_name, child_first_name, child_middle_name, child_dob = children_data[0], children_data[1], children_data[2], children_data[3]
+                    child_full_name = f"{child_last_name}, {child_first_name} {child_middle_name or ''}"
+                    children_info = f"{child_full_name} DOB:{child_dob}"
+                    self.ui.employee_children.setText(children_info)  # Set children info in QLabel
                 else:
                     self.ui.employee_children.setText("No children information available")
 

@@ -97,7 +97,7 @@ class AddEmployeeWindow(QMainWindow):
 
 
         #children data
-        print("running child")
+
         child_first_name = " " +self.ui.child1_FirstName.toPlainText()
         child_middle_name = " " + self.ui.child1_MiddleName.toPlainText()
         child_last_name = " "+ self.ui.child1_LastName.toPlainText()
@@ -110,7 +110,6 @@ class AddEmployeeWindow(QMainWindow):
             )
         
 
-        print("running sibling")
         sibling1_first_name = " "+self.ui.sibling1_FirstName.toPlainText()
         sibling1_middle_name = " "+self.ui.sibling1_MiddleName.toPlainText()
         sibling1_last_name = " "+self.ui.sibling1_LastName.toPlainText()
@@ -141,23 +140,27 @@ class AddEmployeeWindow(QMainWindow):
                 college_id, college_diploma, gradschool_id, 
                 gradschool_diploma, gradschool_fin
             )
-
+            print(f"Academic Id: {academic_record_id}")
             default_year = "2023"
             default_semester = 1
             employee_distinction.add_distinction_to_academic_record(academic_record_id, default_year, default_semester)
-
+            
             self.save_employee_data(employee_data, benefit_id, archived, spouse_id, salary_id, academic_record_id)
         else:
             self.save_employee_data(employee_data, benefit_id, archived, spouse_id, salary_id, None)
 
+
+        print("running publications")
         publications = self.ui.publications.toPlainText()
         if publications:
             publication_list = publications.split(';')
+            print(f"publist: {publication_list}")
             academic_record_id = employee_publication.get_academic_record_id_from_employee(employee_id)
             if (academic_record_id):
-                for publication in publication_list:
-                    name, link = publication.split(',')
-                    employee_publication.add_publication_to_academic_record(academic_record_id, name.strip(), link.strip())
+                name = " "
+                link = " no source "
+                name, link = publication_list[0], publication_list[1]
+                employee_publication.add_publication_to_academic_record(academic_record_id, name.strip(), link.strip())
             else:
                 print(f"No academic record found for employee {employee_id}. Publications not added.")
 
@@ -282,7 +285,7 @@ class AddEmployeeWindow(QMainWindow):
                 data["pagibig"],
                 data["civil_status"],
                 spouse_id,
-                academic_record_id,
+                int(academic_record_id),
                 data["criminal_case_name"],
                 0,
                 benefit_id,

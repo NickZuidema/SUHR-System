@@ -10,6 +10,8 @@ def insert_academic_record_data(
     gradschool_id, gradschool_diploma, gradschool_fin
 ):
     conn = None  # Initialize conn here to avoid the UnboundLocalError
+
+    print("at insert academic record data")
     try:
         # Connect to the database
         conn = sqlite3.connect(db_path)
