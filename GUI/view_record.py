@@ -8,6 +8,8 @@ from config import get_database_path,get_profile_path  # Import get_database_pat
 
 from edit_employee import Edit_MainWindow
 
+from salary import SalaryDialog
+
 import os
 
 class MainWindow(QMainWindow):
@@ -18,8 +20,13 @@ class MainWindow(QMainWindow):
 
         # Connect the archive button to the archive_employee method
         self.ui.archive_button.clicked.connect(self.archive_employee)
+
+
         self.empID = employee_id
         self.ui.edit_info_button.clicked.connect(self.edit_employee_record)
+
+        self.ui.archive_button_2.clicked.connect(self.salary_employee)
+
         # Get the database path from the config module
         database_path = get_database_path()
 
@@ -184,6 +191,11 @@ class MainWindow(QMainWindow):
         print("editing employee")
         self.edit_emp_window = Edit_MainWindow(self.empID)
         self.edit_emp_window.show()
+
+    def salary_employee(self):
+        print("getting salary record")
+        self.salary_emp_window = SalaryDialog()
+        self.salary_emp_window.show()
 
     def archive_employee(self):
         try:

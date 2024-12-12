@@ -1,13 +1,13 @@
 import sqlite3
 import sys
 import uuid
-from PySide6.QtWidgets import QApplication, QMainWindow, QMessageBox, QLineEdit
+from PySide6.QtWidgets import QApplication, QMainWindow, QMessageBox, QLineEdit, QFileDialog
 from PySide6.QtGui import QPalette, QColor
 
 #ui link
 from ui_edit import Ui_MainWindow
 
-from config import get_database_path
+from config import get_database_path,get_profile_path
 from session import SessionManager
 import os
 
@@ -38,6 +38,8 @@ class Edit_MainWindow(QMainWindow):
         #finalize changes
         self.ui.editRecord_btn.clicked.connect(self.edit_confirm)
 
+        self.ui.update_picture_btn.clicked.connect(self.edit_emp_image)
+
         database_path = get_database_path()
         
         try:
@@ -49,8 +51,9 @@ class Edit_MainWindow(QMainWindow):
 
                 # Use the passed employee_id for the query
                 cursor.execute("""
-                    SELECT Last_Name, First_Name, Middle_Name, Dgte_Address, Home_Address, Date_Of_Birth,
-                            Citizenship, Civil_Status, Sss_No, Pagibig_No, Philhealth_No, Contact_No
+                    SELECT Last_Name, First_Name, Middle_Name, Dgte_Address, Home_Address, Date_Of_Birth, Home_Address, 
+                            Citizenship, Civil_Status, Sss_No, Pagibig_No, Philhealth_No, Tax_Id, Contact_No, Church, Criminal_Record, employee_image, 
+                            Department
                     FROM Employee
                     WHERE Employee_Id = ?
                 """, (self.id_val,))
@@ -58,17 +61,89 @@ class Edit_MainWindow(QMainWindow):
 
                 if employee_data is None:
                     raise ValueError(f"No employee found with ID {self.id_val}")
+                
+                cursor.execute("""
+                    SELECT Name from Position 
+                    where Position_Id = (select Position_Id from Employee where Employee_Id = ?)
+                """, (self.id_val,))
+                employee_position_data = cursor.fetchone()
+
+                if employee_position_data is None:
+                    raise ValueError(f"Employee Position Error: No Employee found with ID {self.id_val}")
+                
+
+                cursor.execute("""
+                    select Last_Name, First_Name, Middle_Name from Spouse where Spouse_Id = (select spouse_id from Employee where Employee_Id = ?);
+                """, (self.id_val,))
+                employee_spouse_data = cursor.fetchone()
+
+                if employee_spouse_data is None:
+                    raise ValueError(f"Spouse Data Error:No Employee found with ID {self.id_val}")
+                
+                
+                
+                cursor.execute("""
+                    select Last_Name, First_Name, Middle_Name, Date_Of_Birth from Child 
+                    where Child_Id = (select Child_Child_Id from Employee_Child where Employee_Employee_Id = ?);
+                """, (self.id_val,))
+                employee_child_data = cursor.fetchone()
+
+                if employee_child_data is None:
+                    raise ValueError(f"Child Data Error:No Employee found with ID {self.id_val}")
+
 
                 # Concatenate Last_Name, First_Name, and Middle_Name to form the full name
                 last_name, first_name, middle_name = employee_data[0], employee_data[1], employee_data[2]
                 full_name = f"{last_name}, {first_name} {middle_name or ''}".strip()
+
+                #spouse name
+                spouse_lname, spouse_fname, spouse_mname = employee_spouse_data[0], employee_spouse_data[1], employee_spouse_data[2]
+                spouse_full_name = f"{spouse_lname}, {spouse_fname} {spouse_mname or ''}".strip()
+
+                #child name
+                child_lname, child_fname, child_mname = employee_child_data[0], employee_child_data[1], employee_child_data[2]
+                child_full_name = f"{child_lname}, {child_fname} {child_mname or ''}".strip()
 
                 # Populate UI fields with data from the database
                 # Initialize the Names
                 self.ui.edit_firstName.setPlainText(first_name)  
                 self.ui.edit_middleName.setPlainText(middle_name)  
                 self.ui.edit_lastName.setPlainText(last_name)  
+                self.ui.edit_Position.setPlainText(employee_position_data[0])
+                self.ui.edit_department.setPlainText(employee_data[17])
+
+                self.ui.edit_dgte_address.setPlainText(employee_data[3])
+                self.ui.edit_home_address.setPlainText(employee_data[4])
+
+                self.ui.edit_DoB.setPlainText(employee_data[5])
+                self.ui.edit_PoB.setPlainText(employee_data[6])
+
+                self.ui.edit_citizen.setPlainText(employee_data[7])
+
+                self.ui.edit_contactNo.setPlainText(employee_data[13])
+
+                parse_email_nospace = full_name.replace(" ","")
+                parse_email_notabs = parse_email_nospace.replace("\t","")
+                parse_email_final = parse_email_notabs.replace(",","")
+                self.ui.edit_email_add.setPlainText(parse_email_final+"@su.edu.ph")
+
+                self.ui.edit_TIN.setPlainText(employee_data[12])
+                self.ui.edit_SSS.setPlainText(employee_data[9])
+                self.ui.edit_pagibig.setPlainText(employee_data[10])
+                self.ui.edit_philhealth.setPlainText(employee_data[11])
+
+                self.ui.edit_church.setPlainText(employee_data[14])
+
+                self.ui.edit_civil.setPlainText(employee_data[8])
+
+                self.ui.edit_case.setPlainText(employee_data[15])
+
+                self.ui.employee_image_name.setText(employee_data[16])
                 
+                self.ui.edit_spouse.setPlainText(spouse_full_name)
+
+                self.ui.edit_children.setPlainText(child_full_name)
+                self.ui.edit_children_DoB.setPlainText(employee_child_data[3])
 
         except sqlite3.Error as e:
             QMessageBox.critical(self, "Database Error", f"An error occurred while accessing the database: {e}")
@@ -76,6 +151,18 @@ class Edit_MainWindow(QMainWindow):
             QMessageBox.warning(self, "Record Not Found", str(e))
         except Exception as e:
             QMessageBox.critical(self, "Unexpected Error", f"An unexpected error occurred: {e}")
+
+    def edit_emp_image(self):
+         # Open a file dialog restricted to a specific folder and image files
+        folder_path = get_profile_path()
+        file_filter = "Image Files (*.png *.jpg *.jpeg *.bmp *.gif)"
+        file_path, _ = QFileDialog.getOpenFileName(self, "Select an Image", folder_path, file_filter)
+        
+        
+        if file_path:  # If a file is selected
+            file_name = os.path.basename(file_path)
+            print(f"Grabbed {file_name}")
+            self.ui.employee_image_name.setText(file_name)
 
     def edit_confirm(self):
 
