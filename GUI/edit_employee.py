@@ -79,6 +79,18 @@ class Edit_MainWindow(QMainWindow):
 
                 if employee_spouse_data is None:
                     raise ValueError(f"Spouse Data Error:No Employee found with ID {self.id_val}")
+                
+                
+                
+                cursor.execute("""
+                    select Last_Name, First_Name, Middle_Name, Date_Of_Birth from Child 
+                    where Child_Id = (select Child_Child_Id from Employee_Child where Employee_Employee_Id = ?);
+                """, (self.id_val,))
+                employee_child_data = cursor.fetchone()
+
+                if employee_child_data is None:
+                    raise ValueError(f"Child Data Error:No Employee found with ID {self.id_val}")
+
 
                 # Concatenate Last_Name, First_Name, and Middle_Name to form the full name
                 last_name, first_name, middle_name = employee_data[0], employee_data[1], employee_data[2]
@@ -88,6 +100,9 @@ class Edit_MainWindow(QMainWindow):
                 spouse_lname, spouse_fname, spouse_mname = employee_spouse_data[0], employee_spouse_data[1], employee_spouse_data[2]
                 spouse_full_name = f"{spouse_lname}, {spouse_fname} {spouse_mname or ''}".strip()
 
+                #child name
+                child_lname, child_fname, child_mname = employee_child_data[0], employee_child_data[1], employee_child_data[2]
+                child_full_name = f"{child_lname}, {child_fname} {child_mname or ''}".strip()
 
                 # Populate UI fields with data from the database
                 # Initialize the Names
@@ -125,7 +140,10 @@ class Edit_MainWindow(QMainWindow):
 
                 self.ui.employee_image_name.setText(employee_data[16])
                 
-                self.ui.edit_spouse.setPlainText(spouse_fname)
+                self.ui.edit_spouse.setPlainText(spouse_full_name)
+
+                self.ui.edit_children.setPlainText(child_full_name)
+                self.ui.edit_children_DoB.setPlainText(employee_child_data[3])
 
         except sqlite3.Error as e:
             QMessageBox.critical(self, "Database Error", f"An error occurred while accessing the database: {e}")

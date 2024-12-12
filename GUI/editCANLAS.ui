@@ -554,7 +554,7 @@ QScrollArea {
          <x>0</x>
          <y>0</y>
          <width>1200</width>
-         <height>2904</height>
+         <height>2901</height>
         </rect>
        </property>
        <property name="styleSheet">
@@ -1868,17 +1868,6 @@ color: black;border:1px solid black;</string>
                 </property>
                </widget>
               </item>
-              <item row="55" column="3">
-               <widget class="QCheckBox" name="checkBox_4">
-                <property name="styleSheet">
-                 <string notr="true">background-color: white;
-color: black;</string>
-                </property>
-                <property name="text">
-                 <string>Employee has no record of prior employment</string>
-                </property>
-               </widget>
-              </item>
               <item row="61" column="1">
                <widget class="QLabel" name="label_64">
                 <property name="font">
@@ -2103,17 +2092,6 @@ color: black;</string>
                 </property>
                </widget>
               </item>
-              <item row="64" column="3">
-               <widget class="QCheckBox" name="checkBox_6">
-                <property name="styleSheet">
-                 <string notr="true">background-color: white;
-color: black;</string>
-                </property>
-                <property name="text">
-                 <string>Does not apply</string>
-                </property>
-               </widget>
-              </item>
               <item row="22" column="1" colspan="2">
                <widget class="QPlainTextEdit" name="edit_philhealth">
                 <property name="minimumSize">
@@ -2335,17 +2313,6 @@ color: black;</string>
                 <property name="styleSheet">
                  <string notr="true">background-color: white;
 color: black;border:1px solid black;</string>
-                </property>
-               </widget>
-              </item>
-              <item row="23" column="2">
-               <widget class="QCheckBox" name="checkBox">
-                <property name="styleSheet">
-                 <string notr="true">background-color: white;
-color: black;</string>
-                </property>
-                <property name="text">
-                 <string>Employee has no church affiliation</string>
                 </property>
                </widget>
               </item>
@@ -2655,17 +2622,6 @@ color: black;</string>
                 </property>
                </widget>
               </item>
-              <item row="39" column="3">
-               <widget class="QCheckBox" name="checkBox_3">
-                <property name="styleSheet">
-                 <string notr="true">background-color: white;
-color: black;</string>
-                </property>
-                <property name="text">
-                 <string>Employee has no children.</string>
-                </property>
-               </widget>
-              </item>
               <item row="9" column="0" colspan="3">
                <widget class="QPlainTextEdit" name="edit_home_address">
                 <property name="minimumSize">
@@ -2760,17 +2716,6 @@ color: black;border:1px solid black;</string>
                 <property name="styleSheet">
                  <string notr="true">background-color: white;
 color: black;border:1px solid black;</string>
-                </property>
-               </widget>
-              </item>
-              <item row="13" column="2">
-               <widget class="QCheckBox" name="checkBox_2">
-                <property name="styleSheet">
-                 <string notr="true">background-color: white;
-color: black;</string>
-                </property>
-                <property name="text">
-                 <string>Ignore fields*</string>
                 </property>
                </widget>
               </item>
@@ -2930,17 +2875,6 @@ color: black;</string>
                 </property>
                 <property name="text">
                  <string>Elementary School</string>
-                </property>
-               </widget>
-              </item>
-              <item row="60" column="3">
-               <widget class="QCheckBox" name="checkBox_5">
-                <property name="styleSheet">
-                 <string notr="true">background-color: white;
-color: black;</string>
-                </property>
-                <property name="text">
-                 <string>Does not apply</string>
                 </property>
                </widget>
               </item>

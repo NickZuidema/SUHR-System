@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'editCANLASEKoinm.ui'
+## Form generated from reading UI file 'editCANLASrJqqUl.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.4.3
 ##
@@ -160,7 +160,7 @@ class Ui_MainWindow(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 1200, 2904))
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 1200, 2901))
         self.scrollAreaWidgetContents.setStyleSheet(u"background-color: white;\n"
 "color: black;")
         self.verticalLayout_2 = QVBoxLayout(self.scrollAreaWidgetContents)
@@ -697,13 +697,6 @@ class Ui_MainWindow(object):
 
         self.gridLayout_2.addWidget(self.edit_citizen, 11, 2, 1, 1)
 
-        self.checkBox_4 = QCheckBox(self.scrollAreaWidgetContents)
-        self.checkBox_4.setObjectName(u"checkBox_4")
-        self.checkBox_4.setStyleSheet(u"background-color: white;\n"
-"color: black;")
-
-        self.gridLayout_2.addWidget(self.checkBox_4, 55, 3, 1, 1)
-
         self.label_64 = QLabel(self.scrollAreaWidgetContents)
         self.label_64.setObjectName(u"label_64")
         self.label_64.setFont(font3)
@@ -820,13 +813,6 @@ class Ui_MainWindow(object):
 
         self.gridLayout_2.addWidget(self.label_8, 6, 0, 1, 3)
 
-        self.checkBox_6 = QCheckBox(self.scrollAreaWidgetContents)
-        self.checkBox_6.setObjectName(u"checkBox_6")
-        self.checkBox_6.setStyleSheet(u"background-color: white;\n"
-"color: black;")
-
-        self.gridLayout_2.addWidget(self.checkBox_6, 64, 3, 1, 1)
-
         self.edit_philhealth = QPlainTextEdit(self.scrollAreaWidgetContents)
         self.edit_philhealth.setObjectName(u"edit_philhealth")
         self.edit_philhealth.setMinimumSize(QSize(0, 0))
@@ -941,13 +927,6 @@ class Ui_MainWindow(object):
 "color: black;border:1px solid black;")
 
         self.gridLayout_2.addWidget(self.edit_civil, 38, 0, 1, 1)
-
-        self.checkBox = QCheckBox(self.scrollAreaWidgetContents)
-        self.checkBox.setObjectName(u"checkBox")
-        self.checkBox.setStyleSheet(u"background-color: white;\n"
-"color: black;")
-
-        self.gridLayout_2.addWidget(self.checkBox, 23, 2, 1, 1)
 
         self.label_61 = QLabel(self.scrollAreaWidgetContents)
         self.label_61.setObjectName(u"label_61")
@@ -1101,13 +1080,6 @@ class Ui_MainWindow(object):
 
         self.gridLayout_2.addWidget(self.label_48, 46, 1, 1, 1)
 
-        self.checkBox_3 = QCheckBox(self.scrollAreaWidgetContents)
-        self.checkBox_3.setObjectName(u"checkBox_3")
-        self.checkBox_3.setStyleSheet(u"background-color: white;\n"
-"color: black;")
-
-        self.gridLayout_2.addWidget(self.checkBox_3, 39, 3, 1, 1)
-
         self.edit_home_address = QPlainTextEdit(self.scrollAreaWidgetContents)
         self.edit_home_address.setObjectName(u"edit_home_address")
         self.edit_home_address.setMinimumSize(QSize(0, 0))
@@ -1159,13 +1131,6 @@ class Ui_MainWindow(object):
 "color: black;border:1px solid black;")
 
         self.gridLayout_2.addWidget(self.edit_church, 24, 0, 1, 3)
-
-        self.checkBox_2 = QCheckBox(self.scrollAreaWidgetContents)
-        self.checkBox_2.setObjectName(u"checkBox_2")
-        self.checkBox_2.setStyleSheet(u"background-color: white;\n"
-"color: black;")
-
-        self.gridLayout_2.addWidget(self.checkBox_2, 13, 2, 1, 1)
 
         self.label_23 = QLabel(self.scrollAreaWidgetContents)
         self.label_23.setObjectName(u"label_23")
@@ -1244,13 +1209,6 @@ class Ui_MainWindow(object):
 "color: black;")
 
         self.gridLayout_2.addWidget(self.label_41, 42, 0, 1, 1)
-
-        self.checkBox_5 = QCheckBox(self.scrollAreaWidgetContents)
-        self.checkBox_5.setObjectName(u"checkBox_5")
-        self.checkBox_5.setStyleSheet(u"background-color: white;\n"
-"color: black;")
-
-        self.gridLayout_2.addWidget(self.checkBox_5, 60, 3, 1, 1)
 
         self.label_15 = QLabel(self.scrollAreaWidgetContents)
         self.label_15.setObjectName(u"label_15")
@@ -1354,14 +1312,12 @@ class Ui_MainWindow(object):
         self.label_14.setText(QCoreApplication.translate("MainWindow", u"Citizenship", None))
         self.label_35.setText(QCoreApplication.translate("MainWindow", u"Name of spouse", None))
         self.label_59.setText(QCoreApplication.translate("MainWindow", u"Period of employment", None))
-        self.checkBox_4.setText(QCoreApplication.translate("MainWindow", u"Employee has no record of prior employment", None))
         self.label_64.setText(QCoreApplication.translate("MainWindow", u"Rating", None))
         self.label_9.setText(QCoreApplication.translate("MainWindow", u"Home Address", None))
         self.label_33.setText(QCoreApplication.translate("MainWindow", u"Address", None))
         self.label_47.setText(QCoreApplication.translate("MainWindow", u"College", None))
         self.label_51.setText(QCoreApplication.translate("MainWindow", u"Relationship", None))
         self.label_8.setText(QCoreApplication.translate("MainWindow", u"Dumaguete Address", None))
-        self.checkBox_6.setText(QCoreApplication.translate("MainWindow", u"Does not apply", None))
         self.label_60.setText(QCoreApplication.translate("MainWindow", u"Reason for leaving", None))
         self.label_62.setText(QCoreApplication.translate("MainWindow", u"Address of workplace", None))
         self.label_27.setText(QCoreApplication.translate("MainWindow", u"Home Address", None))
@@ -1370,7 +1326,6 @@ class Ui_MainWindow(object):
         self.label_40.setText(QCoreApplication.translate("MainWindow", u"Academic record", None))
         self.label_28.setText(QCoreApplication.translate("MainWindow", u"Mother", None))
         self.label_37.setText(QCoreApplication.translate("MainWindow", u"Date of marriage", None))
-        self.checkBox.setText(QCoreApplication.translate("MainWindow", u"Employee has no church affiliation", None))
         self.label_61.setText(QCoreApplication.translate("MainWindow", u"Government examination(s) passed", None))
         self.label_19.setText(QCoreApplication.translate("MainWindow", u"Email address", None))
         self.label_58.setText(QCoreApplication.translate("MainWindow", u"Position", None))
@@ -1384,9 +1339,7 @@ class Ui_MainWindow(object):
         self.label_53.setText(QCoreApplication.translate("MainWindow", u"Position", None))
         self.label_16.setText(QCoreApplication.translate("MainWindow", u"ACR number*", None))
         self.label_48.setText(QCoreApplication.translate("MainWindow", u"Address", None))
-        self.checkBox_3.setText(QCoreApplication.translate("MainWindow", u"Employee has no children.", None))
         self.label_57.setText(QCoreApplication.translate("MainWindow", u"Name", None))
-        self.checkBox_2.setText(QCoreApplication.translate("MainWindow", u"Ignore fields*", None))
         self.label_23.setText(QCoreApplication.translate("MainWindow", u"Philhealth Number", None))
         self.label_24.setText(QCoreApplication.translate("MainWindow", u"Church Affiliation", None))
         self.label_46.setText(QCoreApplication.translate("MainWindow", u"Year Graduated", None))
@@ -1394,7 +1347,6 @@ class Ui_MainWindow(object):
         self.label_44.setText(QCoreApplication.translate("MainWindow", u"High School", None))
         self.label_54.setText(QCoreApplication.translate("MainWindow", u"School or college distinction(s)", None))
         self.label_41.setText(QCoreApplication.translate("MainWindow", u"Elementary School", None))
-        self.checkBox_5.setText(QCoreApplication.translate("MainWindow", u"Does not apply", None))
         self.label_15.setText(QCoreApplication.translate("MainWindow", u"If non-Filipino*, please indicate the following:", None))
         self.label_50.setText(QCoreApplication.translate("MainWindow", u"Related staff member(s)", None))
         self.checkBox_8.setText(QCoreApplication.translate("MainWindow", u"This confirms all details listed are true.", None))
