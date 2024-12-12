@@ -196,15 +196,23 @@ class Edit_MainWindow(QMainWindow):
                     QMessageBox.information(self, "Parent Data", "Employee has no Parents Found")
                 else:
                     #parents name
-                    father_lname, father_fname, father_mname = employee_parent_data[0], employee_parent_data[1], employee_parent_data[2]
-                    father_full_name = f"{father_lname}, {father_fname} {father_mname or ''}".strip()
+                    self.father_lname, self.father_fname, self.father_mname = employee_parent_data[0], employee_parent_data[1], employee_parent_data[2]
+                    father_full_name = f"{self.father_lname}, {self.father_fname} {self.father_mname or ''}".strip()
                     
-                    mother_lname, mother_fname, mother_mname = employee_parent_data[5], employee_parent_data[6], employee_parent_data[7]
-                    mother_full_name = f"{mother_lname}, {mother_fname} {mother_mname or ''}".strip()
+                    self.mother_lname, self.mother_fname, self.mother_mname = employee_parent_data[5], employee_parent_data[6], employee_parent_data[7]
+                    mother_full_name = f"{self.mother_lname}, {self.mother_fname} {self.mother_mname or ''}".strip()
+                    
+                    self.ui.edit_father_firstname.setPlainText(self.father_fname)
+                    self.ui.edit_father_lastname.setPlainText(self.father_lname)
+                    self.ui.edit_father_middlename.setPlainText(self.father_mname)
 
                     self.ui.edit_father_name.setPlainText(father_full_name)
                     self.ui.edit_father_home.setPlainText(employee_parent_data[4])
                     self.ui.edit_father_occ.setPlainText(employee_parent_data[3])
+
+                    self.ui.edit_mother_firstname.setPlainText(self.mother_fname)
+                    self.ui.edit_mother_lastname.setPlainText(self.mother_lname)
+                    self.ui.edit_mother_middlename.setPlainText(self.mother_mname)
 
                     self.ui.edit_mother_name.setPlainText(mother_full_name)
                     self.ui.edit_father_address.setPlainText(employee_parent_data[9])
@@ -245,6 +253,8 @@ class Edit_MainWindow(QMainWindow):
             ("place_of_birth",self.ui.edit_PoB), 
             ("citizenship",self.ui.edit_citizen), 
             ("church",self.ui.edit_church), 
+
+
             ("passport_num",self.ui.edit_passportNo), 
             ("acr_num",self.ui.edit_acrNo), 
             ("date_issued",self.ui.edit_date_issued), 
@@ -261,11 +271,15 @@ class Edit_MainWindow(QMainWindow):
 
 
             #father and mother are in a separate table
-            ("father",self.ui.edit_father_name),
+            ("f_firstname",self.ui.edit_father_firstname),
+            ("f_lastname", self.ui.edit_father_lastname),
+            ("f_middlename", self.ui.edit_father_middlename),
             ("father_occ",self.ui.edit_father_occ),
             ("father_home_address", self.ui.edit_father_home),
             
-            ("mother",self.ui.edit_mother_name),
+            ("m_firstname",self.ui.edit_mother_firstname),
+            ("m_lastname", self.ui.edit_mother_lastname),
+            ("m_middlename", self.ui.edit_mother_middlename),
             ("mother_occ",self.ui.edit_mother_occ),
             ("mother_home_address", self.ui.edit_father_address),
         ]
@@ -308,6 +322,16 @@ class Edit_MainWindow(QMainWindow):
                     Update Position Set Name = ? where position_id = (select position_id from Employee where Employee_Id = ?);
                 """, (data["position"],self.id_val))
                 conn.commit()
+
+                cursor.execute("""
+                Update Parent Set Father_Last_Name = ?, Father_First_Name = ?, Father_Middle_Name = ?, Father_Occupation = ?, Father_Address = ?,
+                Mother_Last_Name = ?, Mother_First_Name = ?, Mother_Middle_Name = ?, Mother_Occupation = ?, Mother_Address = ?
+                where Parent_Id = (select Parent_Parent_Id from Employee_Parent where Employee_Employee_Id = (select Employee_Id from Employee where Employee_Id = ?));
+                """, (data["f_firstname"], data["f_lastname"], data["f_middlename"], data["father_occ"], data["father_home_address"],
+                      data["m_firstname"], data["m_lastname"], data["m_middlename"], data["mother_occ"], data["mother_home_address"],self.id_val))
+                conn.commit()
+
+
         
                 QMessageBox.information(self, "Edit Result", f"Updated Record for {self.id_val}.")
 
