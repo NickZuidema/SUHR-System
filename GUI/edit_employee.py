@@ -210,26 +210,6 @@ class Edit_MainWindow(QMainWindow):
                     self.ui.edit_father_address.setPlainText(employee_parent_data[9])
                     self.ui.edit_mother_occ.setPlainText(employee_parent_data[8])
                 
-
-                #academic data
-                cursor.execute("""
-                   select * from Academic_Record where Academic_Id = (select Academic_Id from Employee where Employee_Id = ?);
-                """, (self.id_val,))
-                employee_academic_data = cursor.fetchone()
-
-                if employee_academic_data is None:
-                    QMessageBox.information(self, "Academic Record Data", "Employee has no Academic Record Found")
-                    
-                
-                    
-                    
-
-
-
-
-            
-
-
         except sqlite3.Error as e:
             QMessageBox.critical(self, "Database Error", f"An error occurred while accessing the database: {e}")
         except ValueError as e:
@@ -250,11 +230,10 @@ class Edit_MainWindow(QMainWindow):
             self.ui.employee_image_name.setText(file_name)
 
     def edit_confirm(self):
-
+        print("running edit confirmation")
         # Define a list of tuples mapping variable names to UI fields, make things easier instead of typing like a monkey (ithink)
         # will comment out things that are necessary to update (can be seen in the dashboard)
         fields = [
-
             ("lastname", self.ui.edit_lastName), 
             ("firstname", self.ui.edit_firstName),
             ("midname", self.ui.edit_middleName),
@@ -296,28 +275,31 @@ class Edit_MainWindow(QMainWindow):
         
         
         database_path = get_database_path()
+
+        
         try:
         # Use 'with' to ensure the connection is properly managed
             with sqlite3.connect(database_path) as conn:
                 cursor = conn.cursor()
 
-                position_num = 0
-                if data['position'] != '':
-                    position_num = int(data['position'])
-
+                print("running update")
+                
+                
+                image_name = self.ui.employee_image_name.text()
+                print(f"changed to {image_name}")
 
                 # Use the passed employee_id for the query
                 cursor.execute("""
                     UPDATE Employee
                     SET Last_Name = ?, Middle_Name = ?, First_Name = ?,
-                        Position_Id = ?, Dgte_Address = ?, Home_Address = ?,
+                        Dgte_Address = ?, Home_Address = ?,
                         Date_Of_Birth = ?, Place_Of_Birth = ?, Citizenship = ?,
                         Church = ?, Non_Filipino_Id = ?, Contact_No = ?,
-                        Tax_Id = ?, Sss_No = ?, Pagibig_No = ?, Philhealth_No = ?
+                        Tax_Id = ?, Sss_No = ?, Pagibig_No = ?, Philhealth_No = ?, employee_image = ?
                     WHERE Employee_Id = ?
-                """, (data['lastname'],data['midname'],data['firstname'],position_num,data['duma_address'],
+                """, (data['lastname'],data['midname'],data['firstname'],data['duma_address'],
                       data['home_address'], data['date_of_birth'],data['place_of_birth'], data['citizenship'], data['church'],
-                      data['passport_num'], data['contact_num'], data['tin'], data['sss_num'],data['pag_ibig'],data['ph_health_num'],
+                      data['passport_num'], data['contact_num'], data['tin'], data['sss_num'],data['pag_ibig'],data['ph_health_num'], image_name,
                       self.id_val))
                 conn.commit()
                 
