@@ -52,7 +52,8 @@ class Edit_MainWindow(QMainWindow):
                 # Use the passed employee_id for the query
                 cursor.execute("""
                     SELECT Last_Name, First_Name, Middle_Name, Dgte_Address, Home_Address, Date_Of_Birth, Home_Address, 
-                            Citizenship, Civil_Status, Sss_No, Pagibig_No, Philhealth_No, Tax_Id, Contact_No, Church, Criminal_Record, employee_image
+                            Citizenship, Civil_Status, Sss_No, Pagibig_No, Philhealth_No, Tax_Id, Contact_No, Church, Criminal_Record, employee_image, 
+                            Department
                     FROM Employee
                     WHERE Employee_Id = ?
                 """, (self.id_val,))
@@ -80,6 +81,7 @@ class Edit_MainWindow(QMainWindow):
                 self.ui.edit_middleName.setPlainText(middle_name)  
                 self.ui.edit_lastName.setPlainText(last_name)  
                 self.ui.edit_Position.setPlainText(employee_position_data[0])
+                self.ui.edit_department.setPlainText(employee_data[17])
 
                 self.ui.edit_dgte_address.setPlainText(employee_data[3])
                 self.ui.edit_home_address.setPlainText(employee_data[4])
@@ -92,7 +94,8 @@ class Edit_MainWindow(QMainWindow):
                 self.ui.edit_contactNo.setPlainText(employee_data[13])
 
                 parse_email_nospace = full_name.replace(" ","")
-                parse_email_final = parse_email_nospace.replace(",","")
+                parse_email_notabs = parse_email_nospace.replace("\t","")
+                parse_email_final = parse_email_notabs.replace(",","")
                 self.ui.edit_email_add.setPlainText(parse_email_final+"@su.edu.ph")
 
                 self.ui.edit_TIN.setPlainText(employee_data[12])
