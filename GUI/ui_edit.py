@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'editCANLASrCMLBF.ui'
+## Form generated from reading UI file 'editCANLASEKoinm.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.4.3
 ##
@@ -160,7 +160,7 @@ class Ui_MainWindow(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 1200, 2919))
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 1200, 2904))
         self.scrollAreaWidgetContents.setStyleSheet(u"background-color: white;\n"
 "color: black;")
         self.verticalLayout_2 = QVBoxLayout(self.scrollAreaWidgetContents)
@@ -169,15 +169,75 @@ class Ui_MainWindow(object):
         self.verticalLayout.setObjectName(u"verticalLayout")
         self.gridLayout_3 = QGridLayout()
         self.gridLayout_3.setObjectName(u"gridLayout_3")
+        self.label_4 = QLabel(self.scrollAreaWidgetContents)
+        self.label_4.setObjectName(u"label_4")
+        font1 = QFont()
+        font1.setPointSize(14)
+        font1.setBold(True)
+        self.label_4.setFont(font1)
+        self.label_4.setStyleSheet(u"padding-left: 10px;\n"
+"")
+
+        self.gridLayout_3.addWidget(self.label_4, 0, 0, 1, 4)
+
+        self.update_picture_btn = QPushButton(self.scrollAreaWidgetContents)
+        self.update_picture_btn.setObjectName(u"update_picture_btn")
+        palette2 = QPalette()
+        palette2.setBrush(QPalette.Active, QPalette.WindowText, brush1)
+        brush3 = QBrush(QColor(128, 178, 65, 255))
+        brush3.setStyle(Qt.SolidPattern)
+        palette2.setBrush(QPalette.Active, QPalette.Button, brush3)
+        palette2.setBrush(QPalette.Active, QPalette.Text, brush1)
+        palette2.setBrush(QPalette.Active, QPalette.ButtonText, brush1)
+        palette2.setBrush(QPalette.Active, QPalette.Base, brush3)
+        palette2.setBrush(QPalette.Active, QPalette.Window, brush3)
+        brush4 = QBrush(QColor(255, 255, 255, 128))
+        brush4.setStyle(Qt.SolidPattern)
+#if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
+        palette2.setBrush(QPalette.Active, QPalette.PlaceholderText, brush4)
+#endif
+        palette2.setBrush(QPalette.Inactive, QPalette.WindowText, brush1)
+        palette2.setBrush(QPalette.Inactive, QPalette.Button, brush3)
+        palette2.setBrush(QPalette.Inactive, QPalette.Text, brush1)
+        palette2.setBrush(QPalette.Inactive, QPalette.ButtonText, brush1)
+        palette2.setBrush(QPalette.Inactive, QPalette.Base, brush3)
+        palette2.setBrush(QPalette.Inactive, QPalette.Window, brush3)
+#if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
+        palette2.setBrush(QPalette.Inactive, QPalette.PlaceholderText, brush4)
+#endif
+        palette2.setBrush(QPalette.Disabled, QPalette.WindowText, brush1)
+        palette2.setBrush(QPalette.Disabled, QPalette.Button, brush3)
+        palette2.setBrush(QPalette.Disabled, QPalette.Text, brush1)
+        palette2.setBrush(QPalette.Disabled, QPalette.ButtonText, brush1)
+        palette2.setBrush(QPalette.Disabled, QPalette.Base, brush3)
+        palette2.setBrush(QPalette.Disabled, QPalette.Window, brush3)
+#if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
+        palette2.setBrush(QPalette.Disabled, QPalette.PlaceholderText, brush4)
+#endif
+        self.update_picture_btn.setPalette(palette2)
+        font2 = QFont()
+        font2.setPointSize(12)
+        font2.setBold(True)
+        self.update_picture_btn.setFont(font2)
+        self.update_picture_btn.setCursor(QCursor(Qt.PointingHandCursor))
+        self.update_picture_btn.setStyleSheet(u"border-radius: 5px;\n"
+"background-color: rgb(128, 178, 65);\n"
+"color: rgb(255, 255, 255);\n"
+"padding:5px;")
+
+        self.gridLayout_3.addWidget(self.update_picture_btn, 2, 0, 1, 1)
+
+        self.employee_image_name = QLabel(self.scrollAreaWidgetContents)
+        self.employee_image_name.setObjectName(u"employee_image_name")
+
+        self.gridLayout_3.addWidget(self.employee_image_name, 1, 0, 1, 1)
+
         self.gridLayout_2 = QGridLayout()
         self.gridLayout_2.setObjectName(u"gridLayout_2")
         self.gridLayout_2.setSizeConstraint(QLayout.SetDefaultConstraint)
         self.label_6 = QLabel(self.scrollAreaWidgetContents)
         self.label_6.setObjectName(u"label_6")
-        font1 = QFont()
-        font1.setPointSize(12)
-        font1.setBold(True)
-        self.label_6.setFont(font1)
+        self.label_6.setFont(font2)
         self.label_6.setStyleSheet(u"background-color: white;\n"
 "color: black;")
 
@@ -199,7 +259,7 @@ class Ui_MainWindow(object):
 
         self.label_32 = QLabel(self.scrollAreaWidgetContents)
         self.label_32.setObjectName(u"label_32")
-        self.label_32.setFont(font1)
+        self.label_32.setFont(font2)
         self.label_32.setStyleSheet(u"background-color: white;\n"
 "color: black;")
 
@@ -207,7 +267,7 @@ class Ui_MainWindow(object):
 
         self.label_22 = QLabel(self.scrollAreaWidgetContents)
         self.label_22.setObjectName(u"label_22")
-        self.label_22.setFont(font1)
+        self.label_22.setFont(font2)
         self.label_22.setStyleSheet(u"background-color: white;\n"
 "color: black;")
 
@@ -215,7 +275,7 @@ class Ui_MainWindow(object):
 
         self.label_18 = QLabel(self.scrollAreaWidgetContents)
         self.label_18.setObjectName(u"label_18")
-        self.label_18.setFont(font1)
+        self.label_18.setFont(font2)
         self.label_18.setStyleSheet(u"background-color: white;\n"
 "color: black;")
 
@@ -223,7 +283,7 @@ class Ui_MainWindow(object):
 
         self.label_36 = QLabel(self.scrollAreaWidgetContents)
         self.label_36.setObjectName(u"label_36")
-        self.label_36.setFont(font1)
+        self.label_36.setFont(font2)
         self.label_36.setStyleSheet(u"background-color: white;\n"
 "color: black;")
 
@@ -238,7 +298,7 @@ class Ui_MainWindow(object):
 
         self.label_17 = QLabel(self.scrollAreaWidgetContents)
         self.label_17.setObjectName(u"label_17")
-        self.label_17.setFont(font1)
+        self.label_17.setFont(font2)
         self.label_17.setStyleSheet(u"background-color: white;\n"
 "color: black;")
 
@@ -246,7 +306,7 @@ class Ui_MainWindow(object):
 
         self.label_13 = QLabel(self.scrollAreaWidgetContents)
         self.label_13.setObjectName(u"label_13")
-        self.label_13.setFont(font1)
+        self.label_13.setFont(font2)
         self.label_13.setStyleSheet(u"background-color: white;\n"
 "color: black;")
 
@@ -254,7 +314,7 @@ class Ui_MainWindow(object):
 
         self.label_10 = QLabel(self.scrollAreaWidgetContents)
         self.label_10.setObjectName(u"label_10")
-        self.label_10.setFont(font1)
+        self.label_10.setFont(font2)
         self.label_10.setStyleSheet(u"background-color: white;\n"
 "color: black;")
 
@@ -262,10 +322,10 @@ class Ui_MainWindow(object):
 
         self.label_49 = QLabel(self.scrollAreaWidgetContents)
         self.label_49.setObjectName(u"label_49")
-        font2 = QFont()
-        font2.setPointSize(10)
-        font2.setBold(False)
-        self.label_49.setFont(font2)
+        font3 = QFont()
+        font3.setPointSize(10)
+        font3.setBold(False)
+        self.label_49.setFont(font3)
         self.label_49.setStyleSheet(u"background-color: white;\n"
 "color: black;")
 
@@ -280,7 +340,7 @@ class Ui_MainWindow(object):
 
         self.label_63 = QLabel(self.scrollAreaWidgetContents)
         self.label_63.setObjectName(u"label_63")
-        self.label_63.setFont(font2)
+        self.label_63.setFont(font3)
         self.label_63.setStyleSheet(u"background-color: white;\n"
 "color: black;")
 
@@ -295,7 +355,7 @@ class Ui_MainWindow(object):
 
         self.label_11 = QLabel(self.scrollAreaWidgetContents)
         self.label_11.setObjectName(u"label_11")
-        self.label_11.setFont(font1)
+        self.label_11.setFont(font2)
         self.label_11.setStyleSheet(u"background-color: white;\n"
 "color: black;")
 
@@ -303,7 +363,7 @@ class Ui_MainWindow(object):
 
         self.label_31 = QLabel(self.scrollAreaWidgetContents)
         self.label_31.setObjectName(u"label_31")
-        self.label_31.setFont(font1)
+        self.label_31.setFont(font2)
         self.label_31.setStyleSheet(u"background-color: white;\n"
 "color: black;")
 
@@ -334,7 +394,7 @@ class Ui_MainWindow(object):
 
         self.label_45 = QLabel(self.scrollAreaWidgetContents)
         self.label_45.setObjectName(u"label_45")
-        self.label_45.setFont(font2)
+        self.label_45.setFont(font3)
         self.label_45.setStyleSheet(u"background-color: white;\n"
 "color: black;")
 
@@ -350,7 +410,7 @@ class Ui_MainWindow(object):
 
         self.label_52 = QLabel(self.scrollAreaWidgetContents)
         self.label_52.setObjectName(u"label_52")
-        self.label_52.setFont(font2)
+        self.label_52.setFont(font3)
         self.label_52.setStyleSheet(u"background-color: white;\n"
 "color: black;")
 
@@ -358,45 +418,41 @@ class Ui_MainWindow(object):
 
         self.editRecord_btn = QPushButton(self.scrollAreaWidgetContents)
         self.editRecord_btn.setObjectName(u"editRecord_btn")
-        palette2 = QPalette()
-        palette2.setBrush(QPalette.Active, QPalette.WindowText, brush1)
-        brush3 = QBrush(QColor(128, 178, 65, 255))
-        brush3.setStyle(Qt.SolidPattern)
-        palette2.setBrush(QPalette.Active, QPalette.Button, brush3)
-        palette2.setBrush(QPalette.Active, QPalette.Light, brush1)
-        palette2.setBrush(QPalette.Active, QPalette.Text, brush1)
-        palette2.setBrush(QPalette.Active, QPalette.ButtonText, brush1)
-        palette2.setBrush(QPalette.Active, QPalette.Base, brush3)
-        palette2.setBrush(QPalette.Active, QPalette.Window, brush3)
-        brush4 = QBrush(QColor(255, 255, 255, 128))
-        brush4.setStyle(Qt.SolidPattern)
+        palette3 = QPalette()
+        palette3.setBrush(QPalette.Active, QPalette.WindowText, brush1)
+        palette3.setBrush(QPalette.Active, QPalette.Button, brush3)
+        palette3.setBrush(QPalette.Active, QPalette.Light, brush1)
+        palette3.setBrush(QPalette.Active, QPalette.Text, brush1)
+        palette3.setBrush(QPalette.Active, QPalette.ButtonText, brush1)
+        palette3.setBrush(QPalette.Active, QPalette.Base, brush3)
+        palette3.setBrush(QPalette.Active, QPalette.Window, brush3)
 #if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
-        palette2.setBrush(QPalette.Active, QPalette.PlaceholderText, brush4)
+        palette3.setBrush(QPalette.Active, QPalette.PlaceholderText, brush4)
 #endif
-        palette2.setBrush(QPalette.Inactive, QPalette.WindowText, brush1)
-        palette2.setBrush(QPalette.Inactive, QPalette.Button, brush3)
-        palette2.setBrush(QPalette.Inactive, QPalette.Light, brush1)
-        palette2.setBrush(QPalette.Inactive, QPalette.Text, brush1)
-        palette2.setBrush(QPalette.Inactive, QPalette.ButtonText, brush1)
-        palette2.setBrush(QPalette.Inactive, QPalette.Base, brush3)
-        palette2.setBrush(QPalette.Inactive, QPalette.Window, brush3)
+        palette3.setBrush(QPalette.Inactive, QPalette.WindowText, brush1)
+        palette3.setBrush(QPalette.Inactive, QPalette.Button, brush3)
+        palette3.setBrush(QPalette.Inactive, QPalette.Light, brush1)
+        palette3.setBrush(QPalette.Inactive, QPalette.Text, brush1)
+        palette3.setBrush(QPalette.Inactive, QPalette.ButtonText, brush1)
+        palette3.setBrush(QPalette.Inactive, QPalette.Base, brush3)
+        palette3.setBrush(QPalette.Inactive, QPalette.Window, brush3)
 #if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
-        palette2.setBrush(QPalette.Inactive, QPalette.PlaceholderText, brush4)
+        palette3.setBrush(QPalette.Inactive, QPalette.PlaceholderText, brush4)
 #endif
-        palette2.setBrush(QPalette.Disabled, QPalette.WindowText, brush1)
-        palette2.setBrush(QPalette.Disabled, QPalette.Button, brush3)
-        palette2.setBrush(QPalette.Disabled, QPalette.Light, brush1)
-        palette2.setBrush(QPalette.Disabled, QPalette.Text, brush1)
-        palette2.setBrush(QPalette.Disabled, QPalette.ButtonText, brush1)
-        palette2.setBrush(QPalette.Disabled, QPalette.Base, brush3)
-        palette2.setBrush(QPalette.Disabled, QPalette.Window, brush3)
+        palette3.setBrush(QPalette.Disabled, QPalette.WindowText, brush1)
+        palette3.setBrush(QPalette.Disabled, QPalette.Button, brush3)
+        palette3.setBrush(QPalette.Disabled, QPalette.Light, brush1)
+        palette3.setBrush(QPalette.Disabled, QPalette.Text, brush1)
+        palette3.setBrush(QPalette.Disabled, QPalette.ButtonText, brush1)
+        palette3.setBrush(QPalette.Disabled, QPalette.Base, brush3)
+        palette3.setBrush(QPalette.Disabled, QPalette.Window, brush3)
 #if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
-        palette2.setBrush(QPalette.Disabled, QPalette.PlaceholderText, brush4)
+        palette3.setBrush(QPalette.Disabled, QPalette.PlaceholderText, brush4)
 #endif
-        self.editRecord_btn.setPalette(palette2)
-        font3 = QFont()
-        font3.setPointSize(12)
-        self.editRecord_btn.setFont(font3)
+        self.editRecord_btn.setPalette(palette3)
+        font4 = QFont()
+        font4.setPointSize(12)
+        self.editRecord_btn.setFont(font4)
         self.editRecord_btn.setCursor(QCursor(Qt.PointingHandCursor))
         self.editRecord_btn.setMouseTracking(False)
         self.editRecord_btn.setAutoFillBackground(False)
@@ -412,7 +468,7 @@ class Ui_MainWindow(object):
 
         self.label_5 = QLabel(self.scrollAreaWidgetContents)
         self.label_5.setObjectName(u"label_5")
-        self.label_5.setFont(font1)
+        self.label_5.setFont(font2)
         self.label_5.setStyleSheet(u"background-color: white;\n"
 "color: black;")
 
@@ -420,7 +476,7 @@ class Ui_MainWindow(object):
 
         self.label_34 = QLabel(self.scrollAreaWidgetContents)
         self.label_34.setObjectName(u"label_34")
-        self.label_34.setFont(font1)
+        self.label_34.setFont(font2)
         self.label_34.setStyleSheet(u"background-color: white;\n"
 "color: black;")
 
@@ -443,7 +499,7 @@ class Ui_MainWindow(object):
 
         self.label_20 = QLabel(self.scrollAreaWidgetContents)
         self.label_20.setObjectName(u"label_20")
-        self.label_20.setFont(font1)
+        self.label_20.setFont(font2)
         self.label_20.setStyleSheet(u"background-color: white;\n"
 "color: black;")
 
@@ -465,7 +521,7 @@ class Ui_MainWindow(object):
 
         self.label_67 = QLabel(self.scrollAreaWidgetContents)
         self.label_67.setObjectName(u"label_67")
-        self.label_67.setFont(font1)
+        self.label_67.setFont(font2)
         self.label_67.setStyleSheet(u"background-color: white;\n"
 "color: black;")
 
@@ -480,7 +536,7 @@ class Ui_MainWindow(object):
 
         self.label_42 = QLabel(self.scrollAreaWidgetContents)
         self.label_42.setObjectName(u"label_42")
-        self.label_42.setFont(font2)
+        self.label_42.setFont(font3)
         self.label_42.setStyleSheet(u"background-color: white;\n"
 "color: black;")
 
@@ -498,7 +554,7 @@ class Ui_MainWindow(object):
 
         self.label_66 = QLabel(self.scrollAreaWidgetContents)
         self.label_66.setObjectName(u"label_66")
-        self.label_66.setFont(font2)
+        self.label_66.setFont(font3)
         self.label_66.setStyleSheet(u"background-color: white;\n"
 "color: black;")
 
@@ -521,7 +577,7 @@ class Ui_MainWindow(object):
 
         self.label_26 = QLabel(self.scrollAreaWidgetContents)
         self.label_26.setObjectName(u"label_26")
-        self.label_26.setFont(font1)
+        self.label_26.setFont(font2)
         self.label_26.setStyleSheet(u"background-color: white;\n"
 "color: black;")
 
@@ -529,7 +585,7 @@ class Ui_MainWindow(object):
 
         self.label_25 = QLabel(self.scrollAreaWidgetContents)
         self.label_25.setObjectName(u"label_25")
-        self.label_25.setFont(font1)
+        self.label_25.setFont(font2)
         self.label_25.setStyleSheet(u"background-color: white;\n"
 "color: black;")
 
@@ -560,7 +616,7 @@ class Ui_MainWindow(object):
 
         self.label_14 = QLabel(self.scrollAreaWidgetContents)
         self.label_14.setObjectName(u"label_14")
-        self.label_14.setFont(font1)
+        self.label_14.setFont(font2)
         self.label_14.setStyleSheet(u"background-color: white;\n"
 "color: black;")
 
@@ -597,7 +653,7 @@ class Ui_MainWindow(object):
 
         self.label_35 = QLabel(self.scrollAreaWidgetContents)
         self.label_35.setObjectName(u"label_35")
-        self.label_35.setFont(font1)
+        self.label_35.setFont(font2)
         self.label_35.setStyleSheet(u"background-color: white;\n"
 "color: black;")
 
@@ -612,7 +668,7 @@ class Ui_MainWindow(object):
 
         self.label_59 = QLabel(self.scrollAreaWidgetContents)
         self.label_59.setObjectName(u"label_59")
-        self.label_59.setFont(font2)
+        self.label_59.setFont(font3)
         self.label_59.setStyleSheet(u"background-color: white;\n"
 "color: black;")
 
@@ -650,7 +706,7 @@ class Ui_MainWindow(object):
 
         self.label_64 = QLabel(self.scrollAreaWidgetContents)
         self.label_64.setObjectName(u"label_64")
-        self.label_64.setFont(font2)
+        self.label_64.setFont(font3)
         self.label_64.setStyleSheet(u"background-color: white;\n"
 "color: black;")
 
@@ -658,7 +714,7 @@ class Ui_MainWindow(object):
 
         self.label_9 = QLabel(self.scrollAreaWidgetContents)
         self.label_9.setObjectName(u"label_9")
-        self.label_9.setFont(font1)
+        self.label_9.setFont(font2)
         self.label_9.setStyleSheet(u"background-color: white;\n"
 "color: black;")
 
@@ -719,7 +775,7 @@ class Ui_MainWindow(object):
 
         self.label_33 = QLabel(self.scrollAreaWidgetContents)
         self.label_33.setObjectName(u"label_33")
-        self.label_33.setFont(font1)
+        self.label_33.setFont(font2)
         self.label_33.setStyleSheet(u"background-color: white;\n"
 "color: black;")
 
@@ -727,7 +783,7 @@ class Ui_MainWindow(object):
 
         self.label_47 = QLabel(self.scrollAreaWidgetContents)
         self.label_47.setObjectName(u"label_47")
-        self.label_47.setFont(font2)
+        self.label_47.setFont(font3)
         self.label_47.setStyleSheet(u"background-color: white;\n"
 "color: black;")
 
@@ -750,7 +806,7 @@ class Ui_MainWindow(object):
 
         self.label_51 = QLabel(self.scrollAreaWidgetContents)
         self.label_51.setObjectName(u"label_51")
-        self.label_51.setFont(font2)
+        self.label_51.setFont(font3)
         self.label_51.setStyleSheet(u"background-color: white;\n"
 "color: black;")
 
@@ -758,7 +814,7 @@ class Ui_MainWindow(object):
 
         self.label_8 = QLabel(self.scrollAreaWidgetContents)
         self.label_8.setObjectName(u"label_8")
-        self.label_8.setFont(font1)
+        self.label_8.setFont(font2)
         self.label_8.setStyleSheet(u"background-color: white;\n"
 "color: black;")
 
@@ -788,7 +844,7 @@ class Ui_MainWindow(object):
 
         self.label_60 = QLabel(self.scrollAreaWidgetContents)
         self.label_60.setObjectName(u"label_60")
-        self.label_60.setFont(font2)
+        self.label_60.setFont(font3)
         self.label_60.setStyleSheet(u"background-color: white;\n"
 "color: black;")
 
@@ -802,7 +858,7 @@ class Ui_MainWindow(object):
 
         self.label_62 = QLabel(self.scrollAreaWidgetContents)
         self.label_62.setObjectName(u"label_62")
-        self.label_62.setFont(font2)
+        self.label_62.setFont(font3)
         self.label_62.setStyleSheet(u"background-color: white;\n"
 "color: black;")
 
@@ -810,7 +866,7 @@ class Ui_MainWindow(object):
 
         self.label_27 = QLabel(self.scrollAreaWidgetContents)
         self.label_27.setObjectName(u"label_27")
-        self.label_27.setFont(font1)
+        self.label_27.setFont(font2)
         self.label_27.setStyleSheet(u"background-color: white;\n"
 "color: black;")
 
@@ -818,7 +874,7 @@ class Ui_MainWindow(object):
 
         self.label_30 = QLabel(self.scrollAreaWidgetContents)
         self.label_30.setObjectName(u"label_30")
-        self.label_30.setFont(font1)
+        self.label_30.setFont(font2)
         self.label_30.setStyleSheet(u"background-color: white;\n"
 "color: black;")
 
@@ -826,7 +882,7 @@ class Ui_MainWindow(object):
 
         self.label_38 = QLabel(self.scrollAreaWidgetContents)
         self.label_38.setObjectName(u"label_38")
-        self.label_38.setFont(font1)
+        self.label_38.setFont(font2)
         self.label_38.setStyleSheet(u"background-color: white;\n"
 "color: black;")
 
@@ -841,7 +897,7 @@ class Ui_MainWindow(object):
 
         self.label_40 = QLabel(self.scrollAreaWidgetContents)
         self.label_40.setObjectName(u"label_40")
-        self.label_40.setFont(font1)
+        self.label_40.setFont(font2)
         self.label_40.setStyleSheet(u"background-color: white;\n"
 "color: black;")
 
@@ -849,7 +905,7 @@ class Ui_MainWindow(object):
 
         self.label_28 = QLabel(self.scrollAreaWidgetContents)
         self.label_28.setObjectName(u"label_28")
-        self.label_28.setFont(font1)
+        self.label_28.setFont(font2)
         self.label_28.setStyleSheet(u"background-color: white;\n"
 "color: black;")
 
@@ -872,7 +928,7 @@ class Ui_MainWindow(object):
 
         self.label_37 = QLabel(self.scrollAreaWidgetContents)
         self.label_37.setObjectName(u"label_37")
-        self.label_37.setFont(font1)
+        self.label_37.setFont(font2)
         self.label_37.setStyleSheet(u"background-color: white;\n"
 "color: black;")
 
@@ -895,7 +951,7 @@ class Ui_MainWindow(object):
 
         self.label_61 = QLabel(self.scrollAreaWidgetContents)
         self.label_61.setObjectName(u"label_61")
-        self.label_61.setFont(font1)
+        self.label_61.setFont(font2)
         self.label_61.setStyleSheet(u"background-color: white;\n"
 "color: black;")
 
@@ -910,7 +966,7 @@ class Ui_MainWindow(object):
 
         self.label_19 = QLabel(self.scrollAreaWidgetContents)
         self.label_19.setObjectName(u"label_19")
-        self.label_19.setFont(font1)
+        self.label_19.setFont(font2)
         self.label_19.setStyleSheet(u"background-color: white;\n"
 "color: black;")
 
@@ -918,7 +974,7 @@ class Ui_MainWindow(object):
 
         self.label_58 = QLabel(self.scrollAreaWidgetContents)
         self.label_58.setObjectName(u"label_58")
-        self.label_58.setFont(font2)
+        self.label_58.setFont(font3)
         self.label_58.setStyleSheet(u"background-color: white;\n"
 "color: black;")
 
@@ -933,7 +989,7 @@ class Ui_MainWindow(object):
 
         self.label_65 = QLabel(self.scrollAreaWidgetContents)
         self.label_65.setObjectName(u"label_65")
-        self.label_65.setFont(font2)
+        self.label_65.setFont(font3)
         self.label_65.setStyleSheet(u"background-color: white;\n"
 "color: black;")
 
@@ -941,7 +997,7 @@ class Ui_MainWindow(object):
 
         self.label_43 = QLabel(self.scrollAreaWidgetContents)
         self.label_43.setObjectName(u"label_43")
-        self.label_43.setFont(font2)
+        self.label_43.setFont(font3)
         self.label_43.setStyleSheet(u"background-color: white;\n"
 "color: black;")
 
@@ -956,7 +1012,7 @@ class Ui_MainWindow(object):
 
         self.label_56 = QLabel(self.scrollAreaWidgetContents)
         self.label_56.setObjectName(u"label_56")
-        self.label_56.setFont(font1)
+        self.label_56.setFont(font2)
         self.label_56.setStyleSheet(u"background-color: white;\n"
 "color: black;")
 
@@ -971,7 +1027,7 @@ class Ui_MainWindow(object):
 
         self.label_21 = QLabel(self.scrollAreaWidgetContents)
         self.label_21.setObjectName(u"label_21")
-        self.label_21.setFont(font1)
+        self.label_21.setFont(font2)
         self.label_21.setStyleSheet(u"background-color: white;\n"
 "color: black;")
 
@@ -991,7 +1047,7 @@ class Ui_MainWindow(object):
 
         self.label_55 = QLabel(self.scrollAreaWidgetContents)
         self.label_55.setObjectName(u"label_55")
-        self.label_55.setFont(font1)
+        self.label_55.setFont(font2)
         self.label_55.setStyleSheet(u"background-color: white;\n"
 "color: black;")
 
@@ -999,7 +1055,7 @@ class Ui_MainWindow(object):
 
         self.label_29 = QLabel(self.scrollAreaWidgetContents)
         self.label_29.setObjectName(u"label_29")
-        self.label_29.setFont(font1)
+        self.label_29.setFont(font2)
         self.label_29.setStyleSheet(u"background-color: white;\n"
 "color: black;")
 
@@ -1007,7 +1063,7 @@ class Ui_MainWindow(object):
 
         self.label_7 = QLabel(self.scrollAreaWidgetContents)
         self.label_7.setObjectName(u"label_7")
-        self.label_7.setFont(font1)
+        self.label_7.setFont(font2)
         self.label_7.setStyleSheet(u"background-color: white;\n"
 "color: black;")
 
@@ -1015,7 +1071,7 @@ class Ui_MainWindow(object):
 
         self.label_53 = QLabel(self.scrollAreaWidgetContents)
         self.label_53.setObjectName(u"label_53")
-        self.label_53.setFont(font2)
+        self.label_53.setFont(font3)
         self.label_53.setStyleSheet(u"background-color: white;\n"
 "color: black;")
 
@@ -1031,7 +1087,7 @@ class Ui_MainWindow(object):
 
         self.label_16 = QLabel(self.scrollAreaWidgetContents)
         self.label_16.setObjectName(u"label_16")
-        self.label_16.setFont(font1)
+        self.label_16.setFont(font2)
         self.label_16.setStyleSheet(u"background-color: white;\n"
 "color: black;")
 
@@ -1039,7 +1095,7 @@ class Ui_MainWindow(object):
 
         self.label_48 = QLabel(self.scrollAreaWidgetContents)
         self.label_48.setObjectName(u"label_48")
-        self.label_48.setFont(font2)
+        self.label_48.setFont(font3)
         self.label_48.setStyleSheet(u"background-color: white;\n"
 "color: black;")
 
@@ -1068,7 +1124,7 @@ class Ui_MainWindow(object):
 
         self.label_57 = QLabel(self.scrollAreaWidgetContents)
         self.label_57.setObjectName(u"label_57")
-        self.label_57.setFont(font2)
+        self.label_57.setFont(font3)
         self.label_57.setStyleSheet(u"background-color: white;\n"
 "color: black;")
 
@@ -1113,7 +1169,7 @@ class Ui_MainWindow(object):
 
         self.label_23 = QLabel(self.scrollAreaWidgetContents)
         self.label_23.setObjectName(u"label_23")
-        self.label_23.setFont(font1)
+        self.label_23.setFont(font2)
         self.label_23.setStyleSheet(u"background-color: white;\n"
 "color: black;")
 
@@ -1128,7 +1184,7 @@ class Ui_MainWindow(object):
 
         self.label_24 = QLabel(self.scrollAreaWidgetContents)
         self.label_24.setObjectName(u"label_24")
-        self.label_24.setFont(font1)
+        self.label_24.setFont(font2)
         self.label_24.setStyleSheet(u"background-color: white;\n"
 "color: black;")
 
@@ -1136,7 +1192,7 @@ class Ui_MainWindow(object):
 
         self.label_46 = QLabel(self.scrollAreaWidgetContents)
         self.label_46.setObjectName(u"label_46")
-        self.label_46.setFont(font2)
+        self.label_46.setFont(font3)
         self.label_46.setStyleSheet(u"background-color: white;\n"
 "color: black;")
 
@@ -1152,7 +1208,7 @@ class Ui_MainWindow(object):
 
         self.label_39 = QLabel(self.scrollAreaWidgetContents)
         self.label_39.setObjectName(u"label_39")
-        self.label_39.setFont(font1)
+        self.label_39.setFont(font2)
         self.label_39.setStyleSheet(u"background-color: white;\n"
 "color: black;")
 
@@ -1160,7 +1216,7 @@ class Ui_MainWindow(object):
 
         self.label_44 = QLabel(self.scrollAreaWidgetContents)
         self.label_44.setObjectName(u"label_44")
-        self.label_44.setFont(font2)
+        self.label_44.setFont(font3)
         self.label_44.setStyleSheet(u"background-color: white;\n"
 "color: black;")
 
@@ -1168,7 +1224,7 @@ class Ui_MainWindow(object):
 
         self.label_54 = QLabel(self.scrollAreaWidgetContents)
         self.label_54.setObjectName(u"label_54")
-        self.label_54.setFont(font1)
+        self.label_54.setFont(font2)
         self.label_54.setStyleSheet(u"background-color: white;\n"
 "color: black;")
 
@@ -1183,7 +1239,7 @@ class Ui_MainWindow(object):
 
         self.label_41 = QLabel(self.scrollAreaWidgetContents)
         self.label_41.setObjectName(u"label_41")
-        self.label_41.setFont(font2)
+        self.label_41.setFont(font3)
         self.label_41.setStyleSheet(u"background-color: white;\n"
 "color: black;")
 
@@ -1198,7 +1254,7 @@ class Ui_MainWindow(object):
 
         self.label_15 = QLabel(self.scrollAreaWidgetContents)
         self.label_15.setObjectName(u"label_15")
-        self.label_15.setFont(font2)
+        self.label_15.setFont(font3)
         self.label_15.setStyleSheet(u"background-color: white;\n"
 "color: black;")
 
@@ -1206,7 +1262,7 @@ class Ui_MainWindow(object):
 
         self.label_50 = QLabel(self.scrollAreaWidgetContents)
         self.label_50.setObjectName(u"label_50")
-        self.label_50.setFont(font1)
+        self.label_50.setFont(font2)
         self.label_50.setStyleSheet(u"background-color: white;\n"
 "color: black;")
 
@@ -1227,69 +1283,7 @@ class Ui_MainWindow(object):
         self.gridLayout_2.addWidget(self.checkBox_8, 66, 2, 1, 1)
 
 
-        self.gridLayout_3.addLayout(self.gridLayout_2, 5, 1, 1, 1)
-
-        self.update_picture_btn = QPushButton(self.scrollAreaWidgetContents)
-        self.update_picture_btn.setObjectName(u"update_picture_btn")
-        palette3 = QPalette()
-        palette3.setBrush(QPalette.Active, QPalette.WindowText, brush1)
-        palette3.setBrush(QPalette.Active, QPalette.Button, brush3)
-        palette3.setBrush(QPalette.Active, QPalette.Text, brush1)
-        palette3.setBrush(QPalette.Active, QPalette.ButtonText, brush1)
-        palette3.setBrush(QPalette.Active, QPalette.Base, brush3)
-        palette3.setBrush(QPalette.Active, QPalette.Window, brush3)
-#if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
-        palette3.setBrush(QPalette.Active, QPalette.PlaceholderText, brush4)
-#endif
-        palette3.setBrush(QPalette.Inactive, QPalette.WindowText, brush1)
-        palette3.setBrush(QPalette.Inactive, QPalette.Button, brush3)
-        palette3.setBrush(QPalette.Inactive, QPalette.Text, brush1)
-        palette3.setBrush(QPalette.Inactive, QPalette.ButtonText, brush1)
-        palette3.setBrush(QPalette.Inactive, QPalette.Base, brush3)
-        palette3.setBrush(QPalette.Inactive, QPalette.Window, brush3)
-#if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
-        palette3.setBrush(QPalette.Inactive, QPalette.PlaceholderText, brush4)
-#endif
-        palette3.setBrush(QPalette.Disabled, QPalette.WindowText, brush1)
-        palette3.setBrush(QPalette.Disabled, QPalette.Button, brush3)
-        palette3.setBrush(QPalette.Disabled, QPalette.Text, brush1)
-        palette3.setBrush(QPalette.Disabled, QPalette.ButtonText, brush1)
-        palette3.setBrush(QPalette.Disabled, QPalette.Base, brush3)
-        palette3.setBrush(QPalette.Disabled, QPalette.Window, brush3)
-#if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
-        palette3.setBrush(QPalette.Disabled, QPalette.PlaceholderText, brush4)
-#endif
-        self.update_picture_btn.setPalette(palette3)
-        self.update_picture_btn.setFont(font1)
-        self.update_picture_btn.setCursor(QCursor(Qt.PointingHandCursor))
-        self.update_picture_btn.setStyleSheet(u"border-radius: 5px;\n"
-"background-color: rgb(128, 178, 65);\n"
-"color: rgb(255, 255, 255);\n"
-"padding:5px;")
-
-        self.gridLayout_3.addWidget(self.update_picture_btn, 1, 0, 1, 1)
-
-        self.label_4 = QLabel(self.scrollAreaWidgetContents)
-        self.label_4.setObjectName(u"label_4")
-        font4 = QFont()
-        font4.setPointSize(14)
-        font4.setBold(True)
-        self.label_4.setFont(font4)
-        self.label_4.setStyleSheet(u"padding-left: 10px;\n"
-"")
-
-        self.gridLayout_3.addWidget(self.label_4, 0, 0, 1, 2)
-
-        self.update_sign_btn = QPushButton(self.scrollAreaWidgetContents)
-        self.update_sign_btn.setObjectName(u"update_sign_btn")
-        self.update_sign_btn.setFont(font1)
-        self.update_sign_btn.setCursor(QCursor(Qt.PointingHandCursor))
-        self.update_sign_btn.setStyleSheet(u"border-radius: 5px;\n"
-"background-color: rgb(128, 178, 65);\n"
-"color: rgb(255, 255, 255);\n"
-"padding:5px;")
-
-        self.gridLayout_3.addWidget(self.update_sign_btn, 2, 0, 1, 1)
+        self.gridLayout_3.addLayout(self.gridLayout_2, 7, 3, 1, 1)
 
 
         self.verticalLayout.addLayout(self.gridLayout_3)
@@ -1331,6 +1325,9 @@ class Ui_MainWindow(object):
         self.label.setText(QCoreApplication.translate("MainWindow", u"Silliman University", None))
         self.label_2.setText(QCoreApplication.translate("MainWindow", u"Personal Record Dashboard", None))
         self.label_12.setText("")
+        self.label_4.setText(QCoreApplication.translate("MainWindow", u"Editing Employee Information", None))
+        self.update_picture_btn.setText(QCoreApplication.translate("MainWindow", u"Update Employee Picture", None))
+        self.employee_image_name.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
         self.label_6.setText(QCoreApplication.translate("MainWindow", u"Position(s)", None))
         self.label_32.setText(QCoreApplication.translate("MainWindow", u"Occupation", None))
         self.label_22.setText(QCoreApplication.translate("MainWindow", u"Pag-Ibig Number", None))
@@ -1401,9 +1398,6 @@ class Ui_MainWindow(object):
         self.label_15.setText(QCoreApplication.translate("MainWindow", u"If non-Filipino*, please indicate the following:", None))
         self.label_50.setText(QCoreApplication.translate("MainWindow", u"Related staff member(s)", None))
         self.checkBox_8.setText(QCoreApplication.translate("MainWindow", u"This confirms all details listed are true.", None))
-        self.update_picture_btn.setText(QCoreApplication.translate("MainWindow", u"Update Employee Picture", None))
-        self.label_4.setText(QCoreApplication.translate("MainWindow", u"Editing Employee Information", None))
-        self.update_sign_btn.setText(QCoreApplication.translate("MainWindow", u"Update Signature", None))
         self.edit_footer.setTitle("")
         self.label_68.setText(QCoreApplication.translate("MainWindow", u"Silliman University Personnel Record Dashboard", None))
     # retranslateUi

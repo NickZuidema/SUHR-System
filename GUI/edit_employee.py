@@ -1,13 +1,13 @@
 import sqlite3
 import sys
 import uuid
-from PySide6.QtWidgets import QApplication, QMainWindow, QMessageBox, QLineEdit
+from PySide6.QtWidgets import QApplication, QMainWindow, QMessageBox, QLineEdit, QFileDialog
 from PySide6.QtGui import QPalette, QColor
 
 #ui link
 from ui_edit import Ui_MainWindow
 
-from config import get_database_path
+from config import get_database_path,get_profile_path
 from session import SessionManager
 import os
 
@@ -38,6 +38,8 @@ class Edit_MainWindow(QMainWindow):
         #finalize changes
         self.ui.editRecord_btn.clicked.connect(self.edit_confirm)
 
+        self.ui.update_picture_btn.clicked.connect(self.edit_emp_image)
+
         database_path = get_database_path()
         
         try:
@@ -50,7 +52,7 @@ class Edit_MainWindow(QMainWindow):
                 # Use the passed employee_id for the query
                 cursor.execute("""
                     SELECT Last_Name, First_Name, Middle_Name, Dgte_Address, Home_Address, Date_Of_Birth, Home_Address, 
-                            Citizenship, Civil_Status, Sss_No, Pagibig_No, Philhealth_No, Tax_Id, Contact_No, Church, Criminal_Record
+                            Citizenship, Civil_Status, Sss_No, Pagibig_No, Philhealth_No, Tax_Id, Contact_No, Church, Criminal_Record, employee_image
                     FROM Employee
                     WHERE Employee_Id = ?
                 """, (self.id_val,))
@@ -103,6 +105,8 @@ class Edit_MainWindow(QMainWindow):
                 self.ui.edit_civil.setPlainText(employee_data[8])
 
                 self.ui.edit_case.setPlainText(employee_data[15])
+
+                self.ui.employee_image_name.setText(employee_data[16])
                 
 
         except sqlite3.Error as e:
@@ -111,6 +115,18 @@ class Edit_MainWindow(QMainWindow):
             QMessageBox.warning(self, "Record Not Found", str(e))
         except Exception as e:
             QMessageBox.critical(self, "Unexpected Error", f"An unexpected error occurred: {e}")
+
+    def edit_emp_image(self):
+         # Open a file dialog restricted to a specific folder and image files
+        folder_path = get_profile_path()
+        file_filter = "Image Files (*.png *.jpg *.jpeg *.bmp *.gif)"
+        file_path, _ = QFileDialog.getOpenFileName(self, "Select an Image", folder_path, file_filter)
+        
+        
+        if file_path:  # If a file is selected
+            file_name = os.path.basename(file_path)
+            print(f"Grabbed {file_name}")
+            self.ui.employee_image_name.setText(file_name)
 
     def edit_confirm(self):
 
