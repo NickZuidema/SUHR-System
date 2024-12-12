@@ -552,9 +552,9 @@ QScrollArea {
        <property name="geometry">
         <rect>
          <x>0</x>
-         <y>-1141</y>
+         <y>-1607</y>
          <width>1200</width>
-         <height>3027</height>
+         <height>3117</height>
         </rect>
        </property>
        <property name="styleSheet">
@@ -816,8 +816,55 @@ padding:5px;</string>
               <property name="sizeConstraint">
                <enum>QLayout::SetDefaultConstraint</enum>
               </property>
-              <item row="42" column="2">
-               <widget class="QPlainTextEdit" name="edit_children_DoB">
+              <item row="32" column="0" colspan="2">
+               <widget class="QPlainTextEdit" name="edit_mother_name">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border:1px solid black;</string>
+                </property>
+               </widget>
+              </item>
+              <item row="46" column="2">
+               <widget class="QLabel" name="label_43">
+                <property name="font">
+                 <font>
+                  <pointsize>10</pointsize>
+                  <bold>false</bold>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
+                </property>
+                <property name="text">
+                 <string>Year Graduated</string>
+                </property>
+               </widget>
+              </item>
+              <item row="60" column="2">
+               <widget class="QLabel" name="label_59">
+                <property name="font">
+                 <font>
+                  <pointsize>10</pointsize>
+                  <bold>false</bold>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
+                </property>
+                <property name="text">
+                 <string>Period of employment</string>
+                </property>
+               </widget>
+              </item>
+              <item row="11" column="0">
+               <widget class="QPlainTextEdit" name="edit_DoB">
                 <property name="minimumSize">
                  <size>
                   <width>0</width>
@@ -830,8 +877,8 @@ color: black;border:1px solid black;</string>
                 </property>
                </widget>
               </item>
-              <item row="19" column="0">
-               <widget class="QLabel" name="label_20">
+              <item row="0" column="0" colspan="3">
+               <widget class="QLabel" name="label_5">
                 <property name="font">
                  <font>
                   <pointsize>12</pointsize>
@@ -843,12 +890,12 @@ color: black;border:1px solid black;</string>
 color: black;</string>
                 </property>
                 <property name="text">
-                 <string>Tax Identification Number</string>
+                 <string>Full Name</string>
                 </property>
                </widget>
               </item>
-              <item row="4" column="0" colspan="3">
-               <widget class="QLabel" name="label_7">
+              <item row="55" column="0" colspan="3">
+               <widget class="QLabel" name="label_54">
                 <property name="font">
                  <font>
                   <pointsize>12</pointsize>
@@ -860,21 +907,24 @@ color: black;</string>
 color: black;</string>
                 </property>
                 <property name="text">
-                 <string>Department(s)</string>
+                 <string>School or college distinction(s)</string>
                 </property>
                </widget>
               </item>
-              <item row="3" column="0" colspan="3">
-               <widget class="QPlainTextEdit" name="edit_Position">
-                <property name="minimumSize">
-                 <size>
-                  <width>0</width>
-                  <height>0</height>
-                 </size>
+              <item row="50" column="0">
+               <widget class="QLabel" name="label_47">
+                <property name="font">
+                 <font>
+                  <pointsize>10</pointsize>
+                  <bold>false</bold>
+                 </font>
                 </property>
                 <property name="styleSheet">
                  <string notr="true">background-color: white;
-color: black;border:1px solid black;</string>
+color: black;</string>
+                </property>
+                <property name="text">
+                 <string>College</string>
                 </property>
                </widget>
               </item>
@@ -895,8 +945,8 @@ color: black;</string>
                 </property>
                </widget>
               </item>
-              <item row="59" column="0">
-               <widget class="QPlainTextEdit" name="edit_previous_name">
+              <item row="1" column="1">
+               <widget class="QPlainTextEdit" name="edit_middleName">
                 <property name="minimumSize">
                  <size>
                   <width>0</width>
@@ -908,55 +958,8 @@ color: black;</string>
                 </property>
                </widget>
               </item>
-              <item row="16" column="0">
-               <widget class="QPlainTextEdit" name="edit_passportNo">
-                <property name="minimumSize">
-                 <size>
-                  <width>0</width>
-                  <height>0</height>
-                 </size>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">border:1px solid black;</string>
-                </property>
-               </widget>
-              </item>
-              <item row="7" column="0" colspan="3">
-               <widget class="QPlainTextEdit" name="edit_dgte_address">
-                <property name="minimumSize">
-                 <size>
-                  <width>0</width>
-                  <height>0</height>
-                 </size>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">background-color: white;
-color: black;border:1px solid black;</string>
-                </property>
-               </widget>
-              </item>
-              <item row="12" column="0" colspan="3">
-               <widget class="QFrame" name="frame">
-                <property name="minimumSize">
-                 <size>
-                  <width>0</width>
-                  <height>20</height>
-                 </size>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">background-color: white;
-color: black;</string>
-                </property>
-                <property name="frameShape">
-                 <enum>QFrame::StyledPanel</enum>
-                </property>
-                <property name="frameShadow">
-                 <enum>QFrame::Raised</enum>
-                </property>
-               </widget>
-              </item>
-              <item row="31" column="0" colspan="2">
-               <widget class="QLabel" name="label_28">
+              <item row="23" column="0" colspan="2">
+               <widget class="QLabel" name="label_24">
                 <property name="font">
                  <font>
                   <pointsize>12</pointsize>
@@ -968,12 +971,63 @@ color: black;</string>
 color: black;</string>
                 </property>
                 <property name="text">
-                 <string>Mother</string>
+                 <string>Church Affiliation</string>
                 </property>
                </widget>
               </item>
-              <item row="40" column="0">
-               <widget class="QPlainTextEdit" name="edit_civil">
+              <item row="1" column="2">
+               <widget class="QPlainTextEdit" name="edit_lastName">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border:1px solid black;</string>
+                </property>
+               </widget>
+              </item>
+              <item row="16" column="1">
+               <widget class="QPlainTextEdit" name="edit_acrNo">
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;border:1px solid black;</string>
+                </property>
+               </widget>
+              </item>
+              <item row="46" column="1">
+               <widget class="QLabel" name="label_42">
+                <property name="font">
+                 <font>
+                  <pointsize>10</pointsize>
+                  <bold>false</bold>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
+                </property>
+                <property name="text">
+                 <string>Address</string>
+                </property>
+               </widget>
+              </item>
+              <item row="35" column="0" colspan="3">
+               <widget class="QPlainTextEdit" name="edit_father_address">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border:1px solid black;</string>
+                </property>
+               </widget>
+              </item>
+              <item row="20" column="1" colspan="2">
+               <widget class="QPlainTextEdit" name="edit_SSS">
                 <property name="minimumSize">
                  <size>
                   <width>0</width>
@@ -986,12 +1040,12 @@ color: black;border:1px solid black;</string>
                 </property>
                </widget>
               </item>
-              <item row="13" column="0" colspan="2">
-               <widget class="QLabel" name="label_15">
+              <item row="25" column="0">
+               <widget class="QLabel" name="label_25">
                 <property name="font">
                  <font>
-                  <pointsize>10</pointsize>
-                  <bold>false</bold>
+                  <pointsize>12</pointsize>
+                  <bold>true</bold>
                  </font>
                 </property>
                 <property name="styleSheet">
@@ -999,29 +1053,12 @@ color: black;border:1px solid black;</string>
 color: black;</string>
                 </property>
                 <property name="text">
-                 <string>If non-Filipino*, please indicate the following:</string>
+                 <string>Father</string>
                 </property>
                </widget>
               </item>
-              <item row="46" column="2">
-               <widget class="QLabel" name="label_46">
-                <property name="font">
-                 <font>
-                  <pointsize>10</pointsize>
-                  <bold>false</bold>
-                 </font>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">background-color: white;
-color: black;</string>
-                </property>
-                <property name="text">
-                 <string>Year Graduated</string>
-                </property>
-               </widget>
-              </item>
-              <item row="11" column="2">
-               <widget class="QPlainTextEdit" name="edit_citizen">
+              <item row="20" column="0">
+               <widget class="QPlainTextEdit" name="edit_TIN">
                 <property name="minimumSize">
                  <size>
                   <width>0</width>
@@ -1034,14 +1071,8 @@ color: black;border:1px solid black;</string>
                 </property>
                </widget>
               </item>
-              <item row="1" column="1">
-               <widget class="QPlainTextEdit" name="edit_middleName">
-                <property name="minimumSize">
-                 <size>
-                  <width>0</width>
-                  <height>0</height>
-                 </size>
-                </property>
+              <item row="27" column="2">
+               <widget class="QTextEdit" name="edit_father_lastname">
                 <property name="styleSheet">
                  <string notr="true">border:1px solid black;</string>
                 </property>
@@ -1064,173 +1095,8 @@ color: black;</string>
                 </property>
                </widget>
               </item>
-              <item row="46" column="0">
-               <widget class="QLabel" name="label_44">
-                <property name="font">
-                 <font>
-                  <pointsize>10</pointsize>
-                  <bold>false</bold>
-                 </font>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">background-color: white;
-color: black;</string>
-                </property>
-                <property name="text">
-                 <string>High School</string>
-                </property>
-               </widget>
-              </item>
-              <item row="59" column="3">
-               <widget class="QPlainTextEdit" name="edit_previous_leaving">
-                <property name="minimumSize">
-                 <size>
-                  <width>0</width>
-                  <height>0</height>
-                 </size>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">border:1px solid black;</string>
-                </property>
-               </widget>
-              </item>
-              <item row="45" column="1">
-               <widget class="QPlainTextEdit" name="edit_elem_address">
-                <property name="minimumSize">
-                 <size>
-                  <width>0</width>
-                  <height>0</height>
-                 </size>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">background-color: white;
-color: black;border:1px solid black;</string>
-                </property>
-               </widget>
-              </item>
-              <item row="47" column="2">
+              <item row="49" column="2">
                <widget class="QPlainTextEdit" name="edit_high_date">
-                <property name="minimumSize">
-                 <size>
-                  <width>0</width>
-                  <height>0</height>
-                 </size>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">border:1px solid black;</string>
-                </property>
-               </widget>
-              </item>
-              <item row="21" column="0">
-               <widget class="QLabel" name="label_22">
-                <property name="font">
-                 <font>
-                  <pointsize>12</pointsize>
-                  <bold>true</bold>
-                 </font>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">background-color: white;
-color: black;</string>
-                </property>
-                <property name="text">
-                 <string>Pag-Ibig Number</string>
-                </property>
-               </widget>
-              </item>
-              <item row="54" column="0" colspan="3">
-               <widget class="QPlainTextEdit" name="edit_school_dist">
-                <property name="minimumSize">
-                 <size>
-                  <width>0</width>
-                  <height>0</height>
-                 </size>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">border:1px solid black;</string>
-                </property>
-               </widget>
-              </item>
-              <item row="44" column="2">
-               <widget class="QLabel" name="label_43">
-                <property name="font">
-                 <font>
-                  <pointsize>10</pointsize>
-                  <bold>false</bold>
-                 </font>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">background-color: white;
-color: black;</string>
-                </property>
-                <property name="text">
-                 <string>Year Graduated</string>
-                </property>
-               </widget>
-              </item>
-              <item row="21" column="1" colspan="2">
-               <widget class="QLabel" name="label_23">
-                <property name="font">
-                 <font>
-                  <pointsize>12</pointsize>
-                  <bold>true</bold>
-                 </font>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">background-color: white;
-color: black;</string>
-                </property>
-                <property name="text">
-                 <string>Philhealth Number</string>
-                </property>
-               </widget>
-              </item>
-              <item row="47" column="0">
-               <widget class="QPlainTextEdit" name="edit_high">
-                <property name="minimumSize">
-                 <size>
-                  <width>0</width>
-                  <height>0</height>
-                 </size>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">border:1px solid black;</string>
-                </property>
-               </widget>
-              </item>
-              <item row="48" column="0">
-               <widget class="QLabel" name="label_47">
-                <property name="font">
-                 <font>
-                  <pointsize>10</pointsize>
-                  <bold>false</bold>
-                 </font>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">background-color: white;
-color: black;</string>
-                </property>
-                <property name="text">
-                 <string>College</string>
-                </property>
-               </widget>
-              </item>
-              <item row="24" column="0" colspan="3">
-               <widget class="QPlainTextEdit" name="edit_church">
-                <property name="minimumSize">
-                 <size>
-                  <width>0</width>
-                  <height>0</height>
-                 </size>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">background-color: white;
-color: black;border:1px solid black;</string>
-                </property>
-               </widget>
-              </item>
-              <item row="32" column="2">
-               <widget class="QPlainTextEdit" name="edit_mother_occ">
                 <property name="minimumSize">
                  <size>
                   <width>0</width>
@@ -1259,7 +1125,347 @@ color: black;</string>
                 </property>
                </widget>
               </item>
-              <item row="45" column="2">
+              <item row="15" column="0">
+               <widget class="QLabel" name="label_11">
+                <property name="font">
+                 <font>
+                  <pointsize>12</pointsize>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
+                </property>
+                <property name="text">
+                 <string>Passport number*</string>
+                </property>
+               </widget>
+              </item>
+              <item row="68" column="0" colspan="3">
+               <widget class="QLabel" name="label_67">
+                <property name="font">
+                 <font>
+                  <pointsize>12</pointsize>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
+                </property>
+                <property name="text">
+                 <string>Involvement in criminal/civil case*</string>
+                </property>
+               </widget>
+              </item>
+              <item row="11" column="1">
+               <widget class="QPlainTextEdit" name="edit_PoB">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;border:1px solid black;</string>
+                </property>
+               </widget>
+              </item>
+              <item row="30" column="0" colspan="3">
+               <widget class="QPlainTextEdit" name="edit_father_home">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border:1px solid black;</string>
+                </property>
+               </widget>
+              </item>
+              <item row="16" column="2">
+               <widget class="QPlainTextEdit" name="edit_date_issued">
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;border:1px solid black;</string>
+                </property>
+               </widget>
+              </item>
+              <item row="7" column="0" colspan="3">
+               <widget class="QPlainTextEdit" name="edit_dgte_address">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;border:1px solid black;</string>
+                </property>
+               </widget>
+              </item>
+              <item row="26" column="0" colspan="2">
+               <widget class="QPlainTextEdit" name="edit_father_name">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border:1px solid black;</string>
+                </property>
+               </widget>
+              </item>
+              <item row="65" column="1">
+               <widget class="QLabel" name="label_64">
+                <property name="font">
+                 <font>
+                  <pointsize>10</pointsize>
+                  <bold>false</bold>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
+                </property>
+                <property name="text">
+                 <string>Rating</string>
+                </property>
+               </widget>
+              </item>
+              <item row="45" column="0">
+               <widget class="QLabel" name="label_40">
+                <property name="font">
+                 <font>
+                  <pointsize>12</pointsize>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
+                </property>
+                <property name="text">
+                 <string>Academic record</string>
+                </property>
+               </widget>
+              </item>
+              <item row="63" column="0" colspan="4">
+               <widget class="QPlainTextEdit" name="edit_workplace_address">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border:1px solid black;</string>
+                </property>
+               </widget>
+              </item>
+              <item row="49" column="0">
+               <widget class="QPlainTextEdit" name="edit_high">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border:1px solid black;</string>
+                </property>
+               </widget>
+              </item>
+              <item row="60" column="3">
+               <widget class="QLabel" name="label_60">
+                <property name="font">
+                 <font>
+                  <pointsize>10</pointsize>
+                  <bold>false</bold>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
+                </property>
+                <property name="text">
+                 <string>Reason for leaving</string>
+                </property>
+               </widget>
+              </item>
+              <item row="8" column="0" colspan="3">
+               <widget class="QLabel" name="label_9">
+                <property name="font">
+                 <font>
+                  <pointsize>12</pointsize>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
+                </property>
+                <property name="text">
+                 <string>Home Address</string>
+                </property>
+               </widget>
+              </item>
+              <item row="15" column="2">
+               <widget class="QLabel" name="label_17">
+                <property name="font">
+                 <font>
+                  <pointsize>12</pointsize>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
+                </property>
+                <property name="text">
+                 <string>Date issued*</string>
+                </property>
+               </widget>
+              </item>
+              <item row="54" column="2">
+               <widget class="QPlainTextEdit" name="edit_staff_pos">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border:1px solid black;</string>
+                </property>
+               </widget>
+              </item>
+              <item row="54" column="0">
+               <widget class="QPlainTextEdit" name="edit_staff_name">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border:1px solid black;</string>
+                </property>
+               </widget>
+              </item>
+              <item row="19" column="0">
+               <widget class="QLabel" name="label_20">
+                <property name="font">
+                 <font>
+                  <pointsize>12</pointsize>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
+                </property>
+                <property name="text">
+                 <string>Tax Identification Number</string>
+                </property>
+               </widget>
+              </item>
+              <item row="22" column="0">
+               <widget class="QPlainTextEdit" name="edit_pagibig">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border:1px solid black;</string>
+                </property>
+               </widget>
+              </item>
+              <item row="31" column="2">
+               <widget class="QLabel" name="label_29">
+                <property name="font">
+                 <font>
+                  <pointsize>12</pointsize>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
+                </property>
+                <property name="text">
+                 <string>Mother's occupation</string>
+                </property>
+               </widget>
+              </item>
+              <item row="66" column="2">
+               <widget class="QPlainTextEdit" name="edit_examination_date">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border:1px solid black;</string>
+                </property>
+               </widget>
+              </item>
+              <item row="17" column="0">
+               <widget class="QLabel" name="label_18">
+                <property name="font">
+                 <font>
+                  <pointsize>12</pointsize>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
+                </property>
+                <property name="text">
+                 <string>Contact number</string>
+                </property>
+               </widget>
+              </item>
+              <item row="53" column="0">
+               <widget class="QLabel" name="label_52">
+                <property name="font">
+                 <font>
+                  <pointsize>10</pointsize>
+                  <bold>false</bold>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
+                </property>
+                <property name="text">
+                 <string>Name</string>
+                </property>
+               </widget>
+              </item>
+              <item row="61" column="3">
+               <widget class="QPlainTextEdit" name="edit_previous_leaving">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border:1px solid black;</string>
+                </property>
+               </widget>
+              </item>
+              <item row="47" column="2">
                <widget class="QPlainTextEdit" name="edit_elem_date">
                 <property name="minimumSize">
                  <size>
@@ -1273,7 +1479,106 @@ color: black;border:1px solid black;</string>
                 </property>
                </widget>
               </item>
-              <item row="56" column="0" colspan="3">
+              <item row="28" column="0">
+               <widget class="QLabel" name="label_27">
+                <property name="font">
+                 <font>
+                  <pointsize>12</pointsize>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
+                </property>
+                <property name="text">
+                 <string>Home Address</string>
+                </property>
+               </widget>
+              </item>
+              <item row="48" column="1">
+               <widget class="QLabel" name="label_45">
+                <property name="font">
+                 <font>
+                  <pointsize>10</pointsize>
+                  <bold>false</bold>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
+                </property>
+                <property name="text">
+                 <string>Address</string>
+                </property>
+               </widget>
+              </item>
+              <item row="21" column="0">
+               <widget class="QLabel" name="label_22">
+                <property name="font">
+                 <font>
+                  <pointsize>12</pointsize>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
+                </property>
+                <property name="text">
+                 <string>Pag-Ibig Number</string>
+                </property>
+               </widget>
+              </item>
+              <item row="48" column="0">
+               <widget class="QLabel" name="label_44">
+                <property name="font">
+                 <font>
+                  <pointsize>10</pointsize>
+                  <bold>false</bold>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
+                </property>
+                <property name="text">
+                 <string>High School</string>
+                </property>
+               </widget>
+              </item>
+              <item row="64" column="0" colspan="3">
+               <widget class="QLabel" name="label_61">
+                <property name="font">
+                 <font>
+                  <pointsize>12</pointsize>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
+                </property>
+                <property name="text">
+                 <string>Government examination(s) passed</string>
+                </property>
+               </widget>
+              </item>
+              <item row="44" column="0" colspan="2">
+               <widget class="QPlainTextEdit" name="edit_children">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;border:1px solid black;</string>
+                </property>
+               </widget>
+              </item>
+              <item row="58" column="0" colspan="3">
                <widget class="QPlainTextEdit" name="edit_school_pub">
                 <property name="minimumSize">
                  <size>
@@ -1286,7 +1591,516 @@ color: black;border:1px solid black;</string>
                 </property>
                </widget>
               </item>
-              <item row="68" column="3">
+              <item row="65" column="3">
+               <widget class="QLabel" name="label_66">
+                <property name="font">
+                 <font>
+                  <pointsize>10</pointsize>
+                  <bold>false</bold>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
+                </property>
+                <property name="text">
+                 <string>Place</string>
+                </property>
+               </widget>
+              </item>
+              <item row="48" column="2">
+               <widget class="QLabel" name="label_46">
+                <property name="font">
+                 <font>
+                  <pointsize>10</pointsize>
+                  <bold>false</bold>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
+                </property>
+                <property name="text">
+                 <string>Year Graduated</string>
+                </property>
+               </widget>
+              </item>
+              <item row="9" column="0" colspan="3">
+               <widget class="QPlainTextEdit" name="edit_home_address">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border:1px solid black;</string>
+                </property>
+               </widget>
+              </item>
+              <item row="60" column="1">
+               <widget class="QLabel" name="label_58">
+                <property name="font">
+                 <font>
+                  <pointsize>10</pointsize>
+                  <bold>false</bold>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
+                </property>
+                <property name="text">
+                 <string>Position</string>
+                </property>
+               </widget>
+              </item>
+              <item row="39" column="0">
+               <widget class="QLabel" name="label_34">
+                <property name="font">
+                 <font>
+                  <pointsize>12</pointsize>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
+                </property>
+                <property name="text">
+                 <string>Civil Status</string>
+                </property>
+               </widget>
+              </item>
+              <item row="66" column="0">
+               <widget class="QPlainTextEdit" name="edit_examination">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;border:1px solid black;</string>
+                </property>
+               </widget>
+              </item>
+              <item row="10" column="1">
+               <widget class="QLabel" name="label_13">
+                <property name="font">
+                 <font>
+                  <pointsize>12</pointsize>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
+                </property>
+                <property name="text">
+                 <string>Place of Birth</string>
+                </property>
+               </widget>
+              </item>
+              <item row="4" column="0" colspan="3">
+               <widget class="QLabel" name="label_7">
+                <property name="font">
+                 <font>
+                  <pointsize>12</pointsize>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
+                </property>
+                <property name="text">
+                 <string>Department(s)</string>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="0" colspan="3">
+               <widget class="QLabel" name="label_6">
+                <property name="font">
+                 <font>
+                  <pointsize>12</pointsize>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
+                </property>
+                <property name="text">
+                 <string>Position(s)</string>
+                </property>
+               </widget>
+              </item>
+              <item row="6" column="0" colspan="3">
+               <widget class="QLabel" name="label_8">
+                <property name="font">
+                 <font>
+                  <pointsize>12</pointsize>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
+                </property>
+                <property name="text">
+                 <string>Dumaguete Address</string>
+                </property>
+               </widget>
+              </item>
+              <item row="69" column="0" colspan="4">
+               <widget class="QPlainTextEdit" name="edit_case">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;border:1px solid black;</string>
+                </property>
+               </widget>
+              </item>
+              <item row="36" column="0">
+               <widget class="QLabel" name="label_31">
+                <property name="font">
+                 <font>
+                  <pointsize>12</pointsize>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
+                </property>
+                <property name="text">
+                 <string>Sibling(s)</string>
+                </property>
+               </widget>
+              </item>
+              <item row="27" column="1">
+               <widget class="QTextEdit" name="edit_father_middlename">
+                <property name="styleSheet">
+                 <string notr="true">border:1px solid black;</string>
+                </property>
+               </widget>
+              </item>
+              <item row="31" column="0" colspan="2">
+               <widget class="QLabel" name="label_28">
+                <property name="font">
+                 <font>
+                  <pointsize>12</pointsize>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
+                </property>
+                <property name="text">
+                 <string>Mother</string>
+                </property>
+               </widget>
+              </item>
+              <item row="33" column="0">
+               <widget class="QTextEdit" name="edit_mother_firstname">
+                <property name="styleSheet">
+                 <string notr="true">border:1px solid black;</string>
+                </property>
+               </widget>
+              </item>
+              <item row="24" column="0" colspan="3">
+               <widget class="QPlainTextEdit" name="edit_church">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;border:1px solid black;</string>
+                </property>
+               </widget>
+              </item>
+              <item row="53" column="2">
+               <widget class="QLabel" name="label_53">
+                <property name="font">
+                 <font>
+                  <pointsize>10</pointsize>
+                  <bold>false</bold>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
+                </property>
+                <property name="text">
+                 <string>Position</string>
+                </property>
+               </widget>
+              </item>
+              <item row="53" column="1">
+               <widget class="QLabel" name="label_51">
+                <property name="font">
+                 <font>
+                  <pointsize>10</pointsize>
+                  <bold>false</bold>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
+                </property>
+                <property name="text">
+                 <string>Relationship</string>
+                </property>
+               </widget>
+              </item>
+              <item row="65" column="0">
+               <widget class="QLabel" name="label_63">
+                <property name="font">
+                 <font>
+                  <pointsize>10</pointsize>
+                  <bold>false</bold>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
+                </property>
+                <property name="text">
+                 <string>Examination</string>
+                </property>
+               </widget>
+              </item>
+              <item row="37" column="0">
+               <widget class="QPlainTextEdit" name="edit_siblings_name">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border:1px solid black;</string>
+                </property>
+               </widget>
+              </item>
+              <item row="66" column="3">
+               <widget class="QPlainTextEdit" name="edit_examination_place">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border:1px solid black;</string>
+                </property>
+               </widget>
+              </item>
+              <item row="43" column="0">
+               <widget class="QLabel" name="label_38">
+                <property name="font">
+                 <font>
+                  <pointsize>12</pointsize>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
+                </property>
+                <property name="text">
+                 <string>Children (if any)</string>
+                </property>
+               </widget>
+              </item>
+              <item row="13" column="0" colspan="2">
+               <widget class="QLabel" name="label_15">
+                <property name="font">
+                 <font>
+                  <pointsize>10</pointsize>
+                  <bold>false</bold>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
+                </property>
+                <property name="text">
+                 <string>If non-Filipino*, please indicate the following:</string>
+                </property>
+               </widget>
+              </item>
+              <item row="60" column="0">
+               <widget class="QLabel" name="label_57">
+                <property name="font">
+                 <font>
+                  <pointsize>10</pointsize>
+                  <bold>false</bold>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
+                </property>
+                <property name="text">
+                 <string>Name</string>
+                </property>
+               </widget>
+              </item>
+              <item row="19" column="1" colspan="2">
+               <widget class="QLabel" name="label_21">
+                <property name="font">
+                 <font>
+                  <pointsize>12</pointsize>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
+                </property>
+                <property name="text">
+                 <string>SSS Number</string>
+                </property>
+               </widget>
+              </item>
+              <item row="37" column="2">
+               <widget class="QPlainTextEdit" name="edit_siblings_address">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border:1px solid black;</string>
+                </property>
+               </widget>
+              </item>
+              <item row="54" column="1">
+               <widget class="QPlainTextEdit" name="edit_staff_relation">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border:1px solid black;</string>
+                </property>
+               </widget>
+              </item>
+              <item row="3" column="0" colspan="3">
+               <widget class="QPlainTextEdit" name="edit_Position">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;border:1px solid black;</string>
+                </property>
+               </widget>
+              </item>
+              <item row="11" column="2">
+               <widget class="QPlainTextEdit" name="edit_citizen">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;border:1px solid black;</string>
+                </property>
+               </widget>
+              </item>
+              <item row="66" column="1">
+               <widget class="QPlainTextEdit" name="edit_rating">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border:1px solid black;</string>
+                </property>
+               </widget>
+              </item>
+              <item row="59" column="0" colspan="3">
+               <widget class="QLabel" name="label_56">
+                <property name="font">
+                 <font>
+                  <pointsize>12</pointsize>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
+                </property>
+                <property name="text">
+                 <string>Record of previous employment</string>
+                </property>
+               </widget>
+              </item>
+              <item row="21" column="1" colspan="2">
+               <widget class="QLabel" name="label_23">
+                <property name="font">
+                 <font>
+                  <pointsize>12</pointsize>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
+                </property>
+                <property name="text">
+                 <string>Philhealth Number</string>
+                </property>
+               </widget>
+              </item>
+              <item row="27" column="0">
+               <widget class="QTextEdit" name="edit_father_firstname">
+                <property name="styleSheet">
+                 <string notr="true">border:1px solid black;</string>
+                </property>
+               </widget>
+              </item>
+              <item row="10" column="0">
+               <widget class="QLabel" name="label_10">
+                <property name="font">
+                 <font>
+                  <pointsize>12</pointsize>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
+                </property>
+                <property name="text">
+                 <string>Date of Birth</string>
+                </property>
+               </widget>
+              </item>
+              <item row="70" column="3">
                <widget class="QPushButton" name="editRecord_btn">
                 <property name="palette">
                  <palette>
@@ -1542,6 +2356,71 @@ padding-bottom: 5px;</string>
                 </property>
                </widget>
               </item>
+              <item row="32" column="2">
+               <widget class="QPlainTextEdit" name="edit_mother_occ">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border:1px solid black;</string>
+                </property>
+               </widget>
+              </item>
+              <item row="57" column="0" colspan="3">
+               <widget class="QLabel" name="label_55">
+                <property name="font">
+                 <font>
+                  <pointsize>12</pointsize>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
+                </property>
+                <property name="text">
+                 <string>Publication(s)</string>
+                </property>
+               </widget>
+              </item>
+              <item row="33" column="2">
+               <widget class="QTextEdit" name="edit_mother_lastname">
+                <property name="styleSheet">
+                 <string notr="true">border:1px solid black;</string>
+                </property>
+               </widget>
+              </item>
+              <item row="47" column="0">
+               <widget class="QPlainTextEdit" name="edit_elem">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;border:1px solid black;</string>
+                </property>
+               </widget>
+              </item>
+              <item row="51" column="2">
+               <widget class="QPlainTextEdit" name="edit_college_date">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;border:1px solid black;</string>
+                </property>
+               </widget>
+              </item>
               <item row="37" column="1">
                <widget class="QPlainTextEdit" name="edit_siblings_occ">
                 <property name="minimumSize">
@@ -1555,8 +2434,8 @@ padding-bottom: 5px;</string>
                 </property>
                </widget>
               </item>
-              <item row="46" column="1">
-               <widget class="QLabel" name="label_45">
+              <item row="46" column="0">
+               <widget class="QLabel" name="label_41">
                 <property name="font">
                  <font>
                   <pointsize>10</pointsize>
@@ -1568,46 +2447,12 @@ padding-bottom: 5px;</string>
 color: black;</string>
                 </property>
                 <property name="text">
-                 <string>Address</string>
+                 <string>Elementary School</string>
                 </property>
                </widget>
               </item>
-              <item row="19" column="1" colspan="2">
-               <widget class="QLabel" name="label_21">
-                <property name="font">
-                 <font>
-                  <pointsize>12</pointsize>
-                  <bold>true</bold>
-                 </font>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">background-color: white;
-color: black;</string>
-                </property>
-                <property name="text">
-                 <string>SSS Number</string>
-                </property>
-               </widget>
-              </item>
-              <item row="36" column="0">
-               <widget class="QLabel" name="label_31">
-                <property name="font">
-                 <font>
-                  <pointsize>12</pointsize>
-                  <bold>true</bold>
-                 </font>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">background-color: white;
-color: black;</string>
-                </property>
-                <property name="text">
-                 <string>Sibling(s)</string>
-                </property>
-               </widget>
-              </item>
-              <item row="11" column="1">
-               <widget class="QPlainTextEdit" name="edit_PoB">
+              <item row="44" column="2">
+               <widget class="QPlainTextEdit" name="edit_children_DoB">
                 <property name="minimumSize">
                  <size>
                   <width>0</width>
@@ -1620,8 +2465,106 @@ color: black;border:1px solid black;</string>
                 </property>
                </widget>
               </item>
-              <item row="11" column="0">
-               <widget class="QPlainTextEdit" name="edit_DoB">
+              <item row="5" column="0" colspan="3">
+               <widget class="QPlainTextEdit" name="edit_department">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;border:1px solid black;</string>
+                </property>
+               </widget>
+              </item>
+              <item row="12" column="0" colspan="3">
+               <widget class="QFrame" name="frame">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>20</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
+                </property>
+                <property name="frameShape">
+                 <enum>QFrame::StyledPanel</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Raised</enum>
+                </property>
+               </widget>
+              </item>
+              <item row="65" column="2">
+               <widget class="QLabel" name="label_65">
+                <property name="font">
+                 <font>
+                  <pointsize>10</pointsize>
+                  <bold>false</bold>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
+                </property>
+                <property name="text">
+                 <string>Date of examination</string>
+                </property>
+               </widget>
+              </item>
+              <item row="18" column="0">
+               <widget class="QPlainTextEdit" name="edit_contactNo">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;border:1px solid black;</string>
+                </property>
+               </widget>
+              </item>
+              <item row="56" column="0" colspan="3">
+               <widget class="QPlainTextEdit" name="edit_school_dist">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border:1px solid black;</string>
+                </property>
+               </widget>
+              </item>
+              <item row="61" column="2">
+               <widget class="QPlainTextEdit" name="edit_previous_period">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border:1px solid black;</string>
+                </property>
+               </widget>
+              </item>
+              <item row="33" column="1">
+               <widget class="QTextEdit" name="edit_mother_middlename">
+                <property name="styleSheet">
+                 <string notr="true">border:1px solid black;</string>
+                </property>
+               </widget>
+              </item>
+              <item row="47" column="1">
+               <widget class="QPlainTextEdit" name="edit_elem_address">
                 <property name="minimumSize">
                  <size>
                   <width>0</width>
@@ -1651,717 +2594,7 @@ color: black;</string>
                 </property>
                </widget>
               </item>
-              <item row="41" column="2">
-               <widget class="QLabel" name="label_39">
-                <property name="font">
-                 <font>
-                  <pointsize>12</pointsize>
-                  <bold>true</bold>
-                 </font>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">background-color: white;
-color: black;</string>
-                </property>
-                <property name="text">
-                 <string>Date of birth</string>
-                </property>
-               </widget>
-              </item>
-              <item row="44" column="0">
-               <widget class="QLabel" name="label_41">
-                <property name="font">
-                 <font>
-                  <pointsize>10</pointsize>
-                  <bold>false</bold>
-                 </font>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">background-color: white;
-color: black;</string>
-                </property>
-                <property name="text">
-                 <string>Elementary School</string>
-                </property>
-               </widget>
-              </item>
-              <item row="40" column="2">
-               <widget class="QPlainTextEdit" name="edit_marriage_place">
-                <property name="minimumSize">
-                 <size>
-                  <width>0</width>
-                  <height>0</height>
-                 </size>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">border:1px solid black;</string>
-                </property>
-               </widget>
-              </item>
-              <item row="59" column="1">
-               <widget class="QPlainTextEdit" name="edit_previous_position">
-                <property name="minimumSize">
-                 <size>
-                  <width>0</width>
-                  <height>0</height>
-                 </size>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">border:1px solid black;</string>
-                </property>
-               </widget>
-              </item>
-              <item row="27" column="2">
-               <widget class="QTextEdit" name="edit_father_lastname">
-                <property name="styleSheet">
-                 <string notr="true">border:1px solid black;</string>
-                </property>
-               </widget>
-              </item>
-              <item row="51" column="2">
-               <widget class="QLabel" name="label_53">
-                <property name="font">
-                 <font>
-                  <pointsize>10</pointsize>
-                  <bold>false</bold>
-                 </font>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">background-color: white;
-color: black;</string>
-                </property>
-                <property name="text">
-                 <string>Position</string>
-                </property>
-               </widget>
-              </item>
-              <item row="58" column="2">
-               <widget class="QLabel" name="label_59">
-                <property name="font">
-                 <font>
-                  <pointsize>10</pointsize>
-                  <bold>false</bold>
-                 </font>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">background-color: white;
-color: black;</string>
-                </property>
-                <property name="text">
-                 <string>Period of employment</string>
-                </property>
-               </widget>
-              </item>
-              <item row="40" column="3">
-               <widget class="QPlainTextEdit" name="edit_marriage_date">
-                <property name="styleSheet">
-                 <string notr="true">border:1px solid black;</string>
-                </property>
-               </widget>
-              </item>
-              <item row="10" column="1">
-               <widget class="QLabel" name="label_13">
-                <property name="font">
-                 <font>
-                  <pointsize>12</pointsize>
-                  <bold>true</bold>
-                 </font>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">background-color: white;
-color: black;</string>
-                </property>
-                <property name="text">
-                 <string>Place of Birth</string>
-                </property>
-               </widget>
-              </item>
-              <item row="16" column="1">
-               <widget class="QPlainTextEdit" name="edit_acrNo">
-                <property name="styleSheet">
-                 <string notr="true">background-color: white;
-color: black;border:1px solid black;</string>
-                </property>
-               </widget>
-              </item>
-              <item row="43" column="0">
-               <widget class="QLabel" name="label_40">
-                <property name="font">
-                 <font>
-                  <pointsize>12</pointsize>
-                  <bold>true</bold>
-                 </font>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">background-color: white;
-color: black;</string>
-                </property>
-                <property name="text">
-                 <string>Academic record</string>
-                </property>
-               </widget>
-              </item>
-              <item row="1" column="0">
-               <widget class="QPlainTextEdit" name="edit_firstName">
-                <property name="sizePolicy">
-                 <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-                  <horstretch>0</horstretch>
-                  <verstretch>0</verstretch>
-                 </sizepolicy>
-                </property>
-                <property name="minimumSize">
-                 <size>
-                  <width>0</width>
-                  <height>0</height>
-                 </size>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">border:1px solid black;</string>
-                </property>
-               </widget>
-              </item>
-              <item row="37" column="0">
-               <widget class="QPlainTextEdit" name="edit_siblings_name">
-                <property name="minimumSize">
-                 <size>
-                  <width>0</width>
-                  <height>0</height>
-                 </size>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">border:1px solid black;</string>
-                </property>
-               </widget>
-              </item>
-              <item row="27" column="0">
-               <widget class="QTextEdit" name="edit_father_firstname">
-                <property name="styleSheet">
-                 <string notr="true">border:1px solid black;</string>
-                </property>
-               </widget>
-              </item>
-              <item row="26" column="2">
-               <widget class="QPlainTextEdit" name="edit_father_occ">
-                <property name="minimumSize">
-                 <size>
-                  <width>0</width>
-                  <height>0</height>
-                 </size>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">border:1px solid black;</string>
-                </property>
-               </widget>
-              </item>
-              <item row="61" column="0" colspan="4">
-               <widget class="QPlainTextEdit" name="edit_workplace_address">
-                <property name="minimumSize">
-                 <size>
-                  <width>0</width>
-                  <height>0</height>
-                 </size>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">border:1px solid black;</string>
-                </property>
-               </widget>
-              </item>
-              <item row="1" column="2">
-               <widget class="QPlainTextEdit" name="edit_lastName">
-                <property name="minimumSize">
-                 <size>
-                  <width>0</width>
-                  <height>0</height>
-                 </size>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">border:1px solid black;</string>
-                </property>
-               </widget>
-              </item>
-              <item row="15" column="2">
-               <widget class="QLabel" name="label_17">
-                <property name="font">
-                 <font>
-                  <pointsize>12</pointsize>
-                  <bold>true</bold>
-                 </font>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">background-color: white;
-color: black;</string>
-                </property>
-                <property name="text">
-                 <string>Date issued*</string>
-                </property>
-               </widget>
-              </item>
-              <item row="31" column="2">
-               <widget class="QLabel" name="label_29">
-                <property name="font">
-                 <font>
-                  <pointsize>12</pointsize>
-                  <bold>true</bold>
-                 </font>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">background-color: white;
-color: black;</string>
-                </property>
-                <property name="text">
-                 <string>Mother's occupation</string>
-                </property>
-               </widget>
-              </item>
-              <item row="64" column="1">
-               <widget class="QPlainTextEdit" name="edit_rating">
-                <property name="minimumSize">
-                 <size>
-                  <width>0</width>
-                  <height>0</height>
-                 </size>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">border:1px solid black;</string>
-                </property>
-               </widget>
-              </item>
-              <item row="58" column="0">
-               <widget class="QLabel" name="label_57">
-                <property name="font">
-                 <font>
-                  <pointsize>10</pointsize>
-                  <bold>false</bold>
-                 </font>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">background-color: white;
-color: black;</string>
-                </property>
-                <property name="text">
-                 <string>Name</string>
-                </property>
-               </widget>
-              </item>
-              <item row="37" column="2">
-               <widget class="QPlainTextEdit" name="edit_siblings_address">
-                <property name="minimumSize">
-                 <size>
-                  <width>0</width>
-                  <height>0</height>
-                 </size>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">border:1px solid black;</string>
-                </property>
-               </widget>
-              </item>
-              <item row="39" column="2">
-               <widget class="QLabel" name="label_36">
-                <property name="font">
-                 <font>
-                  <pointsize>12</pointsize>
-                  <bold>true</bold>
-                 </font>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">background-color: white;
-color: black;</string>
-                </property>
-                <property name="text">
-                 <string>Place of marriage</string>
-                </property>
-               </widget>
-              </item>
-              <item row="47" column="1">
-               <widget class="QPlainTextEdit" name="edit_high_address">
-                <property name="minimumSize">
-                 <size>
-                  <width>0</width>
-                  <height>0</height>
-                 </size>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">border:1px solid black;</string>
-                </property>
-               </widget>
-              </item>
-              <item row="39" column="3">
-               <widget class="QLabel" name="label_37">
-                <property name="font">
-                 <font>
-                  <pointsize>12</pointsize>
-                  <bold>true</bold>
-                 </font>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">background-color: white;
-color: black;</string>
-                </property>
-                <property name="text">
-                 <string>Date of marriage</string>
-                </property>
-               </widget>
-              </item>
-              <item row="22" column="0">
-               <widget class="QPlainTextEdit" name="edit_pagibig">
-                <property name="minimumSize">
-                 <size>
-                  <width>0</width>
-                  <height>0</height>
-                 </size>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">border:1px solid black;</string>
-                </property>
-               </widget>
-              </item>
-              <item row="60" column="0" colspan="4">
-               <widget class="QLabel" name="label_62">
-                <property name="font">
-                 <font>
-                  <pointsize>10</pointsize>
-                  <bold>false</bold>
-                 </font>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">background-color: white;
-color: black;</string>
-                </property>
-                <property name="text">
-                 <string>Address of workplace</string>
-                </property>
-               </widget>
-              </item>
-              <item row="28" column="0">
-               <widget class="QLabel" name="label_27">
-                <property name="font">
-                 <font>
-                  <pointsize>12</pointsize>
-                  <bold>true</bold>
-                 </font>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">background-color: white;
-color: black;</string>
-                </property>
-                <property name="text">
-                 <string>Home Address</string>
-                </property>
-               </widget>
-              </item>
-              <item row="58" column="3">
-               <widget class="QLabel" name="label_60">
-                <property name="font">
-                 <font>
-                  <pointsize>10</pointsize>
-                  <bold>false</bold>
-                 </font>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">background-color: white;
-color: black;</string>
-                </property>
-                <property name="text">
-                 <string>Reason for leaving</string>
-                </property>
-               </widget>
-              </item>
-              <item row="59" column="2">
-               <widget class="QPlainTextEdit" name="edit_previous_period">
-                <property name="minimumSize">
-                 <size>
-                  <width>0</width>
-                  <height>0</height>
-                 </size>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">border:1px solid black;</string>
-                </property>
-               </widget>
-              </item>
-              <item row="16" column="2">
-               <widget class="QPlainTextEdit" name="edit_date_issued">
-                <property name="styleSheet">
-                 <string notr="true">background-color: white;
-color: black;border:1px solid black;</string>
-                </property>
-               </widget>
-              </item>
-              <item row="58" column="1">
-               <widget class="QLabel" name="label_58">
-                <property name="font">
-                 <font>
-                  <pointsize>10</pointsize>
-                  <bold>false</bold>
-                 </font>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">background-color: white;
-color: black;</string>
-                </property>
-                <property name="text">
-                 <string>Position</string>
-                </property>
-               </widget>
-              </item>
-              <item row="20" column="1" colspan="2">
-               <widget class="QPlainTextEdit" name="edit_SSS">
-                <property name="minimumSize">
-                 <size>
-                  <width>0</width>
-                  <height>0</height>
-                 </size>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">background-color: white;
-color: black;border:1px solid black;</string>
-                </property>
-               </widget>
-              </item>
-              <item row="63" column="1">
-               <widget class="QLabel" name="label_64">
-                <property name="font">
-                 <font>
-                  <pointsize>10</pointsize>
-                  <bold>false</bold>
-                 </font>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">background-color: white;
-color: black;</string>
-                </property>
-                <property name="text">
-                 <string>Rating</string>
-                </property>
-               </widget>
-              </item>
-              <item row="49" column="1">
-               <widget class="QPlainTextEdit" name="edit_college_address">
-                <property name="minimumSize">
-                 <size>
-                  <width>0</width>
-                  <height>0</height>
-                 </size>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">background-color: white;
-color: black;border:1px solid black;</string>
-                </property>
-               </widget>
-              </item>
-              <item row="53" column="0" colspan="3">
-               <widget class="QLabel" name="label_54">
-                <property name="font">
-                 <font>
-                  <pointsize>12</pointsize>
-                  <bold>true</bold>
-                 </font>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">background-color: white;
-color: black;</string>
-                </property>
-                <property name="text">
-                 <string>School or college distinction(s)</string>
-                </property>
-               </widget>
-              </item>
-              <item row="23" column="0" colspan="2">
-               <widget class="QLabel" name="label_24">
-                <property name="font">
-                 <font>
-                  <pointsize>12</pointsize>
-                  <bold>true</bold>
-                 </font>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">background-color: white;
-color: black;</string>
-                </property>
-                <property name="text">
-                 <string>Church Affiliation</string>
-                </property>
-               </widget>
-              </item>
-              <item row="48" column="1">
-               <widget class="QLabel" name="label_48">
-                <property name="font">
-                 <font>
-                  <pointsize>10</pointsize>
-                  <bold>false</bold>
-                 </font>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">background-color: white;
-color: black;</string>
-                </property>
-                <property name="text">
-                 <string>Address</string>
-                </property>
-               </widget>
-              </item>
-              <item row="64" column="3">
-               <widget class="QPlainTextEdit" name="edit_examination_place">
-                <property name="minimumSize">
-                 <size>
-                  <width>0</width>
-                  <height>0</height>
-                 </size>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">border:1px solid black;</string>
-                </property>
-               </widget>
-              </item>
-              <item row="52" column="0">
-               <widget class="QPlainTextEdit" name="edit_staff_name">
-                <property name="minimumSize">
-                 <size>
-                  <width>0</width>
-                  <height>0</height>
-                 </size>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">border:1px solid black;</string>
-                </property>
-               </widget>
-              </item>
-              <item row="25" column="0">
-               <widget class="QLabel" name="label_25">
-                <property name="font">
-                 <font>
-                  <pointsize>12</pointsize>
-                  <bold>true</bold>
-                 </font>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">background-color: white;
-color: black;</string>
-                </property>
-                <property name="text">
-                 <string>Father</string>
-                </property>
-               </widget>
-              </item>
-              <item row="18" column="0">
-               <widget class="QPlainTextEdit" name="edit_contactNo">
-                <property name="minimumSize">
-                 <size>
-                  <width>0</width>
-                  <height>0</height>
-                 </size>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">background-color: white;
-color: black;border:1px solid black;</string>
-                </property>
-               </widget>
-              </item>
-              <item row="32" column="0" colspan="2">
-               <widget class="QPlainTextEdit" name="edit_mother_name">
-                <property name="minimumSize">
-                 <size>
-                  <width>0</width>
-                  <height>0</height>
-                 </size>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">border:1px solid black;</string>
-                </property>
-               </widget>
-              </item>
-              <item row="15" column="1">
-               <widget class="QLabel" name="label_16">
-                <property name="font">
-                 <font>
-                  <pointsize>12</pointsize>
-                  <bold>true</bold>
-                 </font>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">background-color: white;
-color: black;</string>
-                </property>
-                <property name="text">
-                 <string>ACR number*</string>
-                </property>
-               </widget>
-              </item>
-              <item row="63" column="3">
-               <widget class="QLabel" name="label_66">
-                <property name="font">
-                 <font>
-                  <pointsize>10</pointsize>
-                  <bold>false</bold>
-                 </font>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">background-color: white;
-color: black;</string>
-                </property>
-                <property name="text">
-                 <string>Place</string>
-                </property>
-               </widget>
-              </item>
-              <item row="66" column="0" colspan="3">
-               <widget class="QLabel" name="label_67">
-                <property name="font">
-                 <font>
-                  <pointsize>12</pointsize>
-                  <bold>true</bold>
-                 </font>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">background-color: white;
-color: black;</string>
-                </property>
-                <property name="text">
-                 <string>Involvement in criminal/civil case*</string>
-                </property>
-               </widget>
-              </item>
-              <item row="30" column="0" colspan="3">
-               <widget class="QPlainTextEdit" name="edit_father_home">
-                <property name="minimumSize">
-                 <size>
-                  <width>0</width>
-                  <height>0</height>
-                 </size>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">border:1px solid black;</string>
-                </property>
-               </widget>
-              </item>
-              <item row="40" column="1">
-               <widget class="QPlainTextEdit" name="edit_spouse">
-                <property name="minimumSize">
-                 <size>
-                  <width>0</width>
-                  <height>0</height>
-                 </size>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">border:1px solid black;</string>
-                </property>
-               </widget>
-              </item>
-              <item row="64" column="2">
-               <widget class="QPlainTextEdit" name="edit_examination_date">
-                <property name="minimumSize">
-                 <size>
-                  <width>0</width>
-                  <height>0</height>
-                 </size>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">border:1px solid black;</string>
-                </property>
-               </widget>
-              </item>
-              <item row="48" column="2">
+              <item row="50" column="2">
                <widget class="QLabel" name="label_49">
                 <property name="font">
                  <font>
@@ -2378,345 +2611,8 @@ color: black;</string>
                 </property>
                </widget>
               </item>
-              <item row="45" column="0">
-               <widget class="QPlainTextEdit" name="edit_elem">
-                <property name="minimumSize">
-                 <size>
-                  <width>0</width>
-                  <height>0</height>
-                 </size>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">background-color: white;
-color: black;border:1px solid black;</string>
-                </property>
-               </widget>
-              </item>
-              <item row="62" column="0" colspan="3">
-               <widget class="QLabel" name="label_61">
-                <property name="font">
-                 <font>
-                  <pointsize>12</pointsize>
-                  <bold>true</bold>
-                 </font>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">background-color: white;
-color: black;</string>
-                </property>
-                <property name="text">
-                 <string>Government examination(s) passed</string>
-                </property>
-               </widget>
-              </item>
-              <item row="8" column="0" colspan="3">
-               <widget class="QLabel" name="label_9">
-                <property name="font">
-                 <font>
-                  <pointsize>12</pointsize>
-                  <bold>true</bold>
-                 </font>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">background-color: white;
-color: black;</string>
-                </property>
-                <property name="text">
-                 <string>Home Address</string>
-                </property>
-               </widget>
-              </item>
-              <item row="68" column="2">
-               <widget class="QCheckBox" name="checkBox_8">
-                <property name="styleSheet">
-                 <string notr="true">background-color: white;
-color: black;</string>
-                </property>
-                <property name="text">
-                 <string>This confirms all details listed are true.</string>
-                </property>
-               </widget>
-              </item>
-              <item row="10" column="2">
-               <widget class="QLabel" name="label_14">
-                <property name="font">
-                 <font>
-                  <pointsize>12</pointsize>
-                  <bold>true</bold>
-                 </font>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">background-color: white;
-color: black;</string>
-                </property>
-                <property name="text">
-                 <string>Citizenship</string>
-                </property>
-               </widget>
-              </item>
-              <item row="41" column="0">
-               <widget class="QLabel" name="label_38">
-                <property name="font">
-                 <font>
-                  <pointsize>12</pointsize>
-                  <bold>true</bold>
-                 </font>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">background-color: white;
-color: black;</string>
-                </property>
-                <property name="text">
-                 <string>Children (if any)</string>
-                </property>
-               </widget>
-              </item>
-              <item row="49" column="2">
-               <widget class="QPlainTextEdit" name="edit_college_date">
-                <property name="minimumSize">
-                 <size>
-                  <width>0</width>
-                  <height>0</height>
-                 </size>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">background-color: white;
-color: black;border:1px solid black;</string>
-                </property>
-               </widget>
-              </item>
-              <item row="18" column="1" colspan="2">
-               <widget class="QPlainTextEdit" name="edit_email_add">
-                <property name="minimumSize">
-                 <size>
-                  <width>0</width>
-                  <height>0</height>
-                 </size>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">background-color: white;
-color: black;border:1px solid black;</string>
-                </property>
-               </widget>
-              </item>
-              <item row="67" column="0" colspan="4">
-               <widget class="QPlainTextEdit" name="edit_case">
-                <property name="minimumSize">
-                 <size>
-                  <width>0</width>
-                  <height>0</height>
-                 </size>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">background-color: white;
-color: black;border:1px solid black;</string>
-                </property>
-               </widget>
-              </item>
-              <item row="52" column="1">
-               <widget class="QPlainTextEdit" name="edit_staff_relation">
-                <property name="minimumSize">
-                 <size>
-                  <width>0</width>
-                  <height>0</height>
-                 </size>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">border:1px solid black;</string>
-                </property>
-               </widget>
-              </item>
-              <item row="15" column="0">
-               <widget class="QLabel" name="label_11">
-                <property name="font">
-                 <font>
-                  <pointsize>12</pointsize>
-                  <bold>true</bold>
-                 </font>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">background-color: white;
-color: black;</string>
-                </property>
-                <property name="text">
-                 <string>Passport number*</string>
-                </property>
-               </widget>
-              </item>
-              <item row="2" column="0" colspan="3">
-               <widget class="QLabel" name="label_6">
-                <property name="font">
-                 <font>
-                  <pointsize>12</pointsize>
-                  <bold>true</bold>
-                 </font>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">background-color: white;
-color: black;</string>
-                </property>
-                <property name="text">
-                 <string>Position(s)</string>
-                </property>
-               </widget>
-              </item>
-              <item row="6" column="0" colspan="3">
-               <widget class="QLabel" name="label_8">
-                <property name="font">
-                 <font>
-                  <pointsize>12</pointsize>
-                  <bold>true</bold>
-                 </font>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">background-color: white;
-color: black;</string>
-                </property>
-                <property name="text">
-                 <string>Dumaguete Address</string>
-                </property>
-               </widget>
-              </item>
-              <item row="0" column="0" colspan="3">
-               <widget class="QLabel" name="label_5">
-                <property name="font">
-                 <font>
-                  <pointsize>12</pointsize>
-                  <bold>true</bold>
-                 </font>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">background-color: white;
-color: black;</string>
-                </property>
-                <property name="text">
-                 <string>Full Name</string>
-                </property>
-               </widget>
-              </item>
-              <item row="26" column="0" colspan="2">
-               <widget class="QPlainTextEdit" name="edit_father_name">
-                <property name="minimumSize">
-                 <size>
-                  <width>0</width>
-                  <height>0</height>
-                 </size>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">border:1px solid black;</string>
-                </property>
-               </widget>
-              </item>
-              <item row="63" column="0">
-               <widget class="QLabel" name="label_63">
-                <property name="font">
-                 <font>
-                  <pointsize>10</pointsize>
-                  <bold>false</bold>
-                 </font>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">background-color: white;
-color: black;</string>
-                </property>
-                <property name="text">
-                 <string>Examination</string>
-                </property>
-               </widget>
-              </item>
-              <item row="39" column="0">
-               <widget class="QLabel" name="label_34">
-                <property name="font">
-                 <font>
-                  <pointsize>12</pointsize>
-                  <bold>true</bold>
-                 </font>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">background-color: white;
-color: black;</string>
-                </property>
-                <property name="text">
-                 <string>Civil Status</string>
-                </property>
-               </widget>
-              </item>
-              <item row="52" column="2">
-               <widget class="QPlainTextEdit" name="edit_staff_pos">
-                <property name="minimumSize">
-                 <size>
-                  <width>0</width>
-                  <height>0</height>
-                 </size>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">border:1px solid black;</string>
-                </property>
-               </widget>
-              </item>
-              <item row="64" column="0">
-               <widget class="QPlainTextEdit" name="edit_examination">
-                <property name="minimumSize">
-                 <size>
-                  <width>0</width>
-                  <height>0</height>
-                 </size>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">background-color: white;
-color: black;border:1px solid black;</string>
-                </property>
-               </widget>
-              </item>
-              <item row="9" column="0" colspan="3">
-               <widget class="QPlainTextEdit" name="edit_home_address">
-                <property name="minimumSize">
-                 <size>
-                  <width>0</width>
-                  <height>0</height>
-                 </size>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">border:1px solid black;</string>
-                </property>
-               </widget>
-              </item>
-              <item row="36" column="1">
-               <widget class="QLabel" name="label_32">
-                <property name="font">
-                 <font>
-                  <pointsize>12</pointsize>
-                  <bold>true</bold>
-                 </font>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">background-color: white;
-color: black;</string>
-                </property>
-                <property name="text">
-                 <string>Occupation</string>
-                </property>
-               </widget>
-              </item>
-              <item row="63" column="2">
-               <widget class="QLabel" name="label_65">
-                <property name="font">
-                 <font>
-                  <pointsize>10</pointsize>
-                  <bold>false</bold>
-                 </font>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">background-color: white;
-color: black;</string>
-                </property>
-                <property name="text">
-                 <string>Date of examination</string>
-                </property>
-               </widget>
-              </item>
-              <item row="20" column="0">
-               <widget class="QPlainTextEdit" name="edit_TIN">
+              <item row="51" column="1">
+               <widget class="QPlainTextEdit" name="edit_college_address">
                 <property name="minimumSize">
                  <size>
                   <width>0</width>
@@ -2742,8 +2638,19 @@ color: black;border:1px solid black;</string>
                 </property>
                </widget>
               </item>
-              <item row="57" column="0" colspan="3">
-               <widget class="QLabel" name="label_56">
+              <item row="70" column="2">
+               <widget class="QCheckBox" name="checkBox_8">
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
+                </property>
+                <property name="text">
+                 <string>This confirms all details listed are true.</string>
+                </property>
+               </widget>
+              </item>
+              <item row="36" column="1">
+               <widget class="QLabel" name="label_32">
                 <property name="font">
                  <font>
                   <pointsize>12</pointsize>
@@ -2755,144 +2662,11 @@ color: black;border:1px solid black;</string>
 color: black;</string>
                 </property>
                 <property name="text">
-                 <string>Record of previous employment</string>
+                 <string>Occupation</string>
                 </property>
                </widget>
               </item>
-              <item row="27" column="1">
-               <widget class="QTextEdit" name="edit_father_middlename">
-                <property name="styleSheet">
-                 <string notr="true">border:1px solid black;</string>
-                </property>
-               </widget>
-              </item>
-              <item row="44" column="1">
-               <widget class="QLabel" name="label_42">
-                <property name="font">
-                 <font>
-                  <pointsize>10</pointsize>
-                  <bold>false</bold>
-                 </font>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">background-color: white;
-color: black;</string>
-                </property>
-                <property name="text">
-                 <string>Address</string>
-                </property>
-               </widget>
-              </item>
-              <item row="5" column="0" colspan="3">
-               <widget class="QPlainTextEdit" name="edit_department">
-                <property name="minimumSize">
-                 <size>
-                  <width>0</width>
-                  <height>0</height>
-                 </size>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">background-color: white;
-color: black;border:1px solid black;</string>
-                </property>
-               </widget>
-              </item>
-              <item row="51" column="1">
-               <widget class="QLabel" name="label_51">
-                <property name="font">
-                 <font>
-                  <pointsize>10</pointsize>
-                  <bold>false</bold>
-                 </font>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">background-color: white;
-color: black;</string>
-                </property>
-                <property name="text">
-                 <string>Relationship</string>
-                </property>
-               </widget>
-              </item>
-              <item row="39" column="1">
-               <widget class="QLabel" name="label_35">
-                <property name="font">
-                 <font>
-                  <pointsize>12</pointsize>
-                  <bold>true</bold>
-                 </font>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">background-color: white;
-color: black;</string>
-                </property>
-                <property name="text">
-                 <string>Name of spouse</string>
-                </property>
-               </widget>
-              </item>
-              <item row="42" column="0" colspan="2">
-               <widget class="QPlainTextEdit" name="edit_children">
-                <property name="minimumSize">
-                 <size>
-                  <width>0</width>
-                  <height>0</height>
-                 </size>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">background-color: white;
-color: black;border:1px solid black;</string>
-                </property>
-               </widget>
-              </item>
-              <item row="55" column="0" colspan="3">
-               <widget class="QLabel" name="label_55">
-                <property name="font">
-                 <font>
-                  <pointsize>12</pointsize>
-                  <bold>true</bold>
-                 </font>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">background-color: white;
-color: black;</string>
-                </property>
-                <property name="text">
-                 <string>Publication(s)</string>
-                </property>
-               </widget>
-              </item>
-              <item row="35" column="0" colspan="3">
-               <widget class="QPlainTextEdit" name="edit_father_address">
-                <property name="minimumSize">
-                 <size>
-                  <width>0</width>
-                  <height>0</height>
-                 </size>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">border:1px solid black;</string>
-                </property>
-               </widget>
-              </item>
-              <item row="10" column="0">
-               <widget class="QLabel" name="label_10">
-                <property name="font">
-                 <font>
-                  <pointsize>12</pointsize>
-                  <bold>true</bold>
-                 </font>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">background-color: white;
-color: black;</string>
-                </property>
-                <property name="text">
-                 <string>Date of Birth</string>
-                </property>
-               </widget>
-              </item>
-              <item row="50" column="0">
+              <item row="52" column="0">
                <widget class="QLabel" name="label_50">
                 <property name="font">
                  <font>
@@ -2909,41 +2683,65 @@ color: black;</string>
                 </property>
                </widget>
               </item>
-              <item row="17" column="0">
-               <widget class="QLabel" name="label_18">
-                <property name="font">
-                 <font>
-                  <pointsize>12</pointsize>
-                  <bold>true</bold>
-                 </font>
+              <item row="26" column="2">
+               <widget class="QPlainTextEdit" name="edit_father_occ">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>0</height>
+                 </size>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">background-color: white;
-color: black;</string>
+                 <string notr="true">border:1px solid black;</string>
                 </property>
-                <property name="text">
-                 <string>Contact number</string>
+               </widget>
+              </item>
+              <item row="61" column="0">
+               <widget class="QPlainTextEdit" name="edit_previous_name">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border:1px solid black;</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="0">
+               <widget class="QPlainTextEdit" name="edit_firstName">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border:1px solid black;</string>
+                </property>
+               </widget>
+              </item>
+              <item row="49" column="1">
+               <widget class="QPlainTextEdit" name="edit_high_address">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border:1px solid black;</string>
                 </property>
                </widget>
               </item>
               <item row="51" column="0">
-               <widget class="QLabel" name="label_52">
-                <property name="font">
-                 <font>
-                  <pointsize>10</pointsize>
-                  <bold>false</bold>
-                 </font>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">background-color: white;
-color: black;</string>
-                </property>
-                <property name="text">
-                 <string>Name</string>
-                </property>
-               </widget>
-              </item>
-              <item row="49" column="0">
                <widget class="QPlainTextEdit" name="edit_college">
                 <property name="minimumSize">
                  <size>
@@ -2957,22 +2755,238 @@ color: black;border:1px solid black;</string>
                 </property>
                </widget>
               </item>
-              <item row="33" column="0">
-               <widget class="QTextEdit" name="edit_mother_firstname">
+              <item row="43" column="2">
+               <widget class="QLabel" name="label_39">
+                <property name="font">
+                 <font>
+                  <pointsize>12</pointsize>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
+                </property>
+                <property name="text">
+                 <string>Date of birth</string>
+                </property>
+               </widget>
+              </item>
+              <item row="62" column="0" colspan="4">
+               <widget class="QLabel" name="label_62">
+                <property name="font">
+                 <font>
+                  <pointsize>10</pointsize>
+                  <bold>false</bold>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
+                </property>
+                <property name="text">
+                 <string>Address of workplace</string>
+                </property>
+               </widget>
+              </item>
+              <item row="50" column="1">
+               <widget class="QLabel" name="label_48">
+                <property name="font">
+                 <font>
+                  <pointsize>10</pointsize>
+                  <bold>false</bold>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
+                </property>
+                <property name="text">
+                 <string>Address</string>
+                </property>
+               </widget>
+              </item>
+              <item row="61" column="1">
+               <widget class="QPlainTextEdit" name="edit_previous_position">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>0</height>
+                 </size>
+                </property>
                 <property name="styleSheet">
                  <string notr="true">border:1px solid black;</string>
                 </property>
                </widget>
               </item>
-              <item row="33" column="1">
-               <widget class="QTextEdit" name="edit_mother_middlename">
+              <item row="18" column="1" colspan="2">
+               <widget class="QPlainTextEdit" name="edit_email_add">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;border:1px solid black;</string>
+                </property>
+               </widget>
+              </item>
+              <item row="16" column="0">
+               <widget class="QPlainTextEdit" name="edit_passportNo">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>0</height>
+                 </size>
+                </property>
                 <property name="styleSheet">
                  <string notr="true">border:1px solid black;</string>
                 </property>
                </widget>
               </item>
-              <item row="33" column="2">
-               <widget class="QTextEdit" name="edit_mother_lastname">
+              <item row="40" column="0">
+               <widget class="QPlainTextEdit" name="edit_civil">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;border:1px solid black;</string>
+                </property>
+               </widget>
+              </item>
+              <item row="15" column="1">
+               <widget class="QLabel" name="label_16">
+                <property name="font">
+                 <font>
+                  <pointsize>12</pointsize>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
+                </property>
+                <property name="text">
+                 <string>ACR number*</string>
+                </property>
+               </widget>
+              </item>
+              <item row="10" column="2">
+               <widget class="QLabel" name="label_14">
+                <property name="font">
+                 <font>
+                  <pointsize>12</pointsize>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
+                </property>
+                <property name="text">
+                 <string>Citizenship</string>
+                </property>
+               </widget>
+              </item>
+              <item row="41" column="0">
+               <widget class="QLabel" name="label_35">
+                <property name="font">
+                 <font>
+                  <pointsize>12</pointsize>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
+                </property>
+                <property name="text">
+                 <string>Spouse Name</string>
+                </property>
+               </widget>
+              </item>
+              <item row="42" column="0">
+               <widget class="QPlainTextEdit" name="edit_spousefname">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border:1px solid black;</string>
+                </property>
+               </widget>
+              </item>
+              <item row="40" column="1">
+               <widget class="QPlainTextEdit" name="edit_marriage_place">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border:1px solid black;</string>
+                </property>
+               </widget>
+              </item>
+              <item row="39" column="1">
+               <widget class="QLabel" name="label_36">
+                <property name="font">
+                 <font>
+                  <pointsize>12</pointsize>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
+                </property>
+                <property name="text">
+                 <string>Place of marriage</string>
+                </property>
+               </widget>
+              </item>
+              <item row="39" column="2">
+               <widget class="QLabel" name="label_37">
+                <property name="font">
+                 <font>
+                  <pointsize>12</pointsize>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
+                </property>
+                <property name="text">
+                 <string>Date of marriage</string>
+                </property>
+               </widget>
+              </item>
+              <item row="40" column="2">
+               <widget class="QPlainTextEdit" name="edit_marriage_date">
+                <property name="styleSheet">
+                 <string notr="true">border:1px solid black;</string>
+                </property>
+               </widget>
+              </item>
+              <item row="42" column="1">
+               <widget class="QPlainTextEdit" name="edit_spousemname">
+                <property name="styleSheet">
+                 <string notr="true">border:1px solid black;</string>
+                </property>
+               </widget>
+              </item>
+              <item row="42" column="2">
+               <widget class="QPlainTextEdit" name="edit_spouselname">
                 <property name="styleSheet">
                  <string notr="true">border:1px solid black;</string>
                 </property>

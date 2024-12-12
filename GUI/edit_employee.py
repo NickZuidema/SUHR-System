@@ -125,9 +125,10 @@ class Edit_MainWindow(QMainWindow):
                 else:
                     #spouse name
                     spouse_lname, spouse_fname, spouse_mname = employee_spouse_data[0], employee_spouse_data[1], employee_spouse_data[2]
-                    spouse_full_name = f"{spouse_lname}, {spouse_fname} {spouse_mname or ''}".strip()
                     
-                    self.ui.edit_spouse.setPlainText(spouse_full_name)
+                    self.ui.edit_spousefname.setPlainText(spouse_fname)
+                    self.ui.edit_spouselname.setPlainText(spouse_lname)
+                    self.ui.edit_spousemname.setPlainText(spouse_mname)
 
 
                 #more spouse data
@@ -282,6 +283,11 @@ class Edit_MainWindow(QMainWindow):
             ("m_middlename", self.ui.edit_mother_middlename),
             ("mother_occ",self.ui.edit_mother_occ),
             ("mother_home_address", self.ui.edit_father_address),
+
+            ("civil_status", self.ui.edit_civil),
+            ("sp_fname",self.ui.edit_spousefname),
+            ("sp_lname",self.ui.edit_spouselname),
+            ("sp_mname",self.ui.edit_spousemname),
         ]
 
         # Extract the values into a dictionary or variables
@@ -309,11 +315,11 @@ class Edit_MainWindow(QMainWindow):
                         Dgte_Address = ?, Home_Address = ?,
                         Date_Of_Birth = ?, Place_Of_Birth = ?, Citizenship = ?,
                         Church = ?, Non_Filipino_Id = ?, Contact_No = ?,
-                        Tax_Id = ?, Sss_No = ?, Pagibig_No = ?, Philhealth_No = ?, employee_image = ?
+                        Tax_Id = ?, Sss_No = ?, Pagibig_No = ?, Philhealth_No = ?, Civil_Status = ?, employee_image = ?
                     WHERE Employee_Id = ?
                 """, (data['lastname'],data['midname'],data['firstname'],data['duma_address'],
                       data['home_address'], data['date_of_birth'],data['place_of_birth'], data['citizenship'], data['church'],
-                      data['passport_num'], data['contact_num'], data['tin'], data['sss_num'],data['pag_ibig'],data['ph_health_num'], image_name,
+                      data['passport_num'], data['contact_num'], data['tin'], data['sss_num'],data['pag_ibig'],data['ph_health_num'], data["civil_status"],image_name,
                       self.id_val))
                 conn.commit()
 
@@ -332,6 +338,16 @@ class Edit_MainWindow(QMainWindow):
                 conn.commit()
 
 
+                cursor.execute("""
+                Update Spouse 
+                    Set Last_Name = ?, First_Name = ?, Middle_Name = ?
+                     where Spouse_Id = (select spouse_id from Employee where Employee_id = ?);
+                """, (data["sp_lname"],data["sp_fname"],data["sp_mname"],self.id_val))
+                conn.commit()
+
+
+                #to update
+                # children, sibling
         
                 QMessageBox.information(self, "Edit Result", f"Updated Record for {self.id_val}.")
 
