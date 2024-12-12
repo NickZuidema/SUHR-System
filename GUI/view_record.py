@@ -39,7 +39,7 @@ class MainWindow(QMainWindow):
                 # Use the passed employee_id for the query
                 cursor.execute("""
                     SELECT Last_Name, First_Name, Middle_Name, Dgte_Address, Home_Address, Date_Of_Birth,
-                           Citizenship, Civil_Status, Sss_No, Pagibig_No, Philhealth_No, Contact_No, employee_image
+                           Citizenship, Civil_Status, Sss_No, Pagibig_No, Philhealth_No, Contact_No, employee_image, Department
                     FROM Employee
                     WHERE Employee_Id = ?
                 """, (employee_id,))
@@ -67,6 +67,8 @@ class MainWindow(QMainWindow):
                 self.ui.employee_religion.setText("No religion information available")  # Default message
                 self.ui.employee_father.setText("No father information available")  # Default message
                 self.ui.employee_mother.setText("No mother information available")  # Default message
+                self.ui.employee_department.setText(employee_data[13])
+
 
 
                 #-----load image in process ----------
@@ -102,6 +104,17 @@ class MainWindow(QMainWindow):
                 self.ui.Profile_pic_2.setScene(scene)
 
                 #----------end of image process------
+
+                #display position
+                cursor.execute("""
+                    select Name from position where position_id = (select position_id from Employee where Employee_Id = ?);
+                """, (employee_id,))
+                position_data = cursor.fetchone()
+
+                if position_data and position_data[0]:
+                    self.ui.employee_position.setText(position_data[0])  # Set church affiliation in QLabel
+                else:
+                    self.ui.employee_position.setText("No position data")
 
                 # Fetch and display church affiliation
                 cursor.execute("""

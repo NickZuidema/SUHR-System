@@ -122,16 +122,16 @@ class AddEmployeeWindow(QMainWindow):
             )
 
         print("running school")
-        elementary_id = self.ui.elementary_school.toPlainText()
-        elementary_fin = self.ui.yeargraduate_elementary.toPlainText()
-        seniorhigh_id = self.ui.highschool.toPlainText()
-        seniorhigh_diploma = self.ui.diploma_highschool.toPlainText()
-        seniorhigh_fin = self.ui.yeargraduate_highschool.toPlainText()
-        college_id = self.ui.College.toPlainText()
-        college_diploma = self.ui.diploma_college.toPlainText()
-        gradschool_id = self.ui.Graduateschool.toPlainText()
-        gradschool_diploma = self.ui.diploma_college.toPlainText()
-        gradschool_fin = self.ui.yeargraduate_graduateschool.toPlainText()
+        elementary_id = " "+self.ui.elementary_school.toPlainText()
+        elementary_fin = " "+self.ui.yeargraduate_elementary.toPlainText()
+        seniorhigh_id = " "+self.ui.highschool.toPlainText()
+        seniorhigh_diploma = " "+self.ui.diploma_highschool.toPlainText()
+        seniorhigh_fin = " "+self.ui.yeargraduate_highschool.toPlainText()
+        college_id = " "+self.ui.College.toPlainText()
+        college_diploma = " "+self.ui.diploma_college.toPlainText()
+        gradschool_id = " "+self.ui.Graduateschool.toPlainText()
+        gradschool_diploma = " "+self.ui.diploma_college.toPlainText()
+        gradschool_fin = " "+self.ui.yeargraduate_graduateschool.toPlainText()
 
         if elementary_id or seniorhigh_fin or seniorhigh_id or college_id or gradschool_id:
             academic_record_id = academic.insert_academic_record_data(
@@ -261,8 +261,9 @@ class AddEmployeeWindow(QMainWindow):
                 Salary_Id,
                 Contact_No,
                 Archived,
-                employee_image
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)'''
+                employee_image,
+                Department
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)'''
             position_name = data["position"]
             position_id = generate_position_id(position_name)
             values = (
@@ -292,7 +293,8 @@ class AddEmployeeWindow(QMainWindow):
                 salary_id,
                 data["contact_num"],
                 archived,
-                self.employee_picture
+                self.employee_picture,
+                self.ui.Department.toPlainText()
             )
             cursor.execute(sql, values)
             conn.commit()

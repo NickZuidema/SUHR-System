@@ -302,7 +302,12 @@ class Edit_MainWindow(QMainWindow):
                       data['passport_num'], data['contact_num'], data['tin'], data['sss_num'],data['pag_ibig'],data['ph_health_num'], image_name,
                       self.id_val))
                 conn.commit()
-                
+
+
+                cursor.execute("""
+                    Update Position Set Name = ? where position_id = (select position_id from Employee where Employee_Id = ?);
+                """, (data["position"],self.id_val))
+                conn.commit()
         
                 QMessageBox.information(self, "Edit Result", f"Updated Record for {self.id_val}.")
 
