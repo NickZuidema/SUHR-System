@@ -69,19 +69,30 @@ class Edit_MainWindow(QMainWindow):
                 employee_position_data = cursor.fetchone()
 
                 if employee_position_data is None:
-                    raise ValueError(f"Employee Position Error: No Employee found with ID {self.id_val}")
+                    QMessageBox.information(self, "Employee Position", "No Position Data")
                 
-
+                #spouse data
                 cursor.execute("""
                     select Last_Name, First_Name, Middle_Name from Spouse where Spouse_Id = (select spouse_id from Employee where Employee_Id = ?);
                 """, (self.id_val,))
                 employee_spouse_data = cursor.fetchone()
 
                 if employee_spouse_data is None:
-                    raise ValueError(f"Spouse Data Error:No Employee found with ID {self.id_val}")
+                    QMessageBox.information(self, "Spouse Data", "Employee has no Spouse")
                 
+                #more spouse data
+                cursor.execute("""
+                    select Date_of_Marriage, Place_of_Marriage from Spouse_Info 
+                               where Spouse_Info_Id = (select Spouse_Info_Id from Spouse 
+                               where Spouse_Id = (select Spouse_Id from Employee where Employee_Id = ?));
+                """, (self.id_val,))
+                employee_spouse_information = cursor.fetchone()
+
+                if employee_spouse_information is None:
+                    QMessageBox.information(self, "Spouse Information Data", "Employee has no Spouse Information")
+
                 
-                
+                #child data
                 cursor.execute("""
                     select Last_Name, First_Name, Middle_Name, Date_Of_Birth from Child 
                     where Child_Id = (select Child_Child_Id from Employee_Child where Employee_Employee_Id = ?);
@@ -89,12 +100,43 @@ class Edit_MainWindow(QMainWindow):
                 employee_child_data = cursor.fetchone()
 
                 if employee_child_data is None:
-                    raise ValueError(f"Child Data Error:No Employee found with ID {self.id_val}")
+                    QMessageBox.information(self, "Child Data", "Employee has no children Found")
 
+                #sibling data
+                cursor.execute("""
+                    select Last_Name, First_Name, Middle_Name, Occupation, Address from Sibling 
+                    where Sibling_Id like ?;
+                """, (self.id_val+'%',))
+                employee_sibling_data = cursor.fetchone()
+
+                if employee_sibling_data is None:
+                    QMessageBox.information(self, "Sibling Data", "Employee has no sibling Found")
+
+
+
+                #parent data
+                cursor.execute("""
+                    select Father_Last_Name, Father_First_Name, Father_Middle_Name, Father_Occupation, Father_Address, 
+                               Mother_Last_Name, Mother_First_Name, Mother_Middle_Name, Mother_Occupation, Mother_Address
+                    from Parent where Parent_Id = (select Parent_Parent_Id from Employee_Parent where Employee_Employee_Id = ?);
+                """, (self.id_val,))
+                employee_parent_data = cursor.fetchone()
+
+                if employee_parent_data is None:
+                    QMessageBox.information(self, "Parent Data", "Employee has no Parents Found")
+            
+            
 
                 # Concatenate Last_Name, First_Name, and Middle_Name to form the full name
                 last_name, first_name, middle_name = employee_data[0], employee_data[1], employee_data[2]
                 full_name = f"{last_name}, {first_name} {middle_name or ''}".strip()
+
+                #parents name
+                father_lname, father_fname, father_mname = employee_parent_data[0], employee_parent_data[1], employee_parent_data[2]
+                father_full_name = f"{father_lname}, {father_fname} {father_mname or ''}".strip()
+                
+                mother_lname, mother_fname, mother_mname = employee_parent_data[5], employee_parent_data[6], employee_parent_data[7]
+                mother_full_name = f"{mother_lname}, {mother_fname} {mother_mname or ''}".strip()
 
                 #spouse name
                 spouse_lname, spouse_fname, spouse_mname = employee_spouse_data[0], employee_spouse_data[1], employee_spouse_data[2]
@@ -103,6 +145,10 @@ class Edit_MainWindow(QMainWindow):
                 #child name
                 child_lname, child_fname, child_mname = employee_child_data[0], employee_child_data[1], employee_child_data[2]
                 child_full_name = f"{child_lname}, {child_fname} {child_mname or ''}".strip()
+
+                #sibling name
+                sib_lname, sib_fname, sib_mname = employee_sibling_data[0], employee_sibling_data[1], employee_sibling_data[2]
+                sib_full_name = f"{sib_lname}, {sib_fname} {sib_mname or ''}".strip()
 
                 # Populate UI fields with data from the database
                 # Initialize the Names
@@ -142,8 +188,24 @@ class Edit_MainWindow(QMainWindow):
                 
                 self.ui.edit_spouse.setPlainText(spouse_full_name)
 
+                self.ui.edit_marriage_date.setPlainText(employee_spouse_information[0])
+                self.ui.edit_marriage_place.setPlainText(employee_spouse_information[1])
+
                 self.ui.edit_children.setPlainText(child_full_name)
                 self.ui.edit_children_DoB.setPlainText(employee_child_data[3])
+                
+                self.ui.edit_siblings_name.setPlainText(sib_full_name)
+                self.ui.edit_siblings_occ.setPlainText(employee_sibling_data[3])
+                self.ui.edit_siblings_address.setPlainText(employee_sibling_data[4])
+
+
+                self.ui.edit_father_name.setPlainText(father_full_name)
+                self.ui.edit_father_home.setPlainText(employee_parent_data[4])
+                self.ui.edit_father_occ.setPlainText(employee_parent_data[3])
+
+                self.ui.edit_mother_name.setPlainText(mother_full_name)
+                self.ui.edit_father_address.setPlainText(employee_parent_data[9])
+                self.ui.edit_mother_occ.setPlainText(employee_parent_data[8])
 
         except sqlite3.Error as e:
             QMessageBox.critical(self, "Database Error", f"An error occurred while accessing the database: {e}")

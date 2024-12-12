@@ -40,12 +40,6 @@ def collect_employee_data(ui, employee_id, archived=0):
         "sibling1_occupation": ui.sibling1_occupation.toPlainText(),
         "sibling1_address": ui.sibling1_address.toPlainText(),
         
-        "sibling2_firstname": ui.sibling2_FirstName.toPlainText(),
-        "sibling2_lastname": ui.sibling2_LastName.toPlainText(),
-        "sibling2_middlename": ui.sibling2_MiddleName.toPlainText(),
-        "sibling2_occupation": ui.sibling2_occupation.toPlainText(),
-        "sibling2_address": ui.sibling2_address.toPlainText(),
-        
         "civil_status": ui.CivilStatus.toPlainText(),
         
         "spouse_firstename": ui.Spouse_FirstName.toPlainText(),
@@ -59,11 +53,6 @@ def collect_employee_data(ui, employee_id, archived=0):
         "child1_lastname": ui.child1_LastName.toPlainText(),
         "child1_middlename": ui.child1_MiddleName.toPlainText(),
         "child1_birthdate": ui.child1_dateofbirth.toPlainText(),
-        
-        "child2_firstname": ui.child2_FirstName.toPlainText(),
-        "child2_lastname": ui.child2_LastName.toPlainText(),
-        "child2_middlename": ui.child2_MiddleName.toPlainText(),
-        "child2_birthdate": ui.child2_dateofbirth.toPlainText(),
         
         "elementary_school": ui.elementary_school.toPlainText(),
         "elementary_address": ui.elementary_school_address.toPlainText(),

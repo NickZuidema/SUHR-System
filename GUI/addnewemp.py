@@ -93,28 +93,36 @@ class AddEmployeeWindow(QMainWindow):
         spouse.insert_spouse_data(spouse_id, first_name, middle_name, last_name, date_of_marriage, place_of_marriage)
 
         self.update_employee_spouse_id(employee_data['employee_id'], spouse_id)
+        
 
-        child_first_name = self.ui.child1_FirstName.toPlainText()
-        child_middle_name = self.ui.child1_MiddleName.toPlainText()
-        child_last_name = self.ui.child1_LastName.toPlainText()
-        child_date_of_birth = self.ui.child1_dateofbirth.toPlainText()
 
+        #children data
+        print("running child")
+        child_first_name = " " +self.ui.child1_FirstName.toPlainText()
+        child_middle_name = " " + self.ui.child1_MiddleName.toPlainText()
+        child_last_name = " "+ self.ui.child1_LastName.toPlainText()
+        child_date_of_birth =  " "+self.ui.child1_dateofbirth.toPlainText()
+
+        print(f"{child_first_name},{child_middle_name},{child_last_name},{child_date_of_birth}")
         if child_first_name or child_middle_name or child_last_name:
             employee_child.add_child_to_employee(
                 employee_id, child_last_name, child_first_name, child_middle_name, child_date_of_birth
             )
+        
 
-        sibling1_first_name = self.ui.sibling1_FirstName.toPlainText()
-        sibling1_middle_name = self.ui.sibling1_MiddleName.toPlainText()
-        sibling1_last_name = self.ui.sibling1_LastName.toPlainText()
-        sibling1_occupation = self.ui.sibling1_occupation.toPlainText()
-        sibling1_address = self.ui.sibling1_address.toPlainText()
+        print("running sibling")
+        sibling1_first_name = " "+self.ui.sibling1_FirstName.toPlainText()
+        sibling1_middle_name = " "+self.ui.sibling1_MiddleName.toPlainText()
+        sibling1_last_name = " "+self.ui.sibling1_LastName.toPlainText()
+        sibling1_occupation = " "+self.ui.sibling1_occupation.toPlainText()
+        sibling1_address = " "+self.ui.sibling1_address.toPlainText()
 
         if sibling1_first_name or sibling1_middle_name or sibling1_last_name:
             employee_sibling.add_sibling_to_employee(
                 employee_id, sibling1_last_name, sibling1_first_name, sibling1_middle_name, sibling1_occupation, sibling1_address
             )
 
+        print("running school")
         elementary_id = self.ui.elementary_school.toPlainText()
         elementary_fin = self.ui.yeargraduate_elementary.toPlainText()
         seniorhigh_id = self.ui.highschool.toPlainText()
@@ -163,16 +171,16 @@ class AddEmployeeWindow(QMainWindow):
                 academic_record_id, government_title, government_date, government_score, government_score_max
             )
 
-        father_first_name = self.ui.Father_FirstName.toPlainText()
-        father_middle_name = self.ui.Father_MiddleName.toPlainText()
-        father_last_name = self.ui.Father_LastName.toPlainText()
-        father_occupation = self.ui.FatherJob.toPlainText()
-        father_address = self.ui.FatherAddress.toPlainText()
-        mother_first_name = self.ui.Mother_FirstName.toPlainText()
-        mother_middle_name = self.ui.Mother_MiddleName.toPlainText()
-        mother_last_name = self.ui.Mother_LastName.toPlainText()
-        mother_occupation = self.ui.MotherJob.toPlainText()
-        mother_address = self.ui.MotherAddress.toPlainText()
+        father_first_name = " "+self.ui.Father_FirstName.toPlainText()
+        father_middle_name = " "+self.ui.Father_MiddleName.toPlainText()
+        father_last_name = " "+self.ui.Father_LastName.toPlainText()
+        father_occupation = " "+self.ui.FatherJob.toPlainText()
+        father_address = " "+self.ui.FatherAddress.toPlainText()
+        mother_first_name = " "+self.ui.Mother_FirstName.toPlainText()
+        mother_middle_name = " "+self.ui.Mother_MiddleName.toPlainText()
+        mother_last_name =" "+ self.ui.Mother_LastName.toPlainText()
+        mother_occupation = " "+self.ui.MotherJob.toPlainText()
+        mother_address = " "+self.ui.MotherAddress.toPlainText()
 
         if father_first_name or father_middle_name or father_last_name or mother_first_name or mother_middle_name or mother_last_name:
             parent_family_id = employee_parent.add_parent_to_parent_family_table(
