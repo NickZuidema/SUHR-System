@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'editCANLASaIcaPr.ui'
+## Form generated from reading UI file 'editCANLASzlMCdc.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.4.3
 ##
@@ -160,7 +160,7 @@ class Ui_MainWindow(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, -1607, 1200, 3117))
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, -1446, 1200, 3207))
         self.scrollAreaWidgetContents.setStyleSheet(u"background-color: white;\n"
 "color: black;")
         self.verticalLayout_2 = QVBoxLayout(self.scrollAreaWidgetContents)
@@ -235,6 +235,12 @@ class Ui_MainWindow(object):
         self.gridLayout_2 = QGridLayout()
         self.gridLayout_2.setObjectName(u"gridLayout_2")
         self.gridLayout_2.setSizeConstraint(QLayout.SetDefaultConstraint)
+        self.edit_siblinglname = QPlainTextEdit(self.scrollAreaWidgetContents)
+        self.edit_siblinglname.setObjectName(u"edit_siblinglname")
+        self.edit_siblinglname.setStyleSheet(u"border:1px solid black;")
+
+        self.gridLayout_2.addWidget(self.edit_siblinglname, 37, 2, 1, 1)
+
         self.edit_mother_name = QPlainTextEdit(self.scrollAreaWidgetContents)
         self.edit_mother_name.setObjectName(u"edit_mother_name")
         self.edit_mother_name.setMinimumSize(QSize(0, 0))
@@ -251,7 +257,7 @@ class Ui_MainWindow(object):
         self.label_43.setStyleSheet(u"background-color: white;\n"
 "color: black;")
 
-        self.gridLayout_2.addWidget(self.label_43, 46, 2, 1, 1)
+        self.gridLayout_2.addWidget(self.label_43, 49, 2, 1, 1)
 
         self.label_59 = QLabel(self.scrollAreaWidgetContents)
         self.label_59.setObjectName(u"label_59")
@@ -259,7 +265,7 @@ class Ui_MainWindow(object):
         self.label_59.setStyleSheet(u"background-color: white;\n"
 "color: black;")
 
-        self.gridLayout_2.addWidget(self.label_59, 60, 2, 1, 1)
+        self.gridLayout_2.addWidget(self.label_59, 63, 2, 1, 1)
 
         self.edit_DoB = QPlainTextEdit(self.scrollAreaWidgetContents)
         self.edit_DoB.setObjectName(u"edit_DoB")
@@ -283,7 +289,7 @@ class Ui_MainWindow(object):
         self.label_54.setStyleSheet(u"background-color: white;\n"
 "color: black;")
 
-        self.gridLayout_2.addWidget(self.label_54, 55, 0, 1, 3)
+        self.gridLayout_2.addWidget(self.label_54, 58, 0, 1, 3)
 
         self.label_47 = QLabel(self.scrollAreaWidgetContents)
         self.label_47.setObjectName(u"label_47")
@@ -291,7 +297,7 @@ class Ui_MainWindow(object):
         self.label_47.setStyleSheet(u"background-color: white;\n"
 "color: black;")
 
-        self.gridLayout_2.addWidget(self.label_47, 50, 0, 1, 1)
+        self.gridLayout_2.addWidget(self.label_47, 53, 0, 1, 1)
 
         self.label_30 = QLabel(self.scrollAreaWidgetContents)
         self.label_30.setObjectName(u"label_30")
@@ -336,7 +342,7 @@ class Ui_MainWindow(object):
         self.label_42.setStyleSheet(u"background-color: white;\n"
 "color: black;")
 
-        self.gridLayout_2.addWidget(self.label_42, 46, 1, 1, 1)
+        self.gridLayout_2.addWidget(self.label_42, 49, 1, 1, 1)
 
         self.edit_father_address = QPlainTextEdit(self.scrollAreaWidgetContents)
         self.edit_father_address.setObjectName(u"edit_father_address")
@@ -375,20 +381,12 @@ class Ui_MainWindow(object):
 
         self.gridLayout_2.addWidget(self.edit_father_lastname, 27, 2, 1, 1)
 
-        self.label_33 = QLabel(self.scrollAreaWidgetContents)
-        self.label_33.setObjectName(u"label_33")
-        self.label_33.setFont(font2)
-        self.label_33.setStyleSheet(u"background-color: white;\n"
-"color: black;")
-
-        self.gridLayout_2.addWidget(self.label_33, 36, 2, 1, 1)
-
         self.edit_high_date = QPlainTextEdit(self.scrollAreaWidgetContents)
         self.edit_high_date.setObjectName(u"edit_high_date")
         self.edit_high_date.setMinimumSize(QSize(0, 0))
         self.edit_high_date.setStyleSheet(u"border:1px solid black;")
 
-        self.gridLayout_2.addWidget(self.edit_high_date, 49, 2, 1, 1)
+        self.gridLayout_2.addWidget(self.edit_high_date, 52, 2, 1, 1)
 
         self.label_26 = QLabel(self.scrollAreaWidgetContents)
         self.label_26.setObjectName(u"label_26")
@@ -412,7 +410,7 @@ class Ui_MainWindow(object):
         self.label_67.setStyleSheet(u"background-color: white;\n"
 "color: black;")
 
-        self.gridLayout_2.addWidget(self.label_67, 68, 0, 1, 3)
+        self.gridLayout_2.addWidget(self.label_67, 71, 0, 1, 3)
 
         self.edit_PoB = QPlainTextEdit(self.scrollAreaWidgetContents)
         self.edit_PoB.setObjectName(u"edit_PoB")
@@ -436,6 +434,14 @@ class Ui_MainWindow(object):
 
         self.gridLayout_2.addWidget(self.edit_date_issued, 16, 2, 1, 1)
 
+        self.label_37 = QLabel(self.scrollAreaWidgetContents)
+        self.label_37.setObjectName(u"label_37")
+        self.label_37.setFont(font2)
+        self.label_37.setStyleSheet(u"background-color: white;\n"
+"color: black;")
+
+        self.gridLayout_2.addWidget(self.label_37, 41, 2, 1, 1)
+
         self.edit_dgte_address = QPlainTextEdit(self.scrollAreaWidgetContents)
         self.edit_dgte_address.setObjectName(u"edit_dgte_address")
         self.edit_dgte_address.setMinimumSize(QSize(0, 0))
@@ -451,13 +457,19 @@ class Ui_MainWindow(object):
 
         self.gridLayout_2.addWidget(self.edit_father_name, 26, 0, 1, 2)
 
+        self.edit_siblingmname = QPlainTextEdit(self.scrollAreaWidgetContents)
+        self.edit_siblingmname.setObjectName(u"edit_siblingmname")
+        self.edit_siblingmname.setStyleSheet(u"border:1px solid black;")
+
+        self.gridLayout_2.addWidget(self.edit_siblingmname, 37, 1, 1, 1)
+
         self.label_64 = QLabel(self.scrollAreaWidgetContents)
         self.label_64.setObjectName(u"label_64")
         self.label_64.setFont(font3)
         self.label_64.setStyleSheet(u"background-color: white;\n"
 "color: black;")
 
-        self.gridLayout_2.addWidget(self.label_64, 65, 1, 1, 1)
+        self.gridLayout_2.addWidget(self.label_64, 68, 1, 1, 1)
 
         self.label_40 = QLabel(self.scrollAreaWidgetContents)
         self.label_40.setObjectName(u"label_40")
@@ -465,21 +477,35 @@ class Ui_MainWindow(object):
         self.label_40.setStyleSheet(u"background-color: white;\n"
 "color: black;")
 
-        self.gridLayout_2.addWidget(self.label_40, 45, 0, 1, 1)
+        self.gridLayout_2.addWidget(self.label_40, 48, 0, 1, 1)
 
         self.edit_workplace_address = QPlainTextEdit(self.scrollAreaWidgetContents)
         self.edit_workplace_address.setObjectName(u"edit_workplace_address")
         self.edit_workplace_address.setMinimumSize(QSize(0, 0))
         self.edit_workplace_address.setStyleSheet(u"border:1px solid black;")
 
-        self.gridLayout_2.addWidget(self.edit_workplace_address, 63, 0, 1, 4)
+        self.gridLayout_2.addWidget(self.edit_workplace_address, 66, 0, 1, 4)
 
         self.edit_high = QPlainTextEdit(self.scrollAreaWidgetContents)
         self.edit_high.setObjectName(u"edit_high")
         self.edit_high.setMinimumSize(QSize(0, 0))
         self.edit_high.setStyleSheet(u"border:1px solid black;")
 
-        self.gridLayout_2.addWidget(self.edit_high, 49, 0, 1, 1)
+        self.gridLayout_2.addWidget(self.edit_high, 52, 0, 1, 1)
+
+        self.edit_spousemname = QPlainTextEdit(self.scrollAreaWidgetContents)
+        self.edit_spousemname.setObjectName(u"edit_spousemname")
+        self.edit_spousemname.setStyleSheet(u"border:1px solid black;")
+
+        self.gridLayout_2.addWidget(self.edit_spousemname, 44, 1, 1, 1)
+
+        self.label_39 = QLabel(self.scrollAreaWidgetContents)
+        self.label_39.setObjectName(u"label_39")
+        self.label_39.setFont(font2)
+        self.label_39.setStyleSheet(u"background-color: white;\n"
+"color: black;")
+
+        self.gridLayout_2.addWidget(self.label_39, 45, 3, 1, 1)
 
         self.label_60 = QLabel(self.scrollAreaWidgetContents)
         self.label_60.setObjectName(u"label_60")
@@ -487,7 +513,20 @@ class Ui_MainWindow(object):
         self.label_60.setStyleSheet(u"background-color: white;\n"
 "color: black;")
 
-        self.gridLayout_2.addWidget(self.label_60, 60, 3, 1, 1)
+        self.gridLayout_2.addWidget(self.label_60, 63, 3, 1, 1)
+
+        self.edit_marriage_place = QPlainTextEdit(self.scrollAreaWidgetContents)
+        self.edit_marriage_place.setObjectName(u"edit_marriage_place")
+        self.edit_marriage_place.setMinimumSize(QSize(0, 0))
+        self.edit_marriage_place.setStyleSheet(u"border:1px solid black;")
+
+        self.gridLayout_2.addWidget(self.edit_marriage_place, 42, 1, 1, 1)
+
+        self.edit_childlname = QPlainTextEdit(self.scrollAreaWidgetContents)
+        self.edit_childlname.setObjectName(u"edit_childlname")
+        self.edit_childlname.setStyleSheet(u"border:1px solid black;")
+
+        self.gridLayout_2.addWidget(self.edit_childlname, 46, 2, 1, 1)
 
         self.label_9 = QLabel(self.scrollAreaWidgetContents)
         self.label_9.setObjectName(u"label_9")
@@ -496,6 +535,12 @@ class Ui_MainWindow(object):
 "color: black;")
 
         self.gridLayout_2.addWidget(self.label_9, 8, 0, 1, 3)
+
+        self.edit_childfname = QPlainTextEdit(self.scrollAreaWidgetContents)
+        self.edit_childfname.setObjectName(u"edit_childfname")
+        self.edit_childfname.setStyleSheet(u"border:1px solid black;")
+
+        self.gridLayout_2.addWidget(self.edit_childfname, 46, 0, 1, 1)
 
         self.label_17 = QLabel(self.scrollAreaWidgetContents)
         self.label_17.setObjectName(u"label_17")
@@ -510,14 +555,14 @@ class Ui_MainWindow(object):
         self.edit_staff_pos.setMinimumSize(QSize(0, 0))
         self.edit_staff_pos.setStyleSheet(u"border:1px solid black;")
 
-        self.gridLayout_2.addWidget(self.edit_staff_pos, 54, 2, 1, 1)
+        self.gridLayout_2.addWidget(self.edit_staff_pos, 57, 2, 1, 1)
 
         self.edit_staff_name = QPlainTextEdit(self.scrollAreaWidgetContents)
         self.edit_staff_name.setObjectName(u"edit_staff_name")
         self.edit_staff_name.setMinimumSize(QSize(0, 0))
         self.edit_staff_name.setStyleSheet(u"border:1px solid black;")
 
-        self.gridLayout_2.addWidget(self.edit_staff_name, 54, 0, 1, 1)
+        self.gridLayout_2.addWidget(self.edit_staff_name, 57, 0, 1, 1)
 
         self.label_20 = QLabel(self.scrollAreaWidgetContents)
         self.label_20.setObjectName(u"label_20")
@@ -542,12 +587,18 @@ class Ui_MainWindow(object):
 
         self.gridLayout_2.addWidget(self.label_29, 31, 2, 1, 1)
 
+        self.edit_spouselname = QPlainTextEdit(self.scrollAreaWidgetContents)
+        self.edit_spouselname.setObjectName(u"edit_spouselname")
+        self.edit_spouselname.setStyleSheet(u"border:1px solid black;")
+
+        self.gridLayout_2.addWidget(self.edit_spouselname, 44, 2, 1, 1)
+
         self.edit_examination_date = QPlainTextEdit(self.scrollAreaWidgetContents)
         self.edit_examination_date.setObjectName(u"edit_examination_date")
         self.edit_examination_date.setMinimumSize(QSize(0, 0))
         self.edit_examination_date.setStyleSheet(u"border:1px solid black;")
 
-        self.gridLayout_2.addWidget(self.edit_examination_date, 66, 2, 1, 1)
+        self.gridLayout_2.addWidget(self.edit_examination_date, 69, 2, 1, 1)
 
         self.label_18 = QLabel(self.scrollAreaWidgetContents)
         self.label_18.setObjectName(u"label_18")
@@ -557,20 +608,27 @@ class Ui_MainWindow(object):
 
         self.gridLayout_2.addWidget(self.label_18, 17, 0, 1, 1)
 
+        self.edit_spousefname = QPlainTextEdit(self.scrollAreaWidgetContents)
+        self.edit_spousefname.setObjectName(u"edit_spousefname")
+        self.edit_spousefname.setMinimumSize(QSize(0, 0))
+        self.edit_spousefname.setStyleSheet(u"border:1px solid black;")
+
+        self.gridLayout_2.addWidget(self.edit_spousefname, 44, 0, 1, 1)
+
         self.label_52 = QLabel(self.scrollAreaWidgetContents)
         self.label_52.setObjectName(u"label_52")
         self.label_52.setFont(font3)
         self.label_52.setStyleSheet(u"background-color: white;\n"
 "color: black;")
 
-        self.gridLayout_2.addWidget(self.label_52, 53, 0, 1, 1)
+        self.gridLayout_2.addWidget(self.label_52, 56, 0, 1, 1)
 
         self.edit_previous_leaving = QPlainTextEdit(self.scrollAreaWidgetContents)
         self.edit_previous_leaving.setObjectName(u"edit_previous_leaving")
         self.edit_previous_leaving.setMinimumSize(QSize(0, 0))
         self.edit_previous_leaving.setStyleSheet(u"border:1px solid black;")
 
-        self.gridLayout_2.addWidget(self.edit_previous_leaving, 61, 3, 1, 1)
+        self.gridLayout_2.addWidget(self.edit_previous_leaving, 64, 3, 1, 1)
 
         self.edit_elem_date = QPlainTextEdit(self.scrollAreaWidgetContents)
         self.edit_elem_date.setObjectName(u"edit_elem_date")
@@ -578,7 +636,7 @@ class Ui_MainWindow(object):
         self.edit_elem_date.setStyleSheet(u"background-color: white;\n"
 "color: black;border:1px solid black;")
 
-        self.gridLayout_2.addWidget(self.edit_elem_date, 47, 2, 1, 1)
+        self.gridLayout_2.addWidget(self.edit_elem_date, 50, 2, 1, 1)
 
         self.label_27 = QLabel(self.scrollAreaWidgetContents)
         self.label_27.setObjectName(u"label_27")
@@ -594,7 +652,23 @@ class Ui_MainWindow(object):
         self.label_45.setStyleSheet(u"background-color: white;\n"
 "color: black;")
 
-        self.gridLayout_2.addWidget(self.label_45, 48, 1, 1, 1)
+        self.gridLayout_2.addWidget(self.label_45, 51, 1, 1, 1)
+
+        self.edit_children_DoB = QPlainTextEdit(self.scrollAreaWidgetContents)
+        self.edit_children_DoB.setObjectName(u"edit_children_DoB")
+        self.edit_children_DoB.setMinimumSize(QSize(0, 0))
+        self.edit_children_DoB.setStyleSheet(u"background-color: white;\n"
+"color: black;border:1px solid black;")
+
+        self.gridLayout_2.addWidget(self.edit_children_DoB, 46, 3, 1, 1)
+
+        self.label_36 = QLabel(self.scrollAreaWidgetContents)
+        self.label_36.setObjectName(u"label_36")
+        self.label_36.setFont(font2)
+        self.label_36.setStyleSheet(u"background-color: white;\n"
+"color: black;")
+
+        self.gridLayout_2.addWidget(self.label_36, 41, 1, 1, 1)
 
         self.label_22 = QLabel(self.scrollAreaWidgetContents)
         self.label_22.setObjectName(u"label_22")
@@ -610,7 +684,7 @@ class Ui_MainWindow(object):
         self.label_44.setStyleSheet(u"background-color: white;\n"
 "color: black;")
 
-        self.gridLayout_2.addWidget(self.label_44, 48, 0, 1, 1)
+        self.gridLayout_2.addWidget(self.label_44, 51, 0, 1, 1)
 
         self.label_61 = QLabel(self.scrollAreaWidgetContents)
         self.label_61.setObjectName(u"label_61")
@@ -618,22 +692,14 @@ class Ui_MainWindow(object):
         self.label_61.setStyleSheet(u"background-color: white;\n"
 "color: black;")
 
-        self.gridLayout_2.addWidget(self.label_61, 64, 0, 1, 3)
-
-        self.edit_children = QPlainTextEdit(self.scrollAreaWidgetContents)
-        self.edit_children.setObjectName(u"edit_children")
-        self.edit_children.setMinimumSize(QSize(0, 0))
-        self.edit_children.setStyleSheet(u"background-color: white;\n"
-"color: black;border:1px solid black;")
-
-        self.gridLayout_2.addWidget(self.edit_children, 44, 0, 1, 2)
+        self.gridLayout_2.addWidget(self.label_61, 67, 0, 1, 3)
 
         self.edit_school_pub = QPlainTextEdit(self.scrollAreaWidgetContents)
         self.edit_school_pub.setObjectName(u"edit_school_pub")
         self.edit_school_pub.setMinimumSize(QSize(0, 0))
         self.edit_school_pub.setStyleSheet(u"border:1px solid black;")
 
-        self.gridLayout_2.addWidget(self.edit_school_pub, 58, 0, 1, 3)
+        self.gridLayout_2.addWidget(self.edit_school_pub, 61, 0, 1, 3)
 
         self.label_66 = QLabel(self.scrollAreaWidgetContents)
         self.label_66.setObjectName(u"label_66")
@@ -641,7 +707,7 @@ class Ui_MainWindow(object):
         self.label_66.setStyleSheet(u"background-color: white;\n"
 "color: black;")
 
-        self.gridLayout_2.addWidget(self.label_66, 65, 3, 1, 1)
+        self.gridLayout_2.addWidget(self.label_66, 68, 3, 1, 1)
 
         self.label_46 = QLabel(self.scrollAreaWidgetContents)
         self.label_46.setObjectName(u"label_46")
@@ -649,14 +715,7 @@ class Ui_MainWindow(object):
         self.label_46.setStyleSheet(u"background-color: white;\n"
 "color: black;")
 
-        self.gridLayout_2.addWidget(self.label_46, 48, 2, 1, 1)
-
-        self.edit_home_address = QPlainTextEdit(self.scrollAreaWidgetContents)
-        self.edit_home_address.setObjectName(u"edit_home_address")
-        self.edit_home_address.setMinimumSize(QSize(0, 0))
-        self.edit_home_address.setStyleSheet(u"border:1px solid black;")
-
-        self.gridLayout_2.addWidget(self.edit_home_address, 9, 0, 1, 3)
+        self.gridLayout_2.addWidget(self.label_46, 51, 2, 1, 1)
 
         self.label_58 = QLabel(self.scrollAreaWidgetContents)
         self.label_58.setObjectName(u"label_58")
@@ -664,7 +723,7 @@ class Ui_MainWindow(object):
         self.label_58.setStyleSheet(u"background-color: white;\n"
 "color: black;")
 
-        self.gridLayout_2.addWidget(self.label_58, 60, 1, 1, 1)
+        self.gridLayout_2.addWidget(self.label_58, 63, 1, 1, 1)
 
         self.label_34 = QLabel(self.scrollAreaWidgetContents)
         self.label_34.setObjectName(u"label_34")
@@ -672,7 +731,7 @@ class Ui_MainWindow(object):
         self.label_34.setStyleSheet(u"background-color: white;\n"
 "color: black;")
 
-        self.gridLayout_2.addWidget(self.label_34, 39, 0, 1, 1)
+        self.gridLayout_2.addWidget(self.label_34, 41, 0, 1, 1)
 
         self.edit_examination = QPlainTextEdit(self.scrollAreaWidgetContents)
         self.edit_examination.setObjectName(u"edit_examination")
@@ -680,7 +739,14 @@ class Ui_MainWindow(object):
         self.edit_examination.setStyleSheet(u"background-color: white;\n"
 "color: black;border:1px solid black;")
 
-        self.gridLayout_2.addWidget(self.edit_examination, 66, 0, 1, 1)
+        self.gridLayout_2.addWidget(self.edit_examination, 69, 0, 1, 1)
+
+        self.edit_home_address = QPlainTextEdit(self.scrollAreaWidgetContents)
+        self.edit_home_address.setObjectName(u"edit_home_address")
+        self.edit_home_address.setMinimumSize(QSize(0, 0))
+        self.edit_home_address.setStyleSheet(u"border:1px solid black;")
+
+        self.gridLayout_2.addWidget(self.edit_home_address, 9, 0, 1, 3)
 
         self.label_13 = QLabel(self.scrollAreaWidgetContents)
         self.label_13.setObjectName(u"label_13")
@@ -720,7 +786,7 @@ class Ui_MainWindow(object):
         self.edit_case.setStyleSheet(u"background-color: white;\n"
 "color: black;border:1px solid black;")
 
-        self.gridLayout_2.addWidget(self.edit_case, 69, 0, 1, 4)
+        self.gridLayout_2.addWidget(self.edit_case, 72, 0, 1, 4)
 
         self.label_31 = QLabel(self.scrollAreaWidgetContents)
         self.label_31.setObjectName(u"label_31")
@@ -729,6 +795,12 @@ class Ui_MainWindow(object):
 "color: black;")
 
         self.gridLayout_2.addWidget(self.label_31, 36, 0, 1, 1)
+
+        self.edit_childmname = QPlainTextEdit(self.scrollAreaWidgetContents)
+        self.edit_childmname.setObjectName(u"edit_childmname")
+        self.edit_childmname.setStyleSheet(u"border:1px solid black;")
+
+        self.gridLayout_2.addWidget(self.edit_childmname, 46, 1, 1, 1)
 
         self.edit_father_middlename = QTextEdit(self.scrollAreaWidgetContents)
         self.edit_father_middlename.setObjectName(u"edit_father_middlename")
@@ -764,7 +836,7 @@ class Ui_MainWindow(object):
         self.label_53.setStyleSheet(u"background-color: white;\n"
 "color: black;")
 
-        self.gridLayout_2.addWidget(self.label_53, 53, 2, 1, 1)
+        self.gridLayout_2.addWidget(self.label_53, 56, 2, 1, 1)
 
         self.label_51 = QLabel(self.scrollAreaWidgetContents)
         self.label_51.setObjectName(u"label_51")
@@ -772,7 +844,7 @@ class Ui_MainWindow(object):
         self.label_51.setStyleSheet(u"background-color: white;\n"
 "color: black;")
 
-        self.gridLayout_2.addWidget(self.label_51, 53, 1, 1, 1)
+        self.gridLayout_2.addWidget(self.label_51, 56, 1, 1, 1)
 
         self.label_63 = QLabel(self.scrollAreaWidgetContents)
         self.label_63.setObjectName(u"label_63")
@@ -780,21 +852,20 @@ class Ui_MainWindow(object):
         self.label_63.setStyleSheet(u"background-color: white;\n"
 "color: black;")
 
-        self.gridLayout_2.addWidget(self.label_63, 65, 0, 1, 1)
-
-        self.edit_siblings_name = QPlainTextEdit(self.scrollAreaWidgetContents)
-        self.edit_siblings_name.setObjectName(u"edit_siblings_name")
-        self.edit_siblings_name.setMinimumSize(QSize(0, 0))
-        self.edit_siblings_name.setStyleSheet(u"border:1px solid black;")
-
-        self.gridLayout_2.addWidget(self.edit_siblings_name, 37, 0, 1, 1)
+        self.gridLayout_2.addWidget(self.label_63, 68, 0, 1, 1)
 
         self.edit_examination_place = QPlainTextEdit(self.scrollAreaWidgetContents)
         self.edit_examination_place.setObjectName(u"edit_examination_place")
         self.edit_examination_place.setMinimumSize(QSize(0, 0))
         self.edit_examination_place.setStyleSheet(u"border:1px solid black;")
 
-        self.gridLayout_2.addWidget(self.edit_examination_place, 66, 3, 1, 1)
+        self.gridLayout_2.addWidget(self.edit_examination_place, 69, 3, 1, 1)
+
+        self.edit_marriage_date = QPlainTextEdit(self.scrollAreaWidgetContents)
+        self.edit_marriage_date.setObjectName(u"edit_marriage_date")
+        self.edit_marriage_date.setStyleSheet(u"border:1px solid black;")
+
+        self.gridLayout_2.addWidget(self.edit_marriage_date, 42, 2, 1, 1)
 
         self.label_38 = QLabel(self.scrollAreaWidgetContents)
         self.label_38.setObjectName(u"label_38")
@@ -802,7 +873,7 @@ class Ui_MainWindow(object):
         self.label_38.setStyleSheet(u"background-color: white;\n"
 "color: black;")
 
-        self.gridLayout_2.addWidget(self.label_38, 43, 0, 1, 1)
+        self.gridLayout_2.addWidget(self.label_38, 45, 0, 1, 1)
 
         self.label_15 = QLabel(self.scrollAreaWidgetContents)
         self.label_15.setObjectName(u"label_15")
@@ -818,7 +889,7 @@ class Ui_MainWindow(object):
         self.label_57.setStyleSheet(u"background-color: white;\n"
 "color: black;")
 
-        self.gridLayout_2.addWidget(self.label_57, 60, 0, 1, 1)
+        self.gridLayout_2.addWidget(self.label_57, 63, 0, 1, 1)
 
         self.label_21 = QLabel(self.scrollAreaWidgetContents)
         self.label_21.setObjectName(u"label_21")
@@ -828,19 +899,12 @@ class Ui_MainWindow(object):
 
         self.gridLayout_2.addWidget(self.label_21, 19, 1, 1, 2)
 
-        self.edit_siblings_address = QPlainTextEdit(self.scrollAreaWidgetContents)
-        self.edit_siblings_address.setObjectName(u"edit_siblings_address")
-        self.edit_siblings_address.setMinimumSize(QSize(0, 0))
-        self.edit_siblings_address.setStyleSheet(u"border:1px solid black;")
-
-        self.gridLayout_2.addWidget(self.edit_siblings_address, 37, 2, 1, 1)
-
         self.edit_staff_relation = QPlainTextEdit(self.scrollAreaWidgetContents)
         self.edit_staff_relation.setObjectName(u"edit_staff_relation")
         self.edit_staff_relation.setMinimumSize(QSize(0, 0))
         self.edit_staff_relation.setStyleSheet(u"border:1px solid black;")
 
-        self.gridLayout_2.addWidget(self.edit_staff_relation, 54, 1, 1, 1)
+        self.gridLayout_2.addWidget(self.edit_staff_relation, 57, 1, 1, 1)
 
         self.edit_Position = QPlainTextEdit(self.scrollAreaWidgetContents)
         self.edit_Position.setObjectName(u"edit_Position")
@@ -863,7 +927,7 @@ class Ui_MainWindow(object):
         self.edit_rating.setMinimumSize(QSize(0, 0))
         self.edit_rating.setStyleSheet(u"border:1px solid black;")
 
-        self.gridLayout_2.addWidget(self.edit_rating, 66, 1, 1, 1)
+        self.gridLayout_2.addWidget(self.edit_rating, 69, 1, 1, 1)
 
         self.label_56 = QLabel(self.scrollAreaWidgetContents)
         self.label_56.setObjectName(u"label_56")
@@ -871,7 +935,7 @@ class Ui_MainWindow(object):
         self.label_56.setStyleSheet(u"background-color: white;\n"
 "color: black;")
 
-        self.gridLayout_2.addWidget(self.label_56, 59, 0, 1, 3)
+        self.gridLayout_2.addWidget(self.label_56, 62, 0, 1, 3)
 
         self.label_23 = QLabel(self.scrollAreaWidgetContents)
         self.label_23.setObjectName(u"label_23")
@@ -943,7 +1007,7 @@ class Ui_MainWindow(object):
 "padding-top: 5px;\n"
 "padding-bottom: 5px;")
 
-        self.gridLayout_2.addWidget(self.editRecord_btn, 70, 3, 1, 1)
+        self.gridLayout_2.addWidget(self.editRecord_btn, 73, 3, 1, 1)
 
         self.edit_mother_occ = QPlainTextEdit(self.scrollAreaWidgetContents)
         self.edit_mother_occ.setObjectName(u"edit_mother_occ")
@@ -958,7 +1022,7 @@ class Ui_MainWindow(object):
         self.label_55.setStyleSheet(u"background-color: white;\n"
 "color: black;")
 
-        self.gridLayout_2.addWidget(self.label_55, 57, 0, 1, 3)
+        self.gridLayout_2.addWidget(self.label_55, 60, 0, 1, 3)
 
         self.edit_mother_lastname = QTextEdit(self.scrollAreaWidgetContents)
         self.edit_mother_lastname.setObjectName(u"edit_mother_lastname")
@@ -972,7 +1036,7 @@ class Ui_MainWindow(object):
         self.edit_elem.setStyleSheet(u"background-color: white;\n"
 "color: black;border:1px solid black;")
 
-        self.gridLayout_2.addWidget(self.edit_elem, 47, 0, 1, 1)
+        self.gridLayout_2.addWidget(self.edit_elem, 50, 0, 1, 1)
 
         self.edit_college_date = QPlainTextEdit(self.scrollAreaWidgetContents)
         self.edit_college_date.setObjectName(u"edit_college_date")
@@ -980,14 +1044,7 @@ class Ui_MainWindow(object):
         self.edit_college_date.setStyleSheet(u"background-color: white;\n"
 "color: black;border:1px solid black;")
 
-        self.gridLayout_2.addWidget(self.edit_college_date, 51, 2, 1, 1)
-
-        self.edit_siblings_occ = QPlainTextEdit(self.scrollAreaWidgetContents)
-        self.edit_siblings_occ.setObjectName(u"edit_siblings_occ")
-        self.edit_siblings_occ.setMinimumSize(QSize(0, 0))
-        self.edit_siblings_occ.setStyleSheet(u"border:1px solid black;")
-
-        self.gridLayout_2.addWidget(self.edit_siblings_occ, 37, 1, 1, 1)
+        self.gridLayout_2.addWidget(self.edit_college_date, 54, 2, 1, 1)
 
         self.label_41 = QLabel(self.scrollAreaWidgetContents)
         self.label_41.setObjectName(u"label_41")
@@ -995,15 +1052,7 @@ class Ui_MainWindow(object):
         self.label_41.setStyleSheet(u"background-color: white;\n"
 "color: black;")
 
-        self.gridLayout_2.addWidget(self.label_41, 46, 0, 1, 1)
-
-        self.edit_children_DoB = QPlainTextEdit(self.scrollAreaWidgetContents)
-        self.edit_children_DoB.setObjectName(u"edit_children_DoB")
-        self.edit_children_DoB.setMinimumSize(QSize(0, 0))
-        self.edit_children_DoB.setStyleSheet(u"background-color: white;\n"
-"color: black;border:1px solid black;")
-
-        self.gridLayout_2.addWidget(self.edit_children_DoB, 44, 2, 1, 1)
+        self.gridLayout_2.addWidget(self.label_41, 49, 0, 1, 1)
 
         self.edit_department = QPlainTextEdit(self.scrollAreaWidgetContents)
         self.edit_department.setObjectName(u"edit_department")
@@ -1029,7 +1078,7 @@ class Ui_MainWindow(object):
         self.label_65.setStyleSheet(u"background-color: white;\n"
 "color: black;")
 
-        self.gridLayout_2.addWidget(self.label_65, 65, 2, 1, 1)
+        self.gridLayout_2.addWidget(self.label_65, 68, 2, 1, 1)
 
         self.edit_contactNo = QPlainTextEdit(self.scrollAreaWidgetContents)
         self.edit_contactNo.setObjectName(u"edit_contactNo")
@@ -1044,14 +1093,14 @@ class Ui_MainWindow(object):
         self.edit_school_dist.setMinimumSize(QSize(0, 0))
         self.edit_school_dist.setStyleSheet(u"border:1px solid black;")
 
-        self.gridLayout_2.addWidget(self.edit_school_dist, 56, 0, 1, 3)
+        self.gridLayout_2.addWidget(self.edit_school_dist, 59, 0, 1, 3)
 
         self.edit_previous_period = QPlainTextEdit(self.scrollAreaWidgetContents)
         self.edit_previous_period.setObjectName(u"edit_previous_period")
         self.edit_previous_period.setMinimumSize(QSize(0, 0))
         self.edit_previous_period.setStyleSheet(u"border:1px solid black;")
 
-        self.gridLayout_2.addWidget(self.edit_previous_period, 61, 2, 1, 1)
+        self.gridLayout_2.addWidget(self.edit_previous_period, 64, 2, 1, 1)
 
         self.edit_mother_middlename = QTextEdit(self.scrollAreaWidgetContents)
         self.edit_mother_middlename.setObjectName(u"edit_mother_middlename")
@@ -1065,7 +1114,7 @@ class Ui_MainWindow(object):
         self.edit_elem_address.setStyleSheet(u"background-color: white;\n"
 "color: black;border:1px solid black;")
 
-        self.gridLayout_2.addWidget(self.edit_elem_address, 47, 1, 1, 1)
+        self.gridLayout_2.addWidget(self.edit_elem_address, 50, 1, 1, 1)
 
         self.label_19 = QLabel(self.scrollAreaWidgetContents)
         self.label_19.setObjectName(u"label_19")
@@ -1081,7 +1130,7 @@ class Ui_MainWindow(object):
         self.label_49.setStyleSheet(u"background-color: white;\n"
 "color: black;")
 
-        self.gridLayout_2.addWidget(self.label_49, 50, 2, 1, 1)
+        self.gridLayout_2.addWidget(self.label_49, 53, 2, 1, 1)
 
         self.edit_college_address = QPlainTextEdit(self.scrollAreaWidgetContents)
         self.edit_college_address.setObjectName(u"edit_college_address")
@@ -1089,7 +1138,7 @@ class Ui_MainWindow(object):
         self.edit_college_address.setStyleSheet(u"background-color: white;\n"
 "color: black;border:1px solid black;")
 
-        self.gridLayout_2.addWidget(self.edit_college_address, 51, 1, 1, 1)
+        self.gridLayout_2.addWidget(self.edit_college_address, 54, 1, 1, 1)
 
         self.edit_philhealth = QPlainTextEdit(self.scrollAreaWidgetContents)
         self.edit_philhealth.setObjectName(u"edit_philhealth")
@@ -1103,15 +1152,15 @@ class Ui_MainWindow(object):
         self.checkBox_8.setStyleSheet(u"background-color: white;\n"
 "color: black;")
 
-        self.gridLayout_2.addWidget(self.checkBox_8, 70, 2, 1, 1)
+        self.gridLayout_2.addWidget(self.checkBox_8, 73, 2, 1, 1)
 
-        self.label_32 = QLabel(self.scrollAreaWidgetContents)
-        self.label_32.setObjectName(u"label_32")
-        self.label_32.setFont(font2)
-        self.label_32.setStyleSheet(u"background-color: white;\n"
+        self.label_35 = QLabel(self.scrollAreaWidgetContents)
+        self.label_35.setObjectName(u"label_35")
+        self.label_35.setFont(font2)
+        self.label_35.setStyleSheet(u"background-color: white;\n"
 "color: black;")
 
-        self.gridLayout_2.addWidget(self.label_32, 36, 1, 1, 1)
+        self.gridLayout_2.addWidget(self.label_35, 43, 0, 1, 1)
 
         self.label_50 = QLabel(self.scrollAreaWidgetContents)
         self.label_50.setObjectName(u"label_50")
@@ -1119,7 +1168,7 @@ class Ui_MainWindow(object):
         self.label_50.setStyleSheet(u"background-color: white;\n"
 "color: black;")
 
-        self.gridLayout_2.addWidget(self.label_50, 52, 0, 1, 1)
+        self.gridLayout_2.addWidget(self.label_50, 55, 0, 1, 1)
 
         self.edit_father_occ = QPlainTextEdit(self.scrollAreaWidgetContents)
         self.edit_father_occ.setObjectName(u"edit_father_occ")
@@ -1127,13 +1176,6 @@ class Ui_MainWindow(object):
         self.edit_father_occ.setStyleSheet(u"border:1px solid black;")
 
         self.gridLayout_2.addWidget(self.edit_father_occ, 26, 2, 1, 1)
-
-        self.edit_previous_name = QPlainTextEdit(self.scrollAreaWidgetContents)
-        self.edit_previous_name.setObjectName(u"edit_previous_name")
-        self.edit_previous_name.setMinimumSize(QSize(0, 0))
-        self.edit_previous_name.setStyleSheet(u"border:1px solid black;")
-
-        self.gridLayout_2.addWidget(self.edit_previous_name, 61, 0, 1, 1)
 
         self.edit_firstName = QPlainTextEdit(self.scrollAreaWidgetContents)
         self.edit_firstName.setObjectName(u"edit_firstName")
@@ -1147,12 +1189,19 @@ class Ui_MainWindow(object):
 
         self.gridLayout_2.addWidget(self.edit_firstName, 1, 0, 1, 1)
 
+        self.edit_previous_name = QPlainTextEdit(self.scrollAreaWidgetContents)
+        self.edit_previous_name.setObjectName(u"edit_previous_name")
+        self.edit_previous_name.setMinimumSize(QSize(0, 0))
+        self.edit_previous_name.setStyleSheet(u"border:1px solid black;")
+
+        self.gridLayout_2.addWidget(self.edit_previous_name, 64, 0, 1, 1)
+
         self.edit_high_address = QPlainTextEdit(self.scrollAreaWidgetContents)
         self.edit_high_address.setObjectName(u"edit_high_address")
         self.edit_high_address.setMinimumSize(QSize(0, 0))
         self.edit_high_address.setStyleSheet(u"border:1px solid black;")
 
-        self.gridLayout_2.addWidget(self.edit_high_address, 49, 1, 1, 1)
+        self.gridLayout_2.addWidget(self.edit_high_address, 52, 1, 1, 1)
 
         self.edit_college = QPlainTextEdit(self.scrollAreaWidgetContents)
         self.edit_college.setObjectName(u"edit_college")
@@ -1160,15 +1209,7 @@ class Ui_MainWindow(object):
         self.edit_college.setStyleSheet(u"background-color: white;\n"
 "color: black;border:1px solid black;")
 
-        self.gridLayout_2.addWidget(self.edit_college, 51, 0, 1, 1)
-
-        self.label_39 = QLabel(self.scrollAreaWidgetContents)
-        self.label_39.setObjectName(u"label_39")
-        self.label_39.setFont(font2)
-        self.label_39.setStyleSheet(u"background-color: white;\n"
-"color: black;")
-
-        self.gridLayout_2.addWidget(self.label_39, 43, 2, 1, 1)
+        self.gridLayout_2.addWidget(self.edit_college, 54, 0, 1, 1)
 
         self.label_62 = QLabel(self.scrollAreaWidgetContents)
         self.label_62.setObjectName(u"label_62")
@@ -1176,7 +1217,7 @@ class Ui_MainWindow(object):
         self.label_62.setStyleSheet(u"background-color: white;\n"
 "color: black;")
 
-        self.gridLayout_2.addWidget(self.label_62, 62, 0, 1, 4)
+        self.gridLayout_2.addWidget(self.label_62, 65, 0, 1, 4)
 
         self.label_48 = QLabel(self.scrollAreaWidgetContents)
         self.label_48.setObjectName(u"label_48")
@@ -1184,14 +1225,14 @@ class Ui_MainWindow(object):
         self.label_48.setStyleSheet(u"background-color: white;\n"
 "color: black;")
 
-        self.gridLayout_2.addWidget(self.label_48, 50, 1, 1, 1)
+        self.gridLayout_2.addWidget(self.label_48, 53, 1, 1, 1)
 
         self.edit_previous_position = QPlainTextEdit(self.scrollAreaWidgetContents)
         self.edit_previous_position.setObjectName(u"edit_previous_position")
         self.edit_previous_position.setMinimumSize(QSize(0, 0))
         self.edit_previous_position.setStyleSheet(u"border:1px solid black;")
 
-        self.gridLayout_2.addWidget(self.edit_previous_position, 61, 1, 1, 1)
+        self.gridLayout_2.addWidget(self.edit_previous_position, 64, 1, 1, 1)
 
         self.edit_email_add = QPlainTextEdit(self.scrollAreaWidgetContents)
         self.edit_email_add.setObjectName(u"edit_email_add")
@@ -1200,6 +1241,12 @@ class Ui_MainWindow(object):
 "color: black;border:1px solid black;")
 
         self.gridLayout_2.addWidget(self.edit_email_add, 18, 1, 1, 2)
+
+        self.edit_siblingfname = QPlainTextEdit(self.scrollAreaWidgetContents)
+        self.edit_siblingfname.setObjectName(u"edit_siblingfname")
+        self.edit_siblingfname.setStyleSheet(u"border:1px solid black;")
+
+        self.gridLayout_2.addWidget(self.edit_siblingfname, 37, 0, 1, 1)
 
         self.edit_passportNo = QPlainTextEdit(self.scrollAreaWidgetContents)
         self.edit_passportNo.setObjectName(u"edit_passportNo")
@@ -1214,7 +1261,7 @@ class Ui_MainWindow(object):
         self.edit_civil.setStyleSheet(u"background-color: white;\n"
 "color: black;border:1px solid black;")
 
-        self.gridLayout_2.addWidget(self.edit_civil, 40, 0, 1, 1)
+        self.gridLayout_2.addWidget(self.edit_civil, 42, 0, 1, 1)
 
         self.label_16 = QLabel(self.scrollAreaWidgetContents)
         self.label_16.setObjectName(u"label_16")
@@ -1232,61 +1279,35 @@ class Ui_MainWindow(object):
 
         self.gridLayout_2.addWidget(self.label_14, 10, 2, 1, 1)
 
-        self.label_35 = QLabel(self.scrollAreaWidgetContents)
-        self.label_35.setObjectName(u"label_35")
-        self.label_35.setFont(font2)
-        self.label_35.setStyleSheet(u"background-color: white;\n"
+        self.label_32 = QLabel(self.scrollAreaWidgetContents)
+        self.label_32.setObjectName(u"label_32")
+        self.label_32.setFont(font2)
+        self.label_32.setStyleSheet(u"background-color: white;\n"
 "color: black;")
 
-        self.gridLayout_2.addWidget(self.label_35, 41, 0, 1, 1)
+        self.gridLayout_2.addWidget(self.label_32, 38, 0, 1, 1)
 
-        self.edit_spousefname = QPlainTextEdit(self.scrollAreaWidgetContents)
-        self.edit_spousefname.setObjectName(u"edit_spousefname")
-        self.edit_spousefname.setMinimumSize(QSize(0, 0))
-        self.edit_spousefname.setStyleSheet(u"border:1px solid black;")
-
-        self.gridLayout_2.addWidget(self.edit_spousefname, 42, 0, 1, 1)
-
-        self.edit_marriage_place = QPlainTextEdit(self.scrollAreaWidgetContents)
-        self.edit_marriage_place.setObjectName(u"edit_marriage_place")
-        self.edit_marriage_place.setMinimumSize(QSize(0, 0))
-        self.edit_marriage_place.setStyleSheet(u"border:1px solid black;")
-
-        self.gridLayout_2.addWidget(self.edit_marriage_place, 40, 1, 1, 1)
-
-        self.label_36 = QLabel(self.scrollAreaWidgetContents)
-        self.label_36.setObjectName(u"label_36")
-        self.label_36.setFont(font2)
-        self.label_36.setStyleSheet(u"background-color: white;\n"
+        self.label_33 = QLabel(self.scrollAreaWidgetContents)
+        self.label_33.setObjectName(u"label_33")
+        self.label_33.setFont(font2)
+        self.label_33.setStyleSheet(u"background-color: white;\n"
 "color: black;")
 
-        self.gridLayout_2.addWidget(self.label_36, 39, 1, 1, 1)
+        self.gridLayout_2.addWidget(self.label_33, 38, 1, 1, 1)
 
-        self.label_37 = QLabel(self.scrollAreaWidgetContents)
-        self.label_37.setObjectName(u"label_37")
-        self.label_37.setFont(font2)
-        self.label_37.setStyleSheet(u"background-color: white;\n"
-"color: black;")
+        self.edit_siblings_occ = QPlainTextEdit(self.scrollAreaWidgetContents)
+        self.edit_siblings_occ.setObjectName(u"edit_siblings_occ")
+        self.edit_siblings_occ.setMinimumSize(QSize(0, 0))
+        self.edit_siblings_occ.setStyleSheet(u"border:1px solid black;")
 
-        self.gridLayout_2.addWidget(self.label_37, 39, 2, 1, 1)
+        self.gridLayout_2.addWidget(self.edit_siblings_occ, 39, 0, 1, 1)
 
-        self.edit_marriage_date = QPlainTextEdit(self.scrollAreaWidgetContents)
-        self.edit_marriage_date.setObjectName(u"edit_marriage_date")
-        self.edit_marriage_date.setStyleSheet(u"border:1px solid black;")
+        self.edit_siblings_address = QPlainTextEdit(self.scrollAreaWidgetContents)
+        self.edit_siblings_address.setObjectName(u"edit_siblings_address")
+        self.edit_siblings_address.setMinimumSize(QSize(0, 0))
+        self.edit_siblings_address.setStyleSheet(u"border:1px solid black;")
 
-        self.gridLayout_2.addWidget(self.edit_marriage_date, 40, 2, 1, 1)
-
-        self.edit_spousemname = QPlainTextEdit(self.scrollAreaWidgetContents)
-        self.edit_spousemname.setObjectName(u"edit_spousemname")
-        self.edit_spousemname.setStyleSheet(u"border:1px solid black;")
-
-        self.gridLayout_2.addWidget(self.edit_spousemname, 42, 1, 1, 1)
-
-        self.edit_spouselname = QPlainTextEdit(self.scrollAreaWidgetContents)
-        self.edit_spouselname.setObjectName(u"edit_spouselname")
-        self.edit_spouselname.setStyleSheet(u"border:1px solid black;")
-
-        self.gridLayout_2.addWidget(self.edit_spouselname, 42, 2, 1, 1)
+        self.gridLayout_2.addWidget(self.edit_siblings_address, 39, 1, 1, 1)
 
 
         self.gridLayout_3.addLayout(self.gridLayout_2, 7, 3, 1, 1)
@@ -1343,12 +1364,13 @@ class Ui_MainWindow(object):
         self.label_24.setText(QCoreApplication.translate("MainWindow", u"Church Affiliation", None))
         self.label_42.setText(QCoreApplication.translate("MainWindow", u"Address", None))
         self.label_25.setText(QCoreApplication.translate("MainWindow", u"Father", None))
-        self.label_33.setText(QCoreApplication.translate("MainWindow", u"Address", None))
         self.label_26.setText(QCoreApplication.translate("MainWindow", u"Father's occupation", None))
         self.label_11.setText(QCoreApplication.translate("MainWindow", u"Passport number*", None))
         self.label_67.setText(QCoreApplication.translate("MainWindow", u"Involvement in criminal/civil case*", None))
+        self.label_37.setText(QCoreApplication.translate("MainWindow", u"Date of marriage", None))
         self.label_64.setText(QCoreApplication.translate("MainWindow", u"Rating", None))
         self.label_40.setText(QCoreApplication.translate("MainWindow", u"Academic record", None))
+        self.label_39.setText(QCoreApplication.translate("MainWindow", u"Date of birth", None))
         self.label_60.setText(QCoreApplication.translate("MainWindow", u"Reason for leaving", None))
         self.label_9.setText(QCoreApplication.translate("MainWindow", u"Home Address", None))
         self.label_17.setText(QCoreApplication.translate("MainWindow", u"Date issued*", None))
@@ -1358,6 +1380,7 @@ class Ui_MainWindow(object):
         self.label_52.setText(QCoreApplication.translate("MainWindow", u"Name", None))
         self.label_27.setText(QCoreApplication.translate("MainWindow", u"Home Address", None))
         self.label_45.setText(QCoreApplication.translate("MainWindow", u"Address", None))
+        self.label_36.setText(QCoreApplication.translate("MainWindow", u"Place of marriage", None))
         self.label_22.setText(QCoreApplication.translate("MainWindow", u"Pag-Ibig Number", None))
         self.label_44.setText(QCoreApplication.translate("MainWindow", u"High School", None))
         self.label_61.setText(QCoreApplication.translate("MainWindow", u"Government examination(s) passed", None))
@@ -1369,12 +1392,12 @@ class Ui_MainWindow(object):
         self.label_7.setText(QCoreApplication.translate("MainWindow", u"Department(s)", None))
         self.label_6.setText(QCoreApplication.translate("MainWindow", u"Position(s)", None))
         self.label_8.setText(QCoreApplication.translate("MainWindow", u"Dumaguete Address", None))
-        self.label_31.setText(QCoreApplication.translate("MainWindow", u"Sibling(s)", None))
+        self.label_31.setText(QCoreApplication.translate("MainWindow", u"Sibling", None))
         self.label_28.setText(QCoreApplication.translate("MainWindow", u"Mother", None))
         self.label_53.setText(QCoreApplication.translate("MainWindow", u"Position", None))
         self.label_51.setText(QCoreApplication.translate("MainWindow", u"Relationship", None))
         self.label_63.setText(QCoreApplication.translate("MainWindow", u"Examination", None))
-        self.label_38.setText(QCoreApplication.translate("MainWindow", u"Children (if any)", None))
+        self.label_38.setText(QCoreApplication.translate("MainWindow", u"Child Name (if any)", None))
         self.label_15.setText(QCoreApplication.translate("MainWindow", u"If non-Filipino*, please indicate the following:", None))
         self.label_57.setText(QCoreApplication.translate("MainWindow", u"Name", None))
         self.label_21.setText(QCoreApplication.translate("MainWindow", u"SSS Number", None))
@@ -1388,16 +1411,14 @@ class Ui_MainWindow(object):
         self.label_19.setText(QCoreApplication.translate("MainWindow", u"Email address", None))
         self.label_49.setText(QCoreApplication.translate("MainWindow", u"Year Graduated", None))
         self.checkBox_8.setText(QCoreApplication.translate("MainWindow", u"This confirms all details listed are true.", None))
-        self.label_32.setText(QCoreApplication.translate("MainWindow", u"Occupation", None))
+        self.label_35.setText(QCoreApplication.translate("MainWindow", u"Spouse Name", None))
         self.label_50.setText(QCoreApplication.translate("MainWindow", u"Related staff member(s)", None))
-        self.label_39.setText(QCoreApplication.translate("MainWindow", u"Date of birth", None))
         self.label_62.setText(QCoreApplication.translate("MainWindow", u"Address of workplace", None))
         self.label_48.setText(QCoreApplication.translate("MainWindow", u"Address", None))
         self.label_16.setText(QCoreApplication.translate("MainWindow", u"ACR number*", None))
         self.label_14.setText(QCoreApplication.translate("MainWindow", u"Citizenship", None))
-        self.label_35.setText(QCoreApplication.translate("MainWindow", u"Spouse Name", None))
-        self.label_36.setText(QCoreApplication.translate("MainWindow", u"Place of marriage", None))
-        self.label_37.setText(QCoreApplication.translate("MainWindow", u"Date of marriage", None))
+        self.label_32.setText(QCoreApplication.translate("MainWindow", u"Occupation", None))
+        self.label_33.setText(QCoreApplication.translate("MainWindow", u"Address", None))
         self.edit_footer.setTitle("")
         self.label_68.setText(QCoreApplication.translate("MainWindow", u"Silliman University Personnel Record Dashboard", None))
     # retranslateUi

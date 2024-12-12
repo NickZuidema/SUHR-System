@@ -552,9 +552,9 @@ QScrollArea {
        <property name="geometry">
         <rect>
          <x>0</x>
-         <y>-1607</y>
+         <y>-1446</y>
          <width>1200</width>
-         <height>3117</height>
+         <height>3207</height>
         </rect>
        </property>
        <property name="styleSheet">
@@ -816,6 +816,13 @@ padding:5px;</string>
               <property name="sizeConstraint">
                <enum>QLayout::SetDefaultConstraint</enum>
               </property>
+              <item row="37" column="2">
+               <widget class="QPlainTextEdit" name="edit_siblinglname">
+                <property name="styleSheet">
+                 <string notr="true">border:1px solid black;</string>
+                </property>
+               </widget>
+              </item>
               <item row="32" column="0" colspan="2">
                <widget class="QPlainTextEdit" name="edit_mother_name">
                 <property name="minimumSize">
@@ -829,7 +836,7 @@ padding:5px;</string>
                 </property>
                </widget>
               </item>
-              <item row="46" column="2">
+              <item row="49" column="2">
                <widget class="QLabel" name="label_43">
                 <property name="font">
                  <font>
@@ -846,7 +853,7 @@ color: black;</string>
                 </property>
                </widget>
               </item>
-              <item row="60" column="2">
+              <item row="63" column="2">
                <widget class="QLabel" name="label_59">
                 <property name="font">
                  <font>
@@ -894,7 +901,7 @@ color: black;</string>
                 </property>
                </widget>
               </item>
-              <item row="55" column="0" colspan="3">
+              <item row="58" column="0" colspan="3">
                <widget class="QLabel" name="label_54">
                 <property name="font">
                  <font>
@@ -911,7 +918,7 @@ color: black;</string>
                 </property>
                </widget>
               </item>
-              <item row="50" column="0">
+              <item row="53" column="0">
                <widget class="QLabel" name="label_47">
                 <property name="font">
                  <font>
@@ -996,7 +1003,7 @@ color: black;border:1px solid black;</string>
                 </property>
                </widget>
               </item>
-              <item row="46" column="1">
+              <item row="49" column="1">
                <widget class="QLabel" name="label_42">
                 <property name="font">
                  <font>
@@ -1078,24 +1085,7 @@ color: black;border:1px solid black;</string>
                 </property>
                </widget>
               </item>
-              <item row="36" column="2">
-               <widget class="QLabel" name="label_33">
-                <property name="font">
-                 <font>
-                  <pointsize>12</pointsize>
-                  <bold>true</bold>
-                 </font>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">background-color: white;
-color: black;</string>
-                </property>
-                <property name="text">
-                 <string>Address</string>
-                </property>
-               </widget>
-              </item>
-              <item row="49" column="2">
+              <item row="52" column="2">
                <widget class="QPlainTextEdit" name="edit_high_date">
                 <property name="minimumSize">
                  <size>
@@ -1142,7 +1132,7 @@ color: black;</string>
                 </property>
                </widget>
               </item>
-              <item row="68" column="0" colspan="3">
+              <item row="71" column="0" colspan="3">
                <widget class="QLabel" name="label_67">
                 <property name="font">
                  <font>
@@ -1194,6 +1184,23 @@ color: black;border:1px solid black;</string>
                 </property>
                </widget>
               </item>
+              <item row="41" column="2">
+               <widget class="QLabel" name="label_37">
+                <property name="font">
+                 <font>
+                  <pointsize>12</pointsize>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
+                </property>
+                <property name="text">
+                 <string>Date of marriage</string>
+                </property>
+               </widget>
+              </item>
               <item row="7" column="0" colspan="3">
                <widget class="QPlainTextEdit" name="edit_dgte_address">
                 <property name="minimumSize">
@@ -1221,7 +1228,14 @@ color: black;border:1px solid black;</string>
                 </property>
                </widget>
               </item>
-              <item row="65" column="1">
+              <item row="37" column="1">
+               <widget class="QPlainTextEdit" name="edit_siblingmname">
+                <property name="styleSheet">
+                 <string notr="true">border:1px solid black;</string>
+                </property>
+               </widget>
+              </item>
+              <item row="68" column="1">
                <widget class="QLabel" name="label_64">
                 <property name="font">
                  <font>
@@ -1238,7 +1252,7 @@ color: black;</string>
                 </property>
                </widget>
               </item>
-              <item row="45" column="0">
+              <item row="48" column="0">
                <widget class="QLabel" name="label_40">
                 <property name="font">
                  <font>
@@ -1255,7 +1269,7 @@ color: black;</string>
                 </property>
                </widget>
               </item>
-              <item row="63" column="0" colspan="4">
+              <item row="66" column="0" colspan="4">
                <widget class="QPlainTextEdit" name="edit_workplace_address">
                 <property name="minimumSize">
                  <size>
@@ -1268,7 +1282,7 @@ color: black;</string>
                 </property>
                </widget>
               </item>
-              <item row="49" column="0">
+              <item row="52" column="0">
                <widget class="QPlainTextEdit" name="edit_high">
                 <property name="minimumSize">
                  <size>
@@ -1281,7 +1295,31 @@ color: black;</string>
                 </property>
                </widget>
               </item>
-              <item row="60" column="3">
+              <item row="44" column="1">
+               <widget class="QPlainTextEdit" name="edit_spousemname">
+                <property name="styleSheet">
+                 <string notr="true">border:1px solid black;</string>
+                </property>
+               </widget>
+              </item>
+              <item row="45" column="3">
+               <widget class="QLabel" name="label_39">
+                <property name="font">
+                 <font>
+                  <pointsize>12</pointsize>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
+                </property>
+                <property name="text">
+                 <string>Date of birth</string>
+                </property>
+               </widget>
+              </item>
+              <item row="63" column="3">
                <widget class="QLabel" name="label_60">
                 <property name="font">
                  <font>
@@ -1295,6 +1333,26 @@ color: black;</string>
                 </property>
                 <property name="text">
                  <string>Reason for leaving</string>
+                </property>
+               </widget>
+              </item>
+              <item row="42" column="1">
+               <widget class="QPlainTextEdit" name="edit_marriage_place">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border:1px solid black;</string>
+                </property>
+               </widget>
+              </item>
+              <item row="46" column="2">
+               <widget class="QPlainTextEdit" name="edit_childlname">
+                <property name="styleSheet">
+                 <string notr="true">border:1px solid black;</string>
                 </property>
                </widget>
               </item>
@@ -1315,6 +1373,13 @@ color: black;</string>
                 </property>
                </widget>
               </item>
+              <item row="46" column="0">
+               <widget class="QPlainTextEdit" name="edit_childfname">
+                <property name="styleSheet">
+                 <string notr="true">border:1px solid black;</string>
+                </property>
+               </widget>
+              </item>
               <item row="15" column="2">
                <widget class="QLabel" name="label_17">
                 <property name="font">
@@ -1332,7 +1397,7 @@ color: black;</string>
                 </property>
                </widget>
               </item>
-              <item row="54" column="2">
+              <item row="57" column="2">
                <widget class="QPlainTextEdit" name="edit_staff_pos">
                 <property name="minimumSize">
                  <size>
@@ -1345,7 +1410,7 @@ color: black;</string>
                 </property>
                </widget>
               </item>
-              <item row="54" column="0">
+              <item row="57" column="0">
                <widget class="QPlainTextEdit" name="edit_staff_name">
                 <property name="minimumSize">
                  <size>
@@ -1405,7 +1470,14 @@ color: black;</string>
                 </property>
                </widget>
               </item>
-              <item row="66" column="2">
+              <item row="44" column="2">
+               <widget class="QPlainTextEdit" name="edit_spouselname">
+                <property name="styleSheet">
+                 <string notr="true">border:1px solid black;</string>
+                </property>
+               </widget>
+              </item>
+              <item row="69" column="2">
                <widget class="QPlainTextEdit" name="edit_examination_date">
                 <property name="minimumSize">
                  <size>
@@ -1435,7 +1507,20 @@ color: black;</string>
                 </property>
                </widget>
               </item>
-              <item row="53" column="0">
+              <item row="44" column="0">
+               <widget class="QPlainTextEdit" name="edit_spousefname">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border:1px solid black;</string>
+                </property>
+               </widget>
+              </item>
+              <item row="56" column="0">
                <widget class="QLabel" name="label_52">
                 <property name="font">
                  <font>
@@ -1452,7 +1537,7 @@ color: black;</string>
                 </property>
                </widget>
               </item>
-              <item row="61" column="3">
+              <item row="64" column="3">
                <widget class="QPlainTextEdit" name="edit_previous_leaving">
                 <property name="minimumSize">
                  <size>
@@ -1465,7 +1550,7 @@ color: black;</string>
                 </property>
                </widget>
               </item>
-              <item row="47" column="2">
+              <item row="50" column="2">
                <widget class="QPlainTextEdit" name="edit_elem_date">
                 <property name="minimumSize">
                  <size>
@@ -1496,7 +1581,7 @@ color: black;</string>
                 </property>
                </widget>
               </item>
-              <item row="48" column="1">
+              <item row="51" column="1">
                <widget class="QLabel" name="label_45">
                 <property name="font">
                  <font>
@@ -1510,6 +1595,37 @@ color: black;</string>
                 </property>
                 <property name="text">
                  <string>Address</string>
+                </property>
+               </widget>
+              </item>
+              <item row="46" column="3">
+               <widget class="QPlainTextEdit" name="edit_children_DoB">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;border:1px solid black;</string>
+                </property>
+               </widget>
+              </item>
+              <item row="41" column="1">
+               <widget class="QLabel" name="label_36">
+                <property name="font">
+                 <font>
+                  <pointsize>12</pointsize>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: white;
+color: black;</string>
+                </property>
+                <property name="text">
+                 <string>Place of marriage</string>
                 </property>
                </widget>
               </item>
@@ -1530,7 +1646,7 @@ color: black;</string>
                 </property>
                </widget>
               </item>
-              <item row="48" column="0">
+              <item row="51" column="0">
                <widget class="QLabel" name="label_44">
                 <property name="font">
                  <font>
@@ -1547,7 +1663,7 @@ color: black;</string>
                 </property>
                </widget>
               </item>
-              <item row="64" column="0" colspan="3">
+              <item row="67" column="0" colspan="3">
                <widget class="QLabel" name="label_61">
                 <property name="font">
                  <font>
@@ -1564,21 +1680,7 @@ color: black;</string>
                 </property>
                </widget>
               </item>
-              <item row="44" column="0" colspan="2">
-               <widget class="QPlainTextEdit" name="edit_children">
-                <property name="minimumSize">
-                 <size>
-                  <width>0</width>
-                  <height>0</height>
-                 </size>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">background-color: white;
-color: black;border:1px solid black;</string>
-                </property>
-               </widget>
-              </item>
-              <item row="58" column="0" colspan="3">
+              <item row="61" column="0" colspan="3">
                <widget class="QPlainTextEdit" name="edit_school_pub">
                 <property name="minimumSize">
                  <size>
@@ -1591,7 +1693,7 @@ color: black;border:1px solid black;</string>
                 </property>
                </widget>
               </item>
-              <item row="65" column="3">
+              <item row="68" column="3">
                <widget class="QLabel" name="label_66">
                 <property name="font">
                  <font>
@@ -1608,7 +1710,7 @@ color: black;</string>
                 </property>
                </widget>
               </item>
-              <item row="48" column="2">
+              <item row="51" column="2">
                <widget class="QLabel" name="label_46">
                 <property name="font">
                  <font>
@@ -1625,20 +1727,7 @@ color: black;</string>
                 </property>
                </widget>
               </item>
-              <item row="9" column="0" colspan="3">
-               <widget class="QPlainTextEdit" name="edit_home_address">
-                <property name="minimumSize">
-                 <size>
-                  <width>0</width>
-                  <height>0</height>
-                 </size>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">border:1px solid black;</string>
-                </property>
-               </widget>
-              </item>
-              <item row="60" column="1">
+              <item row="63" column="1">
                <widget class="QLabel" name="label_58">
                 <property name="font">
                  <font>
@@ -1655,7 +1744,7 @@ color: black;</string>
                 </property>
                </widget>
               </item>
-              <item row="39" column="0">
+              <item row="41" column="0">
                <widget class="QLabel" name="label_34">
                 <property name="font">
                  <font>
@@ -1672,7 +1761,7 @@ color: black;</string>
                 </property>
                </widget>
               </item>
-              <item row="66" column="0">
+              <item row="69" column="0">
                <widget class="QPlainTextEdit" name="edit_examination">
                 <property name="minimumSize">
                  <size>
@@ -1683,6 +1772,19 @@ color: black;</string>
                 <property name="styleSheet">
                  <string notr="true">background-color: white;
 color: black;border:1px solid black;</string>
+                </property>
+               </widget>
+              </item>
+              <item row="9" column="0" colspan="3">
+               <widget class="QPlainTextEdit" name="edit_home_address">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border:1px solid black;</string>
                 </property>
                </widget>
               </item>
@@ -1754,7 +1856,7 @@ color: black;</string>
                 </property>
                </widget>
               </item>
-              <item row="69" column="0" colspan="4">
+              <item row="72" column="0" colspan="4">
                <widget class="QPlainTextEdit" name="edit_case">
                 <property name="minimumSize">
                  <size>
@@ -1781,7 +1883,14 @@ color: black;border:1px solid black;</string>
 color: black;</string>
                 </property>
                 <property name="text">
-                 <string>Sibling(s)</string>
+                 <string>Sibling</string>
+                </property>
+               </widget>
+              </item>
+              <item row="46" column="1">
+               <widget class="QPlainTextEdit" name="edit_childmname">
+                <property name="styleSheet">
+                 <string notr="true">border:1px solid black;</string>
                 </property>
                </widget>
               </item>
@@ -1830,7 +1939,7 @@ color: black;border:1px solid black;</string>
                 </property>
                </widget>
               </item>
-              <item row="53" column="2">
+              <item row="56" column="2">
                <widget class="QLabel" name="label_53">
                 <property name="font">
                  <font>
@@ -1847,7 +1956,7 @@ color: black;</string>
                 </property>
                </widget>
               </item>
-              <item row="53" column="1">
+              <item row="56" column="1">
                <widget class="QLabel" name="label_51">
                 <property name="font">
                  <font>
@@ -1864,7 +1973,7 @@ color: black;</string>
                 </property>
                </widget>
               </item>
-              <item row="65" column="0">
+              <item row="68" column="0">
                <widget class="QLabel" name="label_63">
                 <property name="font">
                  <font>
@@ -1881,20 +1990,7 @@ color: black;</string>
                 </property>
                </widget>
               </item>
-              <item row="37" column="0">
-               <widget class="QPlainTextEdit" name="edit_siblings_name">
-                <property name="minimumSize">
-                 <size>
-                  <width>0</width>
-                  <height>0</height>
-                 </size>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">border:1px solid black;</string>
-                </property>
-               </widget>
-              </item>
-              <item row="66" column="3">
+              <item row="69" column="3">
                <widget class="QPlainTextEdit" name="edit_examination_place">
                 <property name="minimumSize">
                  <size>
@@ -1907,7 +2003,14 @@ color: black;</string>
                 </property>
                </widget>
               </item>
-              <item row="43" column="0">
+              <item row="42" column="2">
+               <widget class="QPlainTextEdit" name="edit_marriage_date">
+                <property name="styleSheet">
+                 <string notr="true">border:1px solid black;</string>
+                </property>
+               </widget>
+              </item>
+              <item row="45" column="0">
                <widget class="QLabel" name="label_38">
                 <property name="font">
                  <font>
@@ -1920,7 +2023,7 @@ color: black;</string>
 color: black;</string>
                 </property>
                 <property name="text">
-                 <string>Children (if any)</string>
+                 <string>Child Name (if any)</string>
                 </property>
                </widget>
               </item>
@@ -1941,7 +2044,7 @@ color: black;</string>
                 </property>
                </widget>
               </item>
-              <item row="60" column="0">
+              <item row="63" column="0">
                <widget class="QLabel" name="label_57">
                 <property name="font">
                  <font>
@@ -1975,20 +2078,7 @@ color: black;</string>
                 </property>
                </widget>
               </item>
-              <item row="37" column="2">
-               <widget class="QPlainTextEdit" name="edit_siblings_address">
-                <property name="minimumSize">
-                 <size>
-                  <width>0</width>
-                  <height>0</height>
-                 </size>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">border:1px solid black;</string>
-                </property>
-               </widget>
-              </item>
-              <item row="54" column="1">
+              <item row="57" column="1">
                <widget class="QPlainTextEdit" name="edit_staff_relation">
                 <property name="minimumSize">
                  <size>
@@ -2029,7 +2119,7 @@ color: black;border:1px solid black;</string>
                 </property>
                </widget>
               </item>
-              <item row="66" column="1">
+              <item row="69" column="1">
                <widget class="QPlainTextEdit" name="edit_rating">
                 <property name="minimumSize">
                  <size>
@@ -2042,7 +2132,7 @@ color: black;border:1px solid black;</string>
                 </property>
                </widget>
               </item>
-              <item row="59" column="0" colspan="3">
+              <item row="62" column="0" colspan="3">
                <widget class="QLabel" name="label_56">
                 <property name="font">
                  <font>
@@ -2100,7 +2190,7 @@ color: black;</string>
                 </property>
                </widget>
               </item>
-              <item row="70" column="3">
+              <item row="73" column="3">
                <widget class="QPushButton" name="editRecord_btn">
                 <property name="palette">
                  <palette>
@@ -2369,7 +2459,7 @@ padding-bottom: 5px;</string>
                 </property>
                </widget>
               </item>
-              <item row="57" column="0" colspan="3">
+              <item row="60" column="0" colspan="3">
                <widget class="QLabel" name="label_55">
                 <property name="font">
                  <font>
@@ -2393,7 +2483,7 @@ color: black;</string>
                 </property>
                </widget>
               </item>
-              <item row="47" column="0">
+              <item row="50" column="0">
                <widget class="QPlainTextEdit" name="edit_elem">
                 <property name="minimumSize">
                  <size>
@@ -2407,7 +2497,7 @@ color: black;border:1px solid black;</string>
                 </property>
                </widget>
               </item>
-              <item row="51" column="2">
+              <item row="54" column="2">
                <widget class="QPlainTextEdit" name="edit_college_date">
                 <property name="minimumSize">
                  <size>
@@ -2421,20 +2511,7 @@ color: black;border:1px solid black;</string>
                 </property>
                </widget>
               </item>
-              <item row="37" column="1">
-               <widget class="QPlainTextEdit" name="edit_siblings_occ">
-                <property name="minimumSize">
-                 <size>
-                  <width>0</width>
-                  <height>0</height>
-                 </size>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">border:1px solid black;</string>
-                </property>
-               </widget>
-              </item>
-              <item row="46" column="0">
+              <item row="49" column="0">
                <widget class="QLabel" name="label_41">
                 <property name="font">
                  <font>
@@ -2448,20 +2525,6 @@ color: black;</string>
                 </property>
                 <property name="text">
                  <string>Elementary School</string>
-                </property>
-               </widget>
-              </item>
-              <item row="44" column="2">
-               <widget class="QPlainTextEdit" name="edit_children_DoB">
-                <property name="minimumSize">
-                 <size>
-                  <width>0</width>
-                  <height>0</height>
-                 </size>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">background-color: white;
-color: black;border:1px solid black;</string>
                 </property>
                </widget>
               </item>
@@ -2499,7 +2562,7 @@ color: black;</string>
                 </property>
                </widget>
               </item>
-              <item row="65" column="2">
+              <item row="68" column="2">
                <widget class="QLabel" name="label_65">
                 <property name="font">
                  <font>
@@ -2530,7 +2593,7 @@ color: black;border:1px solid black;</string>
                 </property>
                </widget>
               </item>
-              <item row="56" column="0" colspan="3">
+              <item row="59" column="0" colspan="3">
                <widget class="QPlainTextEdit" name="edit_school_dist">
                 <property name="minimumSize">
                  <size>
@@ -2543,7 +2606,7 @@ color: black;border:1px solid black;</string>
                 </property>
                </widget>
               </item>
-              <item row="61" column="2">
+              <item row="64" column="2">
                <widget class="QPlainTextEdit" name="edit_previous_period">
                 <property name="minimumSize">
                  <size>
@@ -2563,7 +2626,7 @@ color: black;border:1px solid black;</string>
                 </property>
                </widget>
               </item>
-              <item row="47" column="1">
+              <item row="50" column="1">
                <widget class="QPlainTextEdit" name="edit_elem_address">
                 <property name="minimumSize">
                  <size>
@@ -2594,7 +2657,7 @@ color: black;</string>
                 </property>
                </widget>
               </item>
-              <item row="50" column="2">
+              <item row="53" column="2">
                <widget class="QLabel" name="label_49">
                 <property name="font">
                  <font>
@@ -2611,7 +2674,7 @@ color: black;</string>
                 </property>
                </widget>
               </item>
-              <item row="51" column="1">
+              <item row="54" column="1">
                <widget class="QPlainTextEdit" name="edit_college_address">
                 <property name="minimumSize">
                  <size>
@@ -2638,7 +2701,7 @@ color: black;border:1px solid black;</string>
                 </property>
                </widget>
               </item>
-              <item row="70" column="2">
+              <item row="73" column="2">
                <widget class="QCheckBox" name="checkBox_8">
                 <property name="styleSheet">
                  <string notr="true">background-color: white;
@@ -2649,8 +2712,8 @@ color: black;</string>
                 </property>
                </widget>
               </item>
-              <item row="36" column="1">
-               <widget class="QLabel" name="label_32">
+              <item row="43" column="0">
+               <widget class="QLabel" name="label_35">
                 <property name="font">
                  <font>
                   <pointsize>12</pointsize>
@@ -2662,11 +2725,11 @@ color: black;</string>
 color: black;</string>
                 </property>
                 <property name="text">
-                 <string>Occupation</string>
+                 <string>Spouse Name</string>
                 </property>
                </widget>
               </item>
-              <item row="52" column="0">
+              <item row="55" column="0">
                <widget class="QLabel" name="label_50">
                 <property name="font">
                  <font>
@@ -2685,19 +2748,6 @@ color: black;</string>
               </item>
               <item row="26" column="2">
                <widget class="QPlainTextEdit" name="edit_father_occ">
-                <property name="minimumSize">
-                 <size>
-                  <width>0</width>
-                  <height>0</height>
-                 </size>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">border:1px solid black;</string>
-                </property>
-               </widget>
-              </item>
-              <item row="61" column="0">
-               <widget class="QPlainTextEdit" name="edit_previous_name">
                 <property name="minimumSize">
                  <size>
                   <width>0</width>
@@ -2728,7 +2778,20 @@ color: black;</string>
                 </property>
                </widget>
               </item>
-              <item row="49" column="1">
+              <item row="64" column="0">
+               <widget class="QPlainTextEdit" name="edit_previous_name">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border:1px solid black;</string>
+                </property>
+               </widget>
+              </item>
+              <item row="52" column="1">
                <widget class="QPlainTextEdit" name="edit_high_address">
                 <property name="minimumSize">
                  <size>
@@ -2741,7 +2804,7 @@ color: black;</string>
                 </property>
                </widget>
               </item>
-              <item row="51" column="0">
+              <item row="54" column="0">
                <widget class="QPlainTextEdit" name="edit_college">
                 <property name="minimumSize">
                  <size>
@@ -2755,24 +2818,7 @@ color: black;border:1px solid black;</string>
                 </property>
                </widget>
               </item>
-              <item row="43" column="2">
-               <widget class="QLabel" name="label_39">
-                <property name="font">
-                 <font>
-                  <pointsize>12</pointsize>
-                  <bold>true</bold>
-                 </font>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">background-color: white;
-color: black;</string>
-                </property>
-                <property name="text">
-                 <string>Date of birth</string>
-                </property>
-               </widget>
-              </item>
-              <item row="62" column="0" colspan="4">
+              <item row="65" column="0" colspan="4">
                <widget class="QLabel" name="label_62">
                 <property name="font">
                  <font>
@@ -2789,7 +2835,7 @@ color: black;</string>
                 </property>
                </widget>
               </item>
-              <item row="50" column="1">
+              <item row="53" column="1">
                <widget class="QLabel" name="label_48">
                 <property name="font">
                  <font>
@@ -2806,7 +2852,7 @@ color: black;</string>
                 </property>
                </widget>
               </item>
-              <item row="61" column="1">
+              <item row="64" column="1">
                <widget class="QPlainTextEdit" name="edit_previous_position">
                 <property name="minimumSize">
                  <size>
@@ -2833,6 +2879,13 @@ color: black;border:1px solid black;</string>
                 </property>
                </widget>
               </item>
+              <item row="37" column="0">
+               <widget class="QPlainTextEdit" name="edit_siblingfname">
+                <property name="styleSheet">
+                 <string notr="true">border:1px solid black;</string>
+                </property>
+               </widget>
+              </item>
               <item row="16" column="0">
                <widget class="QPlainTextEdit" name="edit_passportNo">
                 <property name="minimumSize">
@@ -2846,7 +2899,7 @@ color: black;border:1px solid black;</string>
                 </property>
                </widget>
               </item>
-              <item row="40" column="0">
+              <item row="42" column="0">
                <widget class="QPlainTextEdit" name="edit_civil">
                 <property name="minimumSize">
                  <size>
@@ -2894,8 +2947,8 @@ color: black;</string>
                 </property>
                </widget>
               </item>
-              <item row="41" column="0">
-               <widget class="QLabel" name="label_35">
+              <item row="38" column="0">
+               <widget class="QLabel" name="label_32">
                 <property name="font">
                  <font>
                   <pointsize>12</pointsize>
@@ -2907,25 +2960,29 @@ color: black;</string>
 color: black;</string>
                 </property>
                 <property name="text">
-                 <string>Spouse Name</string>
+                 <string>Occupation</string>
                 </property>
                </widget>
               </item>
-              <item row="42" column="0">
-               <widget class="QPlainTextEdit" name="edit_spousefname">
-                <property name="minimumSize">
-                 <size>
-                  <width>0</width>
-                  <height>0</height>
-                 </size>
+              <item row="38" column="1">
+               <widget class="QLabel" name="label_33">
+                <property name="font">
+                 <font>
+                  <pointsize>12</pointsize>
+                  <bold>true</bold>
+                 </font>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">border:1px solid black;</string>
+                 <string notr="true">background-color: white;
+color: black;</string>
+                </property>
+                <property name="text">
+                 <string>Address</string>
                 </property>
                </widget>
               </item>
-              <item row="40" column="1">
-               <widget class="QPlainTextEdit" name="edit_marriage_place">
+              <item row="39" column="0">
+               <widget class="QPlainTextEdit" name="edit_siblings_occ">
                 <property name="minimumSize">
                  <size>
                   <width>0</width>
@@ -2938,55 +2995,13 @@ color: black;</string>
                </widget>
               </item>
               <item row="39" column="1">
-               <widget class="QLabel" name="label_36">
-                <property name="font">
-                 <font>
-                  <pointsize>12</pointsize>
-                  <bold>true</bold>
-                 </font>
+               <widget class="QPlainTextEdit" name="edit_siblings_address">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>0</height>
+                 </size>
                 </property>
-                <property name="styleSheet">
-                 <string notr="true">background-color: white;
-color: black;</string>
-                </property>
-                <property name="text">
-                 <string>Place of marriage</string>
-                </property>
-               </widget>
-              </item>
-              <item row="39" column="2">
-               <widget class="QLabel" name="label_37">
-                <property name="font">
-                 <font>
-                  <pointsize>12</pointsize>
-                  <bold>true</bold>
-                 </font>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">background-color: white;
-color: black;</string>
-                </property>
-                <property name="text">
-                 <string>Date of marriage</string>
-                </property>
-               </widget>
-              </item>
-              <item row="40" column="2">
-               <widget class="QPlainTextEdit" name="edit_marriage_date">
-                <property name="styleSheet">
-                 <string notr="true">border:1px solid black;</string>
-                </property>
-               </widget>
-              </item>
-              <item row="42" column="1">
-               <widget class="QPlainTextEdit" name="edit_spousemname">
-                <property name="styleSheet">
-                 <string notr="true">border:1px solid black;</string>
-                </property>
-               </widget>
-              </item>
-              <item row="42" column="2">
-               <widget class="QPlainTextEdit" name="edit_spouselname">
                 <property name="styleSheet">
                  <string notr="true">border:1px solid black;</string>
                 </property>

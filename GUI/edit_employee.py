@@ -158,9 +158,12 @@ class Edit_MainWindow(QMainWindow):
                 else:
                     #child name
                     child_lname, child_fname, child_mname = employee_child_data[0], employee_child_data[1], employee_child_data[2]
-                    child_full_name = f"{child_lname}, {child_fname} {child_mname or ''}".strip()
 
-                    self.ui.edit_children.setPlainText(child_full_name)
+
+                    self.ui.edit_childfname.setPlainText(child_fname)
+                    self.ui.edit_childmname.setPlainText(child_mname)
+                    self.ui.edit_childlname.setPlainText(child_lname)
+
                     self.ui.edit_children_DoB.setPlainText(employee_child_data[3])
 
 
@@ -177,9 +180,12 @@ class Edit_MainWindow(QMainWindow):
                 else:
                     #sibling name
                     sib_lname, sib_fname, sib_mname = employee_sibling_data[0], employee_sibling_data[1], employee_sibling_data[2]
-                    sib_full_name = f"{sib_lname}, {sib_fname} {sib_mname or ''}".strip()
-                                    
-                    self.ui.edit_siblings_name.setPlainText(sib_full_name)
+                    
+
+                    self.ui.edit_siblingfname.setPlainText(sib_fname)
+                    self.ui.edit_siblingmname.setPlainText(sib_mname)
+                    self.ui.edit_siblinglname.setPlainText(sib_lname)
+
                     self.ui.edit_siblings_occ.setPlainText(employee_sibling_data[3])
                     self.ui.edit_siblings_address.setPlainText(employee_sibling_data[4])
 
@@ -254,7 +260,7 @@ class Edit_MainWindow(QMainWindow):
             ("place_of_birth",self.ui.edit_PoB), 
             ("citizenship",self.ui.edit_citizen), 
             ("church",self.ui.edit_church), 
-
+            ("crime",self.ui.edit_case),
 
             ("passport_num",self.ui.edit_passportNo), 
             ("acr_num",self.ui.edit_acrNo), 
@@ -284,10 +290,24 @@ class Edit_MainWindow(QMainWindow):
             ("mother_occ",self.ui.edit_mother_occ),
             ("mother_home_address", self.ui.edit_father_address),
 
+            ("sib_fname",self.ui.edit_siblingfname),
+            ("sib_mname", self.ui.edit_siblingmname),
+            ("sib_lname", self.ui.edit_siblinglname),
+            ("sib_occ", self.ui.edit_siblings_occ),
+            ("sib_addr", self.ui.edit_siblings_address),
+
             ("civil_status", self.ui.edit_civil),
             ("sp_fname",self.ui.edit_spousefname),
             ("sp_lname",self.ui.edit_spouselname),
             ("sp_mname",self.ui.edit_spousemname),
+            ("marriage_date",self.ui.edit_marriage_date),
+            ("marriage_place",self.ui.edit_marriage_place),
+
+
+            ("child_fname",self.ui.edit_childfname),
+            ("child_mname",self.ui.edit_childmname),
+            ("child_lname", self.ui.edit_childlname),
+            ("child_dob", self.ui.edit_children_DoB),
         ]
 
         # Extract the values into a dictionary or variables
@@ -315,11 +335,12 @@ class Edit_MainWindow(QMainWindow):
                         Dgte_Address = ?, Home_Address = ?,
                         Date_Of_Birth = ?, Place_Of_Birth = ?, Citizenship = ?,
                         Church = ?, Non_Filipino_Id = ?, Contact_No = ?,
-                        Tax_Id = ?, Sss_No = ?, Pagibig_No = ?, Philhealth_No = ?, Civil_Status = ?, employee_image = ?
+                        Tax_Id = ?, Sss_No = ?, Pagibig_No = ?, Philhealth_No = ?, Civil_Status = ?, Criminal_Record = ?, employee_image = ?
                     WHERE Employee_Id = ?
                 """, (data['lastname'],data['midname'],data['firstname'],data['duma_address'],
                       data['home_address'], data['date_of_birth'],data['place_of_birth'], data['citizenship'], data['church'],
-                      data['passport_num'], data['contact_num'], data['tin'], data['sss_num'],data['pag_ibig'],data['ph_health_num'], data["civil_status"],image_name,
+                      data['passport_num'], data['contact_num'], data['tin'], data['sss_num'],data['pag_ibig'],data['ph_health_num'], data["civil_status"],
+                      data['crime'],image_name,
                       self.id_val))
                 conn.commit()
 
@@ -345,10 +366,28 @@ class Edit_MainWindow(QMainWindow):
                 """, (data["sp_lname"],data["sp_fname"],data["sp_mname"],self.id_val))
                 conn.commit()
 
+                cursor.execute("""
+                Update Spouse_Info Set Date_Of_Marriage = ?, Place_Of_Marriage = ?
+                where Spouse_Info_Id = (select Spouse_Info_Id from Spouse where 
+                               Spouse_id = (select spouse_id from Employee where Employee_Id = ?) );
+                """, (data["marriage_date"],data["marriage_place"],self.id_val))
+                conn.commit()
 
-                #to update
-                # children, sibling
-        
+                cursor.execute("""
+                Update Child Set Last_Name = ?, First_Name = ?, Middle_Name = ?, Date_of_Birth=?
+                where Child_Id = (select Child_Child_Id from Employee_Child 
+                               where Employee_Employee_Id = (select Employee_Id from Employee where Employee_Id =?) );
+                """, (data["child_lname"],data["child_fname"],data["child_mname"],data["child_dob"],self.id_val))
+                conn.commit()
+
+                cursor.execute("""
+                Update Sibling Set Last_Name = ?, First_Name = ?, Middle_Name = ?, Occupation = ?, Address = ?
+                where Sibling_Id = (select Sibling_Sibling_Id from Employee_Sibling where Employee_Employee_Id = ?);
+                """, (data["sib_lname"],data["sib_fname"],data["sib_mname"],data["sib_occ"],data["sib_addr"],self.id_val))
+                conn.commit()
+                
+
+
                 QMessageBox.information(self, "Edit Result", f"Updated Record for {self.id_val}.")
 
                 
