@@ -49,8 +49,8 @@ class Edit_MainWindow(QMainWindow):
 
                 # Use the passed employee_id for the query
                 cursor.execute("""
-                    SELECT Last_Name, First_Name, Middle_Name, Dgte_Address, Home_Address, Date_Of_Birth,
-                            Citizenship, Civil_Status, Sss_No, Pagibig_No, Philhealth_No, Contact_No
+                    SELECT Last_Name, First_Name, Middle_Name, Dgte_Address, Home_Address, Date_Of_Birth, Home_Address, 
+                            Citizenship, Civil_Status, Sss_No, Pagibig_No, Philhealth_No, Tax_Id, Contact_No, Church, Criminal_Record
                     FROM Employee
                     WHERE Employee_Id = ?
                 """, (self.id_val,))
@@ -58,6 +58,15 @@ class Edit_MainWindow(QMainWindow):
 
                 if employee_data is None:
                     raise ValueError(f"No employee found with ID {self.id_val}")
+                
+                cursor.execute("""
+                    SELECT Name from Position 
+                    where Position_Id = (select Position_Id from Employee where Employee_Id = ?)
+                """, (self.id_val,))
+                employee_position_data = cursor.fetchone()
+
+                if employee_position_data is None:
+                    raise ValueError(f"No Employee found with ID {self.id_val}")
 
                 # Concatenate Last_Name, First_Name, and Middle_Name to form the full name
                 last_name, first_name, middle_name = employee_data[0], employee_data[1], employee_data[2]
@@ -68,6 +77,32 @@ class Edit_MainWindow(QMainWindow):
                 self.ui.edit_firstName.setPlainText(first_name)  
                 self.ui.edit_middleName.setPlainText(middle_name)  
                 self.ui.edit_lastName.setPlainText(last_name)  
+                self.ui.edit_Position.setPlainText(employee_position_data[0])
+
+                self.ui.edit_dgte_address.setPlainText(employee_data[3])
+                self.ui.edit_home_address.setPlainText(employee_data[4])
+
+                self.ui.edit_DoB.setPlainText(employee_data[5])
+                self.ui.edit_PoB.setPlainText(employee_data[6])
+
+                self.ui.edit_citizen.setPlainText(employee_data[7])
+
+                self.ui.edit_contactNo.setPlainText(employee_data[13])
+
+                parse_email_nospace = full_name.replace(" ","")
+                parse_email_final = parse_email_nospace.replace(",","")
+                self.ui.edit_email_add.setPlainText(parse_email_final+"@su.edu.ph")
+
+                self.ui.edit_TIN.setPlainText(employee_data[12])
+                self.ui.edit_SSS.setPlainText(employee_data[9])
+                self.ui.edit_pagibig.setPlainText(employee_data[10])
+                self.ui.edit_philhealth.setPlainText(employee_data[11])
+
+                self.ui.edit_church.setPlainText(employee_data[14])
+
+                self.ui.edit_civil.setPlainText(employee_data[8])
+
+                self.ui.edit_case.setPlainText(employee_data[15])
                 
 
         except sqlite3.Error as e:
