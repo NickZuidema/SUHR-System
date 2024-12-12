@@ -69,11 +69,25 @@ class Edit_MainWindow(QMainWindow):
                 employee_position_data = cursor.fetchone()
 
                 if employee_position_data is None:
-                    raise ValueError(f"No Employee found with ID {self.id_val}")
+                    raise ValueError(f"Employee Position Error: No Employee found with ID {self.id_val}")
+                
+
+                cursor.execute("""
+                    select Last_Name, First_Name, Middle_Name from Spouse where Spouse_Id = (select spouse_id from Employee where Employee_Id = ?);
+                """, (self.id_val,))
+                employee_spouse_data = cursor.fetchone()
+
+                if employee_spouse_data is None:
+                    raise ValueError(f"Spouse Data Error:No Employee found with ID {self.id_val}")
 
                 # Concatenate Last_Name, First_Name, and Middle_Name to form the full name
                 last_name, first_name, middle_name = employee_data[0], employee_data[1], employee_data[2]
                 full_name = f"{last_name}, {first_name} {middle_name or ''}".strip()
+
+                #spouse name
+                spouse_lname, spouse_fname, spouse_mname = employee_spouse_data[0], employee_spouse_data[1], employee_spouse_data[2]
+                spouse_full_name = f"{spouse_lname}, {spouse_fname} {spouse_mname or ''}".strip()
+
 
                 # Populate UI fields with data from the database
                 # Initialize the Names
@@ -111,6 +125,7 @@ class Edit_MainWindow(QMainWindow):
 
                 self.ui.employee_image_name.setText(employee_data[16])
                 
+                self.ui.edit_spouse.setPlainText(spouse_fname)
 
         except sqlite3.Error as e:
             QMessageBox.critical(self, "Database Error", f"An error occurred while accessing the database: {e}")
