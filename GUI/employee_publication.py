@@ -27,7 +27,6 @@ def generate_publication_id():
         print(f"An error occurred while generating Publication_Id: {e}")
         return None
 
-
 def add_academic_record_publication(academic_record_id, publication_id):
     """Insert a new academic record-publication relationship into the Academic_Record_Publication table."""
     try:
@@ -43,7 +42,6 @@ def add_academic_record_publication(academic_record_id, publication_id):
 
     except sqlite3.Error as e:
         print(f"An error occurred while adding academic record to publication: {e}")
-
 
 def store_publication(name, link):
     """Store a new publication's information in the Publication table."""
@@ -71,7 +69,6 @@ def store_publication(name, link):
         print(f"An error occurred while storing publication in Publication table: {e}")
         return None
 
-
 def add_publication_to_academic_record(academic_record_id, name, link):
     """Add a publication to the database and associate it with an academic record."""
     try:
@@ -88,7 +85,6 @@ def add_publication_to_academic_record(academic_record_id, name, link):
 
     except sqlite3.Error as e:
         print(f"An error occurred while adding publication to academic record: {e}")
-
 
 def get_academic_record_id_from_employee(employee_id):
     """Fetch the Academic_Id for an employee from the Employee table."""

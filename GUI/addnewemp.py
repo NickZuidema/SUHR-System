@@ -136,6 +136,7 @@ class AddEmployeeWindow(QMainWindow):
         gradschool_diploma = self.ui.diploma_college.toPlainText()
         gradschool_fin = self.ui.yeargraduate_graduateschool.toPlainText()
 
+        academic_record_id = None
         if elementary_id or seniorhigh_fin or seniorhigh_id or college_id or gradschool_id:
             academic_record_id = self.insert_academic_record_data(
                 elementary_id, elementary_fin, seniorhigh_fin, 
@@ -148,17 +149,16 @@ class AddEmployeeWindow(QMainWindow):
             default_semester = 1
             employee_distinction.add_distinction_to_academic_record(academic_record_id, default_year, default_semester)
 
-            self.save_employee_data(employee_data, benefit_id, archived, spouse_id, salary_id, academic_record_id)
-        else:
-            self.save_employee_data(employee_data, benefit_id, archived, spouse_id, salary_id, None)
+        self.save_employee_data(employee_data, benefit_id, archived, spouse_id, salary_id, academic_record_id)
 
         publications = self.ui.publications.toPlainText()
         if publications:
             publication_list = publications.split(';')
-            academic_record_id = employee_publication.get_academic_record_id_from_employee(employee_id)
-            if (academic_record_id):
+            if academic_record_id:
                 for publication in publication_list:
                     name, link = publication.split(',')
+                    # Debug print
+                    print(f"Adding publication: name={name.strip()}, link={link.strip()}")
                     employee_publication.add_publication_to_academic_record(academic_record_id, name.strip(), link.strip())
             else:
                 print(f"No academic record found for employee {employee_id}. Publications not added.")
@@ -169,9 +169,12 @@ class AddEmployeeWindow(QMainWindow):
         government_score_max = 100
 
         if government_title or government_score or government_date:
-            government_exam.add_government_exam_to_academic_record(
-                academic_record_id, government_title, government_date, government_score, government_score_max
-            )
+            if academic_record_id:
+                government_exam.add_government_exam_to_academic_record(
+                    academic_record_id, government_title, government_date, government_score, government_score_max
+                )
+            else:
+                print(f"No academic record found for employee {employee_id}. Government exam not added.")
 
         father_first_name = " "+self.ui.Father_FirstName.toPlainText()
         father_middle_name = " "+self.ui.Father_MiddleName.toPlainText()
