@@ -9,11 +9,9 @@ def generate_parent_family_id():
         conn = sqlite3.connect(db_path)
         cursor = conn.cursor()
 
-   
         cursor.execute("SELECT Parent_Parent_Id FROM Employee_Parent ORDER BY Parent_Parent_Id DESC LIMIT 1")
         max_id_row = cursor.fetchone()
 
-        
         new_parent_family_id = (int(max_id_row[0]) + 1) if max_id_row else 1
 
         conn.close()
@@ -29,7 +27,6 @@ def add_employee_to_parent_table(employee_employee_id, parent_family_id):
         conn = sqlite3.connect(db_path)
         cursor = conn.cursor()
 
-      
         cursor.execute('''INSERT INTO Employee_Parent (Employee_Employee_Id, Parent_Parent_Id)
                           VALUES (?, ?)''', (employee_employee_id, parent_family_id))
 
@@ -48,7 +45,6 @@ def store_parent_family(last_name_father, first_name_father, middle_name_father,
         conn = sqlite3.connect(db_path)
         cursor = conn.cursor()
 
-       
         cursor.execute('''INSERT INTO Parent (Father_Last_Name, Father_First_Name, Father_Middle_Name,
                                               Father_Occupation, Father_Address, Mother_Last_Name, Mother_First_Name, Mother_Middle_Name,
                                               Mother_Occupation, Mother_Address)
