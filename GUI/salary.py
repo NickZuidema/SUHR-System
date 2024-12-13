@@ -1,7 +1,7 @@
 import sqlite3
 from config import get_database_path
 from ui_salary import Ui_Dialog
-from PySide6.QtWidgets import QApplication, QDialog, QVBoxLayout, QPlainTextEdit, QLabel, QPushButton
+from PySide6.QtWidgets import QApplication, QDialog, QVBoxLayout, QPlainTextEdit, QLabel, QPushButton, QMessageBox
 import sys
 
 DATABASE_PATH = get_database_path()
@@ -80,24 +80,63 @@ def update_employee_with_salary(employee_id, monthly_salary, overtime_salary, to
 
 
 class SalaryDialog(QDialog):
-    def __init__(self):
+    def __init__(self,emp_id):
         super().__init__()
         self.ui = Ui_Dialog()
         self.ui.setupUi(self)
         
+        self.employee_id = emp_id
+        print(f"At Salary Dialog EMP id is {emp_id}")
         # Connect the buttons to their respective functions
+
+       
         self.ui.apply.clicked.connect(self.on_apply)
+
         self.ui.close.clicked.connect(self.on_close)
+        
+        conn = None
+        try:
+        
+            conn = sqlite3.connect(DATABASE_PATH)
+            cursor = conn.cursor()
+
+            cursor.execute("""select Monthly_Salary, Overtime_Salary, Total_Salary
+                           from Salary where 
+                           Salary_Id = (select Salary_Id from Employee where Employee_Id = ?)
+                           """,
+                        (self.employee_id,))
+            salary_data = cursor.fetchone()
+           
+            if salary_data is None:
+                QMessageBox.information(self, "Salary Data", "Employee has no Salary Data")
+            else:
+                self.ui.salary_Monthly.setPlainText(str(salary_data[0]))
+                self.ui.salary_Overtime.setPlainText(str(salary_data[1]))
+                self.ui.salary_Total.setPlainText(str(salary_data[2]))
+
+        except sqlite3.Error as e:
+            print(f"Error: {e}")
 
     def on_apply(self):
-        """Handle the Apply button to insert and update salary information."""
-        monthly_salary = float(self.ui.salary_Monthly.toPlainText())
-        overtime_salary = float(self.ui.salary_Overtime.toPlainText())
-        total_salary = float(self.ui.salary_Total.toPlainText())
+        
+       
 
-        # Update the employee record with salary data
-        employee_id = "EMP001"  # Example Employee ID; this could be passed dynamically
-        update_employee_with_salary(employee_id, monthly_salary, overtime_salary, total_salary)
+        if self.ui.apply_confirm_changes.isChecked() == True:
+
+            """Handle the Apply button to insert and update salary information."""
+            monthly_salary = float(self.ui.salary_Monthly.toPlainText())
+            overtime_salary = float(self.ui.salary_Overtime.toPlainText())
+            total_salary = float(self.ui.salary_Total.toPlainText())
+
+            # Update the employee record with salary data
+            employee_id = self.employee_id # Example Employee ID; this could be passed dynamically
+            update_employee_with_salary(employee_id, monthly_salary, overtime_salary, total_salary)
+
+            QMessageBox.information(self, "Updated Salary Data", f"Updated Salary Data for {self.employee_id}")
+        
+        else:
+            QMessageBox.warning(self, "Error", f"Confirm Update On Record: {self.employee_id}")
+        
 
     def on_close(self):
         """Close the dialog."""

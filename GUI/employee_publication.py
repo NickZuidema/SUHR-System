@@ -1,10 +1,12 @@
 import sqlite3
 from config import get_database_path
 
+db_path = get_database_path()
+
 def generate_publication_id():
     """Generate a new Publication_Id for a publication based on existing Publication_Id."""
     try:
-        conn = sqlite3.connect(get_database_path())
+        conn = sqlite3.connect(db_path)
         cursor = conn.cursor()
 
         # Get the last inserted Publication_Id
@@ -29,7 +31,7 @@ def generate_publication_id():
 def add_academic_record_publication(academic_record_id, publication_id):
     """Insert a new academic record-publication relationship into the Academic_Record_Publication table."""
     try:
-        conn = sqlite3.connect(get_database_path())
+        conn = sqlite3.connect(db_path)
         cursor = conn.cursor()
 
         # Insert the relationship
@@ -46,7 +48,7 @@ def add_academic_record_publication(academic_record_id, publication_id):
 def store_publication(name, link):
     """Store a new publication's information in the Publication table."""
     try:
-        conn = sqlite3.connect(get_database_path())
+        conn = sqlite3.connect(db_path)
         cursor = conn.cursor()
 
         # Generate a unique Publication_Id
@@ -91,7 +93,7 @@ def add_publication_to_academic_record(academic_record_id, name, link):
 def get_academic_record_id_from_employee(employee_id):
     """Fetch the Academic_Id for an employee from the Employee table."""
     try:
-        conn = sqlite3.connect(get_database_path())
+        conn = sqlite3.connect(db_path)
         cursor = conn.cursor()
 
         # Fetch the Academic_Id for the employee

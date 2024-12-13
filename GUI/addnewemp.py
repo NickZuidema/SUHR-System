@@ -1,22 +1,26 @@
-from PySide6.QtWidgets import QApplication, QMainWindow, QMessageBox
+from PySide6.QtWidgets import QApplication, QMainWindow, QMessageBox, QFileDialog
+from PySide6.QtGui import QPixmap
+from PySide6.QtCore import Qt 
 from employee_data import collect_employee_data
 from ui_add_employee_record import Ui_MainWindow
 from generatepdf import save_pdf
 import sys
 import datetime
 import sqlite3
+
+import os
+
 import spouse
 import academic 
-from benefit import insert_benefit_data  # Ensure this function returns the Benefit_Id
-from config import get_database_path,get_pdf_path
+from benefit import insert_benefit_data
+from config import get_database_path,get_pdf_path,get_profile_path
 from position import generate_position_id
-import os
-import employee_child  # Import the employee_child module
-import employee_sibling  # Import the employee_sibling module
-import employee_publication  # Import the employee_publication module
-import employee_distinction  # Import the employee_distinction module
-import government_exam  # Import the government_exam module
-import employee_parent  # Import the employee_parent module
+import employee_child
+import employee_sibling
+import employee_publication
+import employee_distinction
+import government_exam
+import employee_parent
 from nonfilipino import insert_non_filipino_data
 
 class AddEmployeeWindow(QMainWindow):
@@ -24,139 +28,172 @@ class AddEmployeeWindow(QMainWindow):
         super().__init__()
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
+
+        image_path = get_profile_path()
+        image_file = os.path.join(image_path,'employee_1.png')
+        self.employee_picture = image_file
+
         self.ui.pushButton.clicked.connect(self.get_employee_data)
+
+        self.ui.Image_Upload.clicked.connect(self.get_employee_image)
+        
+    def get_employee_image(self):
+        # Open a file dialog restricted to a specific folder and image files
+        folder_path = get_profile_path()
+        file_filter = "Image Files (*.png *.jpg *.jpeg *.bmp *.gif)"
+        file_path, _ = QFileDialog.getOpenFileName(self, "Select an Image", folder_path, file_filter)
+        
+        
+        if file_path:  # If a file is selected
+            # Load and scale the image to fit the QLabel
+            pixmap = QPixmap(file_path)
+            file_name = os.path.basename(file_path)
+            print(f"Grabbed {file_name}")
+            scaled_pixmap = pixmap.scaled(self.ui.employee_picture.size(), Qt.KeepAspectRatio, Qt.SmoothTransformation)
+            self.ui.employee_picture.setPixmap(scaled_pixmap)
+            self.ui.EmployeeImageLabel.setText(file_name)
+            self.employee_picture = file_name
 
     def get_employee_data(self):
         employee_id = self.generate_employee_id()
         archived = 0
         employee_data = collect_employee_data(self.ui, employee_id, archived)
 
-        # Collect non-Filipino details if provided
-        passport_no = self.ui.NONFILIPINO_passport.toPlainText()
-        acr_no = self.ui.NONFILIPINO_acrnum.toPlainText()
-        date_of_issue = self.ui.NONFILIPINO_dateissued.toPlainText()
+        passport_no = " "+self.ui.NONFILIPINO_passport.toPlainText()
+        acr_no = " "+self.ui.NONFILIPINO_acrnum.toPlainText()
+        date_of_issue = " "+self.ui.NONFILIPINO_dateissued.toPlainText()
 
-        if passport_no:  # Insert only if passport number is provided
-            # Insert the data into the Non_Filipino table
-            insert_non_filipino_data(passport_no, acr_no, date_of_issue)
+        if passport_no:
+            print("inserting non filipino data")
+            insert_non_filipino_data(employee_id,passport_no, acr_no, date_of_issue)
 
-        # Include the passport number in the employee data dictionary
         employee_data["passport_num"] = passport_no
 
+        first_name = "n/a"
+        middle_name = "n/a"
+        last_name = "n/a"
 
-        # Handle spouse information if provided
+        spouse_id = 0
+
         first_name = self.ui.Spouse_FirstName.toPlainText()
         middle_name = self.ui.Spouse_MiddleName.toPlainText()
         last_name = self.ui.Spouse_LastName.toPlainText()
         date_of_marriage = self.ui.DateOfMarriage.toPlainText()
         place_of_marriage = self.ui.PlaceOfMarriage.toPlainText()
 
-        # Insert benefit data with default values for education and medical
-        benefit_id = insert_benefit_data()  # Get the new Benefit_Id from the inserted record
+        benefit_id = insert_benefit_data()
 
-         # Generate Salary_Id and insert salary data
-        salary_id = self.insert_salary_data() # Now it works because insert_salary_data is part of this class
+        salary_id = self.insert_salary_data()
         
-        if first_name or middle_name or last_name:  # Check if at least one spouse name part is provided
-            Saved_ID = employee_id.replace('-', '')  # Removing hyphens from employee_id for Saved_ID
-            spouse_id = spouse.generate_spouse_id(Saved_ID)
+        #this has : if first_name or middle_name or last_name: until self.update_employee, 
+        #this will remain with no condition due to a bug that leaves an error when no spouse name is applied to the field
+        
+        Saved_ID = employee_id.replace('-', '')
+        spouse_id = spouse.generate_spouse_id(Saved_ID)
 
-            # Insert the spouse data into the respective tables
-            spouse.insert_spouse_data(spouse_id, first_name, middle_name, last_name, date_of_marriage, place_of_marriage)
+        spouse.insert_spouse_data(spouse_id, first_name, middle_name, last_name, date_of_marriage, place_of_marriage)
 
-            # Update the employee record to include the Spouse_Id
-            self.update_employee_spouse_id(employee_data['employee_id'], spouse_id)
+        self.update_employee_spouse_id(employee_data['employee_id'], spouse_id)
+        
 
-        # Handle child information if provided
-        child_first_name = self.ui.child1_FirstName.toPlainText()
-        child_middle_name = self.ui.child1_MiddleName.toPlainText()
-        child_last_name = self.ui.child1_LastName.toPlainText()
-        child_date_of_birth = self.ui.child1_dateofbirth.toPlainText()
 
-        if child_first_name or child_middle_name or child_last_name:  # Check if at least one child name part is provided
+        #children data
+
+        child_first_name = " " +self.ui.child1_FirstName.toPlainText()
+        child_middle_name = " " + self.ui.child1_MiddleName.toPlainText()
+        child_last_name = " "+ self.ui.child1_LastName.toPlainText()
+        child_date_of_birth =  " "+self.ui.child1_dateofbirth.toPlainText()
+
+        print(f"{child_first_name},{child_middle_name},{child_last_name},{child_date_of_birth}")
+        if child_first_name or child_middle_name or child_last_name:
             employee_child.add_child_to_employee(
                 employee_id, child_last_name, child_first_name, child_middle_name, child_date_of_birth
             )
+        
 
-        # Handle sibling information if provided
-        sibling1_first_name = self.ui.sibling1_FirstName.toPlainText()
-        sibling1_middle_name = self.ui.sibling1_MiddleName.toPlainText()
-        sibling1_last_name = self.ui.sibling1_LastName.toPlainText()
-        sibling1_occupation = self.ui.sibling1_occupation.toPlainText()
-        sibling1_address = self.ui.sibling1_address.toPlainText()
+        sibling1_first_name = " "+self.ui.sibling1_FirstName.toPlainText()
+        sibling1_middle_name = " "+self.ui.sibling1_MiddleName.toPlainText()
+        sibling1_last_name = " "+self.ui.sibling1_LastName.toPlainText()
+        sibling1_occupation = " "+self.ui.sibling1_occupation.toPlainText()
+        sibling1_address = " "+self.ui.sibling1_address.toPlainText()
 
-        if sibling1_first_name or sibling1_middle_name or sibling1_last_name:  # Check if at least one sibling name part is provided
+        if sibling1_first_name or sibling1_middle_name or sibling1_last_name:
             employee_sibling.add_sibling_to_employee(
                 employee_id, sibling1_last_name, sibling1_first_name, sibling1_middle_name, sibling1_occupation, sibling1_address
             )
 
-        # Insert academic record data if provided
-        elementary_id = self.ui.elementary_school.toPlainText()
-        elementary_fin = self.ui.yeargraduate_elementary.toPlainText()
-        seniorhigh_id = self.ui.highschool.toPlainText()
-        seniorhigh_diploma = self.ui.diploma_highschool.toPlainText()
-        seniorhigh_fin = self.ui.yeargraduate_highschool.toPlainText()
-        college_id = self.ui.College.toPlainText()
-        college_diploma = self.ui.diploma_college.toPlainText()
-        gradschool_id = self.ui.Graduateschool.toPlainText()
-        gradschool_diploma = self.ui.diploma_college.toPlainText()
-        gradschool_fin = self.ui.yeargraduate_graduateschool.toPlainText()
+        print("running school")
+        elementary_id = " "+self.ui.elementary_school.toPlainText()
+        elementary_diploma = " "+self.ui.diploma_elementary.toPlainText()
+        elementary_address = " "+self.ui.elementary_school_address.toPlainText()
+        elementary_fin = " "+self.ui.yeargraduate_elementary.toPlainText()
 
-        # Only proceed if at least one field is filled
+        seniorhigh_id = " "+self.ui.highschool.toPlainText()
+        seniorhigh_diploma = " "+self.ui.diploma_highschool.toPlainText()
+        seniorhigh_address = " "+self.ui.address_highschool.toPlainText()
+        seniorhigh_fin = " "+self.ui.yeargraduate_highschool.toPlainText()
+
+        college_id = " "+self.ui.College.toPlainText()
+        college_diploma = " "+self.ui.diploma_college.toPlainText()
+        college_address = " "+self.ui.address_college.toPlainText()
+        college_fin = " "+self.ui.yeargraduate_college.toPlainText()
+
+        gradschool_id = " "+self.ui.Graduateschool.toPlainText()
+        gradschool_diploma = " "+self.ui.diploma_graduateschool.toPlainText()
+        gradschool_address = " "+self.ui.address_graduateschool.toPlainText()
+        gradschool_fin = " "+self.ui.yeargraduate_graduateschool.toPlainText()
+
         if elementary_id or seniorhigh_fin or seniorhigh_id or college_id or gradschool_id:
-            # Insert the academic data
             academic_record_id = academic.insert_academic_record_data(
-                elementary_id, elementary_fin, seniorhigh_fin, 
-                seniorhigh_id, seniorhigh_diploma, seniorhigh_fin, 
-                college_id, college_diploma, gradschool_id, 
-                gradschool_diploma, gradschool_fin
+                elementary_id, elementary_fin, elementary_diploma, elementary_address,
+                seniorhigh_fin, seniorhigh_id, seniorhigh_diploma, seniorhigh_address, 
+                college_id, college_diploma, college_address, college_fin,
+                gradschool_id, gradschool_diploma, gradschool_fin, gradschool_address
             )
-
-            # Add distinctions to the academic record with default values
+            print(f"Academic Id: {academic_record_id}")
             default_year = "2023"
             default_semester = 1
             employee_distinction.add_distinction_to_academic_record(academic_record_id, default_year, default_semester)
-
-            # Update employee data with the new Academic_Record_Id
+            
             self.save_employee_data(employee_data, benefit_id, archived, spouse_id, salary_id, academic_record_id)
         else:
-            # If no academic record, save employee data with None for academic_record_id
             self.save_employee_data(employee_data, benefit_id, archived, spouse_id, salary_id, None)
 
-        # Handle publications if provided
+
+        print("running publications")
         publications = self.ui.publications.toPlainText()
         if publications:
-            publication_list = publications.split(';')  # Assuming publications are separated by semicolons
+            publication_list = publications.split(';')
+            print(f"publist: {publication_list}")
             academic_record_id = employee_publication.get_academic_record_id_from_employee(employee_id)
-            if (academic_record_id):  # Ensure academic_record_id is not None
-                for publication in publication_list:
-                    name, link = publication.split(',')  # Assuming each publication has a name and link separated by a comma
-                    employee_publication.add_publication_to_academic_record(academic_record_id, name.strip(), link.strip())
+            if (academic_record_id):
+                name = " "
+                link = " no source "
+                name, link = publication_list[0], publication_list[1]
+                employee_publication.add_publication_to_academic_record(academic_record_id, name.strip(), link.strip())
             else:
                 print(f"No academic record found for employee {employee_id}. Publications not added.")
 
-        # Handle government exam information if provided
-        government_title = self.ui.government_examination.toPlainText()
-        government_score = self.ui.government_rating.toPlainText()
-        government_date = self.ui.government_date.toPlainText()
-        government_score_max = 100  # Default value since there's no textbox for it
+        government_title = " "+self.ui.government_examination.toPlainText()
+        government_score = " "+ self.ui.government_rating.toPlainText()
+        government_date = " "+ self.ui.government_date.toPlainText()
+        government_score_max = 100
 
-        if government_title or government_score or government_date:  # Check if at least one field is provided
+        if government_title or government_score or government_date:
             government_exam.add_government_exam_to_academic_record(
                 academic_record_id, government_title, government_date, government_score, government_score_max
             )
 
-        # Handle parent family information if provided
-        father_first_name = self.ui.Father_FirstName.toPlainText()
-        father_middle_name = self.ui.Father_MiddleName.toPlainText()
-        father_last_name = self.ui.Father_LastName.toPlainText()
-        father_occupation = self.ui.FatherJob.toPlainText()
-        father_address = self.ui.FatherAddress.toPlainText()
-        mother_first_name = self.ui.Mother_FirstName.toPlainText()
-        mother_middle_name = self.ui.Mother_MiddleName.toPlainText()
-        mother_last_name = self.ui.Mother_LastName.toPlainText()
-        mother_occupation = self.ui.MotherJob.toPlainText()
-        mother_address = self.ui.MotherAddress.toPlainText()
+        father_first_name = " "+self.ui.Father_FirstName.toPlainText()
+        father_middle_name = " "+self.ui.Father_MiddleName.toPlainText()
+        father_last_name = " "+self.ui.Father_LastName.toPlainText()
+        father_occupation = " "+self.ui.FatherJob.toPlainText()
+        father_address = " "+self.ui.FatherAddress.toPlainText()
+        mother_first_name = " "+self.ui.Mother_FirstName.toPlainText()
+        mother_middle_name = " "+self.ui.Mother_MiddleName.toPlainText()
+        mother_last_name =" "+ self.ui.Mother_LastName.toPlainText()
+        mother_occupation = " "+self.ui.MotherJob.toPlainText()
+        mother_address = " "+self.ui.MotherAddress.toPlainText()
 
         if father_first_name or father_middle_name or father_last_name or mother_first_name or mother_middle_name or mother_last_name:
             parent_family_id = employee_parent.add_parent_to_parent_family_table(
@@ -167,26 +204,18 @@ class AddEmployeeWindow(QMainWindow):
                 employee_parent.add_employee_to_parent_table(employee_id, parent_family_id)
 
         pdf_directory = get_pdf_path()
-        # Save employee data to the database with the Benefit_Id and initially without Spouse_Id
         pdf_file_path = os.path.join(pdf_directory, f"{employee_data['employee_id']}.pdf")
-        #pdf_file_path = f"C:\\Users\\Admin\\Downloads\\SUHR-System-sprint-2 (1)\\SUHR-System-sprint-2\\pdf\\{employee_data['employee_id']}.pdf"
-       # pdf_file_path = f"C:/Users/Admin/Downloads/SUHR-System-sprint-2 (1)/SUHR-System-sprint-2/pdf//{employee_data['employee_id']}.pdf"
-        # Call the save_pdf function from generatepdf.py
-        save_pdf(employee_data, pdf_file_path)  # Pass the employee data and the PDF file path
+        save_pdf(employee_data, pdf_file_path)
         print(f"Saving pdf to {pdf_file_path}")
 
     def generate_employee_id(self):
         today_date = datetime.datetime.now().strftime('%Y%m%d')
         count = self.get_employee_count_for_today(today_date)
         employee_id = f"{today_date}-{count + 1:03}"
-
-        print(f"Generated Employee ID: {employee_id}")  # Debugging line
         
-        # Ensure uniqueness of Employee_Id
         while self.check_employee_id_exists(employee_id):
-            print(f"Duplicate Employee ID found: {employee_id}. Regenerating.")
             count += 1
-            employee_id = f"{today_date}-{count + 1:03}"  # Increment the count and regenerate the ID
+            employee_id = f"{today_date}-{count + 1:03}"
         
         return employee_id
 
@@ -199,7 +228,6 @@ class AddEmployeeWindow(QMainWindow):
         """
         cursor.execute(query, (today_date,))
         count = cursor.fetchone()[0]
-        print(f"Employee count for {today_date}: {count}")  # Debugging line
         conn.close()
         return count
 
@@ -216,6 +244,9 @@ class AddEmployeeWindow(QMainWindow):
         try:
             conn = sqlite3.connect(get_database_path())
             cursor = conn.cursor()
+
+            email = " "+self.ui.Email.toPlainText()
+            
             sql = '''INSERT INTO Employee (
                 Employee_Id,
                 Last_Name,
@@ -242,8 +273,11 @@ class AddEmployeeWindow(QMainWindow):
                 Benefit_Id,
                 Salary_Id,
                 Contact_No,
-                Archived
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)'''
+                Archived,
+                employee_image,
+                Department,
+                Email
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)'''
             position_name = data["position"]
             position_id = generate_position_id(position_name)
             values = (
@@ -258,21 +292,24 @@ class AddEmployeeWindow(QMainWindow):
                 data["date_of_birth"],
                 data["place_of_birth"],
                 data["citizenship"],
-                data["passport_num"],  # Store the passport number directly
+                data["employee_id"],
                 data["church_affiliation"],
                 data["tin"],
                 data["sss"],
                 data["philhealth"],
                 data["pagibig"],
                 data["civil_status"],
-                spouse_id,  # Initially None
-                academic_record_id,  # Updated to Academic_Record_Id
-                data["criminal_case_name"],  # Store criminal_case_name in Criminal_Record
-                0,     # Initially not Regular
-                benefit_id,  # Use the Benefit_Id here
-                salary_id,  # Use the Salary_Id here
+                spouse_id,
+                int(academic_record_id),
+                data["criminal_case_name"],
+                0,
+                benefit_id,
+                salary_id,
                 data["contact_num"],
-                archived
+                archived,
+                self.employee_picture,
+                self.ui.Department.toPlainText(),
+                email
             )
             cursor.execute(sql, values)
             conn.commit()
@@ -296,23 +333,19 @@ class AddEmployeeWindow(QMainWindow):
             conn.close()
             
     def insert_salary_data(self):
-        """Generate a new Salary_Id and insert a record in the Salary table."""
         conn = sqlite3.connect(get_database_path())
         cursor = conn.cursor()
 
-        # Generate the new Salary_Id by getting the max value from the Salary table and incrementing it
         cursor.execute("SELECT MAX(Salary_Id) FROM Salary")
         max_id = cursor.fetchone()[0]
         new_salary_id = (max_id + 1) if max_id is not None else 1
 
         new_salary_id = int(new_salary_id)
 
-      
         monthly_salary = 0.0  
         overtime_salary = 0.0  
-        total_salary = monthly_salary + overtime_salary  
+        total_salary = monthly_salary + overtime_salary
 
-        
         cursor.execute(
             "INSERT INTO Salary (Salary_Id, Monthly_Salary, Overtime_Salary, Total_Salary) VALUES (?, ?, ?, ?)",
             (new_salary_id, monthly_salary, overtime_salary, total_salary)
@@ -323,11 +356,9 @@ class AddEmployeeWindow(QMainWindow):
         return new_salary_id
     
     def generate_salary_id(self):
-        """Generate a new Salary_Id for the Employee table."""
         conn = sqlite3.connect(get_database_path())
         cursor = conn.cursor()
 
-        # Get the maximum Salary_Id from the Employee table, or start from 1 if it's the first employee
         cursor.execute("SELECT MAX(Salary_Id) FROM Employee")
         max_salary_id = cursor.fetchone()[0]
         salary_id = (max_salary_id + 1) if max_salary_id is not None else 1

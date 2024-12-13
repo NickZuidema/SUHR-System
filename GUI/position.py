@@ -1,13 +1,15 @@
 import sqlite3
 from config import get_database_path
 
+db_path = get_database_path()
+
 def generate_position_id(name):
     """
     Generates a new Position_Id for the Position table and inserts a new record.
     """
     try:
         # Connect to the database
-        conn = sqlite3.connect(get_database_path())
+        conn = sqlite3.connect(db_path)
         cursor = conn.cursor()
 
         # Query to get the maximum Position_Id

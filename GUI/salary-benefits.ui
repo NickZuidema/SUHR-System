@@ -98,7 +98,7 @@ font: 9pt &quot;Segoe UI&quot;;</string>
     <string>Education benefits</string>
    </property>
   </widget>
-  <widget class="QCheckBox" name="apply_confirm">
+  <widget class="QCheckBox" name="apply_confirm_changes">
    <property name="geometry">
     <rect>
      <x>10</x>
@@ -237,23 +237,6 @@ font: 9pt &quot;Segoe UI&quot;;</string>
    </property>
    <property name="text">
     <string>Medical benefits</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="edit">
-   <property name="geometry">
-    <rect>
-     <x>170</x>
-     <y>460</y>
-     <width>81</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">font: 9pt &quot;Outfit&quot;;
-font: 9pt &quot;Segoe UI&quot;;</string>
-   </property>
-   <property name="text">
-    <string>Edit</string>
    </property>
   </widget>
   <widget class="QPushButton" name="close">

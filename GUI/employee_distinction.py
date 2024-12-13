@@ -1,10 +1,12 @@
 import sqlite3
 from config import get_database_path
 
+db_path = get_database_path()
+
 def generate_distinction_id():
     """Generate a new Distinction_Id for a distinction, ensuring it's unique."""
     try:
-        with sqlite3.connect(get_database_path()) as conn:
+        with sqlite3.connect(db_path) as conn:
             cursor = conn.cursor()
 
             while True:
@@ -38,7 +40,7 @@ def add_distinction_to_academic_record(academic_id, year, semester):
             print("Failed to generate Distinction_Id.")
             return
 
-        conn = sqlite3.connect(get_database_path())
+        conn = sqlite3.connect(db_path)
         cursor = conn.cursor()
 
         # Insert the distinction for the academic record
@@ -56,7 +58,7 @@ def add_distinction_to_academic_record(academic_id, year, semester):
 def get_distinctions_for_academic_record(academic_id):
     """Retrieve all distinctions for a given academic record."""
     try:
-        conn = sqlite3.connect(get_database_path())
+        conn = sqlite3.connect(db_path)
         cursor = conn.cursor()
 
         # Retrieve distinctions related to the given academic record
