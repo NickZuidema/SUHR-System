@@ -105,6 +105,50 @@ class MainWindow(QMainWindow):
 
                 #----------end of image process------
 
+               
+                cursor.execute("""
+                    select Name,Link from Publication where Publication_Id = (select Publication_Publication_Id from Academic_Record_Publication
+                where Academic_Record_Academic_Record_Id = (select Academic_Id from Employee where Employee_Id = ?) );
+                """, (employee_id,))
+                publication_data = cursor.fetchone()
+
+                if publication_data and publication_data[0]:
+                    self.ui.employee_publications.setText(f"TITLE: {publication_data[0]}\n SOURCE: {publication_data[1]}")
+                else:
+                    self.ui.employee_publications.setText(f"No Publications")
+                
+
+                cursor.execute("""
+                    select Last_Name,First_Name, Middle_Name from Sibling
+                     where Sibling_Id = (select Sibling_Sibling_Id from Employee_Sibling where Employee_Employee_Id = ?);
+                """, (employee_id,))
+                sibling_data = cursor.fetchone()
+
+                if sibling_data and sibling_data[0]:
+                    sibling_full_name = f"{sibling_data[0]}, {sibling_data[1]} {sibling_data[2] or ''}".strip()
+                    self.ui.employee_brother.setText(f"{sibling_full_name}")
+                else:
+                    self.ui.employee_brother.setText(f"No Sibling")
+
+
+
+                cursor.execute("""
+                    select Elementary_Name, Elementary_Address, Elementary_Fin, 
+                               HighSchool_Name, HighSchool_Address, HighSchool_Fin, 
+                               College_Name, College_Address, College_Fin
+                    from Academic_Record where Academic_Id = (select Academic_Id from Employee where Employee_Id = ?);
+                """, (employee_id,))
+                educ_record = cursor.fetchone()
+
+                if educ_record and educ_record[0]:
+                    elem_str = f"Elementary Record: {educ_record[0]} at {educ_record[1] or ' '}, Finished on {educ_record[2]}"
+                    high_str = f"High School Record: {educ_record[3]} at {educ_record[4] or ' '}, Finished on {educ_record[5]}"
+                    col_str = f"College Record: {educ_record[6]} at {educ_record[7] or ' '}, Finished on {educ_record[8]}"
+                    self.ui.employee_acad_record.setText(f"{elem_str}\n{high_str}\n{col_str}")
+                else:
+                    self.ui.employee_acad_record.setText(f"No Education Records")
+
+
                 #display position
                 cursor.execute("""
                     select Name from position where position_id = (select position_id from Employee where Employee_Id = ?);
