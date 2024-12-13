@@ -1,0 +1,1677 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1483</width>
+    <height>767</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1440</width>
+    <height>700</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color:white;
+color: black;</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="font">
+    <font>
+     <family>Outfit Medium</family>
+     <pointsize>9</pointsize>
+     <italic>false</italic>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 500 9pt &quot;Outfit Medium&quot;;
+color:black;
+background-color:white;</string>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QWidget" name="widget" native="true">
+      <property name="styleSheet">
+       <string notr="true">background-color: white;
+color:black;
+</string>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_3">
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_2">
+         <item>
+          <widget class="QGroupBox" name="groupBox">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>91</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: white;
+border: none;
+color:black;
+</string>
+           </property>
+           <property name="title">
+            <string/>
+           </property>
+           <widget class="QWidget" name="layoutWidget">
+            <property name="geometry">
+             <rect>
+              <x>130</x>
+              <y>20</y>
+              <width>221</width>
+              <height>51</height>
+             </rect>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout">
+             <item>
+              <widget class="QLabel" name="label">
+               <property name="font">
+                <font>
+                 <family>Outfit Medium</family>
+                 <pointsize>12</pointsize>
+                 <italic>false</italic>
+                 <bold>false</bold>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">color:black;
+background-color:white;
+font: 500 12pt &quot;Outfit Medium&quot;;</string>
+               </property>
+               <property name="text">
+                <string>Silliman University </string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="label_2">
+               <property name="font">
+                <font>
+                 <family>Outfit Medium</family>
+                 <pointsize>12</pointsize>
+                 <italic>false</italic>
+                 <bold>false</bold>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">font: 500 12pt &quot;Outfit Medium&quot;;color:black;
+background-color:white;</string>
+               </property>
+               <property name="text">
+                <string>Personnel Record Dashboard</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+           <widget class="QLabel" name="label_3">
+            <property name="geometry">
+             <rect>
+              <x>10</x>
+              <y>0</y>
+              <width>101</width>
+              <height>91</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color:black;
+background-color:white;</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap>images/sillimanlogo.png</pixmap>
+            </property>
+            <property name="scaledContents">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </widget>
+         </item>
+         <item>
+          <widget class="QScrollArea" name="scrollArea">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QScrollArea {
+    background-color: white; /* Background color for the scroll area */
+	color: black;
+    border: 2px solid black; /* Optional border */
+ 
+}
+QScrollBar:vertical {
+    border: 0px solid #dcdcdc; /* Border around the scrollbar */
+    background: #f5f5f5;       /* Background of the scrollbar area */
+    width: 12px;               /* Width of the scrollbar */
+    margin: 0px 0px 0px 0px;   /* Margins around the scrollbar */
+}
+
+QScrollBar::handle:vertical {
+    background: #888;          /* Color of the scrollbar handle */
+    min-height: 10px;          /* Minimum height of the scrollbar handle */
+    border-radius: 5px;        /* Rounded corners of the scrollbar handle */
+}
+QScrollBar::add-line:vertical,
+QScrollBar::sub-line:vertical {
+    background: #dcdcdc;       /* Background color of arrow buttons */
+    border: 1px solid #aaa;    /* Border around the arrow buttons */
+    height: 12px;              /* Height of arrow buttons */
+    subcontrol-origin: margin;
+    subcontrol-position: top;  /* Positions at top and bottom */
+}
+</string>
+           </property>
+           <property name="widgetResizable">
+            <bool>true</bool>
+           </property>
+           <widget class="QWidget" name="scrollAreaWidgetContents_2">
+            <property name="geometry">
+             <rect>
+              <x>0</x>
+              <y>-1969</y>
+              <width>1429</width>
+              <height>2576</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color:black;
+background-color:white;
+border: 1px solid black</string>
+            </property>
+            <layout class="QGridLayout" name="gridLayout">
+             <item row="6" column="1" colspan="16">
+              <widget class="QPlainTextEdit" name="Position">
+               <property name="styleSheet">
+                <string notr="true">font: 300 9pt &quot;Outfit Light&quot;;</string>
+               </property>
+               <property name="plainText">
+                <string/>
+               </property>
+               <property name="placeholderText">
+                <string>Position...</string>
+               </property>
+              </widget>
+             </item>
+             <item row="15" column="10" colspan="4">
+              <widget class="QLabel" name="label_14">
+               <property name="styleSheet">
+                <string notr="true">border:none;
+</string>
+               </property>
+               <property name="text">
+                <string>Citizenship</string>
+               </property>
+              </widget>
+             </item>
+             <item row="41" column="1" colspan="16">
+              <widget class="QPlainTextEdit" name="elementary_school">
+               <property name="styleSheet">
+                <string notr="true">font: 300 9pt &quot;Outfit Light&quot;;</string>
+               </property>
+               <property name="plainText">
+                <string/>
+               </property>
+               <property name="placeholderText">
+                <string>Elementary School...</string>
+               </property>
+              </widget>
+             </item>
+             <item row="52" column="1" colspan="2">
+              <widget class="QLabel" name="label_38">
+               <property name="styleSheet">
+                <string notr="true">border:none;
+</string>
+               </property>
+               <property name="text">
+                <string>School or college distinction(s)</string>
+               </property>
+              </widget>
+             </item>
+             <item row="51" column="13" colspan="4">
+              <widget class="QPlainTextEdit" name="staff_position2">
+               <property name="styleSheet">
+                <string notr="true">font: 300 9pt &quot;Outfit Light&quot;;</string>
+               </property>
+               <property name="plainText">
+                <string/>
+               </property>
+               <property name="placeholderText">
+                <string>Position...</string>
+               </property>
+              </widget>
+             </item>
+             <item row="50" column="2" colspan="2">
+              <widget class="QPlainTextEdit" name="staff_MiddleName1">
+               <property name="plainText">
+                <string/>
+               </property>
+               <property name="placeholderText">
+                <string>Middle name...</string>
+               </property>
+              </widget>
+             </item>
+             <item row="20" column="1">
+              <widget class="QLabel" name="label_19">
+               <property name="styleSheet">
+                <string notr="true">border:none;
+</string>
+               </property>
+               <property name="text">
+                <string>Contact number</string>
+               </property>
+              </widget>
+             </item>
+             <item row="30" column="1" colspan="16">
+              <widget class="QPlainTextEdit" name="FatherAddress">
+               <property name="styleSheet">
+                <string notr="true">font: 300 9pt &quot;Outfit Light&quot;;</string>
+               </property>
+               <property name="plainText">
+                <string/>
+               </property>
+               <property name="placeholderText">
+                <string>Father's current home address...</string>
+               </property>
+              </widget>
+             </item>
+             <item row="33" column="1" colspan="16">
+              <widget class="QPlainTextEdit" name="MotherAddress">
+               <property name="styleSheet">
+                <string notr="true">font: 300 9pt &quot;Outfit Light&quot;;</string>
+               </property>
+               <property name="plainText">
+                <string/>
+               </property>
+               <property name="placeholderText">
+                <string>Mother's current home address...</string>
+               </property>
+              </widget>
+             </item>
+             <item row="34" column="1" colspan="2">
+              <widget class="QLabel" name="label_30">
+               <property name="styleSheet">
+                <string notr="true">border:none;
+</string>
+               </property>
+               <property name="text">
+                <string>Sibling(s)</string>
+               </property>
+              </widget>
+             </item>
+             <item row="19" column="1" colspan="7">
+              <widget class="QPlainTextEdit" name="NONFILIPINO_passport">
+               <property name="styleSheet">
+                <string notr="true">font: 300 9pt &quot;Outfit Light&quot;;</string>
+               </property>
+               <property name="plainText">
+                <string/>
+               </property>
+               <property name="placeholderText">
+                <string>Passport number...</string>
+               </property>
+              </widget>
+             </item>
+             <item row="21" column="1" colspan="5">
+              <widget class="QPlainTextEdit" name="ContactNumber">
+               <property name="styleSheet">
+                <string notr="true">font: 300 9pt &quot;Outfit Light&quot;;</string>
+               </property>
+               <property name="plainText">
+                <string/>
+               </property>
+               <property name="placeholderText">
+                <string>Contact number...</string>
+               </property>
+              </widget>
+             </item>
+             <item row="19" column="16">
+              <widget class="QPlainTextEdit" name="NONFILIPINO_dateissued">
+               <property name="styleSheet">
+                <string notr="true">font: 300 9pt &quot;Outfit Light&quot;;</string>
+               </property>
+               <property name="plainText">
+                <string/>
+               </property>
+               <property name="placeholderText">
+                <string>DD/MM/YYYY</string>
+               </property>
+              </widget>
+             </item>
+             <item row="51" column="5" colspan="8">
+              <widget class="QPlainTextEdit" name="staff_relationship2_2">
+               <property name="styleSheet">
+                <string notr="true">font: 300 9pt &quot;Outfit Light&quot;;</string>
+               </property>
+               <property name="plainText">
+                <string/>
+               </property>
+               <property name="placeholderText">
+                <string>Relationship...</string>
+               </property>
+              </widget>
+             </item>
+             <item row="26" column="1" colspan="2">
+              <widget class="QLabel" name="label_25">
+               <property name="styleSheet">
+                <string notr="true">border:none;
+</string>
+               </property>
+               <property name="text">
+                <string>Church affiliation</string>
+               </property>
+              </widget>
+             </item>
+             <item row="50" column="13" colspan="4">
+              <widget class="QPlainTextEdit" name="staff_position3">
+               <property name="styleSheet">
+                <string notr="true">font: 300 9pt &quot;Outfit Light&quot;;</string>
+               </property>
+               <property name="plainText">
+                <string/>
+               </property>
+               <property name="placeholderText">
+                <string>Position...</string>
+               </property>
+              </widget>
+             </item>
+             <item row="57" column="12" colspan="5">
+              <widget class="QPlainTextEdit" name="Government_place">
+               <property name="styleSheet">
+                <string notr="true">font: 300 9pt &quot;Outfit Light&quot;;</string>
+               </property>
+               <property name="plainText">
+                <string/>
+               </property>
+               <property name="placeholderText">
+                <string>Place...</string>
+               </property>
+              </widget>
+             </item>
+             <item row="19" column="8" colspan="8">
+              <widget class="QPlainTextEdit" name="NONFILIPINO_acrnum">
+               <property name="styleSheet">
+                <string notr="true">font: 300 9pt &quot;Outfit Light&quot;;</string>
+               </property>
+               <property name="plainText">
+                <string/>
+               </property>
+               <property name="placeholderText">
+                <string>ACR number...</string>
+               </property>
+              </widget>
+             </item>
+             <item row="46" column="4" colspan="9">
+              <widget class="QPlainTextEdit" name="diploma_college">
+               <property name="styleSheet">
+                <string notr="true">font: 300 9pt &quot;Outfit Light&quot;;</string>
+               </property>
+               <property name="plainText">
+                <string/>
+               </property>
+               <property name="placeholderText">
+                <string>Diploma or degree...</string>
+               </property>
+              </widget>
+             </item>
+             <item row="21" column="6" colspan="11">
+              <widget class="QPlainTextEdit" name="Email">
+               <property name="styleSheet">
+                <string notr="true">font: 300 9pt &quot;Outfit Light&quot;;</string>
+               </property>
+               <property name="plainText">
+                <string/>
+               </property>
+               <property name="placeholderText">
+                <string>E-mail address...</string>
+               </property>
+              </widget>
+             </item>
+             <item row="16" column="1">
+              <widget class="QPlainTextEdit" name="DateOfBirth">
+               <property name="styleSheet">
+                <string notr="true">font: 300 9pt &quot;Outfit Light&quot;;</string>
+               </property>
+               <property name="plainText">
+                <string/>
+               </property>
+               <property name="placeholderText">
+                <string>DD/MM/YYYY</string>
+               </property>
+              </widget>
+             </item>
+             <item row="46" column="13" colspan="4">
+              <widget class="QPlainTextEdit" name="yeargraduate_college">
+               <property name="styleSheet">
+                <string notr="true">font: 300 9pt &quot;Outfit Light&quot;;</string>
+               </property>
+               <property name="plainText">
+                <string/>
+               </property>
+               <property name="placeholderText">
+                <string>Year graduated...</string>
+               </property>
+              </widget>
+             </item>
+             <item row="8" column="1" colspan="16">
+              <widget class="QPlainTextEdit" name="Department">
+               <property name="styleSheet">
+                <string notr="true">font: 300 9pt &quot;Outfit Light&quot;;</string>
+               </property>
+               <property name="plainText">
+                <string/>
+               </property>
+               <property name="placeholderText">
+                <string>Department...</string>
+               </property>
+              </widget>
+             </item>
+             <item row="36" column="1">
+              <widget class="QLabel" name="label_31">
+               <property name="styleSheet">
+                <string notr="true">border:none;
+</string>
+               </property>
+               <property name="text">
+                <string>Civil status</string>
+               </property>
+              </widget>
+             </item>
+             <item row="57" column="1" colspan="2">
+              <widget class="QPlainTextEdit" name="government_examination">
+               <property name="styleSheet">
+                <string notr="true">font: 300 9pt &quot;Outfit Light&quot;;</string>
+               </property>
+               <property name="plainText">
+                <string/>
+               </property>
+               <property name="placeholderText">
+                <string>Examination...</string>
+               </property>
+              </widget>
+             </item>
+             <item row="37" column="15" colspan="2">
+              <widget class="QPlainTextEdit" name="DateOfMarriage">
+               <property name="styleSheet">
+                <string notr="true">font: 300 9pt &quot;Outfit Light&quot;;</string>
+               </property>
+               <property name="plainText">
+                <string/>
+               </property>
+               <property name="placeholderText">
+                <string>DD/MM/YYYY</string>
+               </property>
+              </widget>
+             </item>
+             <item row="24" column="1" colspan="2">
+              <widget class="QLabel" name="label_23">
+               <property name="styleSheet">
+                <string notr="true">border:none;
+</string>
+               </property>
+               <property name="text">
+                <string>Pag-Ibig Number</string>
+               </property>
+              </widget>
+             </item>
+             <item row="5" column="0">
+              <widget class="QLabel" name="EmployeeImageLabel">
+               <property name="styleSheet">
+                <string notr="true">color:black;
+background-color:white;</string>
+               </property>
+               <property name="text">
+                <string>(image name here)</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="11" colspan="3">
+              <widget class="QLabel" name="label_7">
+               <property name="styleSheet">
+                <string notr="true">border:none;
+</string>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item row="48" column="1" colspan="3">
+              <widget class="QPlainTextEdit" name="address_graduateschool">
+               <property name="styleSheet">
+                <string notr="true">font: 300 9pt &quot;Outfit Light&quot;;</string>
+               </property>
+               <property name="plainText">
+                <string/>
+               </property>
+               <property name="placeholderText">
+                <string>Address of graduate school...</string>
+               </property>
+              </widget>
+             </item>
+             <item row="39" column="10" colspan="3">
+              <widget class="QPlainTextEdit" name="child1_LastName">
+               <property name="plainText">
+                <string/>
+               </property>
+               <property name="placeholderText">
+                <string>Last name...</string>
+               </property>
+              </widget>
+             </item>
+             <item row="37" column="8" colspan="2">
+              <widget class="QPlainTextEdit" name="Spouse_LastName">
+               <property name="plainText">
+                <string/>
+               </property>
+               <property name="placeholderText">
+                <string>Last name...</string>
+               </property>
+              </widget>
+             </item>
+             <item row="36" column="15" colspan="2">
+              <widget class="QLabel" name="label_34">
+               <property name="styleSheet">
+                <string notr="true">border:none;
+</string>
+               </property>
+               <property name="text">
+                <string>Date of marriage</string>
+               </property>
+              </widget>
+             </item>
+             <item row="40" column="1" colspan="2">
+              <widget class="QLabel" name="label_36">
+               <property name="styleSheet">
+                <string notr="true">border:none;
+</string>
+               </property>
+               <property name="text">
+                <string>Academic record</string>
+               </property>
+              </widget>
+             </item>
+             <item row="45" column="1" colspan="16">
+              <widget class="QPlainTextEdit" name="College">
+               <property name="styleSheet">
+                <string notr="true">font: 300 9pt &quot;Outfit Light&quot;;</string>
+               </property>
+               <property name="plainText">
+                <string/>
+               </property>
+               <property name="placeholderText">
+                <string>College...</string>
+               </property>
+              </widget>
+             </item>
+             <item row="27" column="1" colspan="16">
+              <widget class="QPlainTextEdit" name="ChurchAffiliation">
+               <property name="styleSheet">
+                <string notr="true">font: 300 9pt &quot;Outfit Light&quot;;</string>
+               </property>
+               <property name="plainText">
+                <string/>
+               </property>
+               <property name="placeholderText">
+                <string>Church affiliation...</string>
+               </property>
+              </widget>
+             </item>
+             <item row="50" column="4">
+              <widget class="QPlainTextEdit" name="staff_LastName1">
+               <property name="plainText">
+                <string/>
+               </property>
+               <property name="placeholderText">
+                <string>Last name...</string>
+               </property>
+              </widget>
+             </item>
+             <item row="24" column="8" colspan="4">
+              <widget class="QLabel" name="label_24">
+               <property name="styleSheet">
+                <string notr="true">border:none;
+</string>
+               </property>
+               <property name="text">
+                <string>Philhealth Number</string>
+               </property>
+              </widget>
+             </item>
+             <item row="29" column="9">
+              <widget class="QPlainTextEdit" name="Father_LastName">
+               <property name="plainText">
+                <string/>
+               </property>
+               <property name="placeholderText">
+                <string>Last name...</string>
+               </property>
+              </widget>
+             </item>
+             <item row="11" column="1" colspan="16">
+              <widget class="QPlainTextEdit" name="DumaAddress">
+               <property name="styleSheet">
+                <string notr="true">font: 300 9pt &quot;Outfit Light&quot;;</string>
+               </property>
+               <property name="plainText">
+                <string/>
+               </property>
+               <property name="placeholderText">
+                <string>Full Dumaguete address...</string>
+               </property>
+              </widget>
+             </item>
+             <item row="20" column="6" colspan="3">
+              <widget class="QLabel" name="label_20">
+               <property name="styleSheet">
+                <string notr="true">border:none;
+</string>
+               </property>
+               <property name="text">
+                <string>E-mail address</string>
+               </property>
+              </widget>
+             </item>
+             <item row="50" column="5" colspan="8">
+              <widget class="QPlainTextEdit" name="staff_relationship2">
+               <property name="maximumSize">
+                <size>
+                 <width>16777215</width>
+                 <height>16777215</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">font: 300 9pt &quot;Outfit Light&quot;;</string>
+               </property>
+               <property name="plainText">
+                <string/>
+               </property>
+               <property name="placeholderText">
+                <string>Relationship...</string>
+               </property>
+              </widget>
+             </item>
+             <item row="22" column="1" colspan="2">
+              <widget class="QLabel" name="label_21">
+               <property name="styleSheet">
+                <string notr="true">border:none;
+</string>
+               </property>
+               <property name="text">
+                <string>Tax Identification Number</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="11" colspan="5">
+              <widget class="QCheckBox" name="checkBox">
+               <property name="styleSheet">
+                <string notr="true">border:none;
+</string>
+               </property>
+               <property name="text">
+                <string>This confirms that all details are true.</string>
+               </property>
+              </widget>
+             </item>
+             <item row="35" column="14" colspan="3">
+              <widget class="QPlainTextEdit" name="sibling1_address">
+               <property name="styleSheet">
+                <string notr="true">font: 300 9pt &quot;Outfit Light&quot;;</string>
+               </property>
+               <property name="plainText">
+                <string/>
+               </property>
+               <property name="placeholderText">
+                <string>Address...</string>
+               </property>
+              </widget>
+             </item>
+             <item row="35" column="1">
+              <widget class="QPlainTextEdit" name="sibling1_FirstName">
+               <property name="styleSheet">
+                <string notr="true">font: 300 9pt &quot;Outfit Light&quot;;</string>
+               </property>
+               <property name="plainText">
+                <string/>
+               </property>
+               <property name="placeholderText">
+                <string>Sibling's first name...</string>
+               </property>
+              </widget>
+             </item>
+             <item row="35" column="4">
+              <widget class="QPlainTextEdit" name="sibling1_LastName">
+               <property name="plainText">
+                <string/>
+               </property>
+               <property name="placeholderText">
+                <string>Last name...</string>
+               </property>
+              </widget>
+             </item>
+             <item row="35" column="6" colspan="8">
+              <widget class="QPlainTextEdit" name="sibling1_occupation">
+               <property name="styleSheet">
+                <string notr="true">font: 300 9pt &quot;Outfit Light&quot;;</string>
+               </property>
+               <property name="plainText">
+                <string/>
+               </property>
+               <property name="placeholderText">
+                <string>Occupation...</string>
+               </property>
+              </widget>
+             </item>
+             <item row="36" column="10">
+              <widget class="QLabel" name="label_33">
+               <property name="styleSheet">
+                <string notr="true">border:none;
+</string>
+               </property>
+               <property name="text">
+                <string>Place of marriage</string>
+               </property>
+              </widget>
+             </item>
+             <item row="4" column="5" colspan="6">
+              <widget class="QPlainTextEdit" name="MiddleName">
+               <property name="styleSheet">
+                <string notr="true">font: 300 9pt &quot;Outfit Light&quot;;</string>
+               </property>
+               <property name="plainText">
+                <string/>
+               </property>
+               <property name="placeholderText">
+                <string>Middle name...</string>
+               </property>
+              </widget>
+             </item>
+             <item row="44" column="1" colspan="3">
+              <widget class="QPlainTextEdit" name="address_highschool">
+               <property name="styleSheet">
+                <string notr="true">font: 300 9pt &quot;Outfit Light&quot;;</string>
+               </property>
+               <property name="plainText">
+                <string/>
+               </property>
+               <property name="placeholderText">
+                <string>Address of high school...</string>
+               </property>
+              </widget>
+             </item>
+             <item row="57" column="7" colspan="5">
+              <widget class="QPlainTextEdit" name="government_date">
+               <property name="styleSheet">
+                <string notr="true">font: 300 9pt &quot;Outfit Light&quot;;</string>
+               </property>
+               <property name="plainText">
+                <string/>
+               </property>
+               <property name="placeholderText">
+                <string>Date of examination...</string>
+               </property>
+              </widget>
+             </item>
+             <item row="53" column="1" colspan="16">
+              <widget class="QPlainTextEdit" name="scholarships_awards">
+               <property name="styleSheet">
+                <string notr="true">font: 300 9pt &quot;Outfit Light&quot;;</string>
+               </property>
+               <property name="plainText">
+                <string/>
+               </property>
+               <property name="placeholderText">
+                <string>Includes scholarships, awards, etc ...</string>
+               </property>
+              </widget>
+             </item>
+             <item row="22" column="8" colspan="4">
+              <widget class="QLabel" name="label_22">
+               <property name="styleSheet">
+                <string notr="true">border:none;
+</string>
+               </property>
+               <property name="text">
+                <string>SSS Number</string>
+               </property>
+              </widget>
+             </item>
+             <item row="42" column="1" colspan="3">
+              <widget class="QPlainTextEdit" name="elementary_school_address">
+               <property name="styleSheet">
+                <string notr="true">font: 300 9pt &quot;Outfit Light&quot;;</string>
+               </property>
+               <property name="plainText">
+                <string/>
+               </property>
+               <property name="placeholderText">
+                <string>Address of elementary school...</string>
+               </property>
+              </widget>
+             </item>
+             <item row="42" column="13" colspan="4">
+              <widget class="QPlainTextEdit" name="yeargraduate_elementary">
+               <property name="styleSheet">
+                <string notr="true">font: 300 9pt &quot;Outfit Light&quot;;</string>
+               </property>
+               <property name="plainText">
+                <string/>
+               </property>
+               <property name="placeholderText">
+                <string>Year graduated...</string>
+               </property>
+              </widget>
+             </item>
+             <item row="48" column="13" colspan="4">
+              <widget class="QPlainTextEdit" name="yeargraduate_graduateschool">
+               <property name="styleSheet">
+                <string notr="true">font: 300 9pt &quot;Outfit Light&quot;;</string>
+               </property>
+               <property name="plainText">
+                <string/>
+               </property>
+               <property name="placeholderText">
+                <string>Year graduated...</string>
+               </property>
+              </widget>
+             </item>
+             <item row="7" column="1">
+              <widget class="QLabel" name="label_9">
+               <property name="styleSheet">
+                <string notr="true">border:none;
+</string>
+               </property>
+               <property name="text">
+                <string>Department(s)</string>
+               </property>
+              </widget>
+             </item>
+             <item row="32" column="9">
+              <widget class="QPlainTextEdit" name="Mother_LastName">
+               <property name="plainText">
+                <string/>
+               </property>
+               <property name="placeholderText">
+                <string>Last name...</string>
+               </property>
+              </widget>
+             </item>
+             <item row="37" column="2" colspan="4">
+              <widget class="QPlainTextEdit" name="Spouse_FirstName">
+               <property name="styleSheet">
+                <string notr="true">font: 300 9pt &quot;Outfit Light&quot;;</string>
+               </property>
+               <property name="plainText">
+                <string/>
+               </property>
+               <property name="placeholderText">
+                <string>First name...</string>
+               </property>
+              </widget>
+             </item>
+             <item row="37" column="10" colspan="5">
+              <widget class="QPlainTextEdit" name="PlaceOfMarriage">
+               <property name="styleSheet">
+                <string notr="true">font: 300 9pt &quot;Outfit Light&quot;;</string>
+               </property>
+               <property name="plainText">
+                <string/>
+               </property>
+               <property name="placeholderText">
+                <string>Address...</string>
+               </property>
+              </widget>
+             </item>
+             <item row="58" column="1" colspan="2">
+              <widget class="QLabel" name="label_42">
+               <property name="styleSheet">
+                <string notr="true">border:none;
+</string>
+               </property>
+               <property name="text">
+                <string>Involvement in criminal case(s)*</string>
+               </property>
+              </widget>
+             </item>
+             <item row="23" column="1" colspan="7">
+              <widget class="QPlainTextEdit" name="TINnumber">
+               <property name="styleSheet">
+                <string notr="true">font: 300 9pt &quot;Outfit Light&quot;;</string>
+               </property>
+               <property name="plainText">
+                <string/>
+               </property>
+               <property name="placeholderText">
+                <string>TIN...</string>
+               </property>
+              </widget>
+             </item>
+             <item row="4" column="0">
+              <widget class="QLabel" name="employee_picture">
+               <property name="styleSheet">
+                <string notr="true">color:black;
+background-color:white;</string>
+               </property>
+               <property name="text">
+                <string>Profile Picture</string>
+               </property>
+              </widget>
+             </item>
+             <item row="55" column="1" colspan="16">
+              <widget class="QPlainTextEdit" name="publications">
+               <property name="styleSheet">
+                <string notr="true">font: 300 9pt &quot;Outfit Light&quot;;</string>
+               </property>
+               <property name="plainText">
+                <string/>
+               </property>
+               <property name="placeholderText">
+                <string>Includes thesis papers, and other publications ...</string>
+               </property>
+              </widget>
+             </item>
+             <item row="37" column="6" colspan="2">
+              <widget class="QPlainTextEdit" name="Spouse_MiddleName">
+               <property name="plainText">
+                <string/>
+               </property>
+               <property name="placeholderText">
+                <string>Middle name...</string>
+               </property>
+              </widget>
+             </item>
+             <item row="4" column="1" colspan="4">
+              <widget class="QPlainTextEdit" name="FirstName">
+               <property name="styleSheet">
+                <string notr="true">font: 300 9pt &quot;Outfit Light&quot;;
+</string>
+               </property>
+               <property name="plainText">
+                <string/>
+               </property>
+               <property name="placeholderText">
+                <string>First name...</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="0" colspan="2">
+              <widget class="QLabel" name="label_4">
+               <property name="styleSheet">
+                <string notr="true">color:black;
+font: 600 14pt &quot;Outfit SemiBold&quot;;
+border:none;
+</string>
+               </property>
+               <property name="text">
+                <string>Adding Employee Record</string>
+               </property>
+              </widget>
+             </item>
+             <item row="56" column="1" colspan="2">
+              <widget class="QLabel" name="label_41">
+               <property name="styleSheet">
+                <string notr="true">border:none;
+</string>
+               </property>
+               <property name="text">
+                <string>Government examination(s) passed</string>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="1">
+              <widget class="QLabel" name="label_5">
+               <property name="styleSheet">
+                <string notr="true">
+background-color:white;
+border:none;
+</string>
+               </property>
+               <property name="text">
+                <string>Full Name</string>
+               </property>
+              </widget>
+             </item>
+             <item row="18" column="8" colspan="2">
+              <widget class="QLabel" name="label_17">
+               <property name="styleSheet">
+                <string notr="true">border:none;
+</string>
+               </property>
+               <property name="text">
+                <string>ACR number</string>
+               </property>
+              </widget>
+             </item>
+             <item row="39" column="1" colspan="5">
+              <widget class="QPlainTextEdit" name="child1_FirstName">
+               <property name="styleSheet">
+                <string notr="true">font: 300 9pt &quot;Outfit Light&quot;;</string>
+               </property>
+               <property name="plainText">
+                <string/>
+               </property>
+               <property name="placeholderText">
+                <string>First name...</string>
+               </property>
+              </widget>
+             </item>
+             <item row="17" column="1" colspan="2">
+              <widget class="QLabel" name="label_15">
+               <property name="styleSheet">
+                <string notr="true">border:none;
+font: 9pt &quot;Outfit&quot;;</string>
+               </property>
+               <property name="text">
+                <string>If non-Filipino*, please fill the following fields...</string>
+               </property>
+              </widget>
+             </item>
+             <item row="16" column="10" colspan="7">
+              <widget class="QPlainTextEdit" name="Citizenship">
+               <property name="styleSheet">
+                <string notr="true">font: 300 9pt &quot;Outfit Light&quot;;</string>
+               </property>
+               <property name="plainText">
+                <string/>
+               </property>
+               <property name="placeholderText">
+                <string>Citizenship...</string>
+               </property>
+              </widget>
+             </item>
+             <item row="16" column="2" colspan="8">
+              <widget class="QPlainTextEdit" name="PlaceOfBirth">
+               <property name="styleSheet">
+                <string notr="true">font: 300 9pt &quot;Outfit Light&quot;;</string>
+               </property>
+               <property name="plainText">
+                <string/>
+               </property>
+               <property name="placeholderText">
+                <string>Place of birth...</string>
+               </property>
+              </widget>
+             </item>
+             <item row="10" column="1">
+              <widget class="QLabel" name="label_10">
+               <property name="styleSheet">
+                <string notr="true">border:none;
+</string>
+               </property>
+               <property name="text">
+                <string>Dumaguete address</string>
+               </property>
+              </widget>
+             </item>
+             <item row="51" column="2" colspan="2">
+              <widget class="QPlainTextEdit" name="staff_MiddleName2">
+               <property name="plainText">
+                <string/>
+               </property>
+               <property name="placeholderText">
+                <string>Middle name...</string>
+               </property>
+              </widget>
+             </item>
+             <item row="13" column="1" rowspan="2" colspan="16">
+              <widget class="QPlainTextEdit" name="HomeAddress">
+               <property name="styleSheet">
+                <string notr="true">font: 300 9pt &quot;Outfit Light&quot;;</string>
+               </property>
+               <property name="plainText">
+                <string/>
+               </property>
+               <property name="placeholderText">
+                <string>Full home address...</string>
+               </property>
+              </widget>
+             </item>
+             <item row="50" column="1">
+              <widget class="QPlainTextEdit" name="staff_FirstName1">
+               <property name="styleSheet">
+                <string notr="true">font: 300 9pt &quot;Outfit Light&quot;;</string>
+               </property>
+               <property name="plainText">
+                <string/>
+               </property>
+               <property name="placeholderText">
+                <string>First name...</string>
+               </property>
+              </widget>
+             </item>
+             <item row="29" column="10" colspan="7">
+              <widget class="QPlainTextEdit" name="FatherJob">
+               <property name="styleSheet">
+                <string notr="true">font: 300 9pt &quot;Outfit Light&quot;;</string>
+               </property>
+               <property name="plainText">
+                <string/>
+               </property>
+               <property name="placeholderText">
+                <string>Father's occupation...</string>
+               </property>
+              </widget>
+             </item>
+             <item row="39" column="13" colspan="4">
+              <widget class="QPlainTextEdit" name="child1_dateofbirth">
+               <property name="styleSheet">
+                <string notr="true">font: 300 9pt &quot;Outfit Light&quot;;</string>
+               </property>
+               <property name="plainText">
+                <string/>
+               </property>
+               <property name="placeholderText">
+                <string>Date of birth...</string>
+               </property>
+              </widget>
+             </item>
+             <item row="18" column="1">
+              <widget class="QLabel" name="label_16">
+               <property name="styleSheet">
+                <string notr="true">border:none;
+</string>
+               </property>
+               <property name="text">
+                <string>Passport number</string>
+               </property>
+              </widget>
+             </item>
+             <item row="57" column="3" colspan="4">
+              <widget class="QPlainTextEdit" name="government_rating">
+               <property name="styleSheet">
+                <string notr="true">font: 300 9pt &quot;Outfit Light&quot;;</string>
+               </property>
+               <property name="plainText">
+                <string/>
+               </property>
+               <property name="placeholderText">
+                <string>Rating...</string>
+               </property>
+              </widget>
+             </item>
+             <item row="39" column="6" colspan="4">
+              <widget class="QPlainTextEdit" name="child1_MiddleName">
+               <property name="plainText">
+                <string/>
+               </property>
+               <property name="placeholderText">
+                <string>Middle name...</string>
+               </property>
+              </widget>
+             </item>
+             <item row="44" column="4" colspan="9">
+              <widget class="QPlainTextEdit" name="diploma_highschool">
+               <property name="styleSheet">
+                <string notr="true">font: 300 9pt &quot;Outfit Light&quot;;</string>
+               </property>
+               <property name="plainText">
+                <string/>
+               </property>
+               <property name="placeholderText">
+                <string>Diploma or degree...</string>
+               </property>
+              </widget>
+             </item>
+             <item row="32" column="10" colspan="7">
+              <widget class="QPlainTextEdit" name="MotherJob">
+               <property name="styleSheet">
+                <string notr="true">font: 300 9pt &quot;Outfit Light&quot;;</string>
+               </property>
+               <property name="plainText">
+                <string/>
+               </property>
+               <property name="placeholderText">
+                <string>Mother's occupation...</string>
+               </property>
+              </widget>
+             </item>
+             <item row="29" column="7" colspan="2">
+              <widget class="QPlainTextEdit" name="Father_MiddleName">
+               <property name="minimumSize">
+                <size>
+                 <width>200</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>400</width>
+                 <height>16777215</height>
+                </size>
+               </property>
+               <property name="plainText">
+                <string/>
+               </property>
+               <property name="placeholderText">
+                <string>Middle name...</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="16">
+              <widget class="QPushButton" name="pushButton">
+               <property name="cursor">
+                <cursorShape>PointingHandCursor</cursorShape>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">border-radius: 5px;
+background-color: rgb(128, 178, 65);
+color: rgb(255, 255, 255);
+font: 800 10pt &quot;Segoe UI&quot;;
+padding:5px;
+border:none;
+</string>
+               </property>
+               <property name="text">
+                <string>Apply</string>
+               </property>
+              </widget>
+             </item>
+             <item row="48" column="4" colspan="9">
+              <widget class="QPlainTextEdit" name="diploma_graduateschool">
+               <property name="styleSheet">
+                <string notr="true">font: 300 9pt &quot;Outfit Light&quot;;</string>
+               </property>
+               <property name="plainText">
+                <string/>
+               </property>
+               <property name="placeholderText">
+                <string>Diploma or degree...</string>
+               </property>
+              </widget>
+             </item>
+             <item row="46" column="1" colspan="3">
+              <widget class="QPlainTextEdit" name="address_college">
+               <property name="styleSheet">
+                <string notr="true">font: 300 9pt &quot;Outfit Light&quot;;</string>
+               </property>
+               <property name="plainText">
+                <string/>
+               </property>
+               <property name="placeholderText">
+                <string>Address of College...</string>
+               </property>
+              </widget>
+             </item>
+             <item row="36" column="2" colspan="2">
+              <widget class="QLabel" name="label_32">
+               <property name="styleSheet">
+                <string notr="true">border:none;
+</string>
+               </property>
+               <property name="text">
+                <string>Name of spouse</string>
+               </property>
+              </widget>
+             </item>
+             <item row="32" column="7" colspan="2">
+              <widget class="QPlainTextEdit" name="Mother_MiddleName">
+               <property name="plainText">
+                <string/>
+               </property>
+               <property name="placeholderText">
+                <string>Middle name...</string>
+               </property>
+              </widget>
+             </item>
+             <item row="31" column="1" colspan="2">
+              <widget class="QLabel" name="label_28">
+               <property name="styleSheet">
+                <string notr="true">border:none;
+</string>
+               </property>
+               <property name="text">
+                <string>Mother</string>
+               </property>
+              </widget>
+             </item>
+             <item row="51" column="1">
+              <widget class="QPlainTextEdit" name="staff_FirstName2">
+               <property name="styleSheet">
+                <string notr="true">font: 300 9pt &quot;Outfit Light&quot;;</string>
+               </property>
+               <property name="plainText">
+                <string/>
+               </property>
+               <property name="placeholderText">
+                <string>First name...</string>
+               </property>
+              </widget>
+             </item>
+             <item row="18" column="16">
+              <widget class="QLabel" name="label_18">
+               <property name="styleSheet">
+                <string notr="true">border:none;
+</string>
+               </property>
+               <property name="text">
+                <string>Date issued</string>
+               </property>
+              </widget>
+             </item>
+             <item row="29" column="1" colspan="6">
+              <widget class="QPlainTextEdit" name="Father_FirstName">
+               <property name="maximumSize">
+                <size>
+                 <width>400</width>
+                 <height>16777215</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">font: 300 9pt &quot;Outfit Light&quot;;</string>
+               </property>
+               <property name="plainText">
+                <string/>
+               </property>
+               <property name="placeholderText">
+                <string>First name...</string>
+               </property>
+              </widget>
+             </item>
+             <item row="25" column="1" colspan="7">
+              <widget class="QPlainTextEdit" name="PagIbigNumber">
+               <property name="styleSheet">
+                <string notr="true">font: 300 9pt &quot;Outfit Light&quot;;</string>
+               </property>
+               <property name="plainText">
+                <string/>
+               </property>
+               <property name="placeholderText">
+                <string>Pag-Ibig No. ...</string>
+               </property>
+              </widget>
+             </item>
+             <item row="43" column="1" colspan="16">
+              <widget class="QPlainTextEdit" name="highschool">
+               <property name="styleSheet">
+                <string notr="true">font: 300 9pt &quot;Outfit Light&quot;;</string>
+               </property>
+               <property name="plainText">
+                <string/>
+               </property>
+               <property name="placeholderText">
+                <string>High School...</string>
+               </property>
+              </widget>
+             </item>
+             <item row="5" column="1">
+              <widget class="QLabel" name="label_8">
+               <property name="styleSheet">
+                <string notr="true">border:none;
+</string>
+               </property>
+               <property name="text">
+                <string>Position(s)</string>
+               </property>
+              </widget>
+             </item>
+             <item row="4" column="11" colspan="6">
+              <widget class="QPlainTextEdit" name="SurName">
+               <property name="styleSheet">
+                <string notr="true">font: 300 9pt &quot;Outfit Light&quot;;</string>
+               </property>
+               <property name="plainText">
+                <string/>
+               </property>
+               <property name="placeholderText">
+                <string>Surname...</string>
+               </property>
+              </widget>
+             </item>
+             <item row="38" column="1" colspan="2">
+              <widget class="QLabel" name="label_35">
+               <property name="styleSheet">
+                <string notr="true">border:none;
+</string>
+               </property>
+               <property name="text">
+                <string>Children (if any)</string>
+               </property>
+              </widget>
+             </item>
+             <item row="25" column="8" colspan="9">
+              <widget class="QPlainTextEdit" name="PhilHNumber">
+               <property name="styleSheet">
+                <string notr="true">font: 300 9pt &quot;Outfit Light&quot;;</string>
+               </property>
+               <property name="plainText">
+                <string/>
+               </property>
+               <property name="placeholderText">
+                <string>Philhealth No. ...</string>
+               </property>
+              </widget>
+             </item>
+             <item row="35" column="2" colspan="2">
+              <widget class="QPlainTextEdit" name="sibling1_MiddleName">
+               <property name="plainText">
+                <string/>
+               </property>
+               <property name="placeholderText">
+                <string>Middle name...</string>
+               </property>
+              </widget>
+             </item>
+             <item row="37" column="1">
+              <widget class="QPlainTextEdit" name="CivilStatus">
+               <property name="styleSheet">
+                <string notr="true">font: 300 9pt &quot;Outfit Light&quot;;</string>
+               </property>
+               <property name="plainText">
+                <string/>
+               </property>
+               <property name="placeholderText">
+                <string>Civil status...</string>
+               </property>
+              </widget>
+             </item>
+             <item row="23" column="8" colspan="9">
+              <widget class="QPlainTextEdit" name="SSSnumber">
+               <property name="styleSheet">
+                <string notr="true">font: 300 9pt &quot;Outfit Light&quot;;</string>
+               </property>
+               <property name="plainText">
+                <string/>
+               </property>
+               <property name="placeholderText">
+                <string>SSS...</string>
+               </property>
+              </widget>
+             </item>
+             <item row="15" column="1">
+              <widget class="QLabel" name="label_12">
+               <property name="styleSheet">
+                <string notr="true">border:none;
+</string>
+               </property>
+               <property name="text">
+                <string>Date of birth</string>
+               </property>
+              </widget>
+             </item>
+             <item row="32" column="1" colspan="6">
+              <widget class="QPlainTextEdit" name="Mother_FirstName">
+               <property name="styleSheet">
+                <string notr="true">font: 300 9pt &quot;Outfit Light&quot;;</string>
+               </property>
+               <property name="plainText">
+                <string/>
+               </property>
+               <property name="placeholderText">
+                <string>First name...</string>
+               </property>
+              </widget>
+             </item>
+             <item row="44" column="13" colspan="4">
+              <widget class="QPlainTextEdit" name="yeargraduate_highschool">
+               <property name="styleSheet">
+                <string notr="true">font: 300 9pt &quot;Outfit Light&quot;;</string>
+               </property>
+               <property name="plainText">
+                <string/>
+               </property>
+               <property name="placeholderText">
+                <string>Year graduated...</string>
+               </property>
+              </widget>
+             </item>
+             <item row="15" column="2">
+              <widget class="QLabel" name="label_13">
+               <property name="styleSheet">
+                <string notr="true">border:none;
+</string>
+               </property>
+               <property name="text">
+                <string>Place of birth</string>
+               </property>
+              </widget>
+             </item>
+             <item row="42" column="4" colspan="9">
+              <widget class="QPlainTextEdit" name="diploma_elementary">
+               <property name="styleSheet">
+                <string notr="true">font: 300 9pt &quot;Outfit Light&quot;;</string>
+               </property>
+               <property name="plainText">
+                <string/>
+               </property>
+               <property name="placeholderText">
+                <string>Diploma or degree...</string>
+               </property>
+              </widget>
+             </item>
+             <item row="49" column="1" colspan="2">
+              <widget class="QLabel" name="label_37">
+               <property name="styleSheet">
+                <string notr="true">border:none;
+</string>
+               </property>
+               <property name="text">
+                <string>Related staff member(s)</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0">
+              <widget class="QPushButton" name="Image_Upload">
+               <property name="cursor">
+                <cursorShape>PointingHandCursor</cursorShape>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">border-radius: 5px;
+background-color: rgb(128, 178, 65);
+color: rgb(255, 255, 255);
+font: 800 10pt &quot;Segoe UI&quot;;
+padding:5px;
+border:none;
+</string>
+               </property>
+               <property name="text">
+                <string>Upload Employee Image</string>
+               </property>
+              </widget>
+             </item>
+             <item row="28" column="1" colspan="2">
+              <widget class="QLabel" name="label_26">
+               <property name="styleSheet">
+                <string notr="true">border:none;
+</string>
+               </property>
+               <property name="text">
+                <string>Father</string>
+               </property>
+              </widget>
+             </item>
+             <item row="47" column="1" colspan="16">
+              <widget class="QPlainTextEdit" name="Graduateschool">
+               <property name="styleSheet">
+                <string notr="true">font: 300 9pt &quot;Outfit Light&quot;;</string>
+               </property>
+               <property name="plainText">
+                <string/>
+               </property>
+               <property name="placeholderText">
+                <string>Graduate School...</string>
+               </property>
+              </widget>
+             </item>
+             <item row="59" column="1" colspan="16">
+              <widget class="QPlainTextEdit" name="case_name">
+               <property name="styleSheet">
+                <string notr="true">font: 300 9pt &quot;Outfit Light&quot;;</string>
+               </property>
+               <property name="plainText">
+                <string/>
+               </property>
+               <property name="placeholderText">
+                <string>Case name...</string>
+               </property>
+              </widget>
+             </item>
+             <item row="12" column="1">
+              <widget class="QLabel" name="label_11">
+               <property name="styleSheet">
+                <string notr="true">border:none;
+</string>
+               </property>
+               <property name="text">
+                <string>Home address</string>
+               </property>
+              </widget>
+             </item>
+             <item row="51" column="4">
+              <widget class="QPlainTextEdit" name="staff_LastName2">
+               <property name="plainText">
+                <string/>
+               </property>
+               <property name="placeholderText">
+                <string>Last name...</string>
+               </property>
+              </widget>
+             </item>
+             <item row="54" column="1" colspan="3">
+              <widget class="QLabel" name="label_39">
+               <property name="styleSheet">
+                <string notr="true">border:none;
+</string>
+               </property>
+               <property name="text">
+                <string>Publication(s): Format: Title ; Source</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
