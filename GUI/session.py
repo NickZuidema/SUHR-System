@@ -19,6 +19,8 @@ class SessionManager:
         self.log_file = os.path.join(self.log_folder, "login_logout_log.xlsx")  # Log file path
         self.ensure_log_exists()  # Ensure log file exists and is ready
         self.session_timeout = timedelta(minutes=30)  # Set session timeout (e.g., 30 minutes)
+        self.activity_log_file = os.path.join(self.log_folder, "activity_log.xlsx")  # Activity log file path
+        self.ensure_activity_log_exists()  # Ensure activity log file exists and is ready
 
     def connect_db(self):
         """Establish a connection to the SQLite database."""
@@ -140,17 +142,50 @@ class SessionManager:
         if sheet.title != valid_title:
             sheet.title = valid_title
         
-        # Log the action (login/logout) with timestamp
+        # Log the action (login/logout/failed login) with timestamp
         timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         sheet.append([timestamp, username, action])
         
         # Save the workbook
         wb.save(self.log_file)
 
+    def ensure_activity_log_exists(self):
+        """Ensure the Excel activity log file exists and is ready."""
+        if not os.path.exists(self.activity_log_file):
+            wb = Workbook()
+            sheet = wb.active
+            valid_title = "Activity_Log"
+            sheet.title = valid_title
+            sheet.append(["Timestamp", "Username", "Activity"])
+            wb.save(self.activity_log_file)
+
+    def log_activity(self, username, activity):
+        """Log user activity to Excel file."""
+        from openpyxl import load_workbook
+        from datetime import datetime
+
+        valid_title = "Activity_Log"
+        valid_title = re.sub(r'[\\/*?:"<>|]', "_", valid_title)
+
+        wb = load_workbook(self.activity_log_file)
+        sheet = wb.active
+        
+        if sheet.title != valid_title:
+            sheet.title = valid_title
+        
+        timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        sheet.append([timestamp, username, activity])
+        
+        wb.save(self.activity_log_file)
+
     def is_user_logged_in(self):
         """Check if any user is currently logged in."""
         user_id = self.check_session()
         return user_id is not None
+
+    def log_failed_attempt(self, username):
+        """Log failed login attempt to Excel file."""
+        self.log_to_excel(username, "Failed Login")
 
 if __name__ == "__main__":
     session_manager = SessionManager()

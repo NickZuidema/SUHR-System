@@ -56,6 +56,7 @@ class MainWindow(QMainWindow):
             QMessageBox.information(self, "Success", "Login successful!")
             self.show_dashboard(username)
         else:
+            self.session_manager.log_failed_attempt(username)
             QMessageBox.warning(self, "Error", "Login failed! Please check your credentials.")
 
     def show_dashboard(self, username=None):
@@ -74,6 +75,10 @@ class MainWindow(QMainWindow):
     def logout(self):
         self.session_manager.clear_session()
         self.ui.pushButton.setEnabled(True)
+
+    def add_new_employee(self, employee_data):
+        # ...existing code to add employee...
+        self.session_manager.log_activity(self.current_user, "Add new employee data")
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)

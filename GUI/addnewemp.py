@@ -22,12 +22,14 @@ import employee_distinction
 import government_exam
 import employee_parent
 from nonfilipino import insert_non_filipino_data
+from session import SessionManager  # Import SessionManager
 
 class AddEmployeeWindow(QMainWindow):
     def __init__(self):
         super().__init__()
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
+        self.session_manager = SessionManager()  # Initialize SessionManager
 
         image_path = get_profile_path()
         image_file = os.path.join(image_path,'employee_1.png')
@@ -194,6 +196,7 @@ class AddEmployeeWindow(QMainWindow):
         pdf_file_path = os.path.join(pdf_directory, f"{employee_data['employee_id']}.pdf")
         save_pdf(employee_data, pdf_file_path)
         print(f"Saving pdf to {pdf_file_path}")
+        self.session_manager.log_activity(employee_data['employee_id'], "Added new employee record")
 
     def generate_employee_id(self):
         today_date = datetime.datetime.now().strftime('%Y%m%d')
@@ -295,8 +298,10 @@ class AddEmployeeWindow(QMainWindow):
             conn.commit()
             conn.close()
             QMessageBox.information(self, "Success", "Employee record added successfully.")
+            self.session_manager.log_activity(data["employee_id"], "Employee record saved successfully")
         except sqlite3.Error as e:
             QMessageBox.critical(self, "Error", f"An error occurred: {e}")
+            self.session_manager.log_activity(data["employee_id"], f"Error saving employee record: {e}")
 
     def update_employee_spouse_id(self, employee_id, spouse_id):
         try:
@@ -309,6 +314,7 @@ class AddEmployeeWindow(QMainWindow):
             conn.commit()
         except sqlite3.Error as e:
             QMessageBox.critical(self, "Error", f"An error occurred while updating spouse ID: {e}")
+            self.session_manager.log_activity(employee_id, f"Error updating spouse ID: {e}")
         finally:
             conn.close()
             
