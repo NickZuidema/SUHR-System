@@ -9,29 +9,20 @@ def generate_government_exam_id():
         conn = sqlite3.connect(db_path)
         cursor = conn.cursor()
 
-        # Start by trying to generate a new government exam ID
-        while True:
-            # Get the last inserted Government_Exam_Id
-            cursor.execute("SELECT Government_Exam_Id FROM Government_Exam ORDER BY Government_Exam_Id DESC LIMIT 1")
-            max_id_row = cursor.fetchone()
+      
+        # Get the last inserted Government_Exam_Id
+        cursor.execute("SELECT count(*) from Government_Exam;")
+        max_id_row = cursor.fetchone()
 
-            if max_id_row:
-                # Extract the numeric part and increment
-                last_exam_id = str(max_id_row[0])  # Convert to string
-                if last_exam_id.isdigit():
-                    new_exam_id = int(last_exam_id) + 1
-                else:
-                    # If there is any non-numeric part, just increment the numeric part
-                    new_exam_id = int(last_exam_id[1:]) + 1  # Assuming any prefix is a letter
-            else:
-                # If no previous IDs exist, start from 1
-                new_exam_id = 1
+        if max_id_row:
 
-            # Check if the generated ID already exists in the Government_Exam table
-            cursor.execute("SELECT 1 FROM Government_Exam WHERE Government_Exam_Id = ?", (str(new_exam_id),))
-            if cursor.fetchone() is None:
-                # If the ID does not exist, break out of the loop
-                break
+            last_exam_id = int(max_id_row[0])
+            new_exam_id = last_exam_id + 1
+            print(f'new id:{new_exam_id}')
+            
+        else:
+            # If no previous IDs exist, start from 1
+            new_exam_id = 1
 
         conn.close()
         return str(new_exam_id)  # Return as a simple number, no prefix or padding
