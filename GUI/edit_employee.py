@@ -288,7 +288,7 @@ class Edit_MainWindow(QMainWindow):
                     self.ui.edit_acrNo.setPlainText(employee_passport_details[1])
                     self.ui.edit_date_issued.setPlainText(employee_passport_details[2])
 
-      
+
         except sqlite3.Error as e:
             QMessageBox.critical(self, "Database Error", f"An error occurred while accessing the database: {e}")
         except ValueError as e:
@@ -451,7 +451,7 @@ class Edit_MainWindow(QMainWindow):
                 conn.commit()
                 
 
-                #update record for academic record - school, publication name, and government exam
+                #update record for academic record - school, publication name, and government exam, passports
 
 
 
