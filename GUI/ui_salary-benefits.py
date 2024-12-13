@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'salary-benefitsCcwUgU.ui'
+## Form generated from reading UI file 'salary-benefitstKnLiN.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.4.3
 ##
@@ -46,10 +46,10 @@ class Ui_Dialog(object):
         self.label_3.setGeometry(QRect(10, 240, 121, 16))
         self.label_3.setStyleSheet(u"font: 300 9pt \"Segoe UI\";\n"
 "font: 9pt \"Segoe UI\";")
-        self.apply_confirm_changes = QCheckBox(Dialog)
-        self.apply_confirm_changes.setObjectName(u"apply_confirm_changes")
-        self.apply_confirm_changes.setGeometry(QRect(10, 440, 75, 20))
-        self.apply_confirm_changes.setStyleSheet(u"font: 600 9pt \"Segoe UI\";")
+        self.apply_confirm = QCheckBox(Dialog)
+        self.apply_confirm.setObjectName(u"apply_confirm")
+        self.apply_confirm.setGeometry(QRect(10, 440, 75, 20))
+        self.apply_confirm.setStyleSheet(u"font: 600 9pt \"Segoe UI\";")
         self.salary_Overtime = QPlainTextEdit(Dialog)
         self.salary_Overtime.setObjectName(u"salary_Overtime")
         self.salary_Overtime.setGeometry(QRect(10, 110, 361, 31))
@@ -100,7 +100,7 @@ class Ui_Dialog(object):
         self.Monthly.setText(QCoreApplication.translate("Dialog", u"Monthly salary", None))
         self.benefits_Edu.setPlainText("")
         self.label_3.setText(QCoreApplication.translate("Dialog", u"Education benefits", None))
-        self.apply_confirm_changes.setText(QCoreApplication.translate("Dialog", u"Confirm", None))
+        self.apply_confirm.setText(QCoreApplication.translate("Dialog", u"Confirm", None))
         self.salary_Overtime.setPlainText(QCoreApplication.translate("Dialog", u"0.00", None))
         self.salary_Total.setPlainText(QCoreApplication.translate("Dialog", u"0.00", None))
         self.label_4.setText(QCoreApplication.translate("Dialog", u"Overtime salary", None))

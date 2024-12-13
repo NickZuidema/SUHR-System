@@ -248,7 +248,7 @@ class MainWindow(QMainWindow):
 
     def salary_employee(self):
         print("getting salary record")
-        self.salary_emp_window = SalaryDialog()
+        self.salary_emp_window = SalaryDialog(self.empID)
         self.salary_emp_window.show()
 
     def archive_employee(self):
