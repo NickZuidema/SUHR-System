@@ -39,7 +39,7 @@ class MainWindow(QMainWindow):
                 # Use the passed employee_id for the query
                 cursor.execute("""
                     SELECT Last_Name, First_Name, Middle_Name, Dgte_Address, Home_Address, Date_Of_Birth,
-                           Citizenship, Civil_Status, Sss_No, Pagibig_No, Philhealth_No, Contact_No, employee_image, Department
+                           Citizenship, Civil_Status, Sss_No, Pagibig_No, Philhealth_No, Contact_No, employee_image, Department, Email
                     FROM Employee
                     WHERE Employee_Id = ?
                 """, (employee_id,))
@@ -68,6 +68,7 @@ class MainWindow(QMainWindow):
                 self.ui.employee_father.setText("No father information available")  # Default message
                 self.ui.employee_mother.setText("No mother information available")  # Default message
                 self.ui.employee_department.setText(employee_data[13])
+                self.ui.employee_email.setText(employee_data[14])
 
 
 

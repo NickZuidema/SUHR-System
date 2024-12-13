@@ -244,6 +244,9 @@ class AddEmployeeWindow(QMainWindow):
         try:
             conn = sqlite3.connect(get_database_path())
             cursor = conn.cursor()
+
+            email = " "+self.ui.Email.toPlainText()
+            
             sql = '''INSERT INTO Employee (
                 Employee_Id,
                 Last_Name,
@@ -272,8 +275,9 @@ class AddEmployeeWindow(QMainWindow):
                 Contact_No,
                 Archived,
                 employee_image,
-                Department
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)'''
+                Department,
+                Email
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)'''
             position_name = data["position"]
             position_id = generate_position_id(position_name)
             values = (
@@ -304,7 +308,8 @@ class AddEmployeeWindow(QMainWindow):
                 data["contact_num"],
                 archived,
                 self.employee_picture,
-                self.ui.Department.toPlainText()
+                self.ui.Department.toPlainText(),
+                email
             )
             cursor.execute(sql, values)
             conn.commit()

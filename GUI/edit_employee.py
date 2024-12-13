@@ -54,7 +54,7 @@ class Edit_MainWindow(QMainWindow):
                 cursor.execute("""
                     SELECT Last_Name, First_Name, Middle_Name, Dgte_Address, Home_Address, Date_Of_Birth, Home_Address, 
                             Citizenship, Civil_Status, Sss_No, Pagibig_No, Philhealth_No, Tax_Id, Contact_No, Church, Criminal_Record, employee_image, 
-                            Department
+                            Department, Email
                     FROM Employee
                     WHERE Employee_Id = ?
                 """, (self.id_val,))
@@ -82,10 +82,8 @@ class Edit_MainWindow(QMainWindow):
 
                     self.ui.edit_contactNo.setPlainText(employee_data[13])
 
-                    parse_email_nospace = full_name.replace(" ","")
-                    parse_email_notabs = parse_email_nospace.replace("\t","")
-                    parse_email_final = parse_email_notabs.replace(",","")
-                    self.ui.edit_email_add.setPlainText(parse_email_final+"@su.edu.ph")
+                    
+                    self.ui.edit_email_add.setPlainText(employee_data[18])
 
                     self.ui.edit_TIN.setPlainText(employee_data[12])
                     self.ui.edit_SSS.setPlainText(employee_data[9])
@@ -326,6 +324,7 @@ class Edit_MainWindow(QMainWindow):
             ("church",self.ui.edit_church), 
             ("crime",self.ui.edit_case),
             ("emp_department", self.ui.edit_department),
+            ("emp_email", self.ui.edit_email_add),
 
             ("contact_num",self.ui.edit_contactNo),
 
@@ -424,12 +423,13 @@ class Edit_MainWindow(QMainWindow):
                         Dgte_Address = ?, Home_Address = ?,
                         Date_Of_Birth = ?, Place_Of_Birth = ?, Citizenship = ?,
                         Church = ?,  Contact_No = ?,
-                        Tax_Id = ?, Sss_No = ?, Pagibig_No = ?, Philhealth_No = ?, Civil_Status = ?, Criminal_Record = ?, Department = ?, employee_image = ?
+                        Tax_Id = ?, Sss_No = ?, Pagibig_No = ?, Philhealth_No = ?, Civil_Status = ?, Criminal_Record = ?, Department = ?, Email = ?,
+                         employee_image = ?
                     WHERE Employee_Id = ?
                 """, (data['lastname'],data['midname'],data['firstname'],data['duma_address'],
                       data['home_address'], data['date_of_birth'],data['place_of_birth'], data['citizenship'], data['church'],
                       data['contact_num'], data['tin'], data['sss_num'],data['pag_ibig'],data['ph_health_num'], data["civil_status"],
-                      data['crime'],data['emp_department'],image_name,
+                      data['crime'],data['emp_department'],str(data['emp_email']),image_name,
                       self.id_val))
                 conn.commit()
 
