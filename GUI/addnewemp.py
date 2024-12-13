@@ -137,7 +137,7 @@ class AddEmployeeWindow(QMainWindow):
         gradschool_fin = self.ui.yeargraduate_graduateschool.toPlainText()
 
         if elementary_id or seniorhigh_fin or seniorhigh_id or college_id or gradschool_id:
-            academic_record_id = academic.insert_academic_record_data(
+            academic_record_id = self.insert_academic_record_data(
                 elementary_id, elementary_fin, seniorhigh_fin, 
                 seniorhigh_id, seniorhigh_diploma, seniorhigh_fin, 
                 college_id, college_diploma, gradschool_id, 
@@ -369,6 +369,47 @@ class AddEmployeeWindow(QMainWindow):
         count = cursor.fetchone()[0]
         conn.close()
         return count
+
+    def insert_academic_record_data(
+        self, elementary_id, elementary_fin, elementary_diploma, highschool_id, 
+        highschool_diploma, highschool_fin, college_id, 
+        college_diploma, college_fin, gradschool_id, gradschool_diploma, 
+        gradschool_fin
+    ):
+        conn = None  # Initialize conn here to avoid the UnboundLocalError
+        try:
+            # Connect to the database
+            conn = sqlite3.connect(get_database_path())
+            cursor = conn.cursor()
+    
+            # Insert academic record data
+            sql_academic_record = '''
+                INSERT INTO Academic_Record (
+                    Elementary_ID, Elementary_Fin, Elementary_Diploma, HighSchool_ID, 
+                    HighSchool_Diploma, HighSchool_Fin, 
+                    College_ID, College_Diploma, College_Fin, GradSchool_ID, 
+                    GradSchool_Diploma, GradSchool_Fin
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            '''
+            cursor.execute(sql_academic_record, (
+                elementary_id, elementary_fin, elementary_diploma, highschool_id,
+                highschool_diploma, highschool_fin,
+                college_id, college_diploma, college_fin, gradschool_id,
+                gradschool_diploma, gradschool_fin
+            ))
+    
+            # Commit changes
+            conn.commit()
+            academic_record_id = cursor.lastrowid
+            print(f"Academic record data inserted successfully. Academic_Record_Id: {academic_record_id}")
+    
+            return academic_record_id
+    
+        except sqlite3.Error as e:
+            print(f"An error occurred: {e}")
+        finally:
+            if conn:
+                conn.close()  # Ensure connection is closed only if it was successfully created
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
