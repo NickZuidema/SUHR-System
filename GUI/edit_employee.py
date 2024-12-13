@@ -226,7 +226,7 @@ class Edit_MainWindow(QMainWindow):
                     self.ui.edit_mother_occ.setPlainText(employee_parent_data[8])
 
 
-                #academic records - prev school
+                
                 cursor.execute("""
                     select Elementary_Name, Elementary_Address, Elementary_Fin, HighSchool_Name, HighSchool_Address, HighSchool_Fin, 
                                College_Name, College_Address, College_Fin
@@ -249,7 +249,7 @@ class Edit_MainWindow(QMainWindow):
                     self.ui.edit_college_address.setPlainText(employee_acad_record[7])
                     self.ui.edit_college_date.setPlainText(employee_acad_record[8])
 
-                #academic records - publications
+               
                 cursor.execute("""
                     select Name from Publication where Publication_Id = (select Publication_Publication_Id from Academic_Record_Publication
                     where Academic_Record_Academic_Record_Id = (select Academic_Id from Employee where Employee_Id = ?) );
@@ -261,7 +261,7 @@ class Edit_MainWindow(QMainWindow):
                 else:
                     self.ui.edit_school_pub.setPlainText(employee_publications[0])
 
-                #academic records - government exam
+            
                 cursor.execute("""
                     select Title,Score_Achieved,Date from Government_Exam where Academic_Id = (select Academic_Id from Employee where Employee_Id = ?);
                 """, (self.id_val,))
@@ -274,7 +274,7 @@ class Edit_MainWindow(QMainWindow):
                     self.ui.edit_rating.setPlainText(str(employee_gov_exams[1]))
                     self.ui.edit_examination_date.setPlainText(str(employee_gov_exams[2]))
 
-                #foreign records
+                
 
                 cursor.execute("""
                   select Passport_No, Acr_No, Date_Of_Issue from Non_Filipino where Employee_Id = ?
@@ -325,10 +325,7 @@ class Edit_MainWindow(QMainWindow):
             ("citizenship",self.ui.edit_citizen), 
             ("church",self.ui.edit_church), 
             ("crime",self.ui.edit_case),
-
-            ("passport_num",self.ui.edit_passportNo), 
-            ("acr_num",self.ui.edit_acrNo), 
-            ("date_issued",self.ui.edit_date_issued), 
+            ("emp_department", self.ui.edit_department),
 
             ("contact_num",self.ui.edit_contactNo),
 
@@ -372,6 +369,34 @@ class Edit_MainWindow(QMainWindow):
             ("child_mname",self.ui.edit_childmname),
             ("child_lname", self.ui.edit_childlname),
             ("child_dob", self.ui.edit_children_DoB),
+
+            #school record
+            ("elem_name",self.ui.edit_elem),
+            ("elem_address",self.ui.edit_elem_address),
+            ("elem_date",self.ui.edit_elem_date),
+
+            ("high_name",self.ui.edit_high),
+            ("high_address",self.ui.edit_high_address),
+            ("high_date",self.ui.edit_high_date),
+
+            ("college_name",self.ui.edit_college),
+            ("college_address",self.ui.edit_college_address),
+            ("college_date",self.ui.edit_college_date),
+            
+            #publication
+            ("publication",self.ui.edit_school_pub),
+            
+
+            #government exam
+            ("gov_exam",self.ui.edit_examination ),
+            ("gov_rating",self.ui.edit_rating),
+            ("gov_date",self.ui.edit_examination_date ),
+
+            #passport
+            ("passport_num",self.ui.edit_passportNo), 
+            ("acr_num",self.ui.edit_acrNo), 
+            ("date_issued",self.ui.edit_date_issued), 
+            
         ]
 
         # Extract the values into a dictionary or variables
@@ -399,12 +424,12 @@ class Edit_MainWindow(QMainWindow):
                         Dgte_Address = ?, Home_Address = ?,
                         Date_Of_Birth = ?, Place_Of_Birth = ?, Citizenship = ?,
                         Church = ?,  Contact_No = ?,
-                        Tax_Id = ?, Sss_No = ?, Pagibig_No = ?, Philhealth_No = ?, Civil_Status = ?, Criminal_Record = ?, employee_image = ?
+                        Tax_Id = ?, Sss_No = ?, Pagibig_No = ?, Philhealth_No = ?, Civil_Status = ?, Criminal_Record = ?, Department = ?, employee_image = ?
                     WHERE Employee_Id = ?
                 """, (data['lastname'],data['midname'],data['firstname'],data['duma_address'],
                       data['home_address'], data['date_of_birth'],data['place_of_birth'], data['citizenship'], data['church'],
                       data['contact_num'], data['tin'], data['sss_num'],data['pag_ibig'],data['ph_health_num'], data["civil_status"],
-                      data['crime'],image_name,
+                      data['crime'],data['emp_department'],image_name,
                       self.id_val))
                 conn.commit()
 
@@ -451,8 +476,37 @@ class Edit_MainWindow(QMainWindow):
                 conn.commit()
                 
 
-                #update record for academic record - school, publication name, and government exam, passports
+                cursor.execute("""
+                Update Academic_Record
+                Set Elementary_Name = ?, Elementary_Address = ?, Elementary_Fin = ?, 
+                HighSchool_Name = ?, HighSchool_Address = ?, HighSchool_Fin=?,
+                College_Name = ? , College_Address = ?, College_Fin = ?
+                               where Academic_Id = (select Academic_Id from Employee where Employee_Id = ?);
+                """, (data["elem_name"], data["elem_address"], data["elem_date"], 
+                      data["high_name"], data["high_address"], data["high_date"], 
+                      data["college_name"], data["college_address"], data["college_date"], self.id_val))
+                conn.commit()
 
+                cursor.execute("""
+                Update Publication
+                Set Name = ? where Publication_Id = 
+                               (select Publication_Publication_Id from Academic_Record_Publication where 
+                               Academic_Record_Academic_Record_Id = (select Academic_Id from Employee where Employee_Id = ?));
+                """, (data["publication"],self.id_val))
+                conn.commit()
+
+                cursor.execute("""
+                Update Government_Exam
+                Set Title = ?, Score_Achieved = ?, Date = ? 
+                    where Academic_Id = (select Academic_Id from Employee where Employee_Id = ?);
+                """, (data["gov_exam"], int(data["gov_rating"]), data["gov_date"],self.id_val))
+                conn.commit()
+
+                cursor.execute("""
+                Update Non_Filipino
+                Set Passport_No = ?, Acr_No = ?, Date_Of_Issue = ? where Employee_Id = ?;
+                """, (data["passport_num"], data["acr_num"], data["date_issued"],self.id_val))
+                conn.commit()
 
 
                 QMessageBox.information(self, "Edit Result", f"Updated Record for {self.id_val}.")

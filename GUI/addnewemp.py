@@ -59,9 +59,9 @@ class AddEmployeeWindow(QMainWindow):
         archived = 0
         employee_data = collect_employee_data(self.ui, employee_id, archived)
 
-        passport_no = self.ui.NONFILIPINO_passport.toPlainText()
-        acr_no = self.ui.NONFILIPINO_acrnum.toPlainText()
-        date_of_issue = self.ui.NONFILIPINO_dateissued.toPlainText()
+        passport_no = " "+self.ui.NONFILIPINO_passport.toPlainText()
+        acr_no = " "+self.ui.NONFILIPINO_acrnum.toPlainText()
+        date_of_issue = " "+self.ui.NONFILIPINO_dateissued.toPlainText()
 
         if passport_no:
             print("inserting non filipino data")

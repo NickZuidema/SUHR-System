@@ -43,7 +43,72 @@ where Child_Id = (select Child_Child_Id from Employee_Child where Employee_Emplo
 
 
 
-select * from Sibling where Employee_Id = '20241212-027';
+select * from Sibling where Sibling_Id = (select Sibling_Sibling_Id from Employee_Sibling where Employee_Employee_Id = '20241212-027');
 
+
+Update Sibling Set Last_Name = 'Sib', First_Name = 'Sib', Middle_Name = 'Sib', Occupation = 'Sib', Address = 'Sib'
+where Sibling_Id = (select Sibling_Sibling_Id from Employee_Sibling where Employee_Employee_Id = '20241212-027');
+
+
+select * from Spouse_Info where Spouse_Info_Id = (select Spouse_Info_Id from Spouse where Spouse_id = (select spouse_id from Employee where Employee_Id = '20241212-027') );
+
+Update Spouse_Info
+Set Date_Of_Marriage = 'dom', Place_Of_Marriage = 'pom' where Spouse_Info_Id = (select Spouse_Info_Id from Spouse where Spouse_id = (select spouse_id from Employee where Employee_Id = '20241212-027') );
+
+
+
+select * from Government_Exam;
+
+SELECT count(*) from Government_Exam;
+
+SELECT 1 FROM Government_Exam WHERE Government_Exam_Id = 11;
+
+
+
+-- government exam and publication
+select * from Government_Exam where Academic_Id = (select Academic_Id from Employee where Employee_Id = '20241213-005');
+
+
+select * from Publication where Publication_Id = (select Publication_Publication_Id from Academic_Record_Publication where Academic_Record_Academic_Record_Id = (select Academic_Id from Employee where Employee_Id = '20241213-005') );
+
+
+select * from Academic_Record where Academic_Id = (select Academic_Id from Employee where Employee_Id = '20241213-006');
+
+
+select * from Government_Exam where Academic_Id = (select Academic_Id from Employee where Employee_Id = '20241213-006');
+
+
+select Name,Link from Publication where Publication_Id = (select Publication_Publication_Id from Academic_Record_Publication
+ where Academic_Record_Academic_Record_Id = (select Academic_Id from Employee where Employee_Id = '20241213-006') );
+
+
+
+select Elementary_Name, Elementary_Address, Elementary_Fin, HighSchool_Name, HighSchool_Address, HighSchool_Fin, College_Name, College_Address, College_Fin
+ from Academic_Record where Academic_Id = (select Academic_Id from Employee where Employee_Id = '20241213-006');
+
+
+
+select Title,Score_Achieved,Date from Government_Exam where Academic_Id = (select Academic_Id from Employee where Employee_Id = '20241213-006');
+
+
+select * from Distinction where Academic_Id = (select Academic_Id from Employee where Employee_Id = '20241213-006');
+
+
+
+select Last_Name,First_Name, Middle_Name from Sibling where Sibling_Id = (select Sibling_Sibling_Id from Employee_Sibling where Employee_Employee_Id = '20241213-006');
+
+select Name,Link from Publication where Publication_Id = (select Publication_Publication_Id from Academic_Record_Publication
+ where Academic_Record_Academic_Record_Id = (select Academic_Id from Employee where Employee_Id = '20241213-006') );
+ 
+select Elementary_Name, Elementary_Address, Elementary_Fin, HighSchool_Name, HighSchool_Address, HighSchool_Fin, College_Name, College_Address, College_Fin
+ from Academic_Record where Academic_Id = (select Academic_Id from Employee where Employee_Id = '20241213-006');
+ 
+select * from Non_Filipino;
+
+select Passport_No, Acr_No, Date_Of_Issue from Non_Filipino where Employee_Id = '20241213-006';
+
+
+
+--updating
 
 
