@@ -16,7 +16,7 @@ def generate_non_filipino_id():
     conn.close()
     return new_id
 
-def insert_non_filipino_data(passport_no, acr_no, date_of_issue):
+def insert_non_filipino_data(employee_id,passport_no, acr_no, date_of_issue):
     """
     Insert a new Non-Filipino record into the database.
 
@@ -34,10 +34,10 @@ def insert_non_filipino_data(passport_no, acr_no, date_of_issue):
     # Insert the data into the Non_Filipino table
     cursor.execute(
         """
-        INSERT INTO Non_Filipino (Passport_No, Acr_No, Date_Of_Issue)
-        VALUES (?, ?, ?)
+        INSERT INTO Non_Filipino (Employee_Id,Passport_No, Acr_No, Date_Of_Issue)
+        VALUES (?, ?, ?, ?)
         """,
-        (passport_no, acr_no, date_of_issue)
+        (employee_id,passport_no, acr_no, date_of_issue)
     )
 
     conn.commit()

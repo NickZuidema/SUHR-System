@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'add_employee_recordCANLASakZKTV.ui'
+## Form generated from reading UI file 'add_employee_recordCANLASahtgdS.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.4.3
 ##
@@ -473,13 +473,6 @@ class Ui_MainWindow(object):
 
         self.gridLayout.addWidget(self.scholarships_awards, 53, 1, 1, 16)
 
-        self.label_39 = QLabel(self.scrollAreaWidgetContents_2)
-        self.label_39.setObjectName(u"label_39")
-        self.label_39.setStyleSheet(u"border:none;\n"
-"")
-
-        self.gridLayout.addWidget(self.label_39, 54, 1, 1, 2)
-
         self.label_22 = QLabel(self.scrollAreaWidgetContents_2)
         self.label_22.setObjectName(u"label_22")
         self.label_22.setStyleSheet(u"border:none;\n"
@@ -899,6 +892,13 @@ class Ui_MainWindow(object):
 
         self.gridLayout.addWidget(self.staff_LastName2, 51, 4, 1, 1)
 
+        self.label_39 = QLabel(self.scrollAreaWidgetContents_2)
+        self.label_39.setObjectName(u"label_39")
+        self.label_39.setStyleSheet(u"border:none;\n"
+"")
+
+        self.gridLayout.addWidget(self.label_39, 54, 1, 1, 3)
+
         self.scrollArea.setWidget(self.scrollAreaWidgetContents_2)
 
         self.verticalLayout_2.addWidget(self.scrollArea)
@@ -1015,7 +1015,6 @@ class Ui_MainWindow(object):
         self.government_date.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Date of examination...", None))
         self.scholarships_awards.setPlainText("")
         self.scholarships_awards.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Includes scholarships, awards, etc ...", None))
-        self.label_39.setText(QCoreApplication.translate("MainWindow", u"Publication(s)", None))
         self.label_22.setText(QCoreApplication.translate("MainWindow", u"SSS Number", None))
         self.elementary_school_address.setPlainText("")
         self.elementary_school_address.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Address of elementary school...", None))
@@ -1121,5 +1120,6 @@ class Ui_MainWindow(object):
         self.label_11.setText(QCoreApplication.translate("MainWindow", u"Home address", None))
         self.staff_LastName2.setPlainText("")
         self.staff_LastName2.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Last name...", None))
+        self.label_39.setText(QCoreApplication.translate("MainWindow", u"Publication(s): Format: Title ; Source", None))
     # retranslateUi
 

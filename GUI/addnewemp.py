@@ -64,7 +64,8 @@ class AddEmployeeWindow(QMainWindow):
         date_of_issue = self.ui.NONFILIPINO_dateissued.toPlainText()
 
         if passport_no:
-            insert_non_filipino_data(passport_no, acr_no, date_of_issue)
+            print("inserting non filipino data")
+            insert_non_filipino_data(employee_id,passport_no, acr_no, date_of_issue)
 
         employee_data["passport_num"] = passport_no
 
@@ -173,9 +174,9 @@ class AddEmployeeWindow(QMainWindow):
             else:
                 print(f"No academic record found for employee {employee_id}. Publications not added.")
 
-        government_title = self.ui.government_examination.toPlainText()
-        government_score = self.ui.government_rating.toPlainText()
-        government_date = self.ui.government_date.toPlainText()
+        government_title = " "+self.ui.government_examination.toPlainText()
+        government_score = " "+ self.ui.government_rating.toPlainText()
+        government_date = " "+ self.ui.government_date.toPlainText()
         government_score_max = 100
 
         if government_title or government_score or government_date:
@@ -287,7 +288,7 @@ class AddEmployeeWindow(QMainWindow):
                 data["date_of_birth"],
                 data["place_of_birth"],
                 data["citizenship"],
-                data["passport_num"],
+                data["employee_id"],
                 data["church_affiliation"],
                 data["tin"],
                 data["sss"],

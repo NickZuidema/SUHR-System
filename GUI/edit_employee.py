@@ -268,12 +268,27 @@ class Edit_MainWindow(QMainWindow):
                 employee_gov_exams = cursor.fetchone()
 
                 if employee_gov_exams is None:
-                    QMessageBox.information(self, "Publications Data", "Employee has no Publications Found")
+                    QMessageBox.information(self, "Government Exam Data", "Employee has no Exams Found")
                 else:
                     self.ui.edit_examination.setPlainText(employee_gov_exams[0])
                     self.ui.edit_rating.setPlainText(str(employee_gov_exams[1]))
                     self.ui.edit_examination_date.setPlainText(str(employee_gov_exams[2]))
-                
+
+                #foreign records
+
+                cursor.execute("""
+                  select Passport_No, Acr_No, Date_Of_Issue from Non_Filipino where Employee_Id = ?
+                """, (self.id_val,))
+                employee_passport_details = cursor.fetchone()
+
+                if employee_passport_details is None:
+                    QMessageBox.information(self, "Passport Data", "Employee has no Passports Found")
+                else:
+                    self.ui.edit_passportNo.setPlainText(employee_passport_details[0])
+                    self.ui.edit_acrNo.setPlainText(employee_passport_details[1])
+                    self.ui.edit_date_issued.setPlainText(employee_passport_details[2])
+
+      
         except sqlite3.Error as e:
             QMessageBox.critical(self, "Database Error", f"An error occurred while accessing the database: {e}")
         except ValueError as e:
@@ -383,12 +398,12 @@ class Edit_MainWindow(QMainWindow):
                     SET Last_Name = ?, Middle_Name = ?, First_Name = ?,
                         Dgte_Address = ?, Home_Address = ?,
                         Date_Of_Birth = ?, Place_Of_Birth = ?, Citizenship = ?,
-                        Church = ?, Non_Filipino_Id = ?, Contact_No = ?,
+                        Church = ?,  Contact_No = ?,
                         Tax_Id = ?, Sss_No = ?, Pagibig_No = ?, Philhealth_No = ?, Civil_Status = ?, Criminal_Record = ?, employee_image = ?
                     WHERE Employee_Id = ?
                 """, (data['lastname'],data['midname'],data['firstname'],data['duma_address'],
                       data['home_address'], data['date_of_birth'],data['place_of_birth'], data['citizenship'], data['church'],
-                      data['passport_num'], data['contact_num'], data['tin'], data['sss_num'],data['pag_ibig'],data['ph_health_num'], data["civil_status"],
+                      data['contact_num'], data['tin'], data['sss_num'],data['pag_ibig'],data['ph_health_num'], data["civil_status"],
                       data['crime'],image_name,
                       self.id_val))
                 conn.commit()
@@ -437,6 +452,8 @@ class Edit_MainWindow(QMainWindow):
                 
 
                 #update record for academic record - school, publication name, and government exam
+
+
 
                 QMessageBox.information(self, "Edit Result", f"Updated Record for {self.id_val}.")
 
