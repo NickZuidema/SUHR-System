@@ -224,6 +224,55 @@ class Edit_MainWindow(QMainWindow):
                     self.ui.edit_mother_name.setPlainText(mother_full_name)
                     self.ui.edit_father_address.setPlainText(employee_parent_data[9])
                     self.ui.edit_mother_occ.setPlainText(employee_parent_data[8])
+
+
+                #academic records - prev school
+                cursor.execute("""
+                    select Elementary_Name, Elementary_Address, Elementary_Fin, HighSchool_Name, HighSchool_Address, HighSchool_Fin, 
+                               College_Name, College_Address, College_Fin
+                    from Academic_Record where Academic_Id = (select Academic_Id from Employee where Employee_Id = ?);
+                """, (self.id_val,))
+                employee_acad_record = cursor.fetchone()
+
+                if employee_acad_record is None:
+                    QMessageBox.information(self, "School Data", "Employee has no School Found")
+                else:
+                    self.ui.edit_elem.setPlainText(employee_acad_record[0])
+                    self.ui.edit_elem_address.setPlainText(employee_acad_record[1])
+                    self.ui.edit_elem_date.setPlainText(employee_acad_record[2])
+
+                    self.ui.edit_high.setPlainText(employee_acad_record[3])
+                    self.ui.edit_high_address.setPlainText(employee_acad_record[4])
+                    self.ui.edit_high_date.setPlainText(employee_acad_record[5])
+
+                    self.ui.edit_college.setPlainText(employee_acad_record[6])
+                    self.ui.edit_college_address.setPlainText(employee_acad_record[7])
+                    self.ui.edit_college_date.setPlainText(employee_acad_record[8])
+
+                #academic records - publications
+                cursor.execute("""
+                    select Name from Publication where Publication_Id = (select Publication_Publication_Id from Academic_Record_Publication
+                    where Academic_Record_Academic_Record_Id = (select Academic_Id from Employee where Employee_Id = ?) );
+                """, (self.id_val,))
+                employee_publications = cursor.fetchone()
+
+                if employee_publications is None:
+                    QMessageBox.information(self, "Publications Data", "Employee has no Publications Found")
+                else:
+                    self.ui.edit_school_pub.setPlainText(employee_publications[0])
+
+                #academic records - government exam
+                cursor.execute("""
+                    select Title,Score_Achieved,Date from Government_Exam where Academic_Id = (select Academic_Id from Employee where Employee_Id = ?);
+                """, (self.id_val,))
+                employee_gov_exams = cursor.fetchone()
+
+                if employee_gov_exams is None:
+                    QMessageBox.information(self, "Publications Data", "Employee has no Publications Found")
+                else:
+                    self.ui.edit_examination.setPlainText(employee_gov_exams[0])
+                    self.ui.edit_rating.setPlainText(str(employee_gov_exams[1]))
+                    self.ui.edit_examination_date.setPlainText(str(employee_gov_exams[2]))
                 
         except sqlite3.Error as e:
             QMessageBox.critical(self, "Database Error", f"An error occurred while accessing the database: {e}")
@@ -387,6 +436,7 @@ class Edit_MainWindow(QMainWindow):
                 conn.commit()
                 
 
+                #update record for academic record - school, publication name, and government exam
 
                 QMessageBox.information(self, "Edit Result", f"Updated Record for {self.id_val}.")
 

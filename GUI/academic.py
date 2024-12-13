@@ -5,9 +5,10 @@ db_path = get_database_path()
 
 # Function to insert academic record data
 def insert_academic_record_data(
-    elementary_id, elementary_fin, highschool_fin, seniorhigh_id,
-    seniorhigh_diploma, seniorhigh_fin, college_id, college_diploma,
-    gradschool_id, gradschool_diploma, gradschool_fin
+    elementary_id, elementary_fin, elementary_diploma, elementary_address,
+    seniorhigh_fin, seniorhigh_id, seniorhigh_diploma, seniorhigh_address, 
+    college_id, college_diploma, college_address, college_fin,
+    gradschool_id, gradschool_diploma, gradschool_fin, gradschool_address
 ):
     conn = None  # Initialize conn here to avoid the UnboundLocalError
 
@@ -20,17 +21,23 @@ def insert_academic_record_data(
         # Insert academic record data
         sql_academic_record = '''
             INSERT INTO Academic_Record (
-                Elementary_ID, Elementary_Fin, HighSchool_Fin, 
-                SeniorHigh_ID, SeniorHigh_Diploma, SeniorHigh_Fin, 
-                College_ID, College_Diploma, GradSchool_ID, 
-                GradSchool_Diploma, GradSchool_Fin
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                Elementary_ID, Elementary_Name, Elementary_Address, Elementary_Diploma, Elementary_Fin, 
+                HighSchool_ID, HighSchool_Name, HighSchool_Address, HighSchool_Diploma, HighSchool_Fin, 
+                SeniorHigh_ID, SeniorHigh_Name, SeniorHigh_Address, SeniorHigh_Diploma, SeniorHigh_Fin, 
+                College_ID, College_Name, College_Address, College_Diploma, College_Fin,
+                GradSchool_ID, GradSchool_Name, GradSchool_Address, GradSchool_Diploma, GradSchool_Fin
+            ) VALUES (?, ?, ?, ?, ?,
+                     ?, ?, ?, ?, ?,
+                     ?, ?, ?, ?, ?,
+                     ?, ?, ?, ?, ?,
+                     ?, ?, ?, ?, ?)
         '''
         cursor.execute(sql_academic_record, (
-            elementary_id, elementary_fin, highschool_fin,
-            seniorhigh_id, seniorhigh_diploma, seniorhigh_fin,
-            college_id, college_diploma, gradschool_id,
-            gradschool_diploma, gradschool_fin
+            elementary_id, elementary_id, elementary_address,elementary_diploma,elementary_fin,
+            seniorhigh_id, seniorhigh_id, seniorhigh_address, seniorhigh_diploma, seniorhigh_fin, 
+            seniorhigh_id, seniorhigh_id, seniorhigh_address, seniorhigh_diploma, seniorhigh_fin, 
+            college_id, college_id, college_address, college_diploma, college_fin,
+            gradschool_id, gradschool_id, gradschool_address, gradschool_diploma, gradschool_fin
         ))
 
         # Commit changes

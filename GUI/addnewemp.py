@@ -123,22 +123,31 @@ class AddEmployeeWindow(QMainWindow):
 
         print("running school")
         elementary_id = " "+self.ui.elementary_school.toPlainText()
+        elementary_diploma = " "+self.ui.diploma_elementary.toPlainText()
+        elementary_address = " "+self.ui.elementary_school_address.toPlainText()
         elementary_fin = " "+self.ui.yeargraduate_elementary.toPlainText()
+
         seniorhigh_id = " "+self.ui.highschool.toPlainText()
         seniorhigh_diploma = " "+self.ui.diploma_highschool.toPlainText()
+        seniorhigh_address = " "+self.ui.address_highschool.toPlainText()
         seniorhigh_fin = " "+self.ui.yeargraduate_highschool.toPlainText()
+
         college_id = " "+self.ui.College.toPlainText()
         college_diploma = " "+self.ui.diploma_college.toPlainText()
+        college_address = " "+self.ui.address_college.toPlainText()
+        college_fin = " "+self.ui.yeargraduate_college.toPlainText()
+
         gradschool_id = " "+self.ui.Graduateschool.toPlainText()
-        gradschool_diploma = " "+self.ui.diploma_college.toPlainText()
+        gradschool_diploma = " "+self.ui.diploma_graduateschool.toPlainText()
+        gradschool_address = " "+self.ui.address_graduateschool.toPlainText()
         gradschool_fin = " "+self.ui.yeargraduate_graduateschool.toPlainText()
 
         if elementary_id or seniorhigh_fin or seniorhigh_id or college_id or gradschool_id:
             academic_record_id = academic.insert_academic_record_data(
-                elementary_id, elementary_fin, seniorhigh_fin, 
-                seniorhigh_id, seniorhigh_diploma, seniorhigh_fin, 
-                college_id, college_diploma, gradschool_id, 
-                gradschool_diploma, gradschool_fin
+                elementary_id, elementary_fin, elementary_diploma, elementary_address,
+                seniorhigh_fin, seniorhigh_id, seniorhigh_diploma, seniorhigh_address, 
+                college_id, college_diploma, college_address, college_fin,
+                gradschool_id, gradschool_diploma, gradschool_fin, gradschool_address
             )
             print(f"Academic Id: {academic_record_id}")
             default_year = "2023"

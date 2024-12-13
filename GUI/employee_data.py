@@ -85,11 +85,6 @@ def collect_employee_data(ui, employee_id, archived=0):
         
         "scholarship_awards": ui.scholarships_awards.toPlainText(),
         "publications": ui.publications.toPlainText(),
-        "name_of_employer": ui.name_employer.toPlainText(),
-        "position_workplace": ui.position_workplace.toPlainText(),
-        "period_of_employment": ui.period_employment.toPlainText(),
-        "reason_for_leaving": ui.reason.toPlainText(),
-        "employer_address": ui.address_employment.toPlainText(),
         "government_examinations": ui.government_examination.toPlainText(),
         "government_rating": ui.government_rating.toPlainText(),
         "government_date": ui.government_date.toPlainText(),
